@@ -2,15 +2,8 @@
 A NoLimits Roller Coaster 1 and 2 Library written in C++, which provides functionality to manipulate and create NoLimits 2 Parks or NoLimits 1 Track programmatically.
 
 # Getting started
-## Depenedencies
-`zlib` is needed by `libnolimits`. Depending on your running system you can install `zlib` either by using `homebrew` on macOS or `APT` on debian like systems:
-
-```
-brew install zlib
-```
-```
-sudo apt-get install zlib1g-dev
-```
+## Requirement
+* [zlib](http://zlib.net/)
 
 ## Installing libnolimits
 Clone this repository on your local machine and follow the usual make procedure on unix like environments
