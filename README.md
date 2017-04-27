@@ -14,7 +14,7 @@ make
 make install
 ```
 
-# API Documentation
+# Documentation
 
 Here it is: https://geforcefan.github.io/libnolimits/
 
