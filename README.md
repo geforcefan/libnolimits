@@ -3,7 +3,7 @@ A NoLimits Roller Coaster 1 and 2 Library written in C++, which provides functio
 
 # Getting started
 ## Depenedencies
-You will need `zlib` installed on your development environment. Depending on your running system you can install libz either by using `homebrew` on macOS or `APT` on debian like systems:
+`zlib` is needed by `libnolimits`. Depending on your running system you can install libz either by using `homebrew` on macOS or `APT` on debian like systems:
 
 ```
 brew install zlib
