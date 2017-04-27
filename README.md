@@ -3,7 +3,7 @@ A NoLimits Roller Coaster 1 and 2 Library written in C++, which provides functio
 
 # Getting started
 ## Requirements
-* [zlib](http://zlib.net/)
+* [zlib](http://zlib.net/) >= 1.2.7
 
 ## Installing libnolimits
 Clone this repository on your local machine and follow the usual make procedure on unix like environments
