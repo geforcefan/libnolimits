@@ -55,7 +55,7 @@ make install
       * Rail Nodes
       * Footers
      
-### Version independed features
+### Version independent features
  
 * Setting and getting terrain heights at a given XY point
 * Track interpolation, getting the matrix at a given distance on track
