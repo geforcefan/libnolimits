@@ -18,11 +18,19 @@ make install
 
 Here it is: https://geforcefan.github.io/libnolimits/
 
-# Example
+# Examples
 
-## Opening and reading park information of a *.nl2park
+## Opening and reading park information from a *.nl2park
 
-```
+```c++
+...
+NoLimits::NL2::Park *park = new NoLimits::NL2::Park("Hydra.nl2park");
+
+std::cout << "Author: " park->getInfo()->getAuthor() << std::endl;
+std::cout << "Description: " park->getInfo()->getDescription() << std::endl;
+
+std::cout << "Terrain height at [20, 50]: " << park->getTerrain()->getHeightAtVertex(20, 50) << std::endl;
+...
 ```
 
 ## Features
@@ -35,6 +43,7 @@ Here it is: https://geforcefan.github.io/libnolimits/
 - [x] Terrain
   - [x] Water
   - [x] Layers
+  - [ ] Layer intensities on terrain
 - [ ] Scenery
 - [x] Coaster
   - [x] Tracks
