@@ -5,7 +5,7 @@ A NoLimits Roller Coaster 1 and 2 Library written in C++, which provides functio
 ## Requirements
 * [zlib](http://zlib.net/) >= 1.2.7
 
-## Installing libnolimits
+## Installation
 Clone this repository on your local machine and follow the usual make procedure on unix like environments
 
 ```
@@ -23,6 +23,7 @@ Here it is: https://geforcefan.github.io/libnolimits/
 ## Opening and reading park information from a *.nl2park
 
 ```c++
+#include <libnolimits/libnolimits.h>
 ...
 NoLimits::NL2::Park *park = new NoLimits::NL2::Park("Hydra.nl2park");
 
@@ -30,6 +31,9 @@ std::cout << "Author: " park->getInfo()->getAuthor() << std::endl;
 std::cout << "Description: " park->getInfo()->getDescription() << std::endl;
 
 std::cout << "Terrain height at [20, 50]: " << park->getTerrain()->getHeightAtVertex(20, 50) << std::endl;
+...
+park->getInfo()->setAuthor("Ercan Akyürek"); 
+park->save("HydraClone.nl2park");
 ...
 ```
 
