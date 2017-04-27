@@ -34,4 +34,11 @@ A NoLimits Roller Coaster 1 and 2 Library written in C++, which provides functio
       * Beam Nodes
       * Rail Nodes
       * Footers
-      
+     
+### Version independed features
+ 
+* Setting and getting terrain heights at a given XY point
+* Changing terrain sizes
+* Track interpolation, getting the matrix at a given distance on track
+* "NL2 Spline export" conform CSV generation
+* Creating or modifiying existing tracks
