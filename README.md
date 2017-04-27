@@ -21,6 +21,10 @@ make
 make install
 ```
 
+# API Documentation
+
+Here it is: https://geforcefan.github.io/libnolimits/
+
 ## Features
 ### NoLimits 2 Park (*.nl2park)
 
