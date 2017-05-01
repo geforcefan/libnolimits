@@ -1,7 +1,7 @@
 #include "Layer.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Layer::read(File::File *file) {
             getAutoPaint()->setEnabled(file->readBoolean());
 

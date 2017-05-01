@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         Transport::TransportType TransportDevice::getTransportType() const {
             return transportType;
         }

@@ -4,8 +4,8 @@
 #include <Stream/Chunk.h>
 #include <nolimits.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Sky: public Stream::Chunk {
         public:
             Sky() {

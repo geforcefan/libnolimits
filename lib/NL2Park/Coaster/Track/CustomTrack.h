@@ -14,8 +14,8 @@
 #include <lib/NL2Park/Coaster/Track/Section/Section.h>
 #include <lib/NL2Park/Coaster/Track/Support/RailNode.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class CustomTrack: public Stream::Chunk, public Track  {
         public:
             CustomTrack();

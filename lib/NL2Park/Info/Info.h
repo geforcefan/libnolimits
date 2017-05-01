@@ -6,8 +6,8 @@
 #include <NL2Park/Info/Sky.h>
 #include "Version.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Info: public Stream::Chunk {
         public:
             enum RideView {
@@ -28,7 +28,7 @@ namespace Library {
                 setInitialPositionAndRotationEnabled(false);
                 setInitialPosition(glm::vec3(0.0f));
                 setInitialRotation(glm::vec2(0.0f));
-                setInitialView(Library::NL2Park::Info::RideView::ClosestCoasterFirstTrain);
+                setInitialView(NoLimits::NL2::Info::RideView::ClosestCoasterFirstTrain);
             }
 
             void debug() {
@@ -42,6 +42,7 @@ namespace Library {
 
                 getWeather()->debug();
                 getSky()->debug();
+                getVersion()->debug();
             }
 
             void read(File::File *file);

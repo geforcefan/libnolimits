@@ -1,7 +1,7 @@
 #include "Extras.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         std::string Extras::getFootstepSounds() const {
             return footstepSounds;
         }

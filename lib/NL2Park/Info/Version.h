@@ -1,13 +1,21 @@
 #ifndef LIB_NL2PARK_VERSION_H
 #define LIB_NL2PARK_VERSION_H
 
+#include <nolimits.h>
 #include <string>
 #include <Stream/Chunk.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Version: public Stream::Chunk {
         public:
+            void debug() {
+                std::cout << "Version[getMajor]: " << getMajor() << std::endl;
+                std::cout << "Version[getMinor]: " << getMinor() << std::endl;
+                std::cout << "Version[getRevision]: " << getRevision() << std::endl;
+                std::cout << "Version[getBuild]: " << getBuild() << std::endl;
+            }
+
             void read(File::File *file);
             void write(File::File *file);
 

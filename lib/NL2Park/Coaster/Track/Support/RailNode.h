@@ -4,8 +4,8 @@
 #include <Stream/Chunk.h>
 #include <lib/NL2Park/Coaster/Track/Support/SupportNode.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class RailNode : public Stream::Chunk, public SupportNode {
         public:
             enum ConnectionStyle {

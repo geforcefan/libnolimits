@@ -1,7 +1,7 @@
 #include "Parameter4D.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Parameter4D::read(File::File *file) {
             setPosition(file->readDouble());
             setAngle(file->readDouble());

@@ -3,8 +3,8 @@
 
 #include <Stream/Chunk.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Style: public Stream::Chunk {
         public:
             enum StyleType {
@@ -59,8 +59,13 @@ namespace Library {
                 Striped = 1
             };
 
-            Style();
-            void read(File::File *file);
+            Style() {}
+
+            void debug() {
+                std::cout << "Style[getStyleType]: " << getStyleType() << std::endl;
+                std::cout << "Style[getWornType]: " << getWornType() << std::endl;
+                std::cout << "Style[getRailType]: " << getRailType() << std::endl;
+            }
 
             StyleType getStyleType() const;
             void setStyleType(const StyleType &value);

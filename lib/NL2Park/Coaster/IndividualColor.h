@@ -4,11 +4,13 @@
 #include <Stream/Chunk.h>
 #include <vector>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class IndividualColor: public Stream::Chunk {
         public:
             IndividualColor() {}
+
+            void write(File::File *file);
             void read(File::File *file);
 
             bool getHasIndividualColor() const;
@@ -29,11 +31,8 @@ namespace Library {
             glm::vec3 getChassisColor() const;
             void setChassisColor(const glm::vec3 &value);
 
-            std::string getCarTexture1() const;
-            void setCarTexture1(const std::string &value);
-
-            std::string getCarTexture2() const;
-            void setCarTexture2(const std::string &value);
+            std::vector<std::string> getCarTexture() const;
+            void insertCarTexture(std::string value);
 
         private:
             bool hasIndividualColor;
@@ -44,8 +43,10 @@ namespace Library {
             glm::vec3 bogieColor;
             glm::vec3 chassisColor;
 
-            std::string carTexture1;
-            std::string carTexture2;
+            std::vector<std::string> carTexture;
+
+        protected:
+            std::string getChunkName() { return "INDC"; }
         };
     }
 }

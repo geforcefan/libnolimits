@@ -3,8 +3,8 @@
 #include <string>
 #include <sstream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Info::read(File::File *file) {
             getVersion()->read(file);
 

@@ -12,12 +12,38 @@
 #include <lib/NL2Park/Coaster/Track/Section/Section.h>
 #include <lib/NL2Park/Coaster/Track/CustomTrack.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Coaster: public Stream::Chunk {
         public:
-            Coaster();
+            Coaster() {
+                colors = new Colors();
+                style = new Style();
+                mode = new Mode();
+            }
+
+            void debug() {
+                std::cout << "Coaster[getName]: " << getName() << std::endl;
+                std::cout << "Coaster[getDescription]: " << getDescription() << std::endl;
+                std::cout << "Coaster[getNumberOfCarsPerTrain]: " << getNumberOfCarsPerTrain() << std::endl;
+                std::cout << "Coaster[getHideWireframe]: " << getHideWireframe() << std::endl;
+                std::cout << "Coaster[getFreezed]: " << getFreezed() << std::endl;
+
+                colors->debug();
+                style->debug();
+                mode->debug();
+
+                std::cout << "Coaster[getTrain.size]: " << train.size() << std::endl;
+                if(train.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < train.size(); i++) {
+                    train[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+            }
+
             void read(File::File *file);
+            void write(File::File *file);
 
             std::string getName() const;
             void setName(const std::string &value);
@@ -70,6 +96,9 @@ namespace Library {
             std::vector<Track*> track;
             std::vector<std::string> fileScript;
             std::vector<Train*> train;
+
+        protected:
+            std::string getChunkName() { return "COAS"; }
         };
     }
 }

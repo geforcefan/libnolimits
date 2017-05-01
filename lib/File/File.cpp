@@ -5,7 +5,7 @@
 
 #define ZLIB_CHUNK 16384
 
-namespace Library {
+namespace NoLimits {
     namespace File {
         File::File() {
             openedWB = false;

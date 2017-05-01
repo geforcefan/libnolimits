@@ -1,7 +1,7 @@
 #include "BaseMap.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         std::string BaseMap::getTexture() const {
             return texture;
         }

@@ -6,7 +6,7 @@
 
 #define ZLIB_CHUNK 16384
 
-namespace Library {
+namespace NoLimits {
     namespace Stream {
         void Chunk::readChunk(File::File *file) {
             file->openRB();

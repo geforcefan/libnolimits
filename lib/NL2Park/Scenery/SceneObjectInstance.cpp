@@ -1,8 +1,8 @@
 #include "SceneObjectInstance.h"
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void SceneObjectInstance::read(File::File *file) {
             setSceneObjectIndex(file->readUnsignedInteger());
 

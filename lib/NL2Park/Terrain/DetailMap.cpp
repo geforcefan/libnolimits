@@ -1,7 +1,7 @@
 #include "DetailMap.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         std::string DetailMap::getTexture() const {
             return texture;
         }

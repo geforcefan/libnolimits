@@ -1,7 +1,7 @@
 #include "WoodenSupportGenerator.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void WoodenSupportGenerator::read(File::File *file) {
             setFlag1(file->readUnsigned8());
             setFlag2(file->readUnsigned8());

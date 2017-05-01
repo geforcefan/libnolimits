@@ -1,11 +1,8 @@
 #include <NL2Park/Coaster/Mode.h>
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
-        void Mode::read(File::File *file) {
-        }
-
+namespace NoLimits {
+    namespace NL2 {
         Mode::Operation Mode::getOperationMode() const {
             return operationMode;
         }

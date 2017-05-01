@@ -1,12 +1,59 @@
 #include <NL2Park/Coaster/Coaster.h>
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
-        Coaster::Coaster() {
-            colors = new Colors();
-            style = new Style();
-            mode = new Mode();
+namespace NoLimits {
+    namespace NL2 {
+        void Coaster::write(File::File *file) {
+            file->writeString(getName());
+
+            file->writeColor(getColors()->getWireframeTrack());
+            file->writeUnsigned8(getMode()->getSplinePosition());
+
+            file->writeDoubleVec2(getMode()->getSplinePositionOffset());
+
+            file->writeString(getDescription());
+
+            file->writeNull(3);
+            file->writeUnsigned8(getStyle()->getStyleType());
+
+            file->writeColor(getColors()->getRails());
+            file->writeColor(getColors()->getCrossTies());
+            file->writeColor(getColors()->getMainSpine());
+            file->writeColor(getColors()->getCar());
+            file->writeColor(getColors()->getSeat());
+            file->writeColor(getColors()->getHarness());
+            file->writeColor(getColors()->getBogie());
+
+            file->writeBoolean(getFreezed());
+            file->writeUnsigned8(getColors()->getSpineColorScheme());
+            file->writeColor(getColors()->getSupports());
+            file->writeColor(getColors()->getTunnel());
+
+            file->writeUnsigned8(getStyle()->getWornType());
+            file->writeColor(getColors()->getChasiss());
+
+            file->writeUnsigned8(getMode()->getOperationMode());
+            file->writeUnsigned8(getStyle()->getRailType());
+
+            file->writeColor(getColors()->getHandrails());
+            file->writeColor(getColors()->getCatwalks());
+
+            file->writeUnsigned8(getMode()->getPhysicsModel());
+            file->writeBoolean(getHideWireframe());
+
+            file->writeUnsigned8(getNumberOfCarsPerTrain());
+
+            file->writeNull(6);
+
+            for(uint32_t i = 0; i < train.size(); i++) {
+                file->writeFile(train[i]->writeChunk());
+            }
+
+            file->writeChunkName("SUPP");
+            file->writeUnsignedInteger(32);
+            file->writeNull(32);
+
+            file->writeFile(getMode()->getCustomFriction()->writeChunk());
         }
 
         void Coaster::read(File::File *file) {

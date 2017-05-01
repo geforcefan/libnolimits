@@ -1,7 +1,7 @@
 #include "AutoPaint.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         bool AutoPaint::getEnabled() const {
             return enabled;
         }

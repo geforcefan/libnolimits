@@ -5,8 +5,8 @@
 #include "Segment.h"
 #include <Stream/Chunk.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Separator : public Stream::Chunk {
         public:
             Separator() {

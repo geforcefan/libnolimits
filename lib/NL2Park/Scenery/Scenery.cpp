@@ -1,8 +1,8 @@
 #include "Scenery.h"
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Scenery::read(File::File *file) {
             file->readNull(64);
 

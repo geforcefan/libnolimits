@@ -1,8 +1,8 @@
 #include <NL2Park/Coaster/Track/CustomTrack.h>
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         CustomTrack::CustomTrack() : Track(TrackType::Custom) {
             firstRollPoint = new RollPoint();
             lastRollPoint = new RollPoint();

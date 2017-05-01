@@ -1,14 +1,20 @@
 #include <NL2Park/Coaster/CustomFriction.h>
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
-        CustomFriction::CustomFriction() {
+namespace NoLimits {
+    namespace NL2 {
+        void CustomFriction::write(File::File *file) {
+            file->writeDouble(getConstFrictionParameter());
+            file->writeDouble(getAirResistanceParameter());
+
+            file->writeNull(32);
         }
 
         void CustomFriction::read(File::File *file) {
             setConstFrictionParameter(file->readDouble());
             setAirResistanceParameter(file->readDouble());
+
+            file->readNull(32);
         }
 
         double CustomFriction::getConstFrictionParameter() const {

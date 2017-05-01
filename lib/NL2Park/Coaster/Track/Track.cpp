@@ -1,7 +1,7 @@
 #include "Track.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         Track::TrackType Track::getTrackType() const {
             return _trackType;
         }

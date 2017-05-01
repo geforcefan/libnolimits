@@ -8,7 +8,7 @@
 #include <stdint.h>
 #include <nolimits.h>
 
-namespace Library {
+namespace NoLimits {
     namespace File {
         class File
         {

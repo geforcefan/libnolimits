@@ -1,17 +1,38 @@
 #include <NL2Park/Coaster/Train.h>
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
+        void Train::write(File::File *file) {
+            file->writeString(getStartBlock());
+            file->writeUnsignedInteger(car.size());
+
+            file->writeNull(4);
+
+            file->writeBoolean(getRunBackward());
+            file->writeBoolean(getRemovedFromTrack());
+
+            file->writeNull(31);
+
+            for(uint32_t i = 0; i < car.size(); i++) {
+                file->writeFile(car[i]->writeChunk());
+            }
+
+            if(getIndividualColor()->getHasIndividualColor()) {
+                file->writeFile(getIndividualColor()->writeChunk());
+            }
+        }
+
         void Train::read(File::File *file) {
-            file->readNull(1);
-
             setStartBlock(file->readString());
-            file->readNull(1);
+            file->readUnsignedInteger(); // number of cars
 
-            file->readNull(7);
+            file->readNull(4);
+
             setRunBackward(file->readBoolean());
             setRemovedFromTrack(file->readBoolean());
+
+            file->readNull(31);
 
             for(int i = file->tell(); i <= file->getFilesize(); i++) {
                 file->seek(i, SEEK_SET);

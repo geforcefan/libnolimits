@@ -4,8 +4,8 @@
 #include <string>
 #include "TerrainMap.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class BumpMap
         {
         public:
@@ -13,7 +13,7 @@ namespace Library {
                 setTexture("");
                 setSpecularMapTexture("");
                 setHeightMapScale(2.2f);
-                setMapType(Library::NL2Park::TerrainMap::Normal);
+                setMapType(NoLimits::NL2::TerrainMap::Normal);
                 setRepeatIndex(2);
             }
 

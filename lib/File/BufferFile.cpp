@@ -5,7 +5,7 @@
 #include <fstream>
 #include <iostream>
 
-namespace Library {
+namespace NoLimits {
     namespace File {
         BufferFile::BufferFile() : File() {
             bufferSize = 0;

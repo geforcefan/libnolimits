@@ -5,15 +5,14 @@
 #include <vector>
 #include "SceneObjectInstance.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Scenery: public Stream::Chunk {
         public:
             Scenery() {}
 
             void debug() {
                 std::cout << "Scenery[getSceneObject.size]: " << sceneObject.size() << std::endl;
-
                 if(sceneObject.size())
                     std::cout << "---------------------------------------" << std::endl;
                 for(uint32_t i = 0; i < sceneObject.size(); i++) {

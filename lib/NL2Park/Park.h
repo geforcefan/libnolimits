@@ -12,8 +12,8 @@
 #include <vector>
 #include <map>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Park: public Stream::Chunk {
         public:
             Park(std::string filepath);
@@ -27,6 +27,14 @@ namespace Library {
             void debug() {
                 info->debug();
                 scenery->debug();
+
+                std::cout << "Park[getCoaster.size]: " << coaster.size() << std::endl;
+                if(coaster.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < coaster.size(); i++) {
+                    coaster[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
             }
 
             void read(File::File *file);

@@ -1,7 +1,7 @@
 #include "Segment.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Segment::read(File::File *file) {
             setUseMainSpineColor(file->readBoolean());
             setRailColor(file->readColor());

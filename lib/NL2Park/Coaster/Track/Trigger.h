@@ -3,8 +3,8 @@
 
 #include <Stream/Chunk.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Trigger : public Stream::Chunk {
         public:
             enum TrainEvent {

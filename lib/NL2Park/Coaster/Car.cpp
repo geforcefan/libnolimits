@@ -1,9 +1,20 @@
 #include <NL2Park/Coaster/Car.h>
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
+        void Car::write(File::File *file) {
+            file->writeUnsignedInteger(getCarIndex());
+            file->writeNull(32);
+
+            if(getIndividualColor()->getHasIndividualColor()) {
+                file->writeFile(getIndividualColor()->writeChunk());
+            }
+        }
+
         void Car::read(File::File *file) {
+            setCarIndex(file->readUnsignedInteger());
+
             for(int i = file->tell(); i <= file->getFilesize(); i++) {
                 file->seek(i, SEEK_SET);
                 std::string chunk = file->readChunkName();
@@ -29,6 +40,14 @@ namespace Library {
 
         void Car::setIsZeroCar(bool value) {
             isZeroCar = value;
+        }
+
+        uint32_t Car::getCarIndex() const {
+            return carIndex;
+        }
+
+        void Car::setCarIndex(const uint32_t &value) {
+            carIndex = value;
         }
     }
 }

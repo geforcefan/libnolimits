@@ -10,8 +10,8 @@
 #include "Water.h"
 #include "Layer.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Terrain: public Stream::Chunk {
         public:
             Terrain() {
@@ -31,7 +31,7 @@ namespace Library {
                 insertTextureRepeats(0.01f);
                 insertTextureRepeats(0.01f);
 
-                insertLayer(new Library::NL2Park::Layer());
+                insertLayer(new NoLimits::NL2::Layer());
             }
 
             void read(File::File *file);

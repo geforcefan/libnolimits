@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Brake::read(File::File *file) {
             setMode((Brake::BrakeMode)file->readUnsigned8());
             setBrakeType((Brake::BrakeType)file->readUnsigned8());

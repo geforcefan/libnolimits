@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         double BrakeDevice::getDeceleration() const {
             return deceleration;
         }

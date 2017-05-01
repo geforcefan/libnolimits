@@ -1,14 +1,8 @@
 #include <NL2Park/Coaster/Style.h>
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
-        Style::Style() {
-        }
-
-        void Style::read(File::File *file) {
-        }
-
+namespace NoLimits {
+    namespace NL2 {
         Style::StyleType Style::getStyleType() const {
             return styleType;
         }

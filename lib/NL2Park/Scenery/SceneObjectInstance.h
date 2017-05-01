@@ -4,8 +4,8 @@
 #include <Stream/Chunk.h>
 #include <vector>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class SceneObjectInstance: public Stream::Chunk {
         public:
             SceneObjectInstance() {

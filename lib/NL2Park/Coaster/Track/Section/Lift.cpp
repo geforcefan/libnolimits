@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Lift::read(File::File *file) {
             file->readNull(3);
             setLiftType((LiftType)file->readUnsigned8());

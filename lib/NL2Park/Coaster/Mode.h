@@ -4,8 +4,8 @@
 #include <Stream/Chunk.h>
 #include <lib/NL2Park/Coaster/CustomFriction.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Mode: public Stream::Chunk {
         public:
             enum Operation {
@@ -32,7 +32,14 @@ namespace Library {
                 customFriction = new CustomFriction();
             }
 
-            void read(File::File *file);
+            void debug() {
+                std::cout << "Mode[getOperationMode]: " << getOperationMode() << std::endl;
+                std::cout << "Mode[getPhysicsModel]: " << getPhysicsModel() << std::endl;
+                std::cout << "Mode[getSplinePosition]: " << getSplinePosition() << std::endl;
+                std::cout << "Mode[getSplinePositionOffset]: " << Helper::debug(getSplinePositionOffset()) << std::endl;
+
+                getCustomFriction()->debug();
+            }
 
             Operation getOperationMode() const;
             void setOperationMode(const Operation &value);

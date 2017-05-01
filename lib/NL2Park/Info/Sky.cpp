@@ -1,8 +1,8 @@
 #include <NL2Park/Info/Sky.h>
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Sky::read(File::File *file) {
             setOverrideDefaultDateTime(file->readBoolean());
             setCurrentDate(file->readIntVec2());

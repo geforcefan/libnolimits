@@ -6,7 +6,7 @@
 #include <stdint.h>
 #include <nolimits.h>
 
-namespace Library {
+namespace NoLimits {
     namespace Stream {
         class Chunk {
         public:

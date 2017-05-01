@@ -3,8 +3,8 @@
 
 #include <Stream/Chunk.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Parameter4D : public Stream::Chunk {
         public:
             Parameter4D() {}

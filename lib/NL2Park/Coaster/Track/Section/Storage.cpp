@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Storage::read(File::File *file) {
             setEnableTransportDevice(file->readBoolean());
             setTransportType((Transport::TransportType)file->readUnsigned8());

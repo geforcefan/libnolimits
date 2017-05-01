@@ -1,11 +1,8 @@
 #include <NL2Park/Coaster/Colors.h>
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
-        Colors::Colors() {
-        }
-
+namespace NoLimits {
+    namespace NL2 {
         glm::vec3 Colors::getWireframeTrack() const {
             return wireframeTrack;
         }

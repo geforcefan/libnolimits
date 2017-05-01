@@ -1,8 +1,8 @@
 #include <NL2Park/Info/Weather.h>
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Weather::read(File::File *file) {
            setOverwriteDefaultWeather(file->readBoolean());
            setRainIntensity(file->readFloat());

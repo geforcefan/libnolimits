@@ -111,5 +111,4 @@ HEADERS += \
     lib/NL2Park/Scenery/SceneObjectInstance.h
 
 INCLUDEPATH += lib/ \
-    /usr/local/include/ \
-    EasyBMP_1.06/
+    /usr/local/include/

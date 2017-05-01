@@ -1,7 +1,7 @@
 #include "Separator.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Separator::read(File::File *file) {
             setPosition(file->readDouble());
 

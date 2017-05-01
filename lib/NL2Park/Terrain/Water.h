@@ -4,8 +4,8 @@
 #include <string>
 #include "TerrainMap.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Water
         {
         public:
@@ -14,7 +14,7 @@ namespace Library {
                 setDiffuseTexture("intern:data/textures/water/waterdiffuse.jpg");
                 setDiffuseTextureRepeatsPerDistance(0.06f);
                 setBumpMapTexture("intern:data/textures/water/waterbump.png");
-                setBumpMapType(Library::NL2Park::TerrainMap::Height);
+                setBumpMapType(NoLimits::NL2::TerrainMap::Height);
                 setBumpMapHeightMapScale(10.0f);
                 setBumpMapRepeatsPerDistance(0.08f);
                 setReflection(0.8f);

@@ -1,7 +1,7 @@
 #include "Water.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         float Water::getDensity() const {
             return density;
         }

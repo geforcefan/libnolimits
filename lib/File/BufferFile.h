@@ -4,7 +4,7 @@
 #include <File/File.h>
 #include <string>
 
-namespace Library {
+namespace NoLimits {
     namespace File {
         class BufferFile : public File
         {

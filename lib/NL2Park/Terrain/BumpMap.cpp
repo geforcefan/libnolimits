@@ -1,7 +1,7 @@
 #include "BumpMap.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         std::string BumpMap::getTexture() const {
             return texture;
         }

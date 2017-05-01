@@ -3,11 +3,18 @@
 
 #include <Stream/Chunk.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class CustomFriction: public Stream::Chunk {
         public:
-            CustomFriction();
+            CustomFriction() {}
+
+            void debug() {
+                std::cout << "CustomFriction[getConstFrictionParameter]: " << getConstFrictionParameter() << std::endl;
+                std::cout << "CustomFriction[getAirResistanceParameter]: " << getAirResistanceParameter() << std::endl;
+            }
+
+            void write(File::File *file);
             void read(File::File *file);
 
             double getConstFrictionParameter() const;
@@ -19,6 +26,9 @@ namespace Library {
         private:
             double constFrictionParameter;
             double airResistanceParameter;
+
+        protected:
+            std::string getChunkName() { return "CUFR"; }
         };
     }
 }

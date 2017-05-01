@@ -4,8 +4,8 @@
 #include <Stream/Chunk.h>
 #include "Section/Section.h"
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Track {
         public:
             enum TrackType {

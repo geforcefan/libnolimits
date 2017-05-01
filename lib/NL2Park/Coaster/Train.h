@@ -6,14 +6,31 @@
 #include "Car.h"
 #include <vector>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Train: public Stream::Chunk {
         public:
             Train() {
                 individualColor = new IndividualColor();
             }
 
+            void debug() {
+                std::cout << "Train[getRunBackward]: " << getRunBackward() << std::endl;
+                std::cout << "Train[getRemovedFromTrack]: " << getRemovedFromTrack() << std::endl;
+                std::cout << "Train[getStartBlock]: " << getStartBlock() << std::endl;
+
+                getIndividualColor()->debug();
+
+                std::cout << "Train[getCar.size]: " << car.size() << std::endl;
+                if(car.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < car.size(); i++) {
+                    car[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+            }
+
+            void write(File::File *file);
             void read(File::File *file);
 
             std::vector<Car*> getCar() const;
@@ -37,6 +54,9 @@ namespace Library {
             bool runBackward;
             bool removedFromTrack;
             std::string startBlock;
+
+        protected:
+            std::string getChunkName() { return "TRAI"; }
         };
     }
 }

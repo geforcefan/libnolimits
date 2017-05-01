@@ -2,19 +2,19 @@
 #include <iostream>
 #include <File/BufferFile.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         Park::Park(std::string filepath) {
             info = new Info();
             terrain = new Terrain();
             uspk = new Uspk();
             scenery = new Scenery();
 
-            readChunk(Library::File::BufferFile::createFromFilePath(filepath));
+            readChunk(NoLimits::File::BufferFile::createFromFilePath(filepath));
         }
 
         void Park::save(std::string filepath) {
-            Library::File::File *chunkFile = writeChunk();
+            NoLimits::File::File *chunkFile = writeChunk();
 
             chunkFile->openRB();
             char *oBuffer = (char*) malloc(chunkFile->getFilesize());
@@ -30,7 +30,11 @@ namespace Library {
 
             file->writeFile(getInfo()->writeChunk());
             file->writeFile(getUspk()->writeChunk());
-            //file->writeFile(getCoaster()->writeChunk()); // n amount of coasters
+
+            for(uint32_t i = 0; i < coaster.size(); i++) {
+                file->writeFile(coaster[i]->writeChunk());
+            }
+
             file->writeFile(getTerrain()->writeChunk());
             file->writeFile(getScenery()->writeChunk());
         }

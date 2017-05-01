@@ -3,8 +3,8 @@
 
 #include <string>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class DetailMap
         {
         public:

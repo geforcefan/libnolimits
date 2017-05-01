@@ -1,8 +1,8 @@
 #include "Version.h"
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Version::read(File::File *file) {
             setMajor(file->readUnsigned8());
             setMinor(file->readUnsigned8());

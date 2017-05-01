@@ -2,10 +2,9 @@
 #include <iostream>
 #include <algorithm>
 #include <File/BufferFile.h>
-#include <EasyBMP.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Terrain::read(File::File *file) {
             layer.clear();
             textureRepeats.clear();

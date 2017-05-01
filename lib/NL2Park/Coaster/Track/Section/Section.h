@@ -3,9 +3,9 @@
 
 #include <Stream/Chunk.h>
 
-namespace Library {
-    namespace NL2Park {
-        class Section : public Library::Stream::Chunk {
+namespace NoLimits {
+    namespace NL2 {
+        class Section : public NoLimits::Stream::Chunk {
         public:
             enum SectionType {
                 Track,

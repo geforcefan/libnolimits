@@ -1,8 +1,8 @@
 #include <NL2Park/Uspk.h>
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Uspk::read(File::File *file) {
             // I don´t know what this chunk does (USPK)
         }

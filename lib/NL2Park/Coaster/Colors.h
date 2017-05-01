@@ -3,10 +3,12 @@
 
 #include <Stream/Chunk.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class Colors: public Stream::Chunk {
         public:
+            Colors() {}
+
             enum SpineColorScheme {
                 Plain = 0,
                 TopAccented = 1,
@@ -14,7 +16,23 @@ namespace Library {
                 Stripe = 3
             };
 
-            Colors();
+            void debug() {
+                std::cout << "Colors[getWireframeTrack]: " << Helper::debug(getWireframeTrack()) << std::endl;
+                std::cout << "Colors[getRails]: " << Helper::debug(getRails()) << std::endl;
+                std::cout << "Colors[getCrossTies]: " << Helper::debug(getCrossTies()) << std::endl;
+                std::cout << "Colors[getMainSpine]: " << Helper::debug(getMainSpine()) << std::endl;
+                std::cout << "Colors[getCar]: " << Helper::debug(getCar()) << std::endl;
+                std::cout << "Colors[getSeat]: " << Helper::debug(getSeat()) << std::endl;
+                std::cout << "Colors[getHarness]: " << Helper::debug(getHarness()) << std::endl;
+                std::cout << "Colors[getBogie]: " << Helper::debug(getBogie()) << std::endl;
+                std::cout << "Colors[getChasiss]: " << Helper::debug(getChasiss()) << std::endl;
+                std::cout << "Colors[getSupports]: " << Helper::debug(getSupports()) << std::endl;
+                std::cout << "Colors[getTunnel]: " << Helper::debug(getTunnel()) << std::endl;
+                std::cout << "Colors[getHandrails]: " << Helper::debug(getHandrails()) << std::endl;
+                std::cout << "Colors[getCatwalks]: " << Helper::debug(getCatwalks()) << std::endl;
+                std::cout << "Colors[getSpineColorScheme]: " << getSpineColorScheme() << std::endl;
+            }
+
             void read(File::File *file);
 
             glm::vec3 getWireframeTrack() const;

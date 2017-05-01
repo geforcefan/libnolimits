@@ -1,8 +1,8 @@
 #ifndef AUTOPAINT_H
 #define AUTOPAINT_H
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class AutoPaint
         {
         public:

@@ -3,8 +3,8 @@
 
 #include <lib/nolimits.h>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         class SupportNode
         {
         public:

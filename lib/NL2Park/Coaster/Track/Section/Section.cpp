@@ -7,8 +7,8 @@
 
 #include <iostream>
 
-namespace Library {
-    namespace NL2Park {
+namespace NoLimits {
+    namespace NL2 {
         void Section::read(File::File *file) {
             file->readNull(4);
             std::string name = file->readString();
@@ -19,7 +19,7 @@ namespace Library {
                 std::string chunk = file->readChunkName();
 
                 if(chunk == "LIFT") {
-                    Library::NL2Park::Lift *_lift = new Library::NL2Park::Lift();
+                    NoLimits::NL2::Lift *_lift = new NoLimits::NL2::Lift();
                     _lift->setName(name);
                     setSection(_lift);
 
@@ -28,7 +28,7 @@ namespace Library {
                 }
 
                 if(chunk == "TRNS") {
-                    Library::NL2Park::Transport *_transport = new Library::NL2Park::Transport();
+                    NoLimits::NL2::Transport *_transport = new NoLimits::NL2::Transport();
                     _transport->setName(name);
                     setSection(_transport);
 
@@ -37,7 +37,7 @@ namespace Library {
                 }
 
                 if(chunk == "BRKE") {
-                    Library::NL2Park::Brake *_brake = new Library::NL2Park::Brake();
+                    NoLimits::NL2::Brake *_brake = new NoLimits::NL2::Brake();
                     _brake->setName(name);
                     setSection(_brake);
 
@@ -46,7 +46,7 @@ namespace Library {
                 }
 
                 if(chunk == "STTN") {
-                    Library::NL2Park::Station *_station = new Library::NL2Park::Station();
+                    NoLimits::NL2::Station *_station = new NoLimits::NL2::Station();
                     _station->setName(name);
                     setSection(_station);
 
@@ -55,7 +55,7 @@ namespace Library {
                 }
 
                 if(chunk == "STOR") {
-                    Library::NL2Park::Storage *_storage = new Library::NL2Park::Storage();
+                    NoLimits::NL2::Storage *_storage = new NoLimits::NL2::Storage();
                     _storage->setName(name);
                     setSection(_storage);
 
