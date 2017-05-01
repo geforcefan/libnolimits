@@ -1,5 +1,5 @@
 #include <iostream>
-#include <lib/NL2Park/Park.h>
+#include <src/NL2/Park.h>
 
 using namespace std;
 
