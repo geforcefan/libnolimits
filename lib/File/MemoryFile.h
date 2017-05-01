@@ -1,15 +1,15 @@
-#ifndef LIB_FILE_BUFFERFILE_H
-#define LIB_FILE_BUFFERFILE_H
+#ifndef LIB_FILE_MemoryFile_H
+#define LIB_FILE_MemoryFile_H
 
 #include <File/File.h>
 #include <string>
 
 namespace NoLimits {
     namespace File {
-        class BufferFile : public File
+        class MemoryFile : public File
         {
         public:
-            BufferFile();
+            MemoryFile();
 
             bool openWB();
             bool openRB();
@@ -23,12 +23,9 @@ namespace NoLimits {
             int seek(long offset, int origin);
             long tell();
 
-            bool canWrite();
-            bool canSeekInFile();
-
             long getFilesize();
 
-            static BufferFile *createFromFilePath(std::string filepath);
+            static MemoryFile *createFromFilePath(std::string filepath);
             void setBuffer(void *_buffer, long _size);
         private:
             void *buffer;

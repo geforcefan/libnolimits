@@ -13,7 +13,15 @@ namespace NoLimits {
         class File
         {
         public:
-            File();
+            File(std::string _filepath) : filepath(_filepath) {
+                openedWB = false;
+                openedRB = false;
+            }
+
+            File() {
+                openedWB = false;
+                openedRB = false;
+            }
 
             virtual bool openWB() { return false; }
             virtual bool openRB() { return false; }
@@ -30,9 +38,6 @@ namespace NoLimits {
 
             bool isOpenedWB() const;
             bool isOpenedRB() const;
-
-            virtual bool canWrite() { return false; }
-            virtual bool canSeekInFile() { return false; }
 
             virtual long getFilesize() { return 0; }
 
@@ -92,7 +97,10 @@ namespace NoLimits {
             File *readCompressedFile();
             void writeFileCompressed(File *uncompressedFile);
 
-            File *getChunkBufferFile();
+            File *getChunkMemoryFile();
+
+            std::string getFilepath() const;
+            void setFilepath(const std::string &value);
 
         protected:
             bool openedWB;
@@ -103,6 +111,9 @@ namespace NoLimits {
             template <typename T> T host2Be(T val);
             template <typename T> T le2Host(T val);
             template <typename T> T host2Le(T val);
+
+        private:
+            std::string filepath;
         };
     }
 }

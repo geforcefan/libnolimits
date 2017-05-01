@@ -131,11 +131,11 @@ namespace NoLimits {
         }
 
         float Layer::getIntensityAtVertex(int32_t x, int32_t y) {
-            return paintData[(vertexDimY * y) + x];
+            return paintData[(769 * y) + x];
         }
 
         void Layer::setIntensityAtVertex(int32_t x, int32_t y, float intensity) {
-            paintData[(vertexDimY * y) + x] = intensity;
+            paintData[(769 * y) + x] = intensity;
         }
     }
 }

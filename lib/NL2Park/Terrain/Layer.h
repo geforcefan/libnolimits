@@ -66,8 +66,6 @@ namespace NoLimits {
             Extras *extras;
 
             float *paintData;
-            uint32_t vertexDimX;
-            uint32_t vertexDimY;
         };
     }
 }

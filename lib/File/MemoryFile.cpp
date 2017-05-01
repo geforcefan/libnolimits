@@ -1,4 +1,4 @@
-#include <File/BufferFile.h>
+#include <File/MemoryFile.h>
 
 #include <stdlib.h>
 #include <stdexcept>
@@ -7,12 +7,12 @@
 
 namespace NoLimits {
     namespace File {
-        BufferFile::BufferFile() : File() {
+        MemoryFile::MemoryFile() : File() {
             bufferSize = 0;
             buffer = (void*) malloc(bufferSize);
         }
 
-        bool BufferFile::openWB() {
+        bool MemoryFile::openWB() {
             if(openedRB || openedWB) close();
             openedWB = true;
             pos = 0;
@@ -20,12 +20,12 @@ namespace NoLimits {
             return true;
         }
 
-        void BufferFile::setBuffer(void *_buffer, long _size) {
+        void MemoryFile::setBuffer(void *_buffer, long _size) {
             buffer = _buffer;
             bufferSize = _size;
         }
 
-        bool BufferFile::openRB() {
+        bool MemoryFile::openRB() {
             if(openedRB || openedWB) close();
             openedRB = true;
             pos = 0;
@@ -33,7 +33,7 @@ namespace NoLimits {
             return true;
         }
 
-        bool BufferFile::close() {
+        bool MemoryFile::close() {
             openedRB = false;
             openedWB = false;
             pos = 0;
@@ -41,11 +41,11 @@ namespace NoLimits {
             return true;
         }
 
-        void BufferFile::reallocBuffer() {
+        void MemoryFile::reallocBuffer() {
             buffer = (void*) realloc(buffer, bufferSize);
         }
 
-        std::streamsize BufferFile::read(void *ptr, std::streamsize size, std::streamsize count) {
+        std::streamsize MemoryFile::read(void *ptr, std::streamsize size, std::streamsize count) {
             if(openedRB) {
                 std::streamsize readSize = count * size;
                 std::streamsize restBytes = bufferSize - pos;
@@ -64,7 +64,7 @@ namespace NoLimits {
             return 0;
         }
 
-        std::streamsize BufferFile::write(const void *ptr, std::streamsize size, std::streamsize count) {
+        std::streamsize MemoryFile::write(const void *ptr, std::streamsize size, std::streamsize count) {
             if(openedWB) {
                 std::streamsize copySize = count * size;
                 bufferSize += copySize;
@@ -79,7 +79,7 @@ namespace NoLimits {
             return 0;
         }
 
-        int BufferFile::seek(long offset, int origin) {
+        int MemoryFile::seek(long offset, int origin) {
             switch(origin) {
                 case SEEK_CUR:
                     pos += offset;
@@ -105,29 +105,21 @@ namespace NoLimits {
             return 0;
         }
 
-        long BufferFile::tell() {
+        long MemoryFile::tell() {
             return pos;
         }
 
-        bool BufferFile::canSeekInFile() {
-            return true;
-        }
-
-        long BufferFile::getFilesize() {
+        long MemoryFile::getFilesize() {
             return bufferSize;
         }
 
-        bool BufferFile::canWrite() {
-            return true;
-        }
-
-        bool BufferFile::isEof() {
+        bool MemoryFile::isEof() {
             if(pos >= bufferSize) return true;
             else return false;
         }
 
-        BufferFile *BufferFile::createFromFilePath(std::string filepath) {
-            BufferFile *bf = new BufferFile();
+        MemoryFile *MemoryFile::createFromFilePath(std::string filepath) {
+            MemoryFile *bf = new MemoryFile();
 
             std::ifstream file;
             file.open(filepath.c_str(), std::ifstream::in | std::ifstream::ate | std::ifstream::binary);

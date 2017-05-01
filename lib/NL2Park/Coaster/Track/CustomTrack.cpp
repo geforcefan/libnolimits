@@ -44,7 +44,7 @@ namespace NoLimits {
                     RollPoint *_rollPoint = new RollPoint();
                     insertRollPoint(_rollPoint);
 
-                    _rollPoint->readChunk(file->getChunkBufferFile());
+                    _rollPoint->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
@@ -52,7 +52,7 @@ namespace NoLimits {
                     Trigger *_trigger = new Trigger();
                     insertTrigger(_trigger);
 
-                    _trigger->readChunk(file->getChunkBufferFile());
+                    _trigger->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
@@ -60,13 +60,13 @@ namespace NoLimits {
                     Segment *_segment = new Segment();
                     setSegment(_segment);
 
-                    _segment->readChunk(file->getChunkBufferFile());
+                    _segment->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
                 if(chunk == "SECT") {
                     Section *_section = new Section();
-                    _section->readChunk(file->getChunkBufferFile());
+                    _section->readChunk(file->getChunkMemoryFile());
 
                     setSection(_section->getSection());
                     i = file->tell() - 1;
@@ -76,7 +76,7 @@ namespace NoLimits {
                     Parameter4D *_parameter4D = new Parameter4D();
                     insertParameter4D(_parameter4D);
 
-                    _parameter4D->readChunk(file->getChunkBufferFile());
+                    _parameter4D->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
@@ -84,7 +84,7 @@ namespace NoLimits {
                     RailNode *_railNode = new RailNode();
                     insertRailNode(_railNode);
 
-                    _railNode->readChunk(file->getChunkBufferFile());
+                    _railNode->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
@@ -92,7 +92,7 @@ namespace NoLimits {
                     Separator *_separator = new Separator();
                     insertSeparator(_separator);
 
-                    _separator->readChunk(file->getChunkBufferFile());
+                    _separator->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
             }
@@ -179,7 +179,7 @@ namespace NoLimits {
                     return separator[i]->getSection();
             }
 
-            return NULL;
+            return nullptr;
         }
     }
 }

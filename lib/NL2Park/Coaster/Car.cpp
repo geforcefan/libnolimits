@@ -20,7 +20,7 @@ namespace NoLimits {
                 std::string chunk = file->readChunkName();
 
                 if (chunk == "INDC") {
-                    getIndividualColor()->readChunk(file->getChunkBufferFile());
+                    getIndividualColor()->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
             }

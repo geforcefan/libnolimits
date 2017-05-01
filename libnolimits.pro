@@ -9,7 +9,6 @@ QMAKE_CXXFLAGS_WARN_OFF -= -Wunused-parameter
 QMAKE_CXXFLAGS_WARN_ON += -Wno-unused-parameter
 
 SOURCES += main.cpp \
-    lib/File/BufferFile.cpp \
     lib/File/File.cpp \
     lib/NL2Park/Coaster/Track/Section/Brake.cpp \
     lib/NL2Park/Coaster/Track/Section/BrakeDevice.cpp \
@@ -56,10 +55,11 @@ SOURCES += main.cpp \
     lib/Stream/Chunk.cpp \
     lib/Helper.cpp \
     lib/NL2Park/Scenery/Scenery.cpp \
-    lib/NL2Park/Scenery/SceneObjectInstance.cpp
+    lib/NL2Park/Scenery/SceneObjectInstance.cpp \
+    lib/File/MemoryFile.cpp \
+    lib/File/NormalFile.cpp
 
 HEADERS += \
-    lib/File/BufferFile.h \
     lib/File/File.h \
     lib/NL2Park/Coaster/Track/Section/Brake.h \
     lib/NL2Park/Coaster/Track/Section/BrakeDevice.h \
@@ -108,7 +108,9 @@ HEADERS += \
     lib/Helper.h \
     lib/nolimits.h \
     lib/NL2Park/Scenery/Scenery.h \
-    lib/NL2Park/Scenery/SceneObjectInstance.h
+    lib/NL2Park/Scenery/SceneObjectInstance.h \
+    lib/File/MemoryFile.h \
+    lib/File/NormalFile.h
 
 INCLUDEPATH += lib/ \
     /usr/local/include/

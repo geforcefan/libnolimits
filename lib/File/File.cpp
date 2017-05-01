@@ -1,5 +1,5 @@
 #include "File.h"
-#include "BufferFile.h"
+#include "MemoryFile.h"
 #include <iostream>
 #include <zlib.h>
 
@@ -7,11 +7,6 @@
 
 namespace NoLimits {
     namespace File {
-        File::File() {
-            openedWB = false;
-            openedRB = false;
-        }
-
         bool File::isOpenedRB() const {
             return openedRB;
         }
@@ -212,12 +207,12 @@ namespace NoLimits {
             char *compressedData = (char*) malloc(compressedSize);
             read(&compressedData[0], 1, compressedSize);
 
-            BufferFile *compressedDataBufferFile = new BufferFile();
-            compressedDataBufferFile->setBuffer(compressedData, compressedSize);
-            compressedDataBufferFile->openRB();
+            MemoryFile *compressedDataMemoryFile = new MemoryFile();
+            compressedDataMemoryFile->setBuffer(compressedData, compressedSize);
+            compressedDataMemoryFile->openRB();
 
-            BufferFile *decompressedDataBufferFile = new BufferFile();
-            decompressedDataBufferFile->openWB();
+            MemoryFile *decompressedDataMemoryFile = new MemoryFile();
+            decompressedDataMemoryFile->openWB();
 
             z_stream strm;
             unsigned have;
@@ -236,7 +231,7 @@ namespace NoLimits {
 
             if (ret == Z_OK) {
                 do {
-                    strm.avail_in = compressedDataBufferFile->read(in, 1, ZLIB_CHUNK);
+                    strm.avail_in = compressedDataMemoryFile->read(in, 1, ZLIB_CHUNK);
 
                     if (strm.avail_in == 0)
                         break;
@@ -254,27 +249,27 @@ namespace NoLimits {
                             case Z_MEM_ERROR:
                                 (void)inflateEnd(&strm);
 
-                                compressedDataBufferFile->close();
-                                decompressedDataBufferFile->close();
+                                compressedDataMemoryFile->close();
+                                decompressedDataMemoryFile->close();
 
-                                return decompressedDataBufferFile;
+                                return decompressedDataMemoryFile;
                                 break;
                         }
 
                         have = ZLIB_CHUNK - strm.avail_out;
-                        decompressedDataBufferFile->write(out, 1, have);
+                        decompressedDataMemoryFile->write(out, 1, have);
                     } while (strm.avail_out == 0);
                 } while (ret != Z_STREAM_END);
             }
 
-            compressedDataBufferFile->close();
-            decompressedDataBufferFile->close();
+            compressedDataMemoryFile->close();
+            decompressedDataMemoryFile->close();
 
-            return decompressedDataBufferFile;
+            return decompressedDataMemoryFile;
         }
 
         void File::writeFileCompressed(File *uncompressedFile) {
-            File *compressedFile = new BufferFile();
+            File *compressedFile = new MemoryFile();
 
             uncompressedFile->openRB();
             compressedFile->openWB();
@@ -339,7 +334,7 @@ namespace NoLimits {
             writeFile(compressedFile);
         }
 
-        File *File::getChunkBufferFile() {
+        File *File::getChunkMemoryFile() {
             uint32_t chunkSize = readUnsignedInteger();
 
             char *chunkBuffer = (char*) malloc(chunkSize + 4);
@@ -347,10 +342,10 @@ namespace NoLimits {
             seek(-4, SEEK_CUR);
             read(&chunkBuffer[0], chunkSize + 4, 1);
 
-            BufferFile *bufferFile = new BufferFile();
-            bufferFile->setBuffer(chunkBuffer, chunkSize + 4);
+            MemoryFile *memoryFile = new MemoryFile();
+            memoryFile->setBuffer(chunkBuffer, chunkSize + 4);
 
-            return bufferFile;
+            return memoryFile;
         }
 
         std::string File::readString() {
@@ -378,6 +373,14 @@ namespace NoLimits {
                 write(&value[i], sizeof(char), 1);
             }
             writeNull(2);
+        }
+
+        std::string File::getFilepath() const {
+            return filepath;
+        }
+
+        void File::setFilepath(const std::string &value) {
+            filepath = value;
         }
 
         template <typename T>

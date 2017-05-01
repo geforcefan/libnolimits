@@ -104,7 +104,7 @@ namespace NoLimits {
                     Train *_train = new Train();
                     insertTrain(_train);
 
-                    _train->readChunk(file->getChunkBufferFile());
+                    _train->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
@@ -112,12 +112,12 @@ namespace NoLimits {
                     CustomTrack *_track = new CustomTrack();
                     insertTrack(_track);
 
-                    _track->readChunk(file->getChunkBufferFile());
+                    _track->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
                 if(chunk == "CUFR") {
-                    getMode()->getCustomFriction()->readChunk(file->getChunkBufferFile());
+                    getMode()->getCustomFriction()->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
@@ -230,7 +230,7 @@ namespace NoLimits {
         }
 
         Section *Coaster::getSection(std::string name) {
-            Section *foundSection = NULL;
+            Section *foundSection = nullptr;
 
             if(!name.size())
                 return foundSection;
@@ -239,7 +239,7 @@ namespace NoLimits {
                 Track *t = track[i];
                 Section *section = t->getSectionByName(name);
 
-                if(section != NULL) {
+                if(section != nullptr) {
                     foundSection = section;
                     break;
                 }

@@ -42,12 +42,12 @@ namespace NoLimits {
                     Car *_car = new Car();
                     insertCar(_car);
 
-                    _car->readChunk(file->getChunkBufferFile());
+                    _car->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
                 if (chunk == "INDC") {
-                    getIndividualColor()->readChunk(file->getChunkBufferFile());
+                    getIndividualColor()->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
             }

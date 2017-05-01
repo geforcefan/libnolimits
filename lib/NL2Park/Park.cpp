@@ -1,32 +1,30 @@
 #include <NL2Park/Park.h>
 #include <iostream>
-#include <File/BufferFile.h>
+#include <File/NormalFile.h>
+#include <File/MemoryFile.h>
 
 namespace NoLimits {
     namespace NL2 {
-        Park::Park(std::string filepath) {
+        Park::Park() {
             info = new Info();
             terrain = new Terrain();
             uspk = new Uspk();
             scenery = new Scenery();
+        }
 
-            readChunk(NoLimits::File::BufferFile::createFromFilePath(filepath));
+        Park::Park(std::string filepath) : Park() {
+            readChunk(new NoLimits::File::NormalFile(filepath));
         }
 
         void Park::save(std::string filepath) {
-            NoLimits::File::File *chunkFile = writeChunk();
-
-            chunkFile->openRB();
-            char *oBuffer = (char*) malloc(chunkFile->getFilesize());
-            chunkFile->read(&oBuffer[0], 1, chunkFile->getFilesize());
-
-            FILE *oFile = fopen(filepath.c_str(), "wb");
-            fwrite(&oBuffer[0], 1, chunkFile->getFilesize(), oFile);
-            fclose(oFile);
+            NoLimits::File::File *outputFile = new NoLimits::File::NormalFile(filepath.c_str());
+            outputFile->openWB();
+            outputFile->writeFile(writeChunk());
+            outputFile->close();
         }
 
         void Park::write(File::File *file) {
-            file->writeUnsignedInteger(0x02000502);
+            file->writeNull(4); // propably version?
 
             file->writeFile(getInfo()->writeChunk());
             file->writeFile(getUspk()->writeChunk());
@@ -50,30 +48,30 @@ namespace NoLimits {
                 std::string chunk = file->readChunkName();
 
                 if(chunk == "INFO") {
-                    getInfo()->readChunk(file->getChunkBufferFile());
+                    getInfo()->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
                 if(chunk == "COAS") {
                     Coaster *_coaster = new Coaster();
-                    _coaster->readChunk(file->getChunkBufferFile());
+                    _coaster->readChunk(file->getChunkMemoryFile());
 
                     insertCoaster(_coaster);
                     i = file->tell() - 1;
                 }
 
                 if(chunk == "TERC") {
-                    getTerrain()->readChunk(file->getChunkBufferFile());
+                    getTerrain()->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
                 if(chunk == "SCEN") {
-                    getScenery()->readChunk(file->getChunkBufferFile());
+                    getScenery()->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
                 if(chunk == "USPK") {
-                    getUspk()->readChunk(file->getChunkBufferFile());
+                    getUspk()->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
             }
@@ -91,7 +89,7 @@ namespace NoLimits {
             if(coasterMapping.find(name) != coasterMapping.end())
                 return coaster.at(coasterMapping.at(name));
             else
-                return NULL;
+                return nullptr;
         }
 
         void Park::insertCoaster(Coaster* value) {

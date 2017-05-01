@@ -1,7 +1,7 @@
 #include "Terrain.h"
 #include <iostream>
 #include <algorithm>
-#include <File/BufferFile.h>
+#include <File/MemoryFile.h>
 
 namespace NoLimits {
     namespace NL2 {
@@ -49,16 +49,16 @@ namespace NoLimits {
 
             file->readNull(64);
 
-            File::File *terrainDataBufferFile = file->readCompressedFile();
-            terrainDataBufferFile->openRB();
+            File::File *terrainDataMemoryFile = file->readCompressedFile();
+            terrainDataMemoryFile->openRB();
 
-            terrainDataBufferFile->readNull(8); // x y sizes in int, but don´t need these, we have fix 769x769
-            //setVertexDimX(terrainDataBufferFile->readUnsignedInteger());
-            //setVertexDimY(terrainDataBufferFile->readUnsignedInteger());
+            terrainDataMemoryFile->readNull(8); // x y sizes in int, but don´t need these, we have fix 769x769
+            //setVertexDimX(terrainDataMemoryFile->readUnsignedInteger());
+            //setVertexDimY(terrainDataMemoryFile->readUnsignedInteger());
 
             uint16_t lastAbsoluteHeight = 0;
             for (uint32_t i = 0; i < getVertexDimX() * getVertexDimY(); i++) {
-                uint16_t relativeHeight = terrainDataBufferFile->readUnsignedShort();
+                uint16_t relativeHeight = terrainDataMemoryFile->readUnsignedShort();
                 uint16_t absoluteHeight = relativeHeight + lastAbsoluteHeight;
 
                 terrainData[i] = ((int32_t)absoluteHeight - 8191) / 32.0;
@@ -70,16 +70,16 @@ namespace NoLimits {
                 for (uint32_t j = 0; j < getVertexDimX() * getVertexDimY(); j++) {
                     for(uint32_t i = 1; i < layer.size(); i++) {
                         float *paintData = layer[i]->getPaintData();
-                        paintData[j] = (float)terrainDataBufferFile->readUnsigned8() / 255.0f;
+                        paintData[j] = (float)terrainDataMemoryFile->readUnsigned8() / 255.0f;
                     }
                 }
             else if(layer.size() == 1)
                 for (uint32_t j = 0; j < getVertexDimX() * getVertexDimY(); j++) {
                     float *paintData = layer[0]->getPaintData();
-                    paintData[j] = (float)terrainDataBufferFile->readUnsigned8() / 255.0f;
+                    paintData[j] = (float)terrainDataMemoryFile->readUnsigned8() / 255.0f;
                 }
 
-            terrainDataBufferFile->close();
+            terrainDataMemoryFile->close();
         }
 
         void Terrain::write(File::File *file) {
@@ -120,7 +120,7 @@ namespace NoLimits {
 
             file->writeNull(64);
 
-            File::File *terrainDataBuffer = new File::BufferFile();
+            File::File *terrainDataBuffer = new File::MemoryFile();
             terrainDataBuffer->openWB();
             terrainDataBuffer->writeUnsignedInteger(getVertexDimX());
             terrainDataBuffer->writeUnsignedInteger(getVertexDimY());
@@ -189,14 +189,14 @@ namespace NoLimits {
 
         Layer *Terrain::getLayer(std::string name) {
             if(!name.size())
-                return NULL;
+                return nullptr;
 
             for(uint32_t i = 0; i < layer.size(); i++) {
                 if(layer[i]->getName() == name)
                     return layer[i];
             }
 
-            return NULL;
+            return nullptr;
         }
 
         void Terrain::insertLayer(Layer* value) {

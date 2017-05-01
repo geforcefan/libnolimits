@@ -2,7 +2,7 @@
 #include <iostream>
 #include <zlib.h>
 
-#include <File/BufferFile.h>
+#include <File/MemoryFile.h>
 
 #define ZLIB_CHUNK 16384
 
@@ -16,8 +16,8 @@ namespace NoLimits {
         }
 
         File::File* Chunk::writeChunk() {
-            File::BufferFile *fileChunk = new File::BufferFile();
-            File::BufferFile *fileChunkInner = new File::BufferFile();
+            File::MemoryFile *fileChunk = new File::MemoryFile();
+            File::MemoryFile *fileChunkInner = new File::MemoryFile();
 
             fileChunkInner->openWB();
             write(fileChunkInner);

@@ -23,7 +23,7 @@ namespace NoLimits {
                     _lift->setName(name);
                     setSection(_lift);
 
-                    _lift->readChunk(file->getChunkBufferFile());
+                    _lift->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
@@ -32,7 +32,7 @@ namespace NoLimits {
                     _transport->setName(name);
                     setSection(_transport);
 
-                    _transport->readChunk(file->getChunkBufferFile());
+                    _transport->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
@@ -41,7 +41,7 @@ namespace NoLimits {
                     _brake->setName(name);
                     setSection(_brake);
 
-                    _brake->readChunk(file->getChunkBufferFile());
+                    _brake->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
@@ -50,7 +50,7 @@ namespace NoLimits {
                     _station->setName(name);
                     setSection(_station);
 
-                    _station->readChunk(file->getChunkBufferFile());
+                    _station->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
 
@@ -59,7 +59,7 @@ namespace NoLimits {
                     _storage->setName(name);
                     setSection(_storage);
 
-                    _storage->readChunk(file->getChunkBufferFile());
+                    _storage->readChunk(file->getChunkMemoryFile());
                     i = file->tell() - 1;
                 }
             }

@@ -18,7 +18,7 @@ namespace NoLimits {
             Track() : _trackType(TrackType::None) {}
             TrackType getTrackType() const;
             void setTrackType(const TrackType &value);
-            virtual Section *getSectionByName(std::string name) { return NULL; }
+            virtual Section *getSectionByName(std::string name) { return nullptr; }
         private:
             TrackType _trackType;
         };
