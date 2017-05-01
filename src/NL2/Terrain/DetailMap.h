@@ -2,15 +2,21 @@
 #define DETAILMAP_H
 
 #include <string>
+#include "../../Stream/Chunk.h"
 
 namespace NoLimits {
     namespace NL2 {
-        class DetailMap
+        class DetailMap : public Stream::Chunk
         {
         public:
             DetailMap() {
                 setTexture("intern:data/textures/terrain/GrassVegetation.jpg");
                 setRepeatIndex(1);
+            }
+
+            void debug() {
+                std::cout << "DetailMap[getTexture]: " << getTexture() << std::endl;
+                std::cout << "DetailMap[getRepeatIndex]: " << getRepeatIndex() << std::endl;
             }
 
             std::string getTexture() const;

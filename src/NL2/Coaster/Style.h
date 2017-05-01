@@ -59,7 +59,11 @@ namespace NoLimits {
                 Striped = 1
             };
 
-            Style() {}
+            Style() {
+                setStyleType(StyleType::ClassicSteelLoopingCoaster);
+                setWornType(WornType::Worn);
+                setRailType(RailType::Standard);
+            }
 
             void debug() {
                 std::cout << "Style[getStyleType]: " << getStyleType() << std::endl;

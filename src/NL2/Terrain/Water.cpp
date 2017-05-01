@@ -2,6 +2,44 @@
 
 namespace NoLimits {
     namespace NL2 {
+        void Water::read(File::File *file) {
+            file->readNull(64);
+
+            setDiffuseTexture(file->readString());
+            setBumpMapTexture(file->readString());
+
+            file->readNull(2);
+
+            setDensity(file->readFloat());
+            setDiffuseTextureRepeatsPerDistance(file->readFloat());
+
+            setWaves(file->readFloat());
+            setReflection(file->readFloat());
+
+            setBumpMapType((TerrainMap)file->readUnsigned8());
+            setBumpMapHeightMapScale(file->readFloat());
+            setBumpMapRepeatsPerDistance(file->readFloat());
+        }
+
+        void Water::write(File::File *file) {
+            file->writeNull(64);
+
+            file->writeString(getDiffuseTexture());
+            file->writeString(getBumpMapTexture());
+
+            file->writeNull(2);
+
+            file->writeFloat(getDensity());
+            file->writeFloat(getDiffuseTextureRepeatsPerDistance());
+
+            file->writeFloat(getWaves());
+            file->writeFloat(getReflection());
+
+            file->writeUnsigned8(getBumpMapType());
+            file->writeFloat(getBumpMapHeightMapScale());
+            file->writeFloat(getBumpMapRepeatsPerDistance());
+        }
+
         float Water::getDensity() const {
             return density;
         }

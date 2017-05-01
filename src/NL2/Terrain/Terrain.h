@@ -34,6 +34,29 @@ namespace NoLimits {
                 insertLayer(new NoLimits::NL2::Layer());
             }
 
+            void debug() {
+                std::cout << "Terrain[getTextureRepeats.size]: " << textureRepeats.size() << std::endl;
+                if(textureRepeats.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < textureRepeats.size(); i++) {
+                    std::cout << "Terrain[getTextureRepeats][" << i << "]: " << textureRepeats[i] << std::endl;
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                std::cout << "Terrain[getLayer.size]: " << layer.size() << std::endl;
+                if(layer.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < layer.size(); i++) {
+                    layer[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                getWater()->debug();
+
+                std::cout << "Terrain[getVertexDimX]: " << getVertexDimX() << std::endl;
+                std::cout << "Terrain[getVertexDimY]: " << getVertexDimY() << std::endl;
+            }
+
             void read(File::File *file);
             void write(File::File *file);
 

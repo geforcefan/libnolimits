@@ -8,7 +8,31 @@ namespace NoLimits {
     namespace NL2 {
         class IndividualColor: public Stream::Chunk {
         public:
-            IndividualColor() {}
+            IndividualColor() {
+                setHasIndividualColor(false);
+                setCarColor(glm::vec3(0.0f));
+                setSeatColor(glm::vec3(0.0f));
+                setHarnessColor(glm::vec3(0.0f));
+                setBogieColor(glm::vec3(0.0f));
+                setChassisColor(glm::vec3(0.0f));
+            }
+
+            void debug() {
+                std::cout << "IndividualColor[getHasIndividualColor]: " << getHasIndividualColor() << std::endl;
+                std::cout << "IndividualColor[getCarColor]: " << Helper::debug(getCarColor()) << std::endl;
+                std::cout << "IndividualColor[getSeatColor]: " << Helper::debug(getSeatColor()) << std::endl;
+                std::cout << "IndividualColor[getHarnessColor]: " << Helper::debug(getHarnessColor()) << std::endl;
+                std::cout << "IndividualColor[getBogieColor]: " << Helper::debug(getBogieColor()) << std::endl;
+                std::cout << "IndividualColor[getChassisColor]: " << Helper::debug(getChassisColor()) << std::endl;
+
+                std::cout << "IndividualColor[getCarTexture.size]: " << carTexture.size() << std::endl;
+                if(carTexture.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < carTexture.size(); i++) {
+                    std::cout << "IndividualColor[getCarTexture][" << i << "]: " << carTexture[i] << std::endl;
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+            }
 
             void write(File::File *file);
             void read(File::File *file);

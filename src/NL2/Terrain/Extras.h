@@ -2,10 +2,11 @@
 #define EXTRAS_H
 
 #include <string>
+#include "../../Stream/Chunk.h"
 
 namespace NoLimits {
     namespace NL2 {
-        class Extras
+        class Extras : public Stream::Chunk
         {
         public:
             Extras() {
@@ -14,6 +15,11 @@ namespace NoLimits {
                                   "intern:data/sounds/walk/grass3.wav\n"
                                   "intern:data/sounds/walk/grass4.wav\n");
                 setAutoplantObject("");
+            }
+
+            void debug() {
+                std::cout << "Extras[getFootstepSounds]: " << getFootstepSounds() << std::endl;
+                std::cout << "Extras[getAutoplantObject]: " << getAutoplantObject() << std::endl;
             }
 
             std::string getFootstepSounds() const;

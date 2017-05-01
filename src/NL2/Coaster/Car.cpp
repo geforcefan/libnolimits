@@ -4,7 +4,7 @@
 namespace NoLimits {
     namespace NL2 {
         void Car::write(File::File *file) {
-            file->writeUnsignedInteger(getCarIndex());
+            file->writeUnsignedInteger(getInternalCarIndex());
             file->writeNull(32);
 
             if(getIndividualColor()->getHasIndividualColor()) {
@@ -13,7 +13,7 @@ namespace NoLimits {
         }
 
         void Car::read(File::File *file) {
-            setCarIndex(file->readUnsignedInteger());
+            setInternalCarIndex(file->readUnsignedInteger());
 
             for(int i = file->tell(); i <= file->getFilesize(); i++) {
                 file->seek(i, SEEK_SET);
@@ -34,20 +34,12 @@ namespace NoLimits {
             individualColor = value;
         }
 
-        bool Car::getIsZeroCar() const {
-            return isZeroCar;
+        uint32_t Car::getInternalCarIndex() const {
+            return internalCarIndex;
         }
 
-        void Car::setIsZeroCar(bool value) {
-            isZeroCar = value;
-        }
-
-        uint32_t Car::getCarIndex() const {
-            return carIndex;
-        }
-
-        void Car::setCarIndex(const uint32_t &value) {
-            carIndex = value;
+        void Car::setInternalCarIndex(const uint32_t &value) {
+            internalCarIndex = value;
         }
     }
 }

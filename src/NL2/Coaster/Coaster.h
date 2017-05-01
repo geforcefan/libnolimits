@@ -20,12 +20,19 @@ namespace NoLimits {
                 colors = new Colors();
                 style = new Style();
                 mode = new Mode();
+
+                setName("New Coaster");
+                setDescription("");
+                setHideWireframe(false);
+                setFreezed(false);
+
+                insertTrain(new Train());
+                insertTrain(new Train());
             }
 
             void debug() {
                 std::cout << "Coaster[getName]: " << getName() << std::endl;
                 std::cout << "Coaster[getDescription]: " << getDescription() << std::endl;
-                std::cout << "Coaster[getNumberOfCarsPerTrain]: " << getNumberOfCarsPerTrain() << std::endl;
                 std::cout << "Coaster[getHideWireframe]: " << getHideWireframe() << std::endl;
                 std::cout << "Coaster[getFreezed]: " << getFreezed() << std::endl;
 
@@ -50,9 +57,6 @@ namespace NoLimits {
 
             std::string getDescription() const;
             void setDescription(const std::string &value);
-
-            uint32_t getNumberOfCarsPerTrain() const;
-            void setNumberOfCarsPerTrain(const uint32_t &value);
 
             bool getHideWireframe() const;
             void setHideWireframe(bool value);
@@ -83,8 +87,6 @@ namespace NoLimits {
         private:
             std::string name;
             std::string description;
-
-            uint32_t numberOfCarsPerTrain;
 
             bool hideWireframe;
             bool freezed;

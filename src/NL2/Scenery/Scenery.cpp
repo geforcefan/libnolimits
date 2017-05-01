@@ -4,6 +4,9 @@
 namespace NoLimits {
     namespace NL2 {
         void Scenery::read(File::File *file) {
+            sceneObject.clear();
+            sceneObjectInstance.clear();
+
             file->readNull(64);
 
             uint32_t numberOfSceneObjects = file->readUnsignedInteger();

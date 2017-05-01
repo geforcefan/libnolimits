@@ -11,11 +11,12 @@ namespace NoLimits {
         public:
             Car() {
                 individualColor = new IndividualColor();
+
+                setInternalCarIndex(0);
             }
 
             void debug() {
-                std::cout << "Car[getCarIndex]: " << getCarIndex() << std::endl;
-
+                std::cout << "Car" << std::endl;
                 getIndividualColor()->debug();
             }
 
@@ -25,18 +26,13 @@ namespace NoLimits {
             IndividualColor *getIndividualColor() const;
             void setIndividualColor(IndividualColor *value);
 
-            bool getIsZeroCar() const;
-            void setIsZeroCar(bool value);
-
-            uint32_t getCarIndex() const;
-            void setCarIndex(const uint32_t &value);
+            uint32_t getInternalCarIndex() const;
+            void setInternalCarIndex(const uint32_t &value);
 
         private:
             IndividualColor *individualColor;
-            bool isZeroCar;
-            uint32_t carIndex;
-
             std::string getChunkName() { return "CAR "; }
+            uint32_t internalCarIndex;
         };
     }
 }

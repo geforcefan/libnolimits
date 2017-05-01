@@ -30,6 +30,11 @@ namespace NoLimits {
 
             Mode() {
                 customFriction = new CustomFriction();
+
+                setOperationMode(Operation::ClosedCircuit);
+                setPhysicsModel(PhysicsModel::NoLimits22);
+                setSplinePosition(SplinePosition::CenterOfRail);
+                setSplinePositionOffset(glm::vec2(0.0f));
             }
 
             void debug() {

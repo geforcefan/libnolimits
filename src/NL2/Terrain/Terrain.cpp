@@ -15,22 +15,7 @@ namespace NoLimits {
             //setVertexDimX(file->readUnsignedInteger());
             //setVertexDimY(file->readUnsignedInteger());
 
-            file->readNull(64);
-
-            getWater()->setDiffuseTexture(file->readString());
-            getWater()->setBumpMapTexture(file->readString());
-
-            file->readNull(2);
-
-            getWater()->setDensity(file->readFloat());
-            getWater()->setDiffuseTextureRepeatsPerDistance(file->readFloat());
-
-            getWater()->setWaves(file->readFloat());
-            getWater()->setReflection(file->readFloat());
-
-            getWater()->setBumpMapType((TerrainMap)file->readUnsigned8());
-            getWater()->setBumpMapHeightMapScale(file->readFloat());
-            getWater()->setBumpMapRepeatsPerDistance(file->readFloat());
+            getWater()->read(file);
 
             uint32_t numTextureRepeats = file->readUnsignedInteger();
             for(uint32_t i = 0; i < numTextureRepeats; i++) {
@@ -89,22 +74,7 @@ namespace NoLimits {
             file->writeUnsignedInteger(getVertexDimX() - 1);
             file->writeUnsignedInteger(getVertexDimY() - 1);
 
-            file->writeNull(64);
-
-            file->writeString(getWater()->getDiffuseTexture());
-            file->writeString(getWater()->getBumpMapTexture());
-
-            file->writeNull(2);
-
-            file->writeFloat(getWater()->getDensity());
-            file->writeFloat(getWater()->getDiffuseTextureRepeatsPerDistance());
-
-            file->writeFloat(getWater()->getWaves());
-            file->writeFloat(getWater()->getReflection());
-
-            file->writeUnsigned8(getWater()->getBumpMapType());
-            file->writeFloat(getWater()->getBumpMapHeightMapScale());
-            file->writeFloat(getWater()->getBumpMapRepeatsPerDistance());
+            getWater()->write(file);
 
             file->writeUnsignedInteger(textureRepeats.size());
             for(uint32_t i = 0; i < textureRepeats.size(); i++) {

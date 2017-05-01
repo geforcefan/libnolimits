@@ -2,15 +2,21 @@
 #define BASEMAP_H
 
 #include <string>
+#include "../../Stream/Chunk.h"
 
 namespace NoLimits {
     namespace NL2 {
-        class BaseMap
+        class BaseMap : public Stream::Chunk
         {
         public:
             BaseMap() {
                 setTexture("intern:data/textures/terrain/DiffuseCloudGreen.jpg");
                 setRepeatIndex(0);
+            }
+
+            void debug() {
+                std::cout << "BaseMap[getTexture]: " << getTexture() << std::endl;
+                std::cout << "BaseMap[getRepeatIndex]: " << getRepeatIndex() << std::endl;
             }
 
             std::string getTexture() const;

@@ -7,7 +7,22 @@ namespace NoLimits {
     namespace NL2 {
         class Colors: public Stream::Chunk {
         public:
-            Colors() {}
+            Colors() {
+                setWireframeTrack(glm::vec3(0.0f));
+                setRails(glm::vec3(0.0f));
+                setCrossTies(glm::vec3(0.0f));
+                setMainSpine(glm::vec3(0.0f));
+                setCar(glm::vec3(0.0f));
+                setSeat(glm::vec3(0.0f));
+                setHarness(glm::vec3(0.0f));
+                setBogie(glm::vec3(0.0f));
+                setChasiss(glm::vec3(0.0f));
+                setSupports(glm::vec3(0.0f));
+                setTunnel(glm::vec3(0.0f));
+                setHandrails(glm::vec3(0.0f));
+                setCatwalks(glm::vec3(0.0f));
+                setSpineColorScheme(SpineColorScheme::Plain);
+            }
 
             enum SpineColorScheme {
                 Plain = 0,

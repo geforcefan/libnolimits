@@ -2,11 +2,12 @@
 #define WATER_H
 
 #include <string>
+#include "../../Stream/Chunk.h"
 #include "TerrainMap.h"
 
 namespace NoLimits {
     namespace NL2 {
-        class Water
+        class Water : public Stream::Chunk
         {
         public:
             Water() {
@@ -20,6 +21,21 @@ namespace NoLimits {
                 setReflection(0.8f);
                 setWaves(0.3f);
             }
+
+            void debug() {
+                std::cout << "Water[getDensity]: " << getDensity() << std::endl;
+                std::cout << "Water[getDiffuseTexture]: " << getDiffuseTexture() << std::endl;
+                std::cout << "Water[getDiffuseTextureRepeatsPerDistance]: " << getDiffuseTextureRepeatsPerDistance() << std::endl;
+                std::cout << "Water[getBumpMapTexture]: " << getBumpMapTexture() << std::endl;
+                std::cout << "Water[getBumpMapRepeatsPerDistance]: " << getBumpMapRepeatsPerDistance() << std::endl;
+                std::cout << "Water[getBumpMapType]: " << getBumpMapType() << std::endl;
+                std::cout << "Water[getBumpMapHeightMapScale]: " << getBumpMapHeightMapScale() << std::endl;
+                std::cout << "Water[getReflection]: " << getReflection() << std::endl;
+                std::cout << "Water[getWaves]: " << getWaves() << std::endl;
+            }
+
+            void read(File::File *file);
+            void write(File::File *file);
 
             float getDensity() const;
             void setDensity(float value);

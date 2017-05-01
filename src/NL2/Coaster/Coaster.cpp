@@ -1,5 +1,6 @@
 #include <src/NL2/Coaster/Coaster.h>
 #include <iostream>
+#include <algorithm>
 
 namespace NoLimits {
     namespace NL2 {
@@ -41,7 +42,12 @@ namespace NoLimits {
             file->writeUnsigned8(getMode()->getPhysicsModel());
             file->writeBoolean(getHideWireframe());
 
-            file->writeUnsigned8(getNumberOfCarsPerTrain());
+            int numberOfCarsPerTrain = 0;
+            for(uint32_t i = 0; i < train.size(); i++) {
+                numberOfCarsPerTrain = std::min((int)train[i]->getCar().size(), numberOfCarsPerTrain);
+            }
+
+            file->writeUnsigned8(numberOfCarsPerTrain);
 
             file->writeNull(6);
 
@@ -57,6 +63,10 @@ namespace NoLimits {
         }
 
         void Coaster::read(File::File *file) {
+            track.clear();
+            fileScript.clear();
+            train.clear();
+
             setName(file->readString());
 
             getColors()->setWireframeTrack(file->readColor());
@@ -94,7 +104,10 @@ namespace NoLimits {
             getMode()->setPhysicsModel((Mode::PhysicsModel)file->readUnsigned8());
             setHideWireframe(file->readBoolean());
 
-            setNumberOfCarsPerTrain(file->readUnsigned8());
+            // number of cars per train, but we don´t need to read this value, since there are car chunks inside of train chunks
+            // where we can determine how many cars per train there is
+            //setNumberOfCarsPerTrain(file->readUnsigned8());
+            file->readNull(1);
 
             for(int i = file->tell(); i <= file->getFilesize(); i++) {
                 file->seek(i, SEEK_SET);
@@ -132,13 +145,6 @@ namespace NoLimits {
                     }
                 }
             }
-
-            for (unsigned long i = 0; i < train.size(); i++) {
-                Train *t = train.at(i);
-                if (t->getCar().size() && numberOfCarsPerTrain != t->getCar().size()) {
-                    t->getCar().at(0)->setIsZeroCar(true);
-                }
-            }
         }
 
         std::string Coaster::getName() const {
@@ -155,14 +161,6 @@ namespace NoLimits {
 
         void Coaster::setDescription(const std::string &value) {
             description = value;
-        }
-
-        uint32_t Coaster::getNumberOfCarsPerTrain() const {
-            return numberOfCarsPerTrain;
-        }
-
-        void Coaster::setNumberOfCarsPerTrain(const uint32_t &value) {
-            numberOfCarsPerTrain = value;
         }
 
         bool Coaster::getHideWireframe() const {

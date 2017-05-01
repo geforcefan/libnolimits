@@ -5,7 +5,7 @@ namespace NoLimits {
     namespace NL2 {
         void Train::write(File::File *file) {
             file->writeString(getStartBlock());
-            file->writeUnsignedInteger(car.size());
+            file->writeUnsignedInteger(car.size() + (zeroCar ? 1 : 0));
 
             file->writeNull(4);
 
@@ -14,7 +14,13 @@ namespace NoLimits {
 
             file->writeNull(31);
 
+            if(zeroCar) {
+                zeroCar->setInternalCarIndex(0);
+                file->writeChunk(zeroCar);
+            }
+
             for(uint32_t i = 0; i < car.size(); i++) {
+                car[i]->setInternalCarIndex(i + 1);
                 file->writeChunk(car[i]);
             }
 
@@ -24,6 +30,8 @@ namespace NoLimits {
         }
 
         void Train::read(File::File *file) {
+            car.clear();
+
             setStartBlock(file->readString());
             file->readUnsignedInteger(); // number of cars
 
@@ -40,9 +48,13 @@ namespace NoLimits {
 
                 if(chunk == "CAR") {
                     Car *_car = new Car();
-                    insertCar(_car);
-
                     file->readChunk(_car);
+
+                    if(_car->getInternalCarIndex())
+                        insertCar(_car);
+                    else
+                        setZeroCar(_car);
+
                     i = file->tell() - 1;
                 }
 
@@ -91,6 +103,14 @@ namespace NoLimits {
 
         void Train::setStartBlock(const std::string &value) {
             startBlock = value;
+        }
+
+        Car *Train::getZeroCar() const {
+            return zeroCar;
+        }
+
+        void Train::setZeroCar(Car *value) {
+            zeroCar = value;
         }
     }
 }

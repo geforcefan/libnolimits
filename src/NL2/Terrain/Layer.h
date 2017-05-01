@@ -31,6 +31,16 @@ namespace NoLimits {
                 setName("Grass");
             }
 
+            void debug() {
+                std::cout << "Layer[getName]: " << getName() << std::endl;
+
+                getBaseMap()->debug();
+                getDetailMap()->debug();
+                getBumpMap()->debug();
+                getAutoPaint()->debug();
+                getExtras()->debug();
+            }
+
             void read(File::File *file);
             void write(File::File *file);
 

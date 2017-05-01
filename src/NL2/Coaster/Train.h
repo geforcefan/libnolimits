@@ -12,14 +12,24 @@ namespace NoLimits {
         public:
             Train() {
                 individualColor = new IndividualColor();
+                setZeroCar(nullptr);
+
+                for(int i = 0; i < 6; i++)
+                    insertCar(new Car());
+
+                setRunBackward(false);
+                setRemovedFromTrack(false);
+                setStartBlock("");
             }
 
             void debug() {
                 std::cout << "Train[getRunBackward]: " << getRunBackward() << std::endl;
                 std::cout << "Train[getRemovedFromTrack]: " << getRemovedFromTrack() << std::endl;
                 std::cout << "Train[getStartBlock]: " << getStartBlock() << std::endl;
+                std::cout << "Train[hasZeroCar]: " << (zeroCar ? true : false) << std::endl;
 
-                getIndividualColor()->debug();
+                if(zeroCar)
+                    getZeroCar()->debug();
 
                 std::cout << "Train[getCar.size]: " << car.size() << std::endl;
                 if(car.size())
@@ -28,6 +38,8 @@ namespace NoLimits {
                     car[i]->debug();
                     std::cout << "---------------------------------------" << std::endl;
                 }
+
+                getIndividualColor()->debug();
             }
 
             void write(File::File *file);
@@ -48,7 +60,11 @@ namespace NoLimits {
             std::string getStartBlock() const;
             void setStartBlock(const std::string &value);
 
+            Car *getZeroCar() const;
+            void setZeroCar(Car *value);
+
         private:
+            Car *zeroCar;
             std::vector<Car*> car;
             IndividualColor* individualColor;
             bool runBackward;

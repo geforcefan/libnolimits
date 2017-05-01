@@ -7,7 +7,10 @@ namespace NoLimits {
     namespace NL2 {
         class CustomFriction: public Stream::Chunk {
         public:
-            CustomFriction() {}
+            CustomFriction() {
+                setConstFrictionParameter(0.03f);
+                setAirResistanceParameter(0.0001f);
+            }
 
             void debug() {
                 std::cout << "CustomFriction[getConstFrictionParameter]: " << getConstFrictionParameter() << std::endl;

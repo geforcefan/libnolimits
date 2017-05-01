@@ -3,10 +3,11 @@
 
 #include <string>
 #include "TerrainMap.h"
+#include "../../Stream/Chunk.h"
 
 namespace NoLimits {
     namespace NL2 {
-        class BumpMap
+        class BumpMap : public Stream::Chunk
         {
         public:
             BumpMap() {
@@ -15,6 +16,14 @@ namespace NoLimits {
                 setHeightMapScale(2.2f);
                 setMapType(NoLimits::NL2::TerrainMap::Normal);
                 setRepeatIndex(2);
+            }
+
+            void debug() {
+                std::cout << "BumpMap[getTexture]: " << getTexture() << std::endl;
+                std::cout << "BumpMap[getMapType]: " << getMapType() << std::endl;
+                std::cout << "BumpMap[getHeightMapScale]: " << getHeightMapScale() << std::endl;
+                std::cout << "BumpMap[getSpecularMapTexture]: " << getSpecularMapTexture() << std::endl;
+                std::cout << "BumpMap[getRepeatIndex]: " << getRepeatIndex() << std::endl;
             }
 
             std::string getTexture() const;

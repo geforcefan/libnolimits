@@ -30,6 +30,8 @@ namespace NoLimits {
                     coaster[i]->debug();
                     std::cout << "---------------------------------------" << std::endl;
                 }
+
+                terrain->debug();
             }
 
             void read(File::File *file);
