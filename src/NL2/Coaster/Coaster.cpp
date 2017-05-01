@@ -55,6 +55,12 @@ namespace NoLimits {
                 file->writeChunk(train[i]);
             }
 
+            for(uint32_t i = 0; i < script.size(); i++) {
+                file->writeChunk(script[i]);
+            }
+
+            file->writeChunk(fileScript);
+
             file->writeChunkName("SUPP");
             file->writeUnsignedInteger(32);
             file->writeNull(32);
@@ -64,8 +70,8 @@ namespace NoLimits {
 
         void Coaster::read(File::File *file) {
             track.clear();
-            fileScript.clear();
             train.clear();
+            script.clear();
 
             setName(file->readString());
 
@@ -134,15 +140,17 @@ namespace NoLimits {
                     i = file->tell() - 1;
                 }
 
+                if(chunk == "SCRT") {
+                    Script *_script = new Script();
+                    insertScript(_script);
+
+                    file->readChunk(_script);
+                    i = file->tell() - 1;
+                }
+
                 if(chunk == "FSCR") {
-                    file->readNull(4);
-
-                    uint32_t numScripts = file->readUnsignedInteger();
-
-                    for(uint32_t i = 0; i < numScripts; i++) {
-                        insertFileScript(file->readString());
-                        file->readNull(8);
-                    }
+                    file->readChunk(fileScript);
+                    i = file->tell() - 1;
                 }
             }
         }
@@ -203,14 +211,6 @@ namespace NoLimits {
             mode = value;
         }
 
-        std::vector<std::string> Coaster::getFileScript() const {
-            return fileScript;
-        }
-
-        void Coaster::insertFileScript(std::string value) {
-            fileScript.push_back(value);
-        }
-
         std::vector<Track*> Coaster::getTrack() const {
             return track;
         }
@@ -244,6 +244,14 @@ namespace NoLimits {
             }
 
             return foundSection;
+        }
+
+        std::vector<Script*> Coaster::getScript() const {
+            return script;
+        }
+
+        void Coaster::insertScript(Script* value) {
+            script.push_back(value);
         }
     }
 }

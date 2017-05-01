@@ -56,7 +56,11 @@ SOURCES += main.cpp \
     src/NL2/Scenery/Scenery.cpp \
     src/NL2/Scenery/SceneObjectInstance.cpp \
     src/File/MemoryFile.cpp \
-    src/File/NormalFile.cpp
+    src/File/NormalFile.cpp \
+    src/NL2/Coaster/Script.cpp \
+    src/NL2/Coaster/ResourceFile.cpp \
+    src/NL2/Coaster/FileScript.cpp \
+    EasyBMP_1.06/EasyBMP.cpp
 
 HEADERS += \
     src/File/File.h \
@@ -109,7 +113,11 @@ HEADERS += \
     src/NL2/Scenery/Scenery.h \
     src/NL2/Scenery/SceneObjectInstance.h \
     src/File/MemoryFile.h \
-    src/File/NormalFile.h
+    src/File/NormalFile.h \
+    src/NL2/Coaster/Script.h \
+    src/NL2/Coaster/ResourceFile.h \
+    src/NL2/Coaster/FileScript.h
 
 INCLUDEPATH += src/ \
-    /usr/local/include/
+    /usr/local/include/ \
+    EasyBMP_1.06/

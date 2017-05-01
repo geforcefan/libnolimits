@@ -11,6 +11,8 @@
 #include <src/NL2/Coaster/Track/Track.h>
 #include <src/NL2/Coaster/Track/Section/Section.h>
 #include <src/NL2/Coaster/Track/CustomTrack.h>
+#include "Script.h"
+#include "FileScript.h"
 
 namespace NoLimits {
     namespace NL2 {
@@ -20,6 +22,7 @@ namespace NoLimits {
                 colors = new Colors();
                 style = new Style();
                 mode = new Mode();
+                fileScript = new FileScript();
 
                 setName("New Coaster");
                 setDescription("");
@@ -45,6 +48,16 @@ namespace NoLimits {
                     std::cout << "---------------------------------------" << std::endl;
                 for(uint32_t i = 0; i < train.size(); i++) {
                     train[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                fileScript->debug();
+
+                std::cout << "Coaster[script.size]: " << script.size() << std::endl;
+                if(script.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < script.size(); i++) {
+                    script[i]->debug();
                     std::cout << "---------------------------------------" << std::endl;
                 }
             }
@@ -73,9 +86,6 @@ namespace NoLimits {
             Mode *getMode() const;
             void setMode(Mode *value);
 
-            std::vector<std::string> getFileScript() const;
-            void insertFileScript(std::string value);
-
             std::vector<Track*> getTrack() const;
             void insertTrack(Track* value);
 
@@ -83,6 +93,9 @@ namespace NoLimits {
             void insertTrain(Train* value);
 
             Section *getSection(std::string name);
+
+            std::vector<Script *> getScript() const;
+            void insertScript(Script* value);
 
         private:
             std::string name;
@@ -94,10 +107,11 @@ namespace NoLimits {
             Colors *colors;
             Style *style;
             Mode *mode;
+            FileScript *fileScript;
 
             std::vector<Track*> track;
-            std::vector<std::string> fileScript;
             std::vector<Train*> train;
+            std::vector<Script*> script;
 
             std::string getChunkName() { return "COAS"; }
         };

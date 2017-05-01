@@ -77,6 +77,8 @@ namespace NoLimits {
             void setHeightAtVertex(int32_t x, int32_t y, float height);
 
             std::string getChunkName() { return "TERC"; }
+
+            void saveAsBMP(std::string filepath);
         private:
             uint32_t vertexDimX;
             uint32_t vertexDimY;

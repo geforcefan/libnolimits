@@ -1,5 +1,7 @@
 #include "Layer.h"
 
+#include <EasyBMP.h>
+
 namespace NoLimits {
     namespace NL2 {
         void Layer::read(File::File *file) {
@@ -76,6 +78,26 @@ namespace NoLimits {
             file->writeString(getBumpMap()->getSpecularMapTexture());
 
             file->writeNull(37);
+        }
+
+        void Layer::saveAsBMP(std::string filepath) {
+            BMP AnImage;
+            AnImage.SetSize(769, 769);
+            AnImage.SetBitDepth(32);
+
+            for (uint32_t y = 0; y < 769; y++) {
+                for (uint32_t x = 0; x < 769; x++) {
+                    uint8_t a = (255.0f * getIntensityAtVertex(x, y)) / 1.0f;
+
+                    // Set one of the pixels
+                    AnImage(x,y)->Red = a;
+                    AnImage(x,y)->Green = a;
+                    AnImage(x,y)->Blue = a;
+                    AnImage(x,y)->Alpha = 0;
+                }
+            }
+
+            AnImage.WriteToFile(filepath.c_str());
         }
 
         BaseMap *Layer::getBaseMap() const {

@@ -205,65 +205,42 @@ namespace NoLimits {
             readUnsignedInteger(); // uncompressedSize
             uint32_t compressedSize = readUnsignedInteger();
 
-            char *compressedData = (char*) malloc(compressedSize);
-            read(&compressedData[0], 1, compressedSize);
-
-            MemoryFile *compressedDataMemoryFile = new MemoryFile();
-            compressedDataMemoryFile->setBuffer(compressedData, compressedSize);
-            compressedDataMemoryFile->openRB();
-
             MemoryFile *decompressedDataMemoryFile = new MemoryFile();
             decompressedDataMemoryFile->openWB();
 
-            z_stream strm;
-            unsigned have;
-            int ret;
+            Bytef* in = (Bytef *) malloc(compressedSize);
+            read(in, 1, compressedSize);
 
-            unsigned char in[ZLIB_CHUNK];
-            unsigned char out[ZLIB_CHUNK];
+            Bytef buffer[ZLIB_CHUNK];
 
-            strm.zalloc = Z_NULL;
-            strm.zfree = Z_NULL;
-            strm.opaque = Z_NULL;
-            strm.avail_in = 0;
-            strm.next_in = Z_NULL;
+            z_stream_s stream;
+            stream.avail_in = compressedSize;
+            stream.next_in = in;
+            stream.zalloc = Z_NULL;
+            stream.zfree = Z_NULL;
+            stream.opaque = Z_NULL;
 
-            ret = inflateInit2(&strm, 15);
+            int code = inflateInit(&stream);
 
-            if (ret == Z_OK) {
-                do {
-                    strm.avail_in = compressedDataMemoryFile->read(in, 1, ZLIB_CHUNK);
+            do {
+              stream.next_out = buffer;
+              stream.avail_out = ZLIB_CHUNK;
+              code = inflate(&stream, stream.avail_in > 0 ? Z_NO_FLUSH : Z_FINISH);
 
-                    if (strm.avail_in == 0)
-                        break;
-                    strm.next_in = in;
+              if (code != Z_OK && code != Z_STREAM_END) {
+                deflateEnd(&stream);
 
-                    do {
-                        strm.avail_out = ZLIB_CHUNK;
-                        strm.next_out = out;
-                        ret = inflate(&strm, Z_NO_FLUSH);
+                decompressedDataMemoryFile->close();
+              }
 
-                        switch (ret) {
-                            case Z_NEED_DICT:
-                                ret = Z_DATA_ERROR;
-                            case Z_DATA_ERROR:
-                            case Z_MEM_ERROR:
-                                (void)inflateEnd(&strm);
+              decompressedDataMemoryFile->write(buffer, 1, ZLIB_CHUNK - stream.avail_out);
 
-                                compressedDataMemoryFile->close();
-                                decompressedDataMemoryFile->close();
+              stream.next_out = buffer;
+              stream.avail_out = ZLIB_CHUNK;
+            } while (code != Z_STREAM_END);
 
-                                return decompressedDataMemoryFile;
-                                break;
-                        }
+            deflateEnd(&stream);
 
-                        have = ZLIB_CHUNK - strm.avail_out;
-                        decompressedDataMemoryFile->write(out, 1, have);
-                    } while (strm.avail_out == 0);
-                } while (ret != Z_STREAM_END);
-            }
-
-            compressedDataMemoryFile->close();
             decompressedDataMemoryFile->close();
 
             return decompressedDataMemoryFile;
@@ -275,7 +252,43 @@ namespace NoLimits {
             uncompressedFile->openRB();
             compressedFile->openWB();
 
-            z_stream strm;
+            Bytef* in = (Bytef *) malloc(uncompressedFile->getFilesize());
+            Bytef buffer[ZLIB_CHUNK];
+
+            z_stream_s stream;
+            stream.avail_in = uncompressedFile->read(in, 1, uncompressedFile->getFilesize());
+            stream.next_in = in;
+            stream.zalloc = Z_NULL;
+            stream.zfree = Z_NULL;
+            stream.opaque = Z_NULL;
+
+            int code = deflateInit(&stream, Z_BEST_COMPRESSION);
+
+            do {
+              stream.next_out = buffer;
+              stream.avail_out = ZLIB_CHUNK;
+              code = deflate(&stream, stream.avail_in > 0 ? Z_NO_FLUSH : Z_FINISH);
+
+              if (code != Z_OK && code != Z_STREAM_END) {
+                std::cout << std::string(stream.msg) << std::endl;
+                deflateEnd(&stream);
+
+                compressedFile->close();
+                uncompressedFile->close();
+              }
+
+              compressedFile->write(buffer, 1, ZLIB_CHUNK - stream.avail_out);
+
+              stream.next_out = buffer;
+              stream.avail_out = ZLIB_CHUNK;
+            } while (code != Z_STREAM_END);
+
+            deflateEnd(&stream);
+
+            compressedFile->close();
+            uncompressedFile->close();
+
+            /*z_stream strm;
             unsigned have;
             int ret;
 
@@ -303,10 +316,14 @@ namespace NoLimits {
                         strm.avail_out = ZLIB_CHUNK;
                         strm.next_out = out;
 
-                        if(strm.avail_in < ZLIB_CHUNK)
+                        if(strm.avail_in < ZLIB_CHUNK) {
+                            std::cout << "FINISH" << std::endl;
                             ret = deflate(&strm, Z_FINISH);
-                        else
+                        }
+                        else {
+                            std::cout << "NO FLUSH" << std::endl;
                             ret = deflate(&strm, Z_NO_FLUSH);
+                        }
 
                         switch (ret) {
                             case Z_NEED_DICT:
@@ -325,7 +342,7 @@ namespace NoLimits {
                         compressedFile->write(out, 1, have);
                     } while (strm.avail_out == 0);
                 } while (ret != Z_STREAM_END);
-            }
+            }*/
 
             uncompressedFile->close();
             compressedFile->close();
@@ -333,6 +350,8 @@ namespace NoLimits {
             writeUnsignedInteger(uncompressedFile->getFilesize());
             writeUnsignedInteger(compressedFile->getFilesize());
             writeFile(compressedFile);
+
+            std::cout << "--------------------" << std::endl;
         }
 
         void File::readChunk(Stream::Chunk *chunk) {

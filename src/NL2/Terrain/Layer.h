@@ -66,6 +66,8 @@ namespace NoLimits {
 
             float getIntensityAtVertex(int32_t x, int32_t y);
             void setIntensityAtVertex(int32_t x, int32_t y, float intensity);
+
+            void saveAsBMP(std::string filepath);
         private:
             std::string name;
 

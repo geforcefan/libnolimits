@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <File/MemoryFile.h>
 
+#include <EasyBMP.h>
+
 namespace NoLimits {
     namespace NL2 {
         void Terrain::read(File::File *file) {
@@ -135,6 +137,26 @@ namespace NoLimits {
             y = std::max(std::min(y, (int)vertexDimY), 0);
 
             terrainData[(vertexDimY * y) + x] = height;
+        }
+
+        void Terrain::saveAsBMP(std::string filepath) {
+            BMP AnImage;
+            AnImage.SetSize(getVertexDimX(),getVertexDimY());
+            AnImage.SetBitDepth(32);
+
+            for (uint32_t y = 0; y < getVertexDimY(); y++) {
+                for (uint32_t x = 0; x < getVertexDimX(); x++) {
+                    uint8_t a = (255.0f * getHeightAtVertex(x, y)) / 500.0f;
+
+                    // Set one of the pixels
+                    AnImage(x,y)->Red = a;
+                    AnImage(x,y)->Green = a;
+                    AnImage(x,y)->Blue = a;
+                    AnImage(x,y)->Alpha = 0;
+                }
+            }
+
+            AnImage.WriteToFile(filepath.c_str());
         }
 
         Water *Terrain::getWater() const {

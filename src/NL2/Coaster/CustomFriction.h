@@ -26,11 +26,10 @@ namespace NoLimits {
             double getAirResistanceParameter() const;
             void setAirResistanceParameter(double value);
 
+            std::string getChunkName() { return "CUFR"; }
         private:
             double constFrictionParameter;
             double airResistanceParameter;
-
-            std::string getChunkName() { return "CUFR"; }
         };
     }
 }
