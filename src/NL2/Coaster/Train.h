@@ -55,7 +55,6 @@ namespace NoLimits {
             bool removedFromTrack;
             std::string startBlock;
 
-        protected:
             std::string getChunkName() { return "TRAI"; }
         };
     }

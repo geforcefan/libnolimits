@@ -45,7 +45,6 @@ namespace NoLimits {
 
             std::vector<std::string> carTexture;
 
-        protected:
             std::string getChunkName() { return "INDC"; }
         };
     }

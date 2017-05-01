@@ -9,6 +9,10 @@
 #include "../Nolimits.h"
 
 namespace NoLimits {
+    namespace Stream {
+        class Chunk;
+    }
+
     namespace File {
         class File
         {
@@ -97,7 +101,8 @@ namespace NoLimits {
             File *readCompressedFile();
             void writeFileCompressed(File *uncompressedFile);
 
-            File *getChunkMemoryFile();
+            void readChunk(Stream::Chunk *chunk);
+            void writeChunk(Stream::Chunk *chunk);
 
             std::string getFilepath() const;
             void setFilepath(const std::string &value);

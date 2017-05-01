@@ -97,7 +97,6 @@ namespace NoLimits {
             std::vector<std::string> fileScript;
             std::vector<Train*> train;
 
-        protected:
             std::string getChunkName() { return "COAS"; }
         };
     }

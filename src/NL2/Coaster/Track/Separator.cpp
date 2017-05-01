@@ -14,13 +14,13 @@ namespace NoLimits {
                     Segment *_segment = new Segment();
                     setSegment(_segment);
 
-                    _segment->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(_segment);
                     i = file->tell() - 1;
                 }
 
                 if(chunk == "SECT") {
                     Section *_section = new Section();
-                    _section->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(_section);
 
                     setSection(_section->getSection());
                     i = file->tell() - 1;

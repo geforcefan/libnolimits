@@ -52,7 +52,6 @@ SOURCES += main.cpp \
     src/NL2/Terrain/Water.cpp \
     src/NL2/Park.cpp \
     src/NL2/Uspk.cpp \
-    src/Stream/Chunk.cpp \
     src/Helper.cpp \
     src/NL2/Scenery/Scenery.cpp \
     src/NL2/Scenery/SceneObjectInstance.cpp \

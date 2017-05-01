@@ -13,28 +13,32 @@ namespace NoLimits {
         }
 
         Park::Park(std::string filepath) : Park() {
-            readChunk(new NoLimits::File::NormalFile(filepath));
+            NoLimits::File::File *inputFile = new NoLimits::File::NormalFile(filepath);
+            inputFile->openRB();
+            if(inputFile->readChunkName() == "NL2P")
+                inputFile->readChunk(this);
+            inputFile->close();
         }
 
         void Park::save(std::string filepath) {
-            NoLimits::File::File *outputFile = new NoLimits::File::NormalFile(filepath.c_str());
+            NoLimits::File::File *outputFile = new NoLimits::File::NormalFile(filepath);
             outputFile->openWB();
-            outputFile->writeFile(writeChunk());
+            outputFile->writeChunk(this);
             outputFile->close();
         }
 
         void Park::write(File::File *file) {
             file->writeNull(4); // propably version?
 
-            file->writeFile(getInfo()->writeChunk());
-            file->writeFile(getUspk()->writeChunk());
+            file->writeChunk(getInfo());
+            file->writeChunk(getUspk());
 
             for(uint32_t i = 0; i < coaster.size(); i++) {
-                file->writeFile(coaster[i]->writeChunk());
+                file->writeChunk(coaster[i]);
             }
 
-            file->writeFile(getTerrain()->writeChunk());
-            file->writeFile(getScenery()->writeChunk());
+            file->writeChunk(getTerrain());
+            file->writeChunk(getScenery());
         }
 
         void Park::read(File::File *file) {
@@ -48,30 +52,30 @@ namespace NoLimits {
                 std::string chunk = file->readChunkName();
 
                 if(chunk == "INFO") {
-                    getInfo()->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(getInfo());
                     i = file->tell() - 1;
                 }
 
                 if(chunk == "COAS") {
                     Coaster *_coaster = new Coaster();
-                    _coaster->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(_coaster);
 
                     insertCoaster(_coaster);
                     i = file->tell() - 1;
                 }
 
                 if(chunk == "TERC") {
-                    getTerrain()->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(getTerrain());
                     i = file->tell() - 1;
                 }
 
                 if(chunk == "SCEN") {
-                    getScenery()->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(getScenery());
                     i = file->tell() - 1;
                 }
 
                 if(chunk == "USPK") {
-                    getUspk()->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(getUspk());
                     i = file->tell() - 1;
                 }
             }

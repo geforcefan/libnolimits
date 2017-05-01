@@ -8,7 +8,7 @@ namespace NoLimits {
             file->writeNull(32);
 
             if(getIndividualColor()->getHasIndividualColor()) {
-                file->writeFile(getIndividualColor()->writeChunk());
+                file->writeChunk(getIndividualColor());
             }
         }
 
@@ -20,7 +20,7 @@ namespace NoLimits {
                 std::string chunk = file->readChunkName();
 
                 if (chunk == "INDC") {
-                    getIndividualColor()->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(getIndividualColor());
                     i = file->tell() - 1;
                 }
             }

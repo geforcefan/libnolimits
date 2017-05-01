@@ -36,7 +36,6 @@ namespace NoLimits {
             bool isZeroCar;
             uint32_t carIndex;
 
-        protected:
             std::string getChunkName() { return "CAR "; }
         };
     }

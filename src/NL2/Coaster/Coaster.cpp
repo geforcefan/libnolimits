@@ -46,14 +46,14 @@ namespace NoLimits {
             file->writeNull(6);
 
             for(uint32_t i = 0; i < train.size(); i++) {
-                file->writeFile(train[i]->writeChunk());
+                file->writeChunk(train[i]);
             }
 
             file->writeChunkName("SUPP");
             file->writeUnsignedInteger(32);
             file->writeNull(32);
 
-            file->writeFile(getMode()->getCustomFriction()->writeChunk());
+            file->writeChunk(getMode()->getCustomFriction());
         }
 
         void Coaster::read(File::File *file) {
@@ -104,7 +104,7 @@ namespace NoLimits {
                     Train *_train = new Train();
                     insertTrain(_train);
 
-                    _train->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(_train);
                     i = file->tell() - 1;
                 }
 
@@ -112,12 +112,12 @@ namespace NoLimits {
                     CustomTrack *_track = new CustomTrack();
                     insertTrack(_track);
 
-                    _track->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(_track);
                     i = file->tell() - 1;
                 }
 
                 if(chunk == "CUFR") {
-                    getMode()->getCustomFriction()->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(getMode()->getCustomFriction());
                     i = file->tell() - 1;
                 }
 

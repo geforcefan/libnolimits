@@ -52,7 +52,6 @@ namespace NoLimits {
             Scenery *getScenery() const;
             void setScenery(Scenery *value);
 
-        protected:
             std::string getChunkName() { return "NL2P"; }
 
         private:

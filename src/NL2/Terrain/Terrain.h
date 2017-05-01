@@ -52,6 +52,8 @@ namespace NoLimits {
 
             float getHeightAtVertex(int32_t x, int32_t y);
             void setHeightAtVertex(int32_t x, int32_t y, float height);
+
+            std::string getChunkName() { return "TERC"; }
         private:
             uint32_t vertexDimX;
             uint32_t vertexDimY;
@@ -61,9 +63,6 @@ namespace NoLimits {
             std::vector<Layer*> layer;
 
             float *terrainData;
-
-        protected:
-            std::string getChunkName() { return "TERC"; }
         };
     }
 }

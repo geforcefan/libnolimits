@@ -2,6 +2,7 @@
 #include "MemoryFile.h"
 #include <iostream>
 #include <zlib.h>
+#include "../Stream/Chunk.h"
 
 #define ZLIB_CHUNK 16384
 
@@ -334,18 +335,32 @@ namespace NoLimits {
             writeFile(compressedFile);
         }
 
-        File *File::getChunkMemoryFile() {
+        void File::readChunk(Stream::Chunk *chunk) {
             uint32_t chunkSize = readUnsignedInteger();
-
             char *chunkBuffer = (char*) malloc(chunkSize + 4);
 
             seek(-4, SEEK_CUR);
             read(&chunkBuffer[0], chunkSize + 4, 1);
 
-            MemoryFile *memoryFile = new MemoryFile();
-            memoryFile->setBuffer(chunkBuffer, chunkSize + 4);
+            MemoryFile *chunkFile = new MemoryFile();
+            chunkFile->setBuffer(chunkBuffer, chunkSize + 4);
 
-            return memoryFile;
+            chunkFile->openRB();
+            chunkFile->readNull(4); // Chunk size
+            chunk->read(chunkFile);
+            chunkFile->close();
+        }
+
+        void File::writeChunk(Stream::Chunk *chunk) {
+            MemoryFile *fileChunkInner = new MemoryFile();
+
+            fileChunkInner->openWB();
+            chunk->write(fileChunkInner);
+            fileChunkInner->close();
+
+            writeChunkName(chunk->getChunkName());
+            writeUnsignedInteger((uint32_t)fileChunkInner->getFilesize());
+            writeFile(fileChunkInner);
         }
 
         std::string File::readString() {

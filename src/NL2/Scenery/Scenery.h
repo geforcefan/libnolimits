@@ -39,7 +39,6 @@ namespace NoLimits {
             SceneObjectInstance* getSceneObjectInstance(std::string name);
             void insertSceneObjectInstance(SceneObjectInstance * value);
 
-        protected:
             std::string getChunkName() { return "SCEN"; }
         private:
             std::vector<std::string> sceneObject;

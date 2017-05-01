@@ -27,7 +27,6 @@ namespace NoLimits {
             double constFrictionParameter;
             double airResistanceParameter;
 
-        protected:
             std::string getChunkName() { return "CUFR"; }
         };
     }

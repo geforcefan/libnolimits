@@ -15,11 +15,11 @@ namespace NoLimits {
             file->writeNull(31);
 
             for(uint32_t i = 0; i < car.size(); i++) {
-                file->writeFile(car[i]->writeChunk());
+                file->writeChunk(car[i]);
             }
 
             if(getIndividualColor()->getHasIndividualColor()) {
-                file->writeFile(getIndividualColor()->writeChunk());
+                file->writeChunk(getIndividualColor());
             }
         }
 
@@ -42,12 +42,12 @@ namespace NoLimits {
                     Car *_car = new Car();
                     insertCar(_car);
 
-                    _car->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(_car);
                     i = file->tell() - 1;
                 }
 
                 if (chunk == "INDC") {
-                    getIndividualColor()->readChunk(file->getChunkMemoryFile());
+                    file->readChunk(getIndividualColor());
                     i = file->tell() - 1;
                 }
             }

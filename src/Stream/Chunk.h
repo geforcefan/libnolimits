@@ -10,16 +10,9 @@ namespace NoLimits {
     namespace Stream {
         class Chunk {
         public:
-            Chunk() {}
-
-            void readChunk(File::File *file);
-            File::File* writeChunk();
-
-            virtual void debug() {}
-        protected:
             virtual void read(File::File *file) {}
             virtual void write(File::File *file) {}
-
+            virtual void debug() {}
             virtual std::string getChunkName() { return "CHNK"; }
         };
     }

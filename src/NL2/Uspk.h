@@ -11,7 +11,7 @@ namespace NoLimits {
 
             void read(File::File *file);
             void write(File::File *file);
-        protected:
+
             std::string getChunkName() { return "USPK"; }
         };
     }

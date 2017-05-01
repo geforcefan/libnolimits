@@ -93,7 +93,6 @@ namespace NoLimits {
             glm::vec2 initialRotation;
             RideView initialView;
 
-        protected:
             std::string getChunkName() { return "INFO"; }
         };
     }
