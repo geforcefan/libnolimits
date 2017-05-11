@@ -12,7 +12,7 @@
 #include <src/NL2/Coaster/Track/Segment.h>
 #include <src/NL2/Coaster/Track/Separator.h>
 #include <src/NL2/Coaster/Track/Section/Section.h>
-#include <src/NL2/Coaster/Track/Support/RailNode.h>
+#include <src/NL2/Coaster/Support/RailNode.h>
 
 namespace NoLimits {
     namespace NL2 {

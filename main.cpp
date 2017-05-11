@@ -9,6 +9,9 @@ int main(int argc, char *argv[])
     park->getCoaster("TestCoaster")->debug();
     park->save("/Users/ercanakyurek/Desktop/TestCoaster/TestCoaster.cloned.nl2park");
 
+    NoLimits::NL2::Park *park3 = new NoLimits::NL2::Park("/Users/ercanakyurek/Desktop/TestCoaster/Hydra.nl2park");
+    park3->save("/Users/ercanakyurek/Desktop/TestCoaster/Hydra.cloned.nl2park");
+
     /*park->getTerrain()->saveAsBMP("/Users/ercanakyurek/Desktop/TestCoaster/TerrainData/TestCoaster.Terrain.bmp");
 
     for(uint32_t i = 0; i < park->getTerrain()->getNumberOfIntensityLayers(); i++) {
@@ -18,14 +21,21 @@ int main(int argc, char *argv[])
 
         park->getTerrain()->saveAsBMP(i, filepath.c_str());
     }
-
+*/
     NoLimits::NL2::Park *park2 = new NoLimits::NL2::Park();
     park2->getInfo()->setAuthor("Vanessa Akyürek");
     park2->getInfo()->setDescription("Test Coaster");
-    park2->insertCoaster(new NoLimits::NL2::Coaster());
+
+    NoLimits::NL2::FreeNode *f = new NoLimits::NL2::FreeNode();
+    f->setPosition(glm::vec3(10.0, 10.0f, 10.0f));
+
+    NoLimits::NL2::Coaster *c = new NoLimits::NL2::Coaster();
+    c->getSupport()->insertFreeNode(f);
+    park2->insertCoaster(c);
+
     park2->save("/Users/ercanakyurek/Desktop/TestCoaster/HandMade.nl2park");
 
-    //park->debug();*/
+    //park->debug();
 
     return 0;
 }

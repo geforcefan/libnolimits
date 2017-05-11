@@ -11,6 +11,13 @@ namespace NoLimits {
         }
 
         void CustomTrack::read(File::File *file) {
+            vertex.clear();
+            rollPoint.clear();
+            trigger.clear();
+            railNode.clear();
+            parameter4D.clear();
+            separator.clear();
+
             setClosed(file->readBoolean());
 
             getFirstRollPoint()->setPosition(0.0);

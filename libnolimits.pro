@@ -19,8 +19,8 @@ SOURCES += main.cpp \
     src/NL2/Coaster/Track/Section/Transport.cpp \
     src/NL2/Coaster/Track/Section/TransportDevice.cpp \
     src/NL2/Coaster/Track/Section/WaitTime.cpp \
-    src/NL2/Coaster/Track/Support/RailNode.cpp \
-    src/NL2/Coaster/Track/Support/SupportNode.cpp \
+    src/NL2/Coaster/Support/RailNode.cpp \
+    src/NL2/Coaster/Support/SupportNode.cpp \
     src/NL2/Coaster/Track/CustomTrack.cpp \
     src/NL2/Coaster/Track/Parameter4D.cpp \
     src/NL2/Coaster/Track/RollPoint.cpp \
@@ -60,7 +60,14 @@ SOURCES += main.cpp \
     src/NL2/Coaster/Script.cpp \
     src/NL2/Coaster/ResourceFile.cpp \
     src/NL2/Coaster/FileScript.cpp \
-    EasyBMP_1.06/EasyBMP.cpp
+    EasyBMP_1.06/EasyBMP.cpp \
+    src/NL2/Coaster/Support/Footer.cpp \
+    src/NL2/Coaster/Support/Support.cpp \
+    src/NL2/Coaster/Support/FreeNode.cpp \
+    src/NL2/Coaster/Support/Beam.cpp \
+    src/NL2/Coaster/Support/BeamConnection.cpp \
+    src/NL2/Coaster/Support/BeamNode.cpp \
+    src/NL2/Coaster/Support/SPPM.cpp
 
 HEADERS += \
     src/File/File.h \
@@ -73,8 +80,8 @@ HEADERS += \
     src/NL2/Coaster/Track/Section/Transport.h \
     src/NL2/Coaster/Track/Section/TransportDevice.h \
     src/NL2/Coaster/Track/Section/WaitTime.h \
-    src/NL2/Coaster/Track/Support/RailNode.h \
-    src/NL2/Coaster/Track/Support/SupportNode.h \
+    src/NL2/Coaster/Track/RailNode.h \
+    src/NL2/Coaster/Track/SupportNode.h \
     src/NL2/Coaster/Track/CustomTrack.h \
     src/NL2/Coaster/Track/Parameter4D.h \
     src/NL2/Coaster/Track/RollPoint.h \
@@ -116,7 +123,14 @@ HEADERS += \
     src/File/NormalFile.h \
     src/NL2/Coaster/Script.h \
     src/NL2/Coaster/ResourceFile.h \
-    src/NL2/Coaster/FileScript.h
+    src/NL2/Coaster/FileScript.h \
+    src/NL2/Coaster/Support/Footer.h \
+    src/NL2/Coaster/Support/Support.h \
+    src/NL2/Coaster/Support/FreeNode.h \
+    src/NL2/Coaster/Support/Beam.h \
+    src/NL2/Coaster/Support/BeamConnection.h \
+    src/NL2/Coaster/Support/BeamNode.h \
+    src/NL2/Coaster/Support/SPPM.h
 
 INCLUDEPATH += src/ \
     /usr/local/include/ \

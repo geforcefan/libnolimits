@@ -51,6 +51,8 @@ namespace NoLimits {
             setFlag3(file->readUnsigned8());
 
             file->readNull(8);
+
+            file->readChunk(getSppm());
         }
 
         void RailNode::write(File::File *file) {
@@ -103,6 +105,9 @@ namespace NoLimits {
             file->writeUnsigned8(flag3);
 
             file->writeNull(8);
+
+            // I DONT KNOW WHAT KIND OF CHUNK THIS IS!
+            file->writeChunk(getSppm());
         }
 
         double RailNode::getPosition() const {
@@ -143,6 +148,16 @@ namespace NoLimits {
 
         void RailNode::setIsModel(bool value) {
             isModel = value;
+        }
+
+        SPPM *RailNode::getSppm() const
+        {
+            return sppm;
+        }
+
+        void RailNode::setSppm(SPPM *value)
+        {
+            sppm = value;
         }
     }
 }

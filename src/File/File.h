@@ -87,6 +87,9 @@ namespace NoLimits {
             glm::vec3 readFloatVec3();
             void writeFloatVec3(glm::vec3 vec);
 
+            glm::vec3 readDoubleVec3();
+            void writeDoubleVec3(glm::vec3 vec);
+
             glm::vec4 readDoubleVec4();
             void writeDoubleVec4(glm::vec4 vec);
 
@@ -106,7 +109,6 @@ namespace NoLimits {
 
             std::string getFilepath() const;
             void setFilepath(const std::string &value);
-
         protected:
             bool openedWB;
             bool openedRB;

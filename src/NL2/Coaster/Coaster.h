@@ -11,6 +11,7 @@
 #include <src/NL2/Coaster/Track/Track.h>
 #include <src/NL2/Coaster/Track/Section/Section.h>
 #include <src/NL2/Coaster/Track/CustomTrack.h>
+#include <src/NL2/Coaster/Support/Support.h>
 #include "Script.h"
 #include "FileScript.h"
 
@@ -23,6 +24,7 @@ namespace NoLimits {
                 style = new Style();
                 mode = new Mode();
                 fileScript = new FileScript();
+                support = new Support();
 
                 setName("New Coaster");
                 setDescription("");
@@ -42,6 +44,7 @@ namespace NoLimits {
                 colors->debug();
                 style->debug();
                 mode->debug();
+                support->debug();
 
                 std::cout << "Coaster[getTrain.size]: " << train.size() << std::endl;
                 if(train.size())
@@ -94,6 +97,9 @@ namespace NoLimits {
             Mode *getMode() const;
             void setMode(Mode *value);
 
+            Support *getSupport() const;
+            void setSupport(Support *value);
+
             std::vector<Track*> getTrack() const;
             void insertTrack(Track* value);
 
@@ -106,6 +112,7 @@ namespace NoLimits {
             void insertScript(Script* value);
 
             std::string getChunkName() { return "COAS"; }
+
         private:
             std::string name;
             std::string description;
@@ -117,6 +124,7 @@ namespace NoLimits {
             Style *style;
             Mode *mode;
             FileScript *fileScript;
+            Support *support;
 
             std::vector<Track*> track;
             std::vector<Train*> train;

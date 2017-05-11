@@ -69,9 +69,7 @@ namespace NoLimits {
             if(fileScript->getPath().size())
                 file->writeChunk(fileScript);
 
-            file->writeChunkName("SUPP");
-            file->writeUnsignedInteger(32);
-            file->writeNull(32);
+            file->writeChunk(getSupport());
 
             file->writeChunk(getMode()->getCustomFriction());
         }
@@ -158,6 +156,11 @@ namespace NoLimits {
 
                 if(chunk == "FSCR") {
                     file->readChunk(fileScript);
+                    i = file->tell() - 1;
+                }
+
+                if(chunk == "SUPP") {
+                    file->readChunk(getSupport());
                     i = file->tell() - 1;
                 }
             }
@@ -260,6 +263,14 @@ namespace NoLimits {
 
         void Coaster::insertScript(Script* value) {
             script.push_back(value);
+        }
+
+        Support *Coaster::getSupport() const {
+            return support;
+        }
+
+        void Coaster::setSupport(Support *value) {
+            support = value;
         }
     }
 }

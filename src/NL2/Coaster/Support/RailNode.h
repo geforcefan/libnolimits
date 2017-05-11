@@ -2,7 +2,8 @@
 #define LIB_NL2PARK_RAILNODE_H
 
 #include <Stream/Chunk.h>
-#include <src/NL2/Coaster/Track/Support/SupportNode.h>
+#include <src/NL2/Coaster/Support/SupportNode.h>
+#include "SPPM.h"
 
 namespace NoLimits {
     namespace NL2 {
@@ -23,7 +24,9 @@ namespace NoLimits {
                 SuspendedVertical,
             };
 
-            RailNode() {}
+            RailNode() {
+                sppm = new SPPM();
+            }
 
             void read(File::File *file);
             void write(File::File *file);
@@ -43,6 +46,9 @@ namespace NoLimits {
             bool getIsModel() const;
             void setIsModel(bool value);
 
+            SPPM *getSppm() const;
+            void setSppm(SPPM *value);
+
             std::string getChunkName() { return "SRNP"; }
         private:
             ConnectionStyle connectionStyle;
@@ -50,6 +56,8 @@ namespace NoLimits {
             double sizeParameter;
             uint32_t trackIndex;
             bool isModel;
+
+            SPPM* sppm;
         };
     }
 }

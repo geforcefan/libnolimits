@@ -78,6 +78,7 @@ namespace NoLimits {
             bool getInitialPositionAndRotationEnabled() const;
             void setInitialPositionAndRotationEnabled(bool value);
 
+            std::string getChunkName() { return "INFO"; }
         private:
             Weather *weather;
             Sky *sky;
@@ -92,8 +93,6 @@ namespace NoLimits {
             glm::vec3 initialPosition;
             glm::vec2 initialRotation;
             RideView initialView;
-
-            std::string getChunkName() { return "INFO"; }
         };
     }
 }

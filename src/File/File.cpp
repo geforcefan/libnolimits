@@ -180,6 +180,16 @@ namespace NoLimits {
             writeDouble(vec.w);
         }
 
+        glm::vec3 File::readDoubleVec3() {
+            return glm::vec3(readDouble(), readDouble(), readDouble());
+        }
+
+        void File::writeDoubleVec3(glm::vec3 vec) {
+            writeDouble(vec.x);
+            writeDouble(vec.y);
+            writeDouble(vec.z);
+        }
+
         std::string File::readChunkName() {
             std::string chunkName(4, '\0');
             read(&chunkName[0], sizeof(char), 4);
