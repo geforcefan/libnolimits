@@ -285,65 +285,6 @@ namespace NoLimits {
 
             deflateEnd(&stream);
 
-            compressedFile->close();
-            uncompressedFile->close();
-
-            /*z_stream strm;
-            unsigned have;
-            int ret;
-
-            unsigned char in[ZLIB_CHUNK];
-            unsigned char out[ZLIB_CHUNK];
-
-            strm.zalloc = Z_NULL;
-            strm.zfree = Z_NULL;
-            strm.opaque = Z_NULL;
-
-            strm.avail_in = 0;
-            strm.next_in = Z_NULL;
-
-            ret = deflateInit(&strm, Z_BEST_COMPRESSION);
-
-            if (ret == Z_OK) {
-                do {
-                    strm.avail_in = uncompressedFile->read(in, 1, ZLIB_CHUNK);
-
-                    if (strm.avail_in == 0)
-                        break;
-                    strm.next_in = in;
-
-                    do {
-                        strm.avail_out = ZLIB_CHUNK;
-                        strm.next_out = out;
-
-                        if(strm.avail_in < ZLIB_CHUNK) {
-                            std::cout << "FINISH" << std::endl;
-                            ret = deflate(&strm, Z_FINISH);
-                        }
-                        else {
-                            std::cout << "NO FLUSH" << std::endl;
-                            ret = deflate(&strm, Z_NO_FLUSH);
-                        }
-
-                        switch (ret) {
-                            case Z_NEED_DICT:
-                                ret = Z_DATA_ERROR;
-                            case Z_DATA_ERROR:
-                            case Z_MEM_ERROR:
-                                (void)inflateEnd(&strm);
-
-                                compressedFile->close();
-                                uncompressedFile->close();
-                                return;
-                                break;
-                        }
-
-                        have = ZLIB_CHUNK - strm.avail_out;
-                        compressedFile->write(out, 1, have);
-                    } while (strm.avail_out == 0);
-                } while (ret != Z_STREAM_END);
-            }*/
-
             uncompressedFile->close();
             compressedFile->close();
 

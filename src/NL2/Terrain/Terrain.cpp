@@ -10,10 +10,11 @@ namespace NoLimits {
         void Terrain::read(File::File *file) {
             layer.clear();
             textureRepeats.clear();
+            terrainIntensityLayers.clear();
 
             file->readNull(8);
 
-            file->readNull(8); // x y sizes in int, but don´t need these, we have fix 769x769
+            file->readNull(8); // x y limits in int, but don´t need these, we have fix 769x769
             //setVertexDimX(file->readUnsignedInteger());
             //setVertexDimY(file->readUnsignedInteger());
 
@@ -53,18 +54,12 @@ namespace NoLimits {
                 lastAbsoluteHeight = absoluteHeight;
             }
 
-            if(layer.size() >= 2)
-                for (uint32_t j = 0; j < getVertexDimX() * getVertexDimY(); j++) {
-                    for(uint32_t i = 1; i < layer.size(); i++) {
-                        float *paintData = layer[i]->getPaintData();
-                        paintData[j] = (float)terrainDataMemoryFile->readUnsigned8() / 255.0f;
-                    }
+            // Intensity layers
+            for (uint32_t j = 0; j < getVertexDimX() * getVertexDimY(); j++) {
+                for(uint32_t i = 0; i < getNumberOfIntensityLayers(); i++) {
+                    terrainIntensityLayers[i][j] = (float)terrainDataMemoryFile->readUnsigned8() / 255.0f;
                 }
-            else if(layer.size() == 1)
-                for (uint32_t j = 0; j < getVertexDimX() * getVertexDimY(); j++) {
-                    float *paintData = layer[0]->getPaintData();
-                    paintData[j] = (float)terrainDataMemoryFile->readUnsigned8() / 255.0f;
-                }
+            }
 
             terrainDataMemoryFile->close();
         }
@@ -73,6 +68,7 @@ namespace NoLimits {
             file->writeUnsignedInteger(0x44C00000); // wtf is this?
             file->writeUnsignedInteger(0x44C00000);
 
+            // size limits
             file->writeUnsignedInteger(getVertexDimX() - 1);
             file->writeUnsignedInteger(getVertexDimY() - 1);
 
@@ -107,18 +103,12 @@ namespace NoLimits {
                 lastAbsoluteHeight = absoluteHeight;
             }
 
-            if(layer.size() >= 2)
-                for (uint32_t j = 0; j < getVertexDimX() * getVertexDimY(); j++) {
-                    for(uint32_t i = 1; i < layer.size(); i++) {
-                        float *paintData = layer[i]->getPaintData();
-                        terrainDataBuffer->writeUnsigned8((255.0f * paintData[j]) / 1.0f);
-                    }
+            // Intensity layers
+            for (uint32_t j = 0; j < getVertexDimX() * getVertexDimY(); j++) {
+                for(uint32_t i = 0; i < getNumberOfIntensityLayers(); i++) {
+                    terrainDataBuffer->writeUnsigned8((255.0f * terrainIntensityLayers[i][j]) / 1.0f);
                 }
-            else if(layer.size() == 1)
-                for (uint32_t j = 0; j < getVertexDimX() * getVertexDimY(); j++) {
-                    float *paintData = layer[0]->getPaintData();
-                    terrainDataBuffer->writeUnsigned8((255.0f * paintData[j]) / 1.0f);
-                }
+            }
 
             terrainDataBuffer->close();
 
@@ -139,14 +129,55 @@ namespace NoLimits {
             terrainData[(vertexDimY * y) + x] = height;
         }
 
+        float Terrain::getIntensityAtVertex(uint32_t index, int32_t x, int32_t y) {
+            if(index >= terrainIntensityLayers.size())
+                return 0.0f;
+
+            return terrainIntensityLayers[index][(vertexDimY * y) + x];
+        }
+
+        void Terrain::setIntensityAtVertex(uint32_t index, int32_t x, int32_t y, float intensity) {
+            if(index >= terrainIntensityLayers.size())
+                return;
+
+            terrainIntensityLayers[index][(vertexDimY * y) + x] = intensity;
+        }
+
+        uint32_t Terrain::getNumberOfIntensityLayers() {
+            return terrainIntensityLayers.size();
+        }
+
         void Terrain::saveAsBMP(std::string filepath) {
             BMP AnImage;
-            AnImage.SetSize(getVertexDimX(),getVertexDimY());
+            AnImage.SetSize(getVertexDimX(), getVertexDimY());
             AnImage.SetBitDepth(32);
 
             for (uint32_t y = 0; y < getVertexDimY(); y++) {
                 for (uint32_t x = 0; x < getVertexDimX(); x++) {
                     uint8_t a = (255.0f * getHeightAtVertex(x, y)) / 500.0f;
+
+                    // Set one of the pixels
+                    AnImage(x,y)->Red = a;
+                    AnImage(x,y)->Green = a;
+                    AnImage(x,y)->Blue = a;
+                    AnImage(x,y)->Alpha = 0;
+                }
+            }
+
+            AnImage.WriteToFile(filepath.c_str());
+        }
+
+        void Terrain::saveAsBMP(uint32_t index, std::string filepath) {
+            if(index >= terrainIntensityLayers.size())
+                return;
+
+            BMP AnImage;
+            AnImage.SetSize(getVertexDimX(), getVertexDimY());
+            AnImage.SetBitDepth(32);
+
+            for (uint32_t y = 0; y < getVertexDimX(); y++) {
+                for (uint32_t x = 0; x < getVertexDimY(); x++) {
+                    uint8_t a = (255.0f * getIntensityAtVertex(index, x, y)) / 1.0f;
 
                     // Set one of the pixels
                     AnImage(x,y)->Red = a;
@@ -193,6 +224,17 @@ namespace NoLimits {
 
         void Terrain::insertLayer(Layer* value) {
             layer.push_back(value);
+
+            uint32_t numberOfIntensityLayers = std::floor((layer.size() + 1) / 2.0);
+            for(uint32_t i = terrainIntensityLayers.size(); i < numberOfIntensityLayers; i++) {
+                float *intensityLayer = (float*) malloc(sizeof(float) * getVertexDimX() * getVertexDimY());
+
+                for (uint32_t j = 0; j < getVertexDimX() * getVertexDimY(); j++) {
+                    intensityLayer[j] = 15.0f / 255.0f;
+                }
+
+                terrainIntensityLayers.push_back(intensityLayer);
+            }
         }
 
         uint32_t Terrain::getVertexDimX() const {

@@ -32,6 +32,7 @@ namespace NoLimits {
             }
 
             void read(File::File *file);
+            void write(File::File *file);
 
             bool getInvisibleSegment() const;
             void setInvisibleSegment(bool value);
@@ -104,6 +105,7 @@ namespace NoLimits {
 
             WoodenSupportGenerator *getWoodenSupportGenerator() const;
 
+            std::string getChunkName() { return "SEGM"; }
         private:
             bool invisibleSegment;
 

@@ -26,6 +26,7 @@ namespace NoLimits {
 
             WoodenSupportGenerator() {}
             void read(File::File *file);
+            void write(File::File *file);
 
             bool getUseIndividualSettings();
             bool getUseLeftWideSupports();

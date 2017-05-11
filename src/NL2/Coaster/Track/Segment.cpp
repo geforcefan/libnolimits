@@ -36,6 +36,46 @@ namespace NoLimits {
 
             setRightRailingLights(file->readBoolean());
             setRightRailingLightsColor(file->readColor());
+
+            file->readNull(45);
+        }
+
+        void Segment::write(File::File *file) {
+            file->writeBoolean(getUseMainSpineColor());
+            file->writeColor(getRailColor());
+            file->writeColor(getCrossTiesColor());
+            file->writeColor(getMainSpineColor());
+
+            file->writeUnsigned8(getTunnel());
+
+            file->writeBoolean(getLeftRailingAndCatwalk());
+            file->writeBoolean(getRightRailingAndCatwalk());
+
+            file->writeUnsigned8(getSpineType());
+
+            file->writeUnsigned8(getSpineColorScheme());
+            file->writeBoolean(getInvisibleSegment());
+            file->writeNull(2);
+
+            getWoodenSupportGenerator()->write(file);
+
+            file->writeColor(getHandrailsColor());
+            file->writeColor(getCatwalksColor());
+
+            file->writeBoolean(getTransparentCatwalks());
+            file->writeBoolean(getUseRailsColor());
+            file->writeBoolean(getUseCrossTiesColor());
+            file->writeBoolean(getUseHandrailsColor());
+            file->writeBoolean(getUseCatwalksColor());
+            file->writeBoolean(getUseSpineColorScheme());
+
+            file->writeBoolean(getLeftRailingLights());
+            file->writeColor(getLeftRailingLightsColor());
+
+            file->writeBoolean(getRightRailingLights());
+            file->writeColor(getRightRailingLightsColor());
+
+            file->writeNull(45);
         }
 
         bool Segment::getInvisibleSegment() const {

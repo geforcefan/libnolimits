@@ -6,7 +6,14 @@ namespace NoLimits {
             setPosition(file->readDouble());
             setAngle(file->readDouble());
 
-            file->readNull(16);
+            file->readNull(20);
+        }
+
+        void Parameter4D::write(File::File *file) {
+            file->writeDouble(getPosition());
+            file->writeDouble(getAngle());
+
+            file->writeNull(20);
         }
 
         double Parameter4D::getPosition() const {

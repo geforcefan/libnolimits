@@ -76,9 +76,15 @@ namespace NoLimits {
             float getHeightAtVertex(int32_t x, int32_t y);
             void setHeightAtVertex(int32_t x, int32_t y, float height);
 
+            float getIntensityAtVertex(uint32_t index, int32_t x, int32_t y);
+            void setIntensityAtVertex(uint32_t index, int32_t x, int32_t y, float intensity);
+
+            uint32_t getNumberOfIntensityLayers();
+
             std::string getChunkName() { return "TERC"; }
 
             void saveAsBMP(std::string filepath);
+            void saveAsBMP(uint32_t index, std::string filepath);
         private:
             uint32_t vertexDimX;
             uint32_t vertexDimY;
@@ -88,6 +94,7 @@ namespace NoLimits {
             std::vector<Layer*> layer;
 
             float *terrainData;
+            std::vector<float *> terrainIntensityLayers;
         };
     }
 }

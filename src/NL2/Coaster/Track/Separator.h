@@ -9,11 +9,20 @@ namespace NoLimits {
     namespace NL2 {
         class Separator : public Stream::Chunk {
         public:
+            enum SeparatorType {
+                TypeSeparator,
+                StyleSeparator
+            };
+
             Separator() {
                 section = new Section();
                 segment = new Segment();
+
+                setSeparatorType(Separator::SeparatorType::StyleSeparator);
             }
+
             void read(File::File *file);
+            void write(File::File *file);
 
             Section *getSection() const;
             void setSection(Section *value);
@@ -24,11 +33,17 @@ namespace NoLimits {
             double getPosition() const;
             void setPosition(double value);
 
+            SeparatorType getSeparatorType() const;
+            void setSeparatorType(const SeparatorType &value);
+
+            std::string getChunkName() { return "SEPA"; }
         private:
             Section *section;
             Segment *segment;
 
             double position;
+
+            SeparatorType separatorType;
         };
     }
 }

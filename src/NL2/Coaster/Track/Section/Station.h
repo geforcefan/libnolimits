@@ -38,6 +38,7 @@ namespace NoLimits {
             }
 
             void read(File::File *file);
+            void write(File::File *file);
 
             double getExtraBlockLength() const;
             void setExtraBlockLength(double value);
@@ -87,6 +88,7 @@ namespace NoLimits {
             uint32_t getStationNumber() const;
             void setStationNumber(const uint32_t &value);
 
+            std::string getChunkName() { return "STTN"; }
         private:
             double extraBlockLength;
 

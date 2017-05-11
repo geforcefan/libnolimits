@@ -49,6 +49,60 @@ namespace NoLimits {
             setFlag1(file->readUnsigned8());
             setFlag2(file->readUnsigned8());
             setFlag3(file->readUnsigned8());
+
+            file->readNull(8);
+        }
+
+        void RailNode::write(File::File *file) {
+            file->writeDouble(getPosition());
+
+            file->writeNull(1);
+
+            file->writeColor(getColor());
+
+            file->writeNull(2);
+
+            (file->writeBoolean(getIsModel()));
+
+            uint8_t style = getConnectionStyle();
+
+            if(!getIsModel()) {
+                if(style == RailNode::ConnectionStyle::Simple)
+                    file->writeUnsigned8(0);
+                if(style == RailNode::ConnectionStyle::TrackDefault)
+                    file->writeUnsigned8(2);
+            } else {
+                if(style == RailNode::ConnectionStyle::TwistedStraightDown)
+                    file->writeUnsigned8(0);
+                if(style == RailNode::ConnectionStyle::TwistedHorizontal)
+                    file->writeUnsigned8(1);
+                if(style == RailNode::ConnectionStyle::TwistedVertical)
+                    file->writeUnsigned8(2);
+                if(style == RailNode::ConnectionStyle::CorkscrewStraightDown)
+                    file->writeUnsigned8(3);
+                if(style == RailNode::ConnectionStyle::Horizontal4D)
+                    file->writeUnsigned8(4);
+                if(style == RailNode::ConnectionStyle::Vertical4D)
+                    file->writeUnsigned8(5);
+                if(style == RailNode::ConnectionStyle::Aligned4D)
+                    file->writeUnsigned8(6);
+                if(style == RailNode::ConnectionStyle::Special4D)
+                    file->writeUnsigned8(7);
+                if(style == RailNode::ConnectionStyle::SuspendedHorizontal)
+                    file->writeUnsigned8(8);
+                if(style == RailNode::ConnectionStyle::SuspendedVertical)
+                    file->writeUnsigned8(9);
+            }
+
+            file->writeDouble(getSizeParameter());
+
+            file->writeNull(5);
+
+            file->writeUnsigned8(flag1);
+            file->writeUnsigned8(flag2);
+            file->writeUnsigned8(flag3);
+
+            file->writeNull(8);
         }
 
         double RailNode::getPosition() const {

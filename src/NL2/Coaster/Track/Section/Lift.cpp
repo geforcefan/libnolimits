@@ -19,6 +19,27 @@ namespace NoLimits {
             setExtraBlockLength(file->readDouble());
 
             setDiveCoasterDropReleaseMode(file->readBoolean());
+
+            file->readNull(29);
+        }
+
+        void Lift::write(File::File *file) {
+            file->writeNull(3);
+            file->writeUnsigned8(getLiftType());
+
+            file->writeNull(3);
+            file->writeUnsigned8(getMotorLocation());
+            file->writeDouble(getSpeed());
+            file->writeDouble(getAcceleration());
+            file->writeDouble(getDeceleration());
+
+            file->writeBoolean(getHasAntiRollbackDevice());
+            file->writeBoolean(getShuttleModeGentle2ndPassRelease());
+            file->writeDouble(getExtraBlockLength());
+
+            file->writeBoolean(getDiveCoasterDropReleaseMode());
+
+            file->writeNull(29);
         }
 
         double Lift::getSpeed() const {

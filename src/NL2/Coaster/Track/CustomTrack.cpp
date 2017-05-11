@@ -11,7 +11,7 @@ namespace NoLimits {
         }
 
         void CustomTrack::read(File::File *file) {
-            file->readNull(1);
+            setClosed(file->readBoolean());
 
             getFirstRollPoint()->setPosition(0.0);
             getFirstRollPoint()->setRoll(file->readDouble());
@@ -96,6 +96,61 @@ namespace NoLimits {
                     i = file->tell() - 1;
                 }
             }
+        }
+
+        void CustomTrack::write(File::File *file) {
+            file->writeBoolean(getClosed());
+
+            file->writeDouble(getFirstRollPoint()->getRoll());
+            file->writeBoolean(getFirstRollPoint()->getVertical());
+
+            file->writeDouble(getLastRollPoint()->getRoll());
+            file->writeBoolean(getLastRollPoint()->getVertical());
+
+            file->writeNull(53);
+
+            file->writeUnsignedInteger(vertex.size());
+
+            for (uint32_t i = 0; i < vertex.size(); i++) {
+                vertex[i]->write(file);
+            }
+
+            file->writeNull(60);
+
+            for(uint32_t i = 0; i < rollPoint.size(); i++) {
+                file->writeChunk(rollPoint[i]);
+            }
+
+            for(uint32_t i = 0; i < separator.size(); i++) {
+                file->writeChunk(separator[i]);
+            }
+
+            for(uint32_t i = 0; i < parameter4D.size(); i++) {
+                file->writeChunk(parameter4D[i]);
+            }
+
+            for(uint32_t i = 0; i < trigger.size(); i++) {
+                file->writeChunk(trigger[i]);
+            }
+
+            for(uint32_t i = 0; i < railNode.size(); i++) {
+                file->writeChunk(railNode[i]);
+            }
+
+            file->writeChunk(getSegment());
+
+            // usually we use file->writeChunk, but ONLY in this case we need to "WRAP" the writing
+            // process, because sections are nestes with its subtypes (lift, station, etc...) and I didn´t
+            // wanted to separate section and its subtypes (how the file format internally suggests)
+            getSection()->writeChunk(file);
+        }
+
+        bool CustomTrack::getClosed() const {
+            return closed;
+        }
+
+        void CustomTrack::setClosed(bool value) {
+            closed = value;
         }
 
         RollPoint *CustomTrack::getFirstRollPoint() const {

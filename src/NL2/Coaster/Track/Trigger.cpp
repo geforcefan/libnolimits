@@ -7,7 +7,15 @@ namespace NoLimits {
             setName(file->readString());
             file->readNull(3);
             setTrainEvent((Trigger::TrainEvent)file->readUnsigned8());
-            file->readNull(23);
+            file->readNull(26);
+        }
+
+        void Trigger::write(File::File *file) {
+            file->writeDouble(getPosition());
+            file->writeString(getName());
+            file->writeNull(3);
+            file->writeUnsigned8(getTrainEvent());
+            file->writeNull(26);
         }
 
         double Trigger::getPosition() const {

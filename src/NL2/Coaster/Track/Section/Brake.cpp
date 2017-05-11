@@ -11,15 +11,14 @@ namespace NoLimits {
             setSpeedLimit(file->readDouble());
             setHysteresis(file->readDouble());
 
-            file->readNull(9);
+            setPositionOnTrain((Brake::Position)file->readUnsigned8());
+            setPositionOnSection(file->readDouble());
 
             setCompleteStop(file->readBoolean());
             setWaitTime(file->readDouble());
 
-            file->readNull(66);
-            setExtraBlockLength(file->readDouble());
+            file->readNull(23);
 
-            file->seek(71, SEEK_SET);
             setEnableTransport(file->readBoolean());
 
             getTransportDevice()->setTransportType((Transport::TransportType)file->readUnsigned8());
@@ -30,9 +29,39 @@ namespace NoLimits {
             getTransportDevice()->setLaunchAcceleration(file->readDouble());
             getTransportDevice()->setLaunchMaxSpeed(file->readDouble());
 
-            file->seek(30, SEEK_SET);
-            setPositionOnTrain((Brake::Position)file->readUnsigned8());
-            setPositionOnSection(file->readDouble());
+            setExtraBlockLength(file->readDouble());
+
+            file->readNull(75);
+        }
+
+        void Brake::write(File::File *file) {
+            file->writeUnsigned8(getMode());
+            file->writeUnsigned8(getBrakeType());
+            file->writeDouble(getDeceleration());
+            file->writeDouble(getSpeedLimit());
+            file->writeDouble(getHysteresis());
+
+            file->writeUnsigned8(getPositionOnTrain());
+            file->writeDouble(getPositionOnSection());
+
+            file->writeBoolean(getCompleteStop());
+            file->writeDouble(getWaitTime());
+
+            file->writeNull(23);
+
+            file->writeBoolean(getEnableTransport());
+
+            file->writeUnsigned8(getTransportDevice()->getTransportType());
+            file->writeDouble(getTransportDevice()->getSpeed());
+            file->writeDouble(getTransportDevice()->getAcceleration());
+            file->writeDouble(getTransportDevice()->getDeceleration());
+            file->writeBoolean(getTransportDevice()->getLaunch());
+            file->writeDouble(getTransportDevice()->getLaunchAcceleration());
+            file->writeDouble(getTransportDevice()->getLaunchMaxSpeed());
+
+            file->writeDouble(getExtraBlockLength());
+
+            file->writeNull(75);
         }
 
         double Brake::getExtraBlockLength() const {

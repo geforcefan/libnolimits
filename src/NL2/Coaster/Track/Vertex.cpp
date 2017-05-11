@@ -10,6 +10,14 @@ namespace NoLimits {
             file->readNull(22);
         }
 
+        void Vertex::write(File::File *file) {
+            file->writeDoubleVec4(getPosition());
+            file->writeBoolean(getLocked());
+            file->writeBoolean(getStrict());
+
+            file->writeNull(22);
+        }
+
         glm::vec4 Vertex::getPosition() const {
             return position;
         }

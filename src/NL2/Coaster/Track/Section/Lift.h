@@ -21,6 +21,7 @@ namespace NoLimits {
 
             Lift() : Section(Section::SectionType::Lift) {}
             void read(File::File *file);
+            void write(File::File *file);
 
             double getSpeed() const;
             void setSpeed(double value);
@@ -49,6 +50,7 @@ namespace NoLimits {
             double getExtraBlockLength() const;
             void setExtraBlockLength(double value);
 
+            std::string getChunkName() { return "LIFT"; }
         private:
             double speed;
             double acceleration;

@@ -19,7 +19,14 @@ namespace NoLimits {
         class CustomTrack: public Stream::Chunk, public Track  {
         public:
             CustomTrack();
+
+            void debug() {
+                getSegment()->debug();
+                getSection()->debug();
+            }
+
             void read(File::File *file);
+            void write(File::File *file);
 
             RollPoint *getFirstRollPoint() const;
             RollPoint *getLastRollPoint() const;
@@ -48,7 +55,13 @@ namespace NoLimits {
             Section *getSection() const;
             void setSection(Section *value);
 
+            bool getClosed() const;
+            void setClosed(bool value);
+
             virtual Section *getSectionByName(std::string);
+
+            std::string getChunkName() { return "CUTK"; }
+
         private:
             std::vector<Vertex*> vertex;
             std::vector<RollPoint*> rollPoint;
@@ -62,6 +75,8 @@ namespace NoLimits {
 
             Segment *segment;
             Section *section;
+
+            bool closed;
         };
     }
 }

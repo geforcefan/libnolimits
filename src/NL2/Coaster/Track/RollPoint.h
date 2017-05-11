@@ -8,7 +8,9 @@ namespace NoLimits {
         class RollPoint : public Stream::Chunk {
         public:
             RollPoint() {}
+
             void read(File::File *file);
+            void write(File::File *file);
 
             double getPosition() const;
             void setPosition(double value);
@@ -22,6 +24,7 @@ namespace NoLimits {
             bool getStrict() const;
             void setStrict(bool value);
 
+            std::string getChunkName() { return "ROLL"; }
         private:
             double position;
             double roll;

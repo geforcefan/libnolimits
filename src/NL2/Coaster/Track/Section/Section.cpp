@@ -6,13 +6,14 @@
 #include "Storage.h"
 
 #include <iostream>
+#include <File/MemoryFile.h>
 
 namespace NoLimits {
     namespace NL2 {
         void Section::read(File::File *file) {
-            file->readNull(4);
+            setSectionType((Section::SectionType)file->readUnsignedInteger());
             std::string name = file->readString();
-            file->readNull(1);
+            file->readNull(26);
 
             for(int i = file->tell(); i <= file->getFilesize(); i++) {
                 file->seek(i, SEEK_SET);
@@ -63,6 +64,24 @@ namespace NoLimits {
                     i = file->tell() - 1;
                 }
             }
+        }
+
+        void Section::writeChunk(File::File *file) {
+            File::File *subfile = new File::MemoryFile();
+            subfile->openWB();
+
+            subfile->writeUnsignedInteger(getSectionType());
+            subfile->writeString(getName());
+            subfile->writeNull(26);
+
+            if(getSectionType() != Section::SectionType::Track)
+                subfile->writeChunk(this);
+
+            subfile->close();
+
+            file->writeChunkName("SECT");
+            file->writeUnsignedInteger(subfile->getFilesize());
+            file->writeFile(subfile);
         }
 
         Section::SectionType Section::getSectionType() const {

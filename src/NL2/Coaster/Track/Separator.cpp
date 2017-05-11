@@ -24,7 +24,23 @@ namespace NoLimits {
 
                     setSection(_section->getSection());
                     i = file->tell() - 1;
+
+                    setSeparatorType(Separator::SeparatorType::TypeSeparator);
                 }
+            }
+        }
+
+        void Separator::write(File::File *file) {
+            file->writeDouble(getPosition());
+            file->writeNull(28);
+
+            file->writeChunk(getSegment());
+
+            if(getSeparatorType() == Separator::SeparatorType::TypeSeparator) {
+                // usually we use file->writeChunk, but ONLY in this case we need to "WRAP" the writing
+                // process, because sections are nestes with its subtypes (lift, station, etc...) and I didn´t
+                // wanted to separate section and its subtypes (how the file format internally suggests)
+                getSection()->writeChunk(file);
             }
         }
 
@@ -50,6 +66,14 @@ namespace NoLimits {
 
         void Separator::setPosition(double value) {
             position = value;
+        }
+
+        Separator::SeparatorType Separator::getSeparatorType() const {
+            return separatorType;
+        }
+
+        void Separator::setSeparatorType(const Separator::SeparatorType &value) {
+            separatorType = value;
         }
     }
 

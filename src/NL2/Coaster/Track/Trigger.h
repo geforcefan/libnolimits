@@ -16,7 +16,9 @@ namespace NoLimits {
             };
 
             Trigger() {}
+
             void read(File::File *file);
+            void write(File::File *file);
 
             double getPosition() const;
             void setPosition(double value);
@@ -27,6 +29,7 @@ namespace NoLimits {
             TrainEvent getTrainEvent() const;
             void setTrainEvent(const TrainEvent &value);
 
+            std::string getChunkName() { return "TTRG"; }
         private:
             double position;
             std::string name;

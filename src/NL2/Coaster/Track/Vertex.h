@@ -9,6 +9,7 @@ namespace NoLimits {
         public:
             Vertex() {}
             void read(File::File *file);
+            void write(File::File *file);
 
             glm::vec4 getPosition() const;
             void setPosition(const glm::vec4 &value);

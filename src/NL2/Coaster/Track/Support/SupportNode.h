@@ -55,12 +55,12 @@ namespace NoLimits {
             void setWithCheckFlag2(uint8_t flag, bool state);
             void setWithCheckFlag3(uint8_t flag, bool state);
 
-        private:
-            glm::vec3 color;
-            ColorMode colorMode;
             uint8_t flag1;
             uint8_t flag2;
             uint8_t flag3;
+        private:
+            glm::vec3 color;
+            ColorMode colorMode;
         };
     }
 }

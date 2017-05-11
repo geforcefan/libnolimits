@@ -8,7 +8,16 @@ namespace NoLimits {
             setVertical(file->readBoolean());
             setStrict(file->readBoolean());
 
-            file->readNull(14);
+            file->readNull(18);
+        }
+
+        void RollPoint::write(File::File *file) {
+            (file->writeDouble(getPosition()));
+            (file->writeDouble(getRoll()));
+            (file->writeBoolean(getVertical()));
+            (file->writeBoolean(getStrict()));
+
+            file->writeNull(18);
         }
 
         double RollPoint::getPosition() const {

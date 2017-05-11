@@ -80,26 +80,6 @@ namespace NoLimits {
             file->writeNull(37);
         }
 
-        void Layer::saveAsBMP(std::string filepath) {
-            BMP AnImage;
-            AnImage.SetSize(769, 769);
-            AnImage.SetBitDepth(32);
-
-            for (uint32_t y = 0; y < 769; y++) {
-                for (uint32_t x = 0; x < 769; x++) {
-                    uint8_t a = (255.0f * getIntensityAtVertex(x, y)) / 1.0f;
-
-                    // Set one of the pixels
-                    AnImage(x,y)->Red = a;
-                    AnImage(x,y)->Green = a;
-                    AnImage(x,y)->Blue = a;
-                    AnImage(x,y)->Alpha = 0;
-                }
-            }
-
-            AnImage.WriteToFile(filepath.c_str());
-        }
-
         BaseMap *Layer::getBaseMap() const {
             return baseMap;
         }
@@ -146,18 +126,6 @@ namespace NoLimits {
 
         void Layer::setName(const std::string &value) {
             name = value;
-        }
-
-        float *Layer::getPaintData() const {
-            return paintData;
-        }
-
-        float Layer::getIntensityAtVertex(int32_t x, int32_t y) {
-            return paintData[(769 * y) + x];
-        }
-
-        void Layer::setIntensityAtVertex(int32_t x, int32_t y, float intensity) {
-            paintData[(769 * y) + x] = intensity;
         }
     }
 }

@@ -10,6 +10,16 @@ namespace NoLimits {
         public:
             TransportDevice() {}
 
+            void debug() {
+                std::cout << "TransportDevice[getTransportType]: " << getTransportType() << std::endl;
+                std::cout << "TransportDevice[getSpeed]: " << getSpeed() << std::endl;
+                std::cout << "TransportDevice[getAcceleration]: " << getAcceleration() << std::endl;
+                std::cout << "TransportDevice[getDeceleration]: " << getDeceleration() << std::endl;
+                std::cout << "TransportDevice[getLaunch]: " << getLaunch() << std::endl;
+                std::cout << "TransportDevice[getLaunchAcceleration]: " << getLaunchAcceleration() << std::endl;
+                std::cout << "TransportDevice[getLaunchMaxSpeed]: " << getLaunchMaxSpeed() << std::endl;
+            }
+
             Transport::TransportType getTransportType() const;
             void setTransportType(const Transport::TransportType &value);
 

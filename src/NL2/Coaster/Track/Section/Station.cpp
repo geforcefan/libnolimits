@@ -51,7 +51,58 @@ namespace NoLimits {
             setRailingsColor(file->readColor());
             setStructureColor(file->readColor());
 
-            file->readNull(137);
+            file->readNull(142);
+        }
+
+        void Station::write(File::File *file) {
+            file->writeBoolean(getUseTransportDevice());
+            file->writeUnsigned8(getTransportDevice()->getTransportType());
+            file->writeDouble(getTransportDevice()->getSpeed());
+            file->writeDouble(getTransportDevice()->getAcceleration());
+            file->writeDouble(getTransportDevice()->getDeceleration());
+
+            file->writeDouble(getBrakeDevice()->getDeceleration());
+            file->writeDouble(getWaitTime()->getAvarage());
+            file->writeDouble(getWaitTime()->getMinimum());
+            file->writeDouble(getWaitTime()->getMaximum());
+            file->writeDouble(getWaitTime()->getDeviation());
+
+            file->writeBoolean(getTransportDevice()->getLaunch());
+            file->writeDouble(getTransportDevice()->getLaunchAcceleration());
+            file->writeDouble(getTransportDevice()->getLaunchMaxSpeed());
+
+            file->writeBoolean(getUnloadingOnly());
+
+            file->writeNull(3);
+
+            file->writeUnsigned8(getPasses());
+            file->writeBoolean(getShuttleBackwardsStart());
+            file->writeUnsignedInteger(getStationNumber());
+
+            file->writeNull(3);
+
+            std::vector<uint32_t> synchronizeDispatchWith = getWaitTime()->getSynchronizeDispatchWith();
+            file->writeUnsigned8(synchronizeDispatchWith.size());
+
+            for(uint8_t i = 0; i < synchronizeDispatchWith.size(); i++) {
+                file->writeUnsignedInteger(synchronizeDispatchWith[i]);
+            }
+
+            file->writeDouble(getExtraBlockLength());
+
+            file->writeUnsigned8(getBrakeDevice()->getBrakeType());
+            file->writeUnsigned8(getGateDirection());
+            file->writeUnsigned8(getDisplay());
+            file->writeUnsigned8(getEntranceStairs());
+            file->writeUnsigned8(getExitStairs());
+
+            file->writeNull(1);
+
+            file->writeColor(getGatesColor());
+            file->writeColor(getRailingsColor());
+            file->writeColor(getStructureColor());
+
+            file->writeNull(142);
         }
 
         double Station::getExtraBlockLength() const {

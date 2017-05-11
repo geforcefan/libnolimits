@@ -18,7 +18,9 @@ namespace NoLimits {
             Storage() : Section(Section::SectionType::Storage) {
                 transportDevice = new TransportDevice();
             }
+
             void read(File::File *file);
+            void write(File::File *file);
 
             bool getEnableTransportDevice() const;
             void setEnableTransportDevice(bool value);
@@ -41,6 +43,7 @@ namespace NoLimits {
             glm::vec3 getFrameColor() const;
             void setFrameColor(const glm::vec3 &value);
 
+            std::string getChunkName() { return "STOR"; }
         private:
             bool enableTransportDevice;
 

@@ -9,16 +9,18 @@ namespace NoLimits {
         public:
             enum SectionType {
                 Track,
-                Transport,
-                Lift,
-                Brake,
                 Station,
+                Lift,
+                Transport,
+                Brake,
                 Storage
             };
 
             Section(SectionType sectionType) : _sectionType(sectionType), section(this) {}
             Section() : _sectionType(SectionType::Track), section(this) {}
+
             void read(File::File *file);
+            void writeChunk(File::File *file);
 
             SectionType getSectionType() const;
             void setSectionType(const SectionType &sectionType);

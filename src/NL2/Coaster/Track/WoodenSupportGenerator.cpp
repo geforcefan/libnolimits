@@ -7,6 +7,11 @@ namespace NoLimits {
             setFlag2(file->readUnsigned8());
         }
 
+        void WoodenSupportGenerator::write(File::File *file) {
+            file->writeUnsigned8(flag1);
+            file->writeUnsigned8(flag2);
+        }
+
         bool WoodenSupportGenerator::getUseIndividualSettings() {
             return hasFlag2(Flag::IndividualSettings);
         }

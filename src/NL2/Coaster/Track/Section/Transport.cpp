@@ -12,6 +12,20 @@ namespace NoLimits {
             setSpeedingUpPasses(file->readUnsignedInteger());
             setSpeedingDown(file->readBoolean());
             setMinSpeed(file->readDouble());
+
+            file->readNull(26);
+        }
+
+        void Transport::write(File::File *file) {
+            file->writeUnsigned8(getTransportType());
+            file->writeDouble(getSpeed());
+            file->writeDouble(getAcceleration());
+            file->writeDouble(getDeceleration());
+            file->writeUnsignedInteger(getSpeedingUpPasses());
+            file->writeBoolean(getSpeedingDown());
+            file->writeDouble(getMinSpeed());
+
+            file->writeNull(26);
         }
 
         double Transport::getSpeed() const {

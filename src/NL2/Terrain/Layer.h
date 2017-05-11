@@ -22,12 +22,6 @@ namespace NoLimits {
                 autoPaint = new AutoPaint();
                 extras = new Extras();
 
-                paintData = (float*) malloc(769 * 769 * sizeof(float));
-
-                for (uint32_t j = 0; j < 769 * 769; j++) {
-                    paintData[j] = 15.0f / 255.0f;
-                }
-
                 setName("Grass");
             }
 
@@ -61,13 +55,6 @@ namespace NoLimits {
 
             std::string getName() const;
             void setName(const std::string &value);
-
-            float *getPaintData() const;
-
-            float getIntensityAtVertex(int32_t x, int32_t y);
-            void setIntensityAtVertex(int32_t x, int32_t y, float intensity);
-
-            void saveAsBMP(std::string filepath);
         private:
             std::string name;
 
@@ -76,8 +63,6 @@ namespace NoLimits {
             BumpMap *bumpMap;
             AutoPaint *autoPaint;
             Extras *extras;
-
-            float *paintData;
         };
     }
 }

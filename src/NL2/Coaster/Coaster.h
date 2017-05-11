@@ -60,6 +60,14 @@ namespace NoLimits {
                     script[i]->debug();
                     std::cout << "---------------------------------------" << std::endl;
                 }
+
+                std::cout << "Coaster[track.size]: " << track.size() << std::endl;
+                if(track.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < track.size(); i++) {
+                    track[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
             }
 
             void read(File::File *file);
@@ -97,6 +105,7 @@ namespace NoLimits {
             std::vector<Script *> getScript() const;
             void insertScript(Script* value);
 
+            std::string getChunkName() { return "COAS"; }
         private:
             std::string name;
             std::string description;
@@ -112,8 +121,6 @@ namespace NoLimits {
             std::vector<Track*> track;
             std::vector<Train*> train;
             std::vector<Script*> script;
-
-            std::string getChunkName() { return "COAS"; }
         };
     }
 }

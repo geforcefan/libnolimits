@@ -28,7 +28,24 @@ namespace NoLimits {
             Brake() : Section(Section::SectionType::Brake) {
                 transportDevice = new TransportDevice();
             }
+
+            void debug() {
+                std::cout << "Brake[getExtraBlockLength]: " << getExtraBlockLength() << std::endl;
+                std::cout << "Brake[getMode]: " << getMode() << std::endl;
+                std::cout << "Brake[getCompleteStop]: " << getCompleteStop() << std::endl;
+                std::cout << "Brake[getWaitTime]: " << getWaitTime() << std::endl;
+                std::cout << "Brake[getBrakeType]: " << getBrakeType() << std::endl;
+                std::cout << "Brake[getSpeedLimit]: " << getSpeedLimit() << std::endl;
+                std::cout << "Brake[getHysteresis]: " << getHysteresis() << std::endl;
+                std::cout << "Brake[getDeceleration]: " << getDeceleration() << std::endl;
+                std::cout << "Brake[getPositionOnTrain]: " << getPositionOnTrain() << std::endl;
+                std::cout << "Brake[getPositionOnSection]: " << getPositionOnSection() << std::endl;
+                std::cout << "Brake[getEnableTransport]: " << getEnableTransport() << std::endl;
+                getTransportDevice()->debug();
+            }
+
             void read(File::File *file);
+            void write(File::File *file);
 
             double getExtraBlockLength() const;
             void setExtraBlockLength(double value);
@@ -66,6 +83,7 @@ namespace NoLimits {
             TransportDevice *getTransportDevice() const;
             void setTransportDevice(TransportDevice *value);
 
+            std::string getChunkName() { return "BRKE"; }
         private:
             double extraBlockLength;
 

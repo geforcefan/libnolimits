@@ -51,6 +51,13 @@ namespace NoLimits {
 
             file->writeNull(6);
 
+
+            for(uint32_t i = 0; i < track.size(); i++) {
+                if(track[i]->getTrackType() == Track::TrackType::Custom) {
+                    file->writeChunk(dynamic_cast<CustomTrack*>(track[i]));
+                }
+            }
+
             for(uint32_t i = 0; i < train.size(); i++) {
                 file->writeChunk(train[i]);
             }
@@ -59,7 +66,8 @@ namespace NoLimits {
                 file->writeChunk(script[i]);
             }
 
-            file->writeChunk(fileScript);
+            if(fileScript->getPath().size())
+                file->writeChunk(fileScript);
 
             file->writeChunkName("SUPP");
             file->writeUnsignedInteger(32);

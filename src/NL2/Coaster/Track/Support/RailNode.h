@@ -24,7 +24,9 @@ namespace NoLimits {
             };
 
             RailNode() {}
+
             void read(File::File *file);
+            void write(File::File *file);
 
             double getPosition() const;
             void setPosition(double value);
@@ -41,6 +43,7 @@ namespace NoLimits {
             bool getIsModel() const;
             void setIsModel(bool value);
 
+            std::string getChunkName() { return "SRNP"; }
         private:
             ConnectionStyle connectionStyle;
             double position;

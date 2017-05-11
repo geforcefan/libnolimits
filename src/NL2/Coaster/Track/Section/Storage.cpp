@@ -12,7 +12,18 @@ namespace NoLimits {
             setSideColor(file->readColor());
             setFrameColor(file->readColor());
 
-            file->readNull(15);
+            file->readNull(20);
+        }
+
+        void Storage::write(File::File *file) {
+            file->writeBoolean(getEnableTransportDevice());
+            file->writeUnsigned8(getTransportType());
+            file->writeUnsigned8(getBuilding());
+            file->writeColor(getRoofColor());
+            file->writeColor(getSideColor());
+            file->writeColor(getFrameColor());
+
+            file->writeNull(20);
         }
 
         bool Storage::getEnableTransportDevice() const {

@@ -16,6 +16,7 @@ namespace NoLimits {
 
             Transport() : Section(Section::SectionType::Transport) {}
             void read(File::File *file);
+            void write(File::File *file);
 
             double getSpeed() const;
             void setSpeed(double value);
@@ -38,6 +39,7 @@ namespace NoLimits {
             TransportType getTransportType() const;
             void setTransportType(const TransportType &value);
 
+            std::string getChunkName() { return "TRNS"; }
         private:
             double speed;
 

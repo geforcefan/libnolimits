@@ -9,6 +9,7 @@ namespace NoLimits {
         public:
             Parameter4D() {}
             void read(File::File *file);
+            void write(File::File *file);
 
             double getPosition() const;
             void setPosition(double value);
@@ -16,6 +17,7 @@ namespace NoLimits {
             double getAngle() const;
             void setAngle(double value);
 
+            std::string getChunkName() { return "4DPM"; }
         private:
             double position;
             double angle;
