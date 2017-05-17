@@ -2,10 +2,10 @@
 #define LIB_NL2PARK_LIFT_H
 
 #include "Section.h"
-#include <Stream/Chunk.h>
+#include "../../../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Lift : public Section {
         public:
             enum LiftType {

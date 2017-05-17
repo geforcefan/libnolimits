@@ -2,10 +2,10 @@
 #define LIB_NL2PARK_TRANSPORT_H
 
 #include "Section.h"
-#include <Stream/Chunk.h>
+#include "../../../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Transport : public Section {
         public:
             enum TransportType {

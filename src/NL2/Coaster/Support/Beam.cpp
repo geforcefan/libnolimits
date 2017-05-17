@@ -1,7 +1,7 @@
 #include "Beam.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Beam::read(File::File *file) {
             beamNode.clear();
 

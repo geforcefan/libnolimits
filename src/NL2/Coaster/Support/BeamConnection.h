@@ -1,10 +1,10 @@
 #ifndef LIB_NL2PARK_BEAMCONNECTION_H
 #define LIB_NL2PARK_BEAMCONNECTION_H
 
-#include <Stream/Chunk.h>
+#include "../../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class BeamConnection : public Stream::Chunk {
         public:
             enum Type {

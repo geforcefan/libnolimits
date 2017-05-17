@@ -2,7 +2,7 @@
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Scenery::read(File::File *file) {
             sceneObject.clear();
             sceneObjectInstance.clear();

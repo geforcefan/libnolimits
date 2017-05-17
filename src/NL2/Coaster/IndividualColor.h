@@ -1,11 +1,11 @@
 #ifndef LIB_NL2PARK_INDIVIDUALCOLOR_H
 #define LIB_NL2PARK_INDIVIDUALCOLOR_H
 
-#include <Stream/Chunk.h>
+#include "../../Stream/Chunk.h"
 #include <vector>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class IndividualColor: public Stream::Chunk {
         public:
             IndividualColor() {

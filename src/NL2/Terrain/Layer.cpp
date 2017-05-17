@@ -1,9 +1,7 @@
 #include "Layer.h"
 
-#include <EasyBMP.h>
-
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Layer::read(File::File *file) {
             getAutoPaint()->setEnabled(file->readBoolean());
 

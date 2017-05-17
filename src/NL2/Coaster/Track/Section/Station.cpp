@@ -3,7 +3,7 @@
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Station::read(File::File *file) {
             setUseTransportDevice(file->readBoolean());
             getTransportDevice()->setTransportType((Transport::TransportType)file->readUnsigned8());

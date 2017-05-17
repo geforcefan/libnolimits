@@ -1,8 +1,8 @@
-#include <src/NL2/Coaster/IndividualColor.h>
+#include "IndividualColor.h"
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void IndividualColor::write(File::File *file) {
             file->writeBoolean(getHasIndividualColor());
 

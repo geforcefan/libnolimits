@@ -1,8 +1,8 @@
-#include <src/NL2/Coaster/Style.h>
+#include "Style.h"
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         Style::StyleType Style::getStyleType() const {
             return styleType;
         }

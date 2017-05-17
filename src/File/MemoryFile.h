@@ -1,7 +1,7 @@
 #ifndef LIB_FILE_MemoryFile_H
 #define LIB_FILE_MemoryFile_H
 
-#include "../File/File.h"
+#include "File.h"
 #include <string>
 
 namespace NoLimits {

@@ -1,11 +1,11 @@
 #ifndef LIB_NL2PARK_SCENEOBJECTINSTANCE_H
 #define LIB_NL2PARK_SCENEOBJECTINSTANCE_H
 
-#include <Stream/Chunk.h>
+#include "../../Stream/Chunk.h"
 #include <vector>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class SceneObjectInstance: public Stream::Chunk {
         public:
             SceneObjectInstance() {

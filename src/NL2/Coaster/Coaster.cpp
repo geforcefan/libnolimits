@@ -1,9 +1,9 @@
-#include <src/NL2/Coaster/Coaster.h>
+#include "Coaster.h"
 #include <iostream>
 #include <algorithm>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Coaster::write(File::File *file) {
             file->writeString(getName());
 

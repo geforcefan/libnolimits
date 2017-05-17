@@ -1,8 +1,8 @@
-#include <src/NL2/Coaster/Mode.h>
+#include "Mode.h"
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         Mode::Operation Mode::getOperationMode() const {
             return operationMode;
         }

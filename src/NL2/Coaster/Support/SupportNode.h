@@ -1,10 +1,10 @@
 #ifndef LIB_NL2PARK_SUPPORTNODE_H
 #define LIB_NL2PARK_SUPPORTNODE_H
 
-#include <src/nolimits.h>
+#include "../../../Nolimits.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class SupportNode
         {
         public:

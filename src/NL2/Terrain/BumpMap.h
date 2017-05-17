@@ -6,7 +6,7 @@
 #include "../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class BumpMap : public Stream::Chunk
         {
         public:
@@ -14,7 +14,7 @@ namespace NoLimits {
                 setTexture("");
                 setSpecularMapTexture("");
                 setHeightMapScale(2.2f);
-                setMapType(NoLimits::NL2::TerrainMap::Normal);
+                setMapType(NoLimits::NoLimits2::TerrainMap::Normal);
                 setRepeatIndex(2);
             }
 

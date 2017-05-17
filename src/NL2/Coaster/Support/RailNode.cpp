@@ -1,7 +1,7 @@
 #include "RailNode.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void RailNode::read(File::File *file) {
             setPosition(file->readDouble());
 

@@ -2,7 +2,7 @@
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Version::read(File::File *file) {
             setMajor(file->readUnsigned8());
             setMinor(file->readUnsigned8());

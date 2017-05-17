@@ -4,7 +4,7 @@
 #include "../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class AutoPaint : public Stream::Chunk
         {
         public:

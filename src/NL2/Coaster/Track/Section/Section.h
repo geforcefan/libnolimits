@@ -1,10 +1,10 @@
 #ifndef LIB_NL2PARK_SECTION_H
 #define LIB_NL2PARK_SECTION_H
 
-#include <Stream/Chunk.h>
+#include "../../../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Section : public NoLimits::Stream::Chunk {
         public:
             enum SectionType {

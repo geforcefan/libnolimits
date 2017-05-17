@@ -1,10 +1,10 @@
-#include <src/NL2/Info/Info.h>
+#include "Info.h"
 #include <iostream>
 #include <string>
 #include <sstream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Info::read(File::File *file) {
             getVersion()->read(file);
 

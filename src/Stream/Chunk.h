@@ -4,7 +4,7 @@
 #include "../File/File.h"
 
 #include <stdint.h>
-#include <nolimits.h>
+#include "../Nolimits.h"
 
 namespace NoLimits {
     namespace Stream {

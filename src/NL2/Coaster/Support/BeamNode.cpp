@@ -1,7 +1,7 @@
 #include "BeamNode.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void BeamNode::read(File::File *file) {
             setPosition(file->readFloat());
             setIsFlange(file->readBoolean());

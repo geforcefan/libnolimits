@@ -1,7 +1,7 @@
 #include "BaseMap.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         std::string BaseMap::getTexture() const {
             return texture;
         }

@@ -1,8 +1,8 @@
-#include <src/NL2/Coaster/CustomFriction.h>
+#include "CustomFriction.h"
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void CustomFriction::write(File::File *file) {
             file->writeDouble(getConstFrictionParameter());
             file->writeDouble(getAirResistanceParameter());

@@ -1,10 +1,10 @@
-#ifndef LIB_NL2PARK_PARAMETER4d_H
-#define LIB_NL2PARK_PARAMETER4d_H
+#ifndef LIB_NL2PARK_PARAMETER4D_H
+#define LIB_NL2PARK_PARAMETER4D_H
 
-#include <Stream/Chunk.h>
+#include "../../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Parameter4D : public Stream::Chunk {
         public:
             Parameter4D() {}
@@ -25,4 +25,4 @@ namespace NoLimits {
     }
 }
 
-#endif // LIB_NL2PARK_PARAMETER4d_H
+#endif // LIB_NL2PARK_PARAMETER4D_H

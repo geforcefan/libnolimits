@@ -3,19 +3,19 @@
 
 #include <vector>
 
-#include <Stream/Chunk.h>
-#include <src/NL2/Coaster/Track/Track.h>
-#include <src/NL2/Coaster/Track/RollPoint.h>
-#include <src/NL2/Coaster/Track/Vertex.h>
-#include <src/NL2/Coaster/Track/Trigger.h>
-#include <src/NL2/Coaster/Track/Parameter4D.h>
-#include <src/NL2/Coaster/Track/Segment.h>
-#include <src/NL2/Coaster/Track/Separator.h>
-#include <src/NL2/Coaster/Track/Section/Section.h>
-#include <src/NL2/Coaster/Support/RailNode.h>
+#include "../../../Stream/Chunk.h"
+#include "Track.h"
+#include "RollPoint.h"
+#include "Vertex.h"
+#include "Trigger.h"
+#include "Parameter4D.h"
+#include "Segment.h"
+#include "Separator.h"
+#include "Section/Section.h"
+#include "../Support/RailNode.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class CustomTrack: public Stream::Chunk, public Track  {
         public:
             CustomTrack();

@@ -1,8 +1,8 @@
-#include <src/NL2/Coaster/Train.h>
+#include "Train.h"
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Train::write(File::File *file) {
             file->writeString(getStartBlock());
             file->writeUnsignedInteger(car.size() + (zeroCar ? 1 : 0));

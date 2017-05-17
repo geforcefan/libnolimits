@@ -3,7 +3,7 @@
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         Transport::TransportType TransportDevice::getTransportType() const {
             return transportType;
         }

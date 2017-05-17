@@ -1,8 +1,8 @@
 #include "Support.h"
-#include <File/MemoryFile.h>
+#include "../../../File/MemoryFile.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Support::read(File::File *file) {
             footer.clear();
             freeNode.clear();

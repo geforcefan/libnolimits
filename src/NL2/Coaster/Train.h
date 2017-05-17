@@ -1,13 +1,13 @@
 #ifndef LIB_NL2PARK_TRAIN_H
 #define LIB_NL2PARK_TRAIN_H
 
-#include <Stream/Chunk.h>
+#include "../../Stream/Chunk.h"
 #include "IndividualColor.h"
 #include "Car.h"
 #include <vector>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Train: public Stream::Chunk {
         public:
             Train() {

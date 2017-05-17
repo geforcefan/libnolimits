@@ -1,12 +1,11 @@
 #include "Terrain.h"
+#include "../../File/MemoryFile.h"
+
 #include <iostream>
 #include <algorithm>
-#include <File/MemoryFile.h>
-
-#include <EasyBMP.h>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Terrain::read(File::File *file) {
             layer.clear();
             textureRepeats.clear();
@@ -147,6 +146,7 @@ namespace NoLimits {
             return terrainIntensityLayers.size();
         }
 
+        /*
         void Terrain::saveAsBMP(std::string filepath) {
             BMP AnImage;
             AnImage.SetSize(getVertexDimX(), getVertexDimY());
@@ -188,7 +188,7 @@ namespace NoLimits {
             }
 
             AnImage.WriteToFile(filepath.c_str());
-        }
+        }*/
 
         Water *Terrain::getWater() const {
             return water;

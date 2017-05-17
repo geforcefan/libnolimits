@@ -1,12 +1,12 @@
 #ifndef LIB_NL2PARK_SEGMENT_H
 #define LIB_NL2PARK_SEGMENT_H
 
-#include <src/NL2/Coaster/Colors.h>
-#include <src/NL2/Coaster/Track/WoodenSupportGenerator.h>
-#include <Stream/Chunk.h>
+#include "../Colors.h"
+#include "WoodenSupportGenerator.h"
+#include "../../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Segment : public Stream::Chunk {
         public:
             enum Tunnel {

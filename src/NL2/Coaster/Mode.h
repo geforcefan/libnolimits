@@ -1,11 +1,11 @@
 #ifndef LIB_NL2PARK_MODE_H
 #define LIB_NL2PARK_MODE_H
 
-#include <Stream/Chunk.h>
-#include <src/NL2/Coaster/CustomFriction.h>
+#include "../../Stream/Chunk.h"
+#include "CustomFriction.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Mode: public Stream::Chunk {
         public:
             enum Operation {

@@ -1,7 +1,7 @@
 #include "Track.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         Track::TrackType Track::getTrackType() const {
             return _trackType;
         }

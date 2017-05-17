@@ -1,7 +1,7 @@
 #include "BumpMap.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         std::string BumpMap::getTexture() const {
             return texture;
         }

@@ -1,10 +1,10 @@
 #ifndef LIB_NL2PARK_ROLLPOINT_H
 #define LIB_NL2PARK_ROLLPOINT_H
 
-#include <Stream/Chunk.h>
+#include "../../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class RollPoint : public Stream::Chunk {
         public:
             RollPoint() {}

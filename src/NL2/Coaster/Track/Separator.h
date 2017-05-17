@@ -3,10 +3,10 @@
 
 #include "Section/Section.h"
 #include "Segment.h"
-#include <Stream/Chunk.h>
+#include "../../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Separator : public Stream::Chunk {
         public:
             enum SeparatorType {

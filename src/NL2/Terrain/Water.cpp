@@ -1,7 +1,7 @@
 #include "Water.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Water::read(File::File *file) {
             file->readNull(64);
 

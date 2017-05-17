@@ -1,11 +1,11 @@
 #ifndef LIB_NL2PARK_FILESCRIPT_H
 #define LIB_NL2PARK_FILESCRIPT_H
 
-#include <Stream/Chunk.h>
+#include "../../Stream/Chunk.h"
 #include <vector>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class FileScript: public Stream::Chunk {
         public:
             FileScript() {}

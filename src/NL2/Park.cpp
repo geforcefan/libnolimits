@@ -1,10 +1,10 @@
-#include <src/NL2/Park.h>
+#include "Park.h"
 #include <iostream>
-#include <File/NormalFile.h>
-#include <File/MemoryFile.h>
+#include "../File/NormalFile.h"
+#include "../File/MemoryFile.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         Park::Park() {
             info = new Info();
             terrain = new Terrain();

@@ -1,12 +1,12 @@
 #ifndef LIB_NL2PARK_VERSION_H
 #define LIB_NL2PARK_VERSION_H
 
-#include <nolimits.h>
+#include "../../Nolimits.h"
 #include <string>
-#include <Stream/Chunk.h>
+#include "../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Version: public Stream::Chunk {
         public:
             void debug() {

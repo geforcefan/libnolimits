@@ -1,12 +1,12 @@
 #ifndef LIB_NL2PARK_RAILNODE_H
 #define LIB_NL2PARK_RAILNODE_H
 
-#include <Stream/Chunk.h>
-#include <src/NL2/Coaster/Support/SupportNode.h>
+#include "../../../Stream/Chunk.h"
+#include "SupportNode.h"
 #include "SPPM.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class RailNode : public Stream::Chunk, public SupportNode {
         public:
             enum ConnectionStyle {

@@ -1,7 +1,7 @@
 #include "BeamConnection.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void BeamConnection::read(File::File *file) {
             setType((BeamConnection::Type)file->readUnsignedInteger());
             setIndex(file->readUnsignedInteger());

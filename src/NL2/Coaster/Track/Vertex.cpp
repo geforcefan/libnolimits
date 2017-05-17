@@ -1,7 +1,7 @@
 #include "Vertex.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Vertex::read(File::File *file) {
             setPosition(file->readDoubleVec4());
             setLocked(file->readBoolean());

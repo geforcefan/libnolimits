@@ -1,8 +1,8 @@
-#include <src/NL2/Coaster/FileScript.h>
+#include "FileScript.h"
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void FileScript::read(File::File *file) {
             path.clear();
 

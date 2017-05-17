@@ -5,7 +5,7 @@
 #include "../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Extras : public Stream::Chunk
         {
         public:

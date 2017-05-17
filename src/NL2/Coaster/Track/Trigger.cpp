@@ -1,7 +1,7 @@
 #include "Trigger.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Trigger::read(File::File *file) {
             setPosition(file->readDouble());
             setName(file->readString());

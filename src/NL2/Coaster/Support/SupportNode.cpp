@@ -1,7 +1,7 @@
 #include "SupportNode.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         bool SupportNode::getHasNoCapsForLODsHint() {
             return hasFlag1(SupportNode::Flags::NoCapsForLODsHint);
         }

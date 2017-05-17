@@ -1,7 +1,7 @@
 #include "FreeNode.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void FreeNode::read(File::File *file) {
             setPosition(file->readDoubleVec3());
             file->readNull(4);

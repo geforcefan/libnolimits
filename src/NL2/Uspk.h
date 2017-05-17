@@ -1,10 +1,10 @@
 #ifndef LIB_NL2PARK_USPK_H
 #define LIB_NL2PARK_USPK_H
 
-#include <Stream/Chunk.h>
+#include "../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Uspk: public Stream::Chunk {
         public:
             Uspk() {}

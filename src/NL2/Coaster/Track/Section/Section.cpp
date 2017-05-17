@@ -4,12 +4,12 @@
 #include "Brake.h"
 #include "Station.h"
 #include "Storage.h"
+#include "../../../../File/MemoryFile.h"
 
 #include <iostream>
-#include <File/MemoryFile.h>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Section::read(File::File *file) {
             setSectionType((Section::SectionType)file->readUnsignedInteger());
             std::string name = file->readString();
@@ -20,7 +20,7 @@ namespace NoLimits {
                 std::string chunk = file->readChunkName();
 
                 if(chunk == "LIFT") {
-                    NoLimits::NL2::Lift *_lift = new NoLimits::NL2::Lift();
+                    NoLimits::NoLimits2::Lift *_lift = new NoLimits::NoLimits2::Lift();
                     _lift->setName(name);
                     setSection(_lift);
 
@@ -29,7 +29,7 @@ namespace NoLimits {
                 }
 
                 if(chunk == "TRNS") {
-                    NoLimits::NL2::Transport *_transport = new NoLimits::NL2::Transport();
+                    NoLimits::NoLimits2::Transport *_transport = new NoLimits::NoLimits2::Transport();
                     _transport->setName(name);
                     setSection(_transport);
 
@@ -38,7 +38,7 @@ namespace NoLimits {
                 }
 
                 if(chunk == "BRKE") {
-                    NoLimits::NL2::Brake *_brake = new NoLimits::NL2::Brake();
+                    NoLimits::NoLimits2::Brake *_brake = new NoLimits::NoLimits2::Brake();
                     _brake->setName(name);
                     setSection(_brake);
 
@@ -47,7 +47,7 @@ namespace NoLimits {
                 }
 
                 if(chunk == "STTN") {
-                    NoLimits::NL2::Station *_station = new NoLimits::NL2::Station();
+                    NoLimits::NoLimits2::Station *_station = new NoLimits::NoLimits2::Station();
                     _station->setName(name);
                     setSection(_station);
 
@@ -56,7 +56,7 @@ namespace NoLimits {
                 }
 
                 if(chunk == "STOR") {
-                    NoLimits::NL2::Storage *_storage = new NoLimits::NL2::Storage();
+                    NoLimits::NoLimits2::Storage *_storage = new NoLimits::NoLimits2::Storage();
                     _storage->setName(name);
                     setSection(_storage);
 

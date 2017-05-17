@@ -1,8 +1,9 @@
 #include "File.h"
 #include "MemoryFile.h"
+#include "../Stream/Chunk.h"
+
 #include <iostream>
 #include <zlib.h>
-#include "../Stream/Chunk.h"
 
 #define ZLIB_CHUNK 16384
 
@@ -301,8 +302,6 @@ namespace NoLimits {
             writeUnsignedInteger(uncompressedFile->getFilesize());
             writeUnsignedInteger(compressedFile->getFilesize());
             writeFile(compressedFile);
-
-            std::cout << "--------------------" << std::endl;
         }
 
         void File::readChunk(Stream::Chunk *chunk) {

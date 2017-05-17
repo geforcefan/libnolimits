@@ -1,11 +1,11 @@
 #ifndef LIB_NL2PARK_BRAKEDEVICE_H
 #define LIB_NL2PARK_BRAKEDEVICE_H
 
-#include <Stream/Chunk.h>
+#include "../../../../Stream/Chunk.h"
 #include "Brake.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class BrakeDevice {
         public:
             BrakeDevice() {}

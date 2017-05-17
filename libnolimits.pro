@@ -1,15 +1,29 @@
-TEMPLATE = app
+QT -= core gui
+
+TEMPLATE = lib
+TARGET = nolimits
 CONFIG += c++11
-CONFIG += app_bundle
-CONFIG += qt
+CONFIG += staticlib
 
 LIBS += -lz
 
 QMAKE_CXXFLAGS_WARN_OFF -= -Wunused-parameter
 QMAKE_CXXFLAGS_WARN_ON += -Wno-unused-parameter
 
-SOURCES += main.cpp \
-    src/File/File.cpp \
+DEFINES += NOLIMITS_LIBRARY
+DEFINES += QT_DEPRECATED_WARNINGS
+
+QMAKE_CFLAGS_X86_64 += -mmacosx-version-min=10.7
+QMAKE_CXXFLAGS += -mmacosx-version-min=10.7
+LIBS += -mmacosx-version-min=10.7
+
+
+QMAKE_CFLAGS_X86_64 -= -mmacosx-version-min=10.9
+QMAKE_CXXFLAGS -= -mmacosx-version-min=10.9
+LIBS -= -mmacosx-version-min=10.9
+
+#SOURCES += main.cpp \
+SOURCES += src/File/File.cpp \
     src/NL2/Coaster/Track/Section/Brake.cpp \
     src/NL2/Coaster/Track/Section/BrakeDevice.cpp \
     src/NL2/Coaster/Track/Section/Lift.cpp \
@@ -60,7 +74,6 @@ SOURCES += main.cpp \
     src/NL2/Coaster/Script.cpp \
     src/NL2/Coaster/ResourceFile.cpp \
     src/NL2/Coaster/FileScript.cpp \
-    EasyBMP_1.06/EasyBMP.cpp \
     src/NL2/Coaster/Support/Footer.cpp \
     src/NL2/Coaster/Support/Support.cpp \
     src/NL2/Coaster/Support/FreeNode.cpp \
@@ -80,8 +93,8 @@ HEADERS += \
     src/NL2/Coaster/Track/Section/Transport.h \
     src/NL2/Coaster/Track/Section/TransportDevice.h \
     src/NL2/Coaster/Track/Section/WaitTime.h \
-    src/NL2/Coaster/Track/RailNode.h \
-    src/NL2/Coaster/Track/SupportNode.h \
+    src/NL2/Coaster/Support/RailNode.h \
+    src/NL2/Coaster/Support/SupportNode.h \
     src/NL2/Coaster/Track/CustomTrack.h \
     src/NL2/Coaster/Track/Parameter4D.h \
     src/NL2/Coaster/Track/RollPoint.h \
@@ -133,5 +146,4 @@ HEADERS += \
     src/NL2/Coaster/Support/SPPM.h
 
 INCLUDEPATH += src/ \
-    /usr/local/include/ \
-    EasyBMP_1.06/
+    /usr/local/include/

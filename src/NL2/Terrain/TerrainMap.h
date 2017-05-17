@@ -2,7 +2,7 @@
 #define TERRAINMAP_H
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         enum TerrainMap {
             Normal,
             Height

@@ -1,7 +1,7 @@
 #include "SPPM.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void SPPM::read(File::File *file) {
             // I DONT KNOW WHAT KIND OF CHUNK THIS IS!
             file->readNull(4);

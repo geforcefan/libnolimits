@@ -3,7 +3,7 @@
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Lift::read(File::File *file) {
             file->readNull(3);
             setLiftType((LiftType)file->readUnsigned8());

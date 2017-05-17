@@ -1,7 +1,7 @@
 #include "AutoPaint.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         bool AutoPaint::getEnabled() const {
             return enabled;
         }

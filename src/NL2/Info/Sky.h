@@ -1,11 +1,11 @@
 #ifndef LIB_NL2PARK_SKY_H
 #define LIB_NL2PARK_SKY_H
 
-#include <Stream/Chunk.h>
-#include <nolimits.h>
+#include "../../Nolimits.h"
+#include "../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Sky: public Stream::Chunk {
         public:
             Sky() {

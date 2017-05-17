@@ -1,8 +1,8 @@
-#include <src/NL2/Coaster/ResourceFile.h>
+#include "ResourceFile.h"
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void ResourceFile::read(File::File *file) {
             setId(file->readString());
             setPath(file->readString());

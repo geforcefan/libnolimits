@@ -1,8 +1,5 @@
 #include "NormalFile.h"
 
-#include <QDebug>
-#include <QFile>
-
 namespace NoLimits {
     namespace File {
         bool NormalFile::openWB() {

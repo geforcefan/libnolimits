@@ -3,7 +3,7 @@
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Storage::read(File::File *file) {
             setEnableTransportDevice(file->readBoolean());
             setTransportType((Transport::TransportType)file->readUnsigned8());

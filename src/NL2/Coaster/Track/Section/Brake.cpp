@@ -3,7 +3,7 @@
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Brake::read(File::File *file) {
             setMode((Brake::BrakeMode)file->readUnsigned8());
             setBrakeType((Brake::BrakeType)file->readUnsigned8());

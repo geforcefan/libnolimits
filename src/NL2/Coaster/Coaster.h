@@ -3,20 +3,20 @@
 
 #include <vector>
 
-#include <Stream/Chunk.h>
-#include <src/NL2/Coaster/Colors.h>
-#include <src/NL2/Coaster/Style.h>
-#include <src/NL2/Coaster/Mode.h>
-#include <src/NL2/Coaster/Train.h>
-#include <src/NL2/Coaster/Track/Track.h>
-#include <src/NL2/Coaster/Track/Section/Section.h>
-#include <src/NL2/Coaster/Track/CustomTrack.h>
-#include <src/NL2/Coaster/Support/Support.h>
+#include "../../Stream/Chunk.h"
+#include "Colors.h"
+#include "Style.h"
+#include "Mode.h"
+#include "Train.h"
+#include "Track/Track.h"
+#include "Track/Section/Section.h"
+#include "Track/CustomTrack.h"
+#include "Support/Support.h"
 #include "Script.h"
 #include "FileScript.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Coaster: public Stream::Chunk {
         public:
             Coaster() {

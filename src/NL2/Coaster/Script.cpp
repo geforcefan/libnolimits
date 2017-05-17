@@ -1,8 +1,8 @@
-#include <src/NL2/Coaster/Script.h>
+#include "Script.h"
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Script::read(File::File *file) {
             resourceFile.clear();
 

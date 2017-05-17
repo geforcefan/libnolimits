@@ -6,7 +6,7 @@
 #include "TerrainMap.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Water : public Stream::Chunk
         {
         public:
@@ -15,7 +15,7 @@ namespace NoLimits {
                 setDiffuseTexture("intern:data/textures/water/waterdiffuse.jpg");
                 setDiffuseTextureRepeatsPerDistance(0.06f);
                 setBumpMapTexture("intern:data/textures/water/waterbump.png");
-                setBumpMapType(NoLimits::NL2::TerrainMap::Height);
+                setBumpMapType(NoLimits::NoLimits2::TerrainMap::Height);
                 setBumpMapHeightMapScale(10.0f);
                 setBumpMapRepeatsPerDistance(0.08f);
                 setReflection(0.8f);

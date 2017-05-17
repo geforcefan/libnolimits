@@ -6,7 +6,6 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     NoLimits::NL2::Park *park = new NoLimits::NL2::Park("/Users/ercanakyurek/Desktop/TestCoaster/TestCoaster.nl2park");
-    park->getCoaster("TestCoaster")->debug();
     park->save("/Users/ercanakyurek/Desktop/TestCoaster/TestCoaster.cloned.nl2park");
 
     NoLimits::NL2::Park *park3 = new NoLimits::NL2::Park("/Users/ercanakyurek/Desktop/TestCoaster/Hydra.nl2park");
@@ -35,6 +34,7 @@ int main(int argc, char *argv[])
 
     park2->save("/Users/ercanakyurek/Desktop/TestCoaster/HandMade.nl2park");
 
+    park2->getTerrain()->saveAsBMP("/Users/ercanakyurek/Desktop/TestCoaster/TestCoaster.Terrain.bmp");
     //park->debug();
 
     return 0;

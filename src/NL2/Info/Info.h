@@ -1,13 +1,13 @@
 #ifndef LIB_NL2PARK_INFO_H
 #define LIB_NL2PARK_INFO_H
 
-#include <Stream/Chunk.h>
-#include <src/NL2/Info/Weather.h>
-#include <src/NL2/Info/Sky.h>
+#include "../../Stream/Chunk.h"
+#include "Weather.h"
+#include "Sky.h"
 #include "Version.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Info: public Stream::Chunk {
         public:
             enum RideView {
@@ -28,7 +28,7 @@ namespace NoLimits {
                 setInitialPositionAndRotationEnabled(false);
                 setInitialPosition(glm::vec3(0.0f));
                 setInitialRotation(glm::vec2(0.0f));
-                setInitialView(NoLimits::NL2::Info::RideView::ClosestCoasterFirstTrain);
+                setInitialView(NoLimits::NoLimits2::Info::RideView::ClosestCoasterFirstTrain);
             }
 
             void debug() {

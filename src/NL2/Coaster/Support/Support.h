@@ -1,14 +1,14 @@
 #ifndef LIB_NL2PARK_SUPPORT_H
 #define LIB_NL2PARK_SUPPORT_H
 
-#include <Stream/Chunk.h>
+#include "../../../Stream/Chunk.h"
 #include "Footer.h"
 #include "FreeNode.h"
 #include "Beam.h"
 #include <vector>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Support : public Stream::Chunk {
         public:
             Support() {}

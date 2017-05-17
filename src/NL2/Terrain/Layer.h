@@ -8,10 +8,10 @@
 #include "AutoPaint.h"
 #include "Extras.h"
 
-#include <Stream/Chunk.h>
+#include "../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Layer : public Stream::Chunk
         {
         public:

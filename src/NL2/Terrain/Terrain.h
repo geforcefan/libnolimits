@@ -2,7 +2,7 @@
 #define LIB_NL2PARK_TERRAIN_H
 
 #include <string>
-#include <Stream/Chunk.h>
+#include "../../Stream/Chunk.h"
 
 #include <vector>
 #include <map>
@@ -11,7 +11,7 @@
 #include "Layer.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Terrain: public Stream::Chunk {
         public:
             Terrain() {
@@ -31,7 +31,7 @@ namespace NoLimits {
                 insertTextureRepeats(0.01f);
                 insertTextureRepeats(0.01f);
 
-                insertLayer(new NoLimits::NL2::Layer());
+                insertLayer(new NoLimits::NoLimits2::Layer());
             }
 
             void debug() {
@@ -83,8 +83,8 @@ namespace NoLimits {
 
             std::string getChunkName() { return "TERC"; }
 
-            void saveAsBMP(std::string filepath);
-            void saveAsBMP(uint32_t index, std::string filepath);
+            /*void saveAsBMP(std::string filepath);
+            void saveAsBMP(uint32_t index, std::string filepath);*/
         private:
             uint32_t vertexDimX;
             uint32_t vertexDimY;

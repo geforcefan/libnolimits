@@ -1,7 +1,7 @@
 #include "Footer.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Footer::read(File::File *file) {
             setPosition(file->readDoubleVec3());
             setRotationAngle(file->readFloat());

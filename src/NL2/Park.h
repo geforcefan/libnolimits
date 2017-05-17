@@ -2,18 +2,18 @@
 #define LIB_NL2PARK_PARK_H
 
 #include <string>
-#include <Stream/Chunk.h>
 #include "Uspk.h"
 #include "Scenery/Scenery.h"
-#include <src/NL2/Info/Info.h>
-#include <src/NL2/Terrain/Terrain.h>
-#include <src/NL2/Coaster/Coaster.h>
+#include "Info/Info.h"
+#include "Terrain/Terrain.h"
+#include "Coaster/Coaster.h"
+#include "../Stream/Chunk.h"
 
 #include <vector>
 #include <map>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class Park: public Stream::Chunk {
         public:
             Park(std::string filepath);

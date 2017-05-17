@@ -2,10 +2,10 @@
 #define LIB_NL2PARK_WAITTIME_H
 
 #include <vector>
-#include <Stream/Chunk.h>
+#include "../../../../Stream/Chunk.h"
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         class WaitTime {
         public:
             WaitTime() {}

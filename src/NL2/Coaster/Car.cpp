@@ -1,8 +1,8 @@
-#include <src/NL2/Coaster/Car.h>
+#include "Car.h"
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void Car::write(File::File *file) {
             file->writeUnsignedInteger(getInternalCarIndex());
             file->writeNull(32);

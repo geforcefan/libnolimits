@@ -2,7 +2,7 @@
 #include <iostream>
 
 namespace NoLimits {
-    namespace NL2 {
+    namespace NoLimits2 {
         void SceneObjectInstance::read(File::File *file) {
             setSceneObjectIndex(file->readUnsignedInteger());
 
