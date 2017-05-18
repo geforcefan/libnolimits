@@ -25,7 +25,7 @@ Here it is: https://geforcefan.github.io/libnolimits/
 ```c++
 #include <libnolimits/libnolimits.h>
 ...
-NoLimits::NL2::Park *park = new NoLimits::NL2::Park("Hydra.nl2park");
+NoLimits::NoLimits2::Park *park = new NoLimits::NoLimits2::Park("Hydra.nl2park");
 
 std::cout << "Author: " park->getInfo()->getAuthor() << std::endl;
 std::cout << "Description: " park->getInfo()->getDescription() << std::endl;
