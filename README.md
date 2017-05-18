@@ -47,13 +47,18 @@ park->save("HydraClone.nl2park");
 - [x] Terrain
   - [x] Water
   - [x] Layers
-  - [ ] Layer intensities on terrain
-- [ ] Scenery
+  - [x] Layer intensities on terrain
+- [x] Scenery
 - [x] Coaster
   - [x] Tracks
     - [x] Vertices
     - [x] Segments
     - [x] Sections
+      - [x] Brake
+      - [x] Lift
+      - [x] Station
+      - [x] Storage
+      - [x] Transport
     - [x] Separators
     - [x] Triggers
     - [x] Roll points
@@ -68,17 +73,20 @@ park->save("HydraClone.nl2park");
   - [x] Sections
   - [x] Resource files
   - [x] Supports
+    - [x] Beams
     - [x] Free Nodes
     - [x] Beam Nodes
     - [x] Rail Nodes
+    - [x] Support Nodes
     - [x] Footers
+    - [ ] Prefabs
      
 ### Version independent features
  
 - [x] Setting and getting terrain heights at a given XY point
 - [ ] Track interpolation, getting the matrix at a given distance on track
 - [ ] "NL2 Spline export" conform CSV generation
-- [ ] Creating or modifiying existing tracks
+- [x] Creating or modifiying existing tracks
 
 # Contribution
 
