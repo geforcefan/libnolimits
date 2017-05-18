@@ -7,6 +7,10 @@ This library is still beta. There is no documentation nor unit tests yet, but pl
 
 All non working features are listed below.
 
+# Examples
+
+There is a basic example in this repository, which will be compiled during the ``cmake`` build process. There will be more examples in the feature. Feel free to ask for specific examples.
+
 # Getting started
 ## Requirements
 * [zlib](http://zlib.net/) >= 1.2.7
@@ -32,6 +36,7 @@ Documentation is not written yet. It´s still in progress.
 ## Opening and reading park information from a *.nl2park
 
 ```c++
+#include <iostream>
 #include <libnolimits.h>
 ...
 NoLimits::NoLimits2::Park *park = new NoLimits::NoLimits2::Park("Hydra.nl2park");
