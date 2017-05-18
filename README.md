@@ -1,6 +1,12 @@
 # libnolimits 1.0.0-beta
 A NoLimits Roller Coaster 1 and 2 Library written in C++, which provides functionality to manipulate and create NoLimits 2 Parks or NoLimits 1 Tracks programmatically.
 
+# Important
+
+This library is still beta. There is no documentation nor unit tests yet, but planned for the stable release. If you like to contribute, feel free to beta test this library, especially by opening, saving and comparing an existing park in NoLimits 2 with this library.
+
+All non working features are listed below.
+
 # Getting started
 ## Requirements
 * [zlib](http://zlib.net/) >= 1.2.7
@@ -19,7 +25,7 @@ make install
 
 Documentation is not written yet. It´s still in progress.
 
-Here it is: ~~https://geforcefan.github.io/libnolimits/~~
+~~Here it is: https://geforcefan.github.io/libnolimits/~~
 
 # Examples
 
