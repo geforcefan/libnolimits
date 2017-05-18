@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 find_package(PkgConfig REQUIRED)
 
 project(libnolimits)
-set(LIBNOLIMITS_VERSION "1.0.0")
+set(LIBNOLIMITS_VERSION "1.0.0-beta")
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
