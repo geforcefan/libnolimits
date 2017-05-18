@@ -78,4 +78,6 @@ Thumbs.db
 *.dll
 *.exe
 
-EasyBMP_1.06
+.idea/*
+.idea/**/*
+.idea/workspace.xml
