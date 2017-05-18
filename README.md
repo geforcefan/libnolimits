@@ -48,6 +48,7 @@ park->save("HydraClone.nl2park");
   - [x] Water
   - [x] Layers
   - [x] Layer intensities on terrain
+  - [x] Terrain height data
 - [x] Scenery
 - [x] Coaster
   - [x] Tracks
@@ -65,7 +66,7 @@ park->save("HydraClone.nl2park");
     - [x] 4D parameters
     - [ ] Special tracks (switch and transfer table)
   - [x] Trains
-  - [x] Cars
+    - [x] Cars
   - [x] Custom Friction
   - [x] Track / Train / Car Colors
   - [x] Scripts
@@ -81,6 +82,31 @@ park->save("HydraClone.nl2park");
     - [x] Footers
     - [ ] Prefabs
      
+### NoLimits 1 Park (*.nltrack)
+#### Available chunks
+
+- [ ] Info
+- [ ] Terrain
+  - [ ] Terrain height data
+- [ ] Environment
+- [ ] Train
+  - [ ] Cars
+- [ ] Track
+  - [ ] Vertices
+  - [ ] Sections
+      - [ ] Brake
+      - [ ] Lift
+      - [ ] Station
+      - [ ] Transport
+  - [ ] Catwalks
+- [ ] Supports
+  - [ ] Rail Nodes
+  - [ ] Free Nodes
+  - [ ] Beam
+  - [ ] Footers
+- [ ] Train
+- [ ] Scenery
+
 ### Version independent features
  
 - [x] Setting and getting terrain heights at a given XY point
