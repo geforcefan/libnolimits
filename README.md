@@ -4,12 +4,13 @@ A NoLimits Roller Coaster 1 and 2 Library written in C++, which provides functio
 # Getting started
 ## Requirements
 * [zlib](http://zlib.net/) >= 1.2.7
+* [glm](http://zlib.net/) >= 0.9.8
 
 ## Installation
-Clone this repository on your local machine and follow the usual make procedure on unix like environments
+Clone this repository on your local machine and follow the usual [cmake](https://cmake.org/) procedure.
 
 ```
-./configure
+cmake .
 make
 make install
 ```

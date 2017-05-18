@@ -2,44 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59cedb71-8b16-4393-95da-63efc60990f9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmake/libnolimits.pc.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/CMakeLists.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CMakeLists.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AUTHORS" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/COPYING" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ChangeLog" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/INSTALL" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEWS" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/aclocal.m4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/autom4te.cache/output.0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/autom4te.cache/output.1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/autom4te.cache/requests" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/autom4te.cache/traces.0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/autom4te.cache/traces.1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/compile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config.guess" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config.h.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config.status" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config.sub" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/configure" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/configure.ac" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/depcomp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/install-sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/libnolimits.pc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/libnolimits.pc.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/libtool" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ltmain.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/missing" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/.deps/Helper.Plo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stamp-h1" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/libnolimits.h" afterPath="$PROJECT_DIR$/include/libnolimits.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE" afterPath="$PROJECT_DIR$/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NL2/Coaster/Support/Beam.cpp" afterPath="$PROJECT_DIR$/src/NL2/Coaster/Support/Beam.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,7 +15,31 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="180">
+                <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -80,7 +69,6 @@
         <option value="$PROJECT_DIR$/src/NL2/Makefile.am" />
         <option value="$PROJECT_DIR$/src/File/Makefile.am" />
         <option value="$PROJECT_DIR$/Makefile.am" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/libnolimits.h" />
         <option value="$PROJECT_DIR$/src/Makefile.am" />
         <option value="$PROJECT_DIR$/libnolimits.pc.in" />
@@ -94,6 +82,8 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/include/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/cmake/libnolimits.pc.in" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -281,17 +271,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495123198991</updated>
-      <workItem from="1495123200330" duration="9734000" />
+      <workItem from="1495123200330" duration="9881000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9734000" />
+    <option name="totallyTimeSpent" value="9881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="951" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -397,14 +388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -573,6 +556,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="37" column="13" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="180">
+            <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
           <folding />
         </state>
       </provider>
