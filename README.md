@@ -26,12 +26,12 @@ Here it is: ~~https://geforcefan.github.io/libnolimits/~~
 ## Opening and reading park information from a *.nl2park
 
 ```c++
-#include <libnolimits/libnolimits.h>
+#include <libnolimits.h>
 ...
 NoLimits::NoLimits2::Park *park = new NoLimits::NoLimits2::Park("Hydra.nl2park");
 
-std::cout << "Author: " park->getInfo()->getAuthor() << std::endl;
-std::cout << "Description: " park->getInfo()->getDescription() << std::endl;
+std::cout << "Author: " << park->getInfo()->getAuthor() << std::endl;
+std::cout << "Description: " << park->getInfo()->getDescription() << std::endl;
 
 std::cout << "Terrain height at [20, 50]: " << park->getTerrain()->getHeightAtVertex(20, 50) << std::endl;
 ...

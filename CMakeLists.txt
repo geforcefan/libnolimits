@@ -15,8 +15,8 @@ set(CMAKE_CXX_FLAGS "-std=c++11")
 
 include_directories("${PROJECT_SOURCE_DIR}")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
-add_subdirectory(src)
 add_subdirectory(include)
+add_subdirectory(libnolimits)
 
 pkg_check_modules (ZLIB zlib>=1.2.8)
 pkg_search_module(ZLIB REQUIRED zlib>=1.2.8)
@@ -48,3 +48,6 @@ add_custom_target(
     WORKING_DIRECTORY
     "${CMAKE_BINARY_DIR}"
 )
+
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/example")
+add_subdirectory(example)

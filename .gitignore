@@ -83,3 +83,5 @@ Thumbs.db
 .idea/workspace.xml
 
 install_manifest.txt
+
+example/libnolimits_example_basic
