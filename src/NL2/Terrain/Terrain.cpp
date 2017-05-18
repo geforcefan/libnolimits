@@ -146,50 +146,6 @@ namespace NoLimits {
             return terrainIntensityLayers.size();
         }
 
-        /*
-        void Terrain::saveAsBMP(std::string filepath) {
-            BMP AnImage;
-            AnImage.SetSize(getVertexDimX(), getVertexDimY());
-            AnImage.SetBitDepth(32);
-
-            for (uint32_t y = 0; y < getVertexDimY(); y++) {
-                for (uint32_t x = 0; x < getVertexDimX(); x++) {
-                    uint8_t a = (255.0f * getHeightAtVertex(x, y)) / 500.0f;
-
-                    // Set one of the pixels
-                    AnImage(x,y)->Red = a;
-                    AnImage(x,y)->Green = a;
-                    AnImage(x,y)->Blue = a;
-                    AnImage(x,y)->Alpha = 0;
-                }
-            }
-
-            AnImage.WriteToFile(filepath.c_str());
-        }
-
-        void Terrain::saveAsBMP(uint32_t index, std::string filepath) {
-            if(index >= terrainIntensityLayers.size())
-                return;
-
-            BMP AnImage;
-            AnImage.SetSize(getVertexDimX(), getVertexDimY());
-            AnImage.SetBitDepth(32);
-
-            for (uint32_t y = 0; y < getVertexDimX(); y++) {
-                for (uint32_t x = 0; x < getVertexDimY(); x++) {
-                    uint8_t a = (255.0f * getIntensityAtVertex(index, x, y)) / 1.0f;
-
-                    // Set one of the pixels
-                    AnImage(x,y)->Red = a;
-                    AnImage(x,y)->Green = a;
-                    AnImage(x,y)->Blue = a;
-                    AnImage(x,y)->Alpha = 0;
-                }
-            }
-
-            AnImage.WriteToFile(filepath.c_str());
-        }*/
-
         Water *Terrain::getWater() const {
             return water;
         }

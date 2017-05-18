@@ -82,9 +82,6 @@ namespace NoLimits {
             uint32_t getNumberOfIntensityLayers();
 
             std::string getChunkName() { return "TERC"; }
-
-            /*void saveAsBMP(std::string filepath);
-            void saveAsBMP(uint32_t index, std::string filepath);*/
         private:
             uint32_t vertexDimX;
             uint32_t vertexDimY;
