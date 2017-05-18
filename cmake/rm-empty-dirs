@@ -1,0 +1,17 @@
+#!/bin/sh
+numempty=0
+
+for filepath in "$@" ; do
+  #echo "File: $filepath"
+  dirpath=$(dirname "$filepath")
+  while true ; do
+    #echo "Directory: $dirpath"
+    rmdir "$dirpath" 2>/dev/null || continue 2
+    # Note: this is safe because `rmdir` only removes empty directories.
+    #echo "Removed empty directory: $dirpath"
+    numempty=$(($numempty+1))
+    dirpath=$(dirname "$dirpath")
+  done
+done
+
+echo "$0: $numempty empty directories were removed."

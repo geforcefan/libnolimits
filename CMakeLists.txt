@@ -38,3 +38,13 @@ install(
 )
 
 export(PACKAGE glm)
+
+add_custom_target(
+    uninstall
+    COMMAND
+    cat install_manifest.txt | xargs rm
+    COMMAND
+    xargs cmake/rm-empty-dirs < install_manifest.txt
+    WORKING_DIRECTORY
+    "${CMAKE_BINARY_DIR}"
+)
