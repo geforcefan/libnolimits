@@ -16,7 +16,9 @@ make install
 
 # Documentation
 
-Here it is: https://geforcefan.github.io/libnolimits/
+Documentation is not written yet. It´s in progress.
+
+Here it is: ~~https://geforcefan.github.io/libnolimits/~~
 
 # Examples
 
