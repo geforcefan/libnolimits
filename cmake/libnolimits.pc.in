@@ -1,11 +1,7 @@
-prefix=@prefix@
-exec_prefix=@exec_prefix@
-libdir=@libdir@
-includedir=@includedir@
+prefix=@CMAKE_INSTALL_PREFIX@
+includedir=${prefix}/include
 
 Name: Ercan Akyürek
 Description: A NoLimits Roller Coaster 1 and 2 Library written in C++, which provides functionality to manipulate and create NoLimits 2 Parks or NoLimits 1 Tracks programmatically.
-Version: @VERSION@
+Version: @LIBNOLIMITS_VERSION@
 Libs: -L${libdir} -lnolimits
-Cflags: -I${includedir}/@GENERIC_LIBRARY_NAME@
-

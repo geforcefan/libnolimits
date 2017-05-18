@@ -219,6 +219,8 @@ namespace NoLimits {
                 case Beam::RotationMode::VerticalBeam:
                     setWithCheckFlag2(SupportNode::Flags::RotationModeAzimuth, true);
                     break;
+                case Beam::RotationMode::HorizontalBeam:
+                    break;
             }
 
             rotationMode = getRotationMode();
@@ -255,6 +257,8 @@ namespace NoLimits {
                     break;
                 case Beam::LODPriority::High:
                     setWithCheckFlag3(1, true);
+                    break;
+                case Beam::LODPriority::Highest:
                     break;
             }
 
