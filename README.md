@@ -16,16 +16,21 @@ All non working features are listed below.
 * [zlib](http://zlib.net/) >= 1.2.7
 * [glm](http://glm.g-truc.net/0.9.8/index.html) >= 0.9.8
 
-If you need help installing the requirements, read the wiki article [How to install all required tools and libraries](https://github.com/geforcefan/libnolimits/wiki/How-to-install-all-required-tools-and-libraries).
+If you need help installing the requirements, read the wiki article about [How to install all required tools and libraries](https://github.com/geforcefan/libnolimits/wiki/How-to-install-all-required-tools-and-libraries).
 
 ## Installation
 Clone this repository on your local machine and follow the usual [cmake](https://cmake.org/) procedure.
 
 ```
+$ git clone https://github.com/geforcefan/libnolimits.git
+$ cd libnolimits
+
 $ cmake .
 $ make
 $ make install
 ```
+
+If you need help installing ``libnolimits``, read the wiki article about [How to install libnolimits](https://github.com/geforcefan/libnolimits/wiki/How-to-install-libnolimits).
 
 # Documentation
 
