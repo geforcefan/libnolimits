@@ -12,7 +12,7 @@ All non working features are listed below.
 * [cmake](https://cmake.org/)
 * [pkg-config](https://www.freedesktop.org/wiki/Software/pkg-config/)
 
-## Requirements
+## Required libraries
 * [zlib](http://zlib.net/) >= 1.2.7
 * [glm](http://glm.g-truc.net/0.9.8/index.html) >= 0.9.8
 
