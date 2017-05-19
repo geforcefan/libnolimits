@@ -22,9 +22,9 @@ If you need help installing the requirements, read the wiki article [How to inst
 Clone this repository on your local machine and follow the usual [cmake](https://cmake.org/) procedure.
 
 ```
-cmake .
-make
-make install
+$ cmake .
+$ make
+$ make install
 ```
 
 # Documentation
