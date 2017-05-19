@@ -8,9 +8,13 @@ This library is still beta. There is no documentation nor unit tests yet, but pl
 All non working features are listed below.
 
 # Getting started
+## Required tools
+* [cmake](https://cmake.org/)
+* [pkg-config](https://www.freedesktop.org/wiki/Software/pkg-config/)
+
 ## Requirements
 * [zlib](http://zlib.net/) >= 1.2.7
-* [glm](http://zlib.net/) >= 0.9.8
+* [glm](http://glm.g-truc.net/0.9.8/index.html) >= 0.9.8
 
 ## Installation
 Clone this repository on your local machine and follow the usual [cmake](https://cmake.org/) procedure.
