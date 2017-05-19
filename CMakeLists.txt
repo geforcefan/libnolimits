@@ -18,8 +18,8 @@ include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
 add_subdirectory(include)
 add_subdirectory(libnolimits)
 
-pkg_check_modules (ZLIB zlib>=1.2.8)
-pkg_search_module(ZLIB REQUIRED zlib>=1.2.8)
+pkg_check_modules (ZLIB zlib>=1.2.7)
+pkg_search_module(ZLIB REQUIRED zlib>=1.2.7)
 
 pkg_check_modules (GLM glm=>0.9.8)
 pkg_search_module(GLM REQUIRED glm=>0.9.8)
