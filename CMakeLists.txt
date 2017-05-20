@@ -13,16 +13,23 @@ set(CMAKE_XCODE_ATTRIBUTE_CLANG_CXX_LANGUAGE_STANDARD "c++11")
 set(CMAKE_XCODE_ATTRIBUTE_CLANG_CXX_LIBRARY "libc++")
 set(CMAKE_CXX_FLAGS "-std=c++11")
 
-include_directories("${PROJECT_SOURCE_DIR}")
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
-add_subdirectory(include)
-add_subdirectory(libnolimits)
-
 pkg_check_modules (ZLIB zlib>=1.2.7)
 pkg_search_module(ZLIB REQUIRED zlib>=1.2.7)
 
 pkg_check_modules (GLM glm=>0.9.8)
 pkg_search_module(GLM REQUIRED glm=>0.9.8)
+
+include_directories("${GLM_INCLUDEDIR}")
+include_directories("${ZLIB_INCLUDEDIR}")
+
+link_directories("${GLM_LIBDIR}")
+link_directories("${ZLIB_LIBDIR}")
+
+include_directories("${PROJECT_SOURCE_DIR}")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
+
+add_subdirectory(include)
+add_subdirectory(libnolimits)
 
 # build pkg-config file
 configure_file(
