@@ -1,11 +1,14 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
+x64
 .idea
+*.dir
 cmake_install.cmake
 CMakeCache.txt
 libnolimits.pc
 CMakeFiles
 Makefile
+Release
 *.dirstamp
 *.pro
 *~
