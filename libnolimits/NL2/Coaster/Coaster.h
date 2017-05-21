@@ -108,6 +108,8 @@ namespace NoLimits {
 
             Section *getSection(std::string name);
 
+            FileScript *getFileScript();
+
             std::vector<Script *> getScript() const;
             void insertScript(Script* value);
 

@@ -272,5 +272,10 @@ namespace NoLimits {
         void Coaster::setSupport(Support *value) {
             support = value;
         }
+
+
+        FileScript *Coaster::getFileScript() {
+            return fileScript;
+        }
     }
 }
