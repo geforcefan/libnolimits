@@ -15,8 +15,6 @@ install(TARGETS nolimits
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib)
 
-install(TARGETS nolimits DESTINATION lib)
-
 foreach ( file ${ROOT_HEADER} )
     get_filename_component( dir ${file} DIRECTORY BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR} )
     file(RELATIVE_PATH dir2 "${CMAKE_CURRENT_SOURCE_DIR}" "${dir}")
