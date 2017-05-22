@@ -1,7 +1,11 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(libnolimits_example_basic)
+file(GLOB_RECURSE ROOT_SOURCE *.cpp)
 
-add_executable(libnolimits_example_basic basic.cpp)
+foreach ( file ${ROOT_SOURCE} )
+    get_filename_component(filename ${file} NAME_WE)
 
-target_link_libraries(libnolimits_example_basic nolimits ${GLM_LIBRARIES} ${ZLIB_LIBRARIES})
+    project(${filename})
+    add_executable(${filename} ${file})
+    target_link_libraries(${filename} nolimits ${GLM_LIBRARIES} ${ZLIB_LIBRARIES})
+endforeach()
