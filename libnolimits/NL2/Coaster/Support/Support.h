@@ -27,10 +27,14 @@ namespace NoLimits {
             std::vector<Beam *> getBeam() const;
             void insertBeam(Beam* value);
 
+            std::vector<std::string> getPrefab() const;
+            void insertPrefab(std::string value);
+
         private:
             std::vector<Footer*> footer;
             std::vector<FreeNode*> freeNode;
             std::vector<Beam*> beam;
+            std::vector<std::string> prefab;
 
             void readFooters(File::File *file);
             void writeFooters(File::File *file);
@@ -40,6 +44,9 @@ namespace NoLimits {
 
             void readBeams(File::File *file);
             void writeBeams(File::File *file);
+
+            void readPrefab(File::File *file);
+            void writePrefab(File::File *file);
         };
     }
 }

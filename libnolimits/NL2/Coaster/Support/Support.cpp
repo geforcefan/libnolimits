@@ -7,6 +7,7 @@ namespace NoLimits {
             footer.clear();
             freeNode.clear();
             footer.clear();
+            prefab.clear();
 
             file->readNull(32);
 
@@ -24,6 +25,10 @@ namespace NoLimits {
 
                 if(chunk == "BEAM") {
                     readBeams(file);
+                }
+
+                if(chunk == "PRFT") {
+                    readPrefab(file);
                 }
             }
         }
@@ -58,6 +63,33 @@ namespace NoLimits {
             subfile->close();
 
             file->writeChunkName("FOOT");
+            file->writeUnsignedInteger(subfile->getFilesize());
+            file->writeFile(subfile);
+        }
+
+
+        void Support::readPrefab(File::File *file) {
+            file->readNull(4);
+
+            uint32_t numberOfPrefabs = file->readUnsignedInteger();
+
+            for(uint32_t i = 0; i < numberOfPrefabs; i++) {
+                insertPrefab(file->readString());
+            }
+        }
+
+        void Support::writePrefab(File::File *file) {
+            File::File *subfile = new File::MemoryFile();
+            subfile->openWB();
+
+            subfile->writeUnsignedInteger(prefab.size());
+            for(uint32_t i = 0; i < prefab.size(); i++) {
+                subfile->writeString(prefab[i]);
+            }
+
+            subfile->close();
+
+            file->writeChunkName("PRFT");
             file->writeUnsignedInteger(subfile->getFilesize());
             file->writeFile(subfile);
         }
@@ -141,6 +173,9 @@ namespace NoLimits {
 
             if(beam.size())
                 writeBeams(file);
+
+            if(prefab.size())
+                writePrefab(file);
         }
 
         std::vector<Footer *> Support::getFooter() const {
@@ -166,6 +201,14 @@ namespace NoLimits {
 
         void Support::insertBeam(Beam *value) {
             beam.push_back(value);
+        }
+
+        std::vector<std::string> Support::getPrefab() const {
+            return prefab;
+        }
+
+        void Support::insertPrefab(std::string value) {
+            prefab.push_back(value);
         }
     }
 }

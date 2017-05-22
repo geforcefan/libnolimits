@@ -3,7 +3,8 @@
 
 #include "../../../Stream/Chunk.h"
 #include "SupportNode.h"
-#include "SPPM.h"
+#include "SupportParameter.h"
+#include <vector>
 
 namespace NoLimits {
     namespace NoLimits2 {
@@ -22,11 +23,10 @@ namespace NoLimits {
                 Special4D,
                 SuspendedHorizontal,
                 SuspendedVertical,
+                Prefab
             };
 
-            RailNode() {
-                sppm = new SPPM();
-            }
+            RailNode() { }
 
             void read(File::File *file);
             void write(File::File *file);
@@ -46,10 +46,14 @@ namespace NoLimits {
             bool getIsModel() const;
             void setIsModel(bool value);
 
-            SPPM *getSppm() const;
-            void setSppm(SPPM *value);
+            uint32_t getPrefabIndex() const;
+            void setPrefabIndex(const uint32_t &value);
 
             std::string getChunkName() { return "SRNP"; }
+
+            std::vector<SupportParameter *> getSupportParameter() const;
+            void insertSupportParameter(SupportParameter* value);
+
         private:
             ConnectionStyle connectionStyle;
             double position;
@@ -57,7 +61,9 @@ namespace NoLimits {
             uint32_t trackIndex;
             bool isModel;
 
-            SPPM* sppm;
+            uint32_t prefabIndex;
+
+            std::vector<SupportParameter*> supportParameter;
         };
     }
 }

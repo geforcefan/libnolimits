@@ -3,6 +3,8 @@
 namespace NoLimits {
     namespace NoLimits2 {
         void RailNode::read(File::File *file) {
+            supportParameter.clear();
+
             setPosition(file->readDouble());
 
             file->readNull(1);
@@ -17,6 +19,8 @@ namespace NoLimits {
             if(!getIsModel()) {
                 if(style == 0)
                     setConnectionStyle(RailNode::ConnectionStyle::Simple);
+                if(style == 1)
+                    setConnectionStyle(RailNode::ConnectionStyle::Prefab);
                 if(style == 2)
                     setConnectionStyle(RailNode::ConnectionStyle::TrackDefault);
             } else {
@@ -44,7 +48,13 @@ namespace NoLimits {
 
             setSizeParameter(file->readDouble());
 
-            file->readNull(5);
+            if(!getIsModel() && getConnectionStyle() == RailNode::ConnectionStyle::Prefab) {
+                setPrefabIndex(file->readUnsignedInteger() - 1);
+            } else {
+                setPrefabIndex(0);
+            }
+
+            file->readNull(1);
 
             setFlag1(file->readUnsigned8());
             setFlag2(file->readUnsigned8());
@@ -52,7 +62,18 @@ namespace NoLimits {
 
             file->readNull(8);
 
-            file->readChunk(getSppm());
+            for(int i = file->tell(); i <= file->getFilesize(); i++) {
+                file->seek(i, SEEK_SET);
+                std::string chunk = file->readChunkName();
+
+                if(chunk == "SPPM") {
+                    SupportParameter *supportParameter = new SupportParameter();
+                    insertSupportParameter(supportParameter);
+
+                    file->readChunk(supportParameter);
+                    i = file->tell() - 1;
+                }
+            }
         }
 
         void RailNode::write(File::File *file) {
@@ -71,6 +92,8 @@ namespace NoLimits {
             if(!getIsModel()) {
                 if(style == RailNode::ConnectionStyle::Simple)
                     file->writeUnsigned8(0);
+                if(style == RailNode::ConnectionStyle::Prefab)
+                    file->writeUnsigned8(1);
                 if(style == RailNode::ConnectionStyle::TrackDefault)
                     file->writeUnsigned8(2);
             } else {
@@ -98,7 +121,13 @@ namespace NoLimits {
 
             file->writeDouble(getSizeParameter());
 
-            file->writeNull(5);
+            if(!getIsModel() && style == RailNode::ConnectionStyle::Prefab) {
+                file->writeUnsignedInteger(getPrefabIndex() + 1);
+            } else {
+                file->writeUnsignedInteger(0);
+            }
+
+            file->writeNull(1);
 
             file->writeUnsigned8(flag1);
             file->writeUnsigned8(flag2);
@@ -106,8 +135,9 @@ namespace NoLimits {
 
             file->writeNull(8);
 
-            // I DONT KNOW WHAT KIND OF CHUNK THIS IS!
-            file->writeChunk(getSppm());
+            if(supportParameter.size())
+                for(uint32_t i = 0; i < supportParameter.size(); i++)
+                    file->writeChunk(supportParameter[i]);
         }
 
         double RailNode::getPosition() const {
@@ -150,14 +180,20 @@ namespace NoLimits {
             isModel = value;
         }
 
-        SPPM *RailNode::getSppm() const
-        {
-            return sppm;
+        uint32_t RailNode::getPrefabIndex() const {
+            return prefabIndex;
         }
 
-        void RailNode::setSppm(SPPM *value)
-        {
-            sppm = value;
+        void RailNode::setPrefabIndex(const uint32_t &value) {
+            prefabIndex = value;
+        }
+
+        std::vector<SupportParameter *> RailNode::getSupportParameter() const {
+            return supportParameter;
+        }
+
+        void RailNode::insertSupportParameter(SupportParameter *value) {
+            supportParameter.push_back(value);
         }
     }
 }

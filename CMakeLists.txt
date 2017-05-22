@@ -56,5 +56,8 @@ add_custom_target(
     "${CMAKE_BINARY_DIR}"
 )
 
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/example")
-add_subdirectory(example)
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/examples")
+add_subdirectory(examples)
+
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/test")
+add_subdirectory(test)
