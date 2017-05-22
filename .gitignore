@@ -1,11 +1,11 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
-CMakeList.txt.user
+CMakeLists.txt.user
 examples/
-!examples/CMakeList.txt
+!examples/CMakeLists.txt
 !examples/*.cpp
 test/
-!test/CMakeList.txt
+!test/CMakeLists.txt
 !test/*.cpp
 x64
 .idea
