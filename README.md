@@ -103,7 +103,7 @@ park->save("HydraClone.nl2park");
     - [x] Rail Nodes
     - [x] Support Nodes
     - [x] Footers
-    - [ ] Prefabs
+    - [x] Prefabs
      
 ### NoLimits 1 Park (*.nltrack)
 #### Available chunks
