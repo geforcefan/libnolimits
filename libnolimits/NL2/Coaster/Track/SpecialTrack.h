@@ -1,84 +1,82 @@
-#ifndef LIB_NL2PARK_CUSTOM_TRACK_H
-#define LIB_NL2PARK_CUSTOM_TRACK_H
+#ifndef LIB_NL2PARK_SPECIAL_TRACK_H
+#define LIB_NL2PARK_SPECIAL_TRACK_H
 
 #include <vector>
 
 #include "../../../Stream/Chunk.h"
 #include "Track.h"
-#include "RollPoint.h"
-#include "Vertex.h"
-#include "Trigger.h"
-#include "Parameter4D.h"
 #include "Segment.h"
-#include "Separator.h"
-#include "Section/Section.h"
-#include "../Support/RailNode.h"
 
 namespace NoLimits {
     namespace NoLimits2 {
-        class CustomTrack: public Stream::Chunk, public Track  {
+        class SpecialTrack: public Track  {
         public:
-            CustomTrack();
+            enum SpecialTrackType {
+                None,
+                SwitchTrackFork,
+                SwitchTrackMerge,
+                Transfer
+            };
 
-            void debug() {
-                getSegment()->debug();
-                getSection()->debug();
-            }
+            enum DisplayStructure {
+                Simple,
+                Off
+            };
 
-            void read(File::File *file);
-            void write(File::File *file);
+            SpecialTrack() : Track(TrackType::SpecialTrack), _specialTrackType(SpecialTrackType::None) { }
+            SpecialTrack(SpecialTrackType specialTrackType) : Track(TrackType::SpecialTrack), _specialTrackType(specialTrackType) { }
 
-            RollPoint *getFirstRollPoint() const;
-            RollPoint *getLastRollPoint() const;
+            void read(File::File *file) final;
+            void write(File::File *file) final;
 
-            std::vector<Vertex*> getVertex() const;
-            void insertVertex(Vertex *value);
+            virtual void readSpecialTrack(File::File *file) {}
+            virtual void writeSpecialTrack(File::File *file) {}
 
-            std::vector<RollPoint*> getRollPoint() const;
-            void insertRollPoint(RollPoint* value);
+            SpecialTrackType getSpecialTrackType() const;
+            void setSpecialTrackType(const SpecialTrackType &specialTrackType);
 
-            std::vector<Trigger*> getTrigger() const;
-            void insertTrigger(Trigger* value);
+            std::string getName() const;
+            void setName(const std::string &value);
 
-            std::vector<RailNode*> getRailNode() const;
-            void insertRailNode(RailNode* value);
+            glm::vec3 getPosition() const;
+            void setPosition(const glm::vec3 &value);
 
-            std::vector<Parameter4D*> getParameter4D() const;
-            void insertParameter4D(Parameter4D* value);
+            glm::vec3 getRotation() const;
+            void setRotation(const glm::vec3 &value);
 
-            std::vector<Separator*> getSeparator() const;
-            void insertSeparator(Separator* value);
+            std::vector<uint32_t> getInput() const;
+            void insertInput(uint32_t value);
 
-            Segment *getSegment() const;
-            void setSegment(Segment *value);
+            std::vector<uint32_t> getOutput() const;
+            void insertOutput(uint32_t value);
 
-            Section *getSection() const;
-            void setSection(Section *value);
+            float getSwitchTime() const;
+            void setSwitchTime(float value);
 
-            bool getClosed() const;
-            void setClosed(bool value);
+            static SpecialTrack *createSpecialTrackFromType(SpecialTrackType specialTrackType);
 
-            virtual Section *getSectionByName(std::string);
+            std::string getChunkName() final { return "SPTK"; }
+            virtual std::string getSpecialTrackChunkName() { return "CHNK"; }
 
-            std::string getChunkName() { return "CUTK"; }
+            std::vector<Segment *> getSegment() const;
+            void insertSegment(Segment* value);
 
         private:
-            std::vector<Vertex*> vertex;
-            std::vector<RollPoint*> rollPoint;
-            std::vector<Trigger*> trigger;
-            std::vector<RailNode*> railNode;
-            std::vector<Parameter4D*> parameter4D;
-            std::vector<Separator*> separator;
+            SpecialTrackType _specialTrackType;
 
-            RollPoint *firstRollPoint;
-            RollPoint *lastRollPoint;
+            std::string name;
 
-            Segment *segment;
-            Section *section;
+            glm::vec3 position;
+            glm::vec3 rotation;
 
-            bool closed;
+            std::vector<uint32_t> input;
+            std::vector<uint32_t> output;
+
+            float switchTime;
+
+            std::vector<Segment*> segment;
         };
     }
 }
 
-#endif // LIB_NL2PARK_CUSTOM_TRACK_H
+#endif // LIB_NL2PARK_SPECIAL_TRACK_H

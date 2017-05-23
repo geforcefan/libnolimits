@@ -1,247 +1,171 @@
-#include "CustomTrack.h"
+#include "SpecialTrack.h"
+#include "SwitchTrack.h"
+#include "TransferTable.h"
+#include "../../../File/MemoryFile.h"
+
 #include <iostream>
 
 namespace NoLimits {
     namespace NoLimits2 {
-        CustomTrack::CustomTrack() : Track(TrackType::Custom) {
-            firstRollPoint = new RollPoint();
-            lastRollPoint = new RollPoint();
-            segment = new Segment();
-            section = new Section();
-        }
+        void SpecialTrack::read(File::File *file) {
+            segment.clear();
 
-        void CustomTrack::read(File::File *file) {
-            vertex.clear();
-            rollPoint.clear();
-            trigger.clear();
-            railNode.clear();
-            parameter4D.clear();
-            separator.clear();
+            setName(file->readString());
+            file->readNull(4); // special track type
 
-            setClosed(file->readBoolean());
+            setPosition(file->readDoubleVec3());
+            setRotation(file->readDoubleVec3());
 
-            getFirstRollPoint()->setPosition(0.0);
-            getFirstRollPoint()->setRoll(file->readDouble());
-            getFirstRollPoint()->setVertical(file->readBoolean());
-            getFirstRollPoint()->setStrict(true);
+            uint32_t numberOfInputPoints = file->readUnsignedInteger();
+            uint32_t numberOfOutputPoints = file->readUnsignedInteger();
 
-            getLastRollPoint()->setRoll(file->readDouble());
-            getLastRollPoint()->setVertical(file->readBoolean());
-            getLastRollPoint()->setStrict(true);
-
-            file->readNull(53);
-
-            uint32_t numberOfControlPoints = file->readUnsignedInteger();
-            getLastRollPoint()->setPosition(numberOfControlPoints - 1);
-
-            for (uint32_t i = 0; i < numberOfControlPoints; i++) {
-                Vertex *vertex = new Vertex();
-                vertex->read(file);
-                insertVertex(vertex);
+            for(uint32_t i = 0; i < numberOfInputPoints; i++) {
+                insertInput(file->readUnsignedInteger());
             }
 
+            for(uint32_t i = 0; i < numberOfOutputPoints; i++) {
+                insertOutput(file->readUnsignedInteger());
+            }
+
+            setSwitchTime(file->readFloat());
+
             file->readNull(60);
+
+            file->readNull(8); // dummy read chunk name and chunk size
+
+            readSpecialTrack(file);
 
             for(int i=0; i <= file->tell(); i++) {
                 file->seek(i, SEEK_SET);
 
                 std::string chunk = file->readChunkName();
 
-                if(chunk == "ROLL") {
-                    RollPoint *_rollPoint = new RollPoint();
-                    insertRollPoint(_rollPoint);
-
-                    file->readChunk(_rollPoint);
-                    i = file->tell() - 1;
-                }
-
-                if(chunk == "TTRG") {
-                    Trigger *_trigger = new Trigger();
-                    insertTrigger(_trigger);
-
-                    file->readChunk(_trigger);
-                    i = file->tell() - 1;
-                }
-
                 if(chunk == "SEGM") {
                     Segment *_segment = new Segment();
-                    setSegment(_segment);
+                    insertSegment(_segment);
 
                     file->readChunk(_segment);
                     i = file->tell() - 1;
                 }
-
-                if(chunk == "SECT") {
-                    Section *_section = new Section();
-                    file->readChunk(_section);
-
-                    setSection(_section->getSection());
-                    i = file->tell() - 1;
-                }
-
-                if(chunk == "4DPM") {
-                    Parameter4D *_parameter4D = new Parameter4D();
-                    insertParameter4D(_parameter4D);
-
-                    file->readChunk(_parameter4D);
-                    i = file->tell() - 1;
-                }
-
-                if(chunk == "SRNP") {
-                    RailNode *_railNode = new RailNode();
-                    insertRailNode(_railNode);
-
-                    file->readChunk(_railNode);
-                    i = file->tell() - 1;
-                }
-
-                if(chunk == "SEPA") {
-                    Separator *_separator = new Separator();
-                    insertSeparator(_separator);
-
-                    file->readChunk(_separator);
-                    i = file->tell() - 1;
-                }
             }
         }
 
-        void CustomTrack::write(File::File *file) {
-            file->writeBoolean(getClosed());
+        void SpecialTrack::write(File::File *file) {
+            file->writeString(getName());
+            file->writeUnsignedInteger(getSpecialTrackType());
 
-            file->writeDouble(getFirstRollPoint()->getRoll());
-            file->writeBoolean(getFirstRollPoint()->getVertical());
+            file->writeDoubleVec3(getPosition());
+            file->writeDoubleVec3(getRotation());
 
-            file->writeDouble(getLastRollPoint()->getRoll());
-            file->writeBoolean(getLastRollPoint()->getVertical());
+            file->writeUnsignedInteger(input.size());
+            file->writeUnsignedInteger(output.size());
 
-            file->writeNull(53);
-
-            file->writeUnsignedInteger(vertex.size());
-
-            for (uint32_t i = 0; i < vertex.size(); i++) {
-                vertex[i]->write(file);
+            for(uint32_t i = 0; i < input.size(); i++) {
+                file->writeUnsignedInteger(input[i]);
             }
+
+            for(uint32_t i = 0; i < output.size(); i++) {
+                file->writeUnsignedInteger(output[i]);
+            }
+
+            file->writeFloat(getSwitchTime());
 
             file->writeNull(60);
 
-            for(uint32_t i = 0; i < rollPoint.size(); i++) {
-                file->writeChunk(rollPoint[i]);
+            File::File *specialTrackChunkFile = new File::MemoryFile();
+            specialTrackChunkFile->openWB();
+            writeSpecialTrack(specialTrackChunkFile);
+            specialTrackChunkFile->close();
+
+            file->writeChunkName(getSpecialTrackChunkName());
+            file->writeUnsignedInteger(specialTrackChunkFile->getFilesize());
+            file->writeFile(specialTrackChunkFile);
+
+            for(uint32_t i = 0; i < segment.size(); i++) {
+                file->writeChunk(segment[i]);
             }
-
-            for(uint32_t i = 0; i < separator.size(); i++) {
-                file->writeChunk(separator[i]);
-            }
-
-            for(uint32_t i = 0; i < parameter4D.size(); i++) {
-                file->writeChunk(parameter4D[i]);
-            }
-
-            for(uint32_t i = 0; i < trigger.size(); i++) {
-                file->writeChunk(trigger[i]);
-            }
-
-            for(uint32_t i = 0; i < railNode.size(); i++) {
-                file->writeChunk(railNode[i]);
-            }
-
-            file->writeChunk(getSegment());
-
-            // usually we use file->writeChunk, but ONLY in this case we need to "WRAP" the writing
-            // process, because sections are nestes with its subtypes (lift, station, etc...) and I didn´t
-            // wanted to separate section and its subtypes (how the file format internally suggests)
-            getSection()->writeChunk(file);
         }
 
-        bool CustomTrack::getClosed() const {
-            return closed;
+        SpecialTrack::SpecialTrackType SpecialTrack::getSpecialTrackType() const {
+            return _specialTrackType;
         }
 
-        void CustomTrack::setClosed(bool value) {
-            closed = value;
+        void SpecialTrack::setSpecialTrackType(const SpecialTrack::SpecialTrackType &specialTrackType) {
+            _specialTrackType = specialTrackType;
+        }
+        
+        std::string SpecialTrack::getName() const {
+            return name;
+        }
+        
+        void SpecialTrack::setName(const std::string &value) {
+            name = value;
         }
 
-        RollPoint *CustomTrack::getFirstRollPoint() const {
-            return firstRollPoint;
+        glm::vec3 SpecialTrack::getPosition() const {
+            return position;
         }
 
-        RollPoint *CustomTrack::getLastRollPoint() const {
-            return lastRollPoint;
+        void SpecialTrack::setPosition(const glm::vec3 &value) {
+            position = value;
         }
 
-        std::vector<Vertex*> CustomTrack::getVertex() const {
-            return vertex;
+        glm::vec3 SpecialTrack::getRotation() const {
+            return rotation;
         }
 
-        void CustomTrack::insertVertex(Vertex *value) {
-            vertex.push_back(value);
+        void SpecialTrack::setRotation(const glm::vec3 &value) {
+            rotation = value;
         }
 
-        std::vector<RollPoint *> CustomTrack::getRollPoint() const {
-            return rollPoint;
+        std::vector<uint32_t> SpecialTrack::getInput() const {
+            return input;
         }
 
-        void CustomTrack::insertRollPoint(RollPoint *value) {
-            rollPoint.push_back(value);
+        void SpecialTrack::insertInput(uint32_t value) {
+            input.push_back(value);
         }
 
-        std::vector<Trigger *> CustomTrack::getTrigger() const {
-            return trigger;
+        std::vector<uint32_t> SpecialTrack::getOutput() const {
+            return output;
         }
 
-        void CustomTrack::insertTrigger(Trigger* value) {
-            trigger.push_back(value);
+        void SpecialTrack::insertOutput(uint32_t value) {
+            output.push_back(value);
         }
 
-        std::vector<RailNode*> CustomTrack::getRailNode() const {
-            return railNode;
+        float SpecialTrack::getSwitchTime() const {
+            return switchTime;
         }
 
-        void CustomTrack::insertRailNode(RailNode* value) {
-            railNode.push_back(value);
+        void SpecialTrack::setSwitchTime(float value) {
+            switchTime = value;
         }
 
-        std::vector<Parameter4D*> CustomTrack::getParameter4D() const {
-            return parameter4D;
-        }
-
-        void CustomTrack::insertParameter4D(Parameter4D* value) {
-            parameter4D.push_back(value);
-        }
-
-        std::vector<Separator *> CustomTrack::getSeparator() const {
-            return separator;
-        }
-
-        void CustomTrack::insertSeparator(Separator* value) {
-            separator.push_back(value);
-        }
-
-        Segment *CustomTrack::getSegment() const {
+        std::vector<Segment *> SpecialTrack::getSegment() const {
             return segment;
         }
 
-        void CustomTrack::setSegment(Segment *value) {
-            segment = value;
+        void SpecialTrack::insertSegment(Segment *value) {
+            segment.push_back(value);
         }
 
-        Section *CustomTrack::getSection() const {
-            return section;
-        }
-
-        void CustomTrack::setSection(Section *value) {
-            section = value;
-        }
-
-        Section *CustomTrack::getSectionByName(std::string name) {
-            if(section->getName() == name)
-                return section;
-
-            for(int i = separator.size() - 1; i >= 0; i--) {
-                if(separator[i]->getSection()->getName() == name)
-                    return separator[i]->getSection();
+        SpecialTrack *SpecialTrack::createSpecialTrackFromType(SpecialTrack::SpecialTrackType specialTrackType) {
+            switch (specialTrackType) {
+            case SpecialTrackType::SwitchTrackFork:
+                return new SwitchTrack(SwitchTrack::SwitchType::Fork);
+                break;
+            case SpecialTrackType::SwitchTrackMerge:
+                return new SwitchTrack(SwitchTrack::SwitchType::Merge);
+                break;
+            case SpecialTrackType::Transfer:
+                return new TransferTable();
+                break;
+            case SpecialTrackType::None:
+            default:
+                return new SpecialTrack();
+                break;
             }
-
-            return nullptr;
         }
     }
 }

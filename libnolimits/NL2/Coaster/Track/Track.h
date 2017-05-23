@@ -6,7 +6,7 @@
 
 namespace NoLimits {
     namespace NoLimits2 {
-        class Track {
+        class Track : public Stream::Chunk {
         public:
             enum TrackType {
                 None,

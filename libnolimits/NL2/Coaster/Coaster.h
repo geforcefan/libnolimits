@@ -11,6 +11,7 @@
 #include "Track/Track.h"
 #include "Track/Section/Section.h"
 #include "Track/CustomTrack.h"
+#include "Track/SpecialTrack.h"
 #include "Support/Support.h"
 #include "Script.h"
 #include "FileScript.h"

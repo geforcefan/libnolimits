@@ -16,7 +16,7 @@
 
 namespace NoLimits {
     namespace NoLimits2 {
-        class CustomTrack: public Stream::Chunk, public Track  {
+        class CustomTrack: public Track  {
         public:
             CustomTrack();
 

@@ -53,9 +53,7 @@ namespace NoLimits {
 
 
             for(uint32_t i = 0; i < track.size(); i++) {
-                if(track[i]->getTrackType() == Track::TrackType::Custom) {
-                    file->writeChunk(dynamic_cast<CustomTrack*>(track[i]));
-                }
+                file->writeChunk(track[i]);
             }
 
             for(uint32_t i = 0; i < train.size(); i++) {
@@ -137,6 +135,22 @@ namespace NoLimits {
                     CustomTrack *_track = new CustomTrack();
                     insertTrack(_track);
 
+                    file->readChunk(_track);
+                    i = file->tell() - 1;
+                }
+
+                if(chunk == "SPTK") {
+                    uint32_t chunkStartPosition = file->tell();
+
+                    file->readNull(4); // dummy read chunk size
+                    file->readString(); // dummy read special track name
+
+                    uint32_t specialTrackType = file->readUnsignedInteger();
+
+                    SpecialTrack *_track = SpecialTrack::createSpecialTrackFromType((SpecialTrack::SpecialTrackType)specialTrackType);
+                    insertTrack(_track);
+
+                    file->seek(chunkStartPosition, SEEK_SET);
                     file->readChunk(_track);
                     i = file->tell() - 1;
                 }
