@@ -17,9 +17,9 @@ namespace NoLimits {
 
             BeamConnection() {
                 setType(Type::None);
-                setIndex(0);
-                setIndexOnBeam(0);
-                setIndexOnRailConnector(0);
+                setIndex1(0);
+                setIndex2(0);
+                setIndex3(0);
             }
 
             /*! \cond INTERNAL */
@@ -29,27 +29,27 @@ namespace NoLimits {
 
             void debug() {
                 std::cout << "BeamConnection[getType]: " << getType() << std::endl;
-                std::cout << "BeamConnection[getIndex]: " << getIndex() << std::endl;
-                std::cout << "BeamConnection[getIndexOnBeam]: " << getIndexOnBeam() << std::endl;
-                std::cout << "BeamConnection[getIndexOnRailConnector]: " << getIndexOnRailConnector() << std::endl;
+                std::cout << "BeamConnection[getIndex1]: " << getIndex1() << std::endl;
+                std::cout << "BeamConnection[getIndex2]: " << getIndex2() << std::endl;
+                std::cout << "BeamConnection[getIndex3]: " << getIndex3() << std::endl;
             }
 
             Type getType() const;
             void setType(const Type &value);
 
-            uint32_t getIndex() const;
-            void setIndex(const uint32_t &value);
+            uint32_t getIndex1() const;
+            void setIndex1(const uint32_t &value);
 
-            uint32_t getIndexOnBeam() const;
-            void setIndexOnBeam(const uint32_t &value);
+            uint32_t getIndex2() const;
+            void setIndex2(const uint32_t &value);
 
-            uint32_t getIndexOnRailConnector() const;
-            void setIndexOnRailConnector(const uint32_t &value);
+            uint32_t getIndex3() const;
+            void setIndex3(const uint32_t &value);
         private:
             Type type;
-            uint32_t index;
-            uint32_t indexOnBeam;
-            uint32_t indexOnRailConnector;
+            uint32_t index1;
+            uint32_t index2;
+            uint32_t index3;
         };
     }
 }

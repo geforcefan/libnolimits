@@ -8,7 +8,7 @@
 
 namespace NoLimits {
     namespace NoLimits2 {
-        class RailNode : public Stream::Chunk, public SupportNode {
+        class RailConnector : public Stream::Chunk, public SupportNode {
         public:
             enum ConnectionStyle {
                 TrackDefault,
@@ -26,7 +26,7 @@ namespace NoLimits {
                 Prefab
             };
 
-            RailNode() : SupportNode() {
+            RailConnector() : SupportNode() {
                 setPosition(0.0f);
                 setSizeParameter(0.0f);
                 setTrackIndex(0);

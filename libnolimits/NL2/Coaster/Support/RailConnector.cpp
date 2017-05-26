@@ -1,8 +1,8 @@
-#include "RailNode.h"
+#include "RailConnector.h"
 
 namespace NoLimits {
     namespace NoLimits2 {
-        void RailNode::read(File::File *file) {
+        void RailConnector::read(File::File *file) {
             supportParameter.clear();
 
             setPosition(file->readDouble());
@@ -18,38 +18,38 @@ namespace NoLimits {
 
             if(!getIsModel()) {
                 if(style == 0)
-                    setConnectionStyle(RailNode::ConnectionStyle::Simple);
+                    setConnectionStyle(RailConnector::ConnectionStyle::Simple);
                 if(style == 1)
-                    setConnectionStyle(RailNode::ConnectionStyle::Prefab);
+                    setConnectionStyle(RailConnector::ConnectionStyle::Prefab);
                 if(style == 2)
-                    setConnectionStyle(RailNode::ConnectionStyle::TrackDefault);
+                    setConnectionStyle(RailConnector::ConnectionStyle::TrackDefault);
             } else {
                 if(style == 0)
-                    setConnectionStyle(RailNode::ConnectionStyle::TwistedStraightDown);
+                    setConnectionStyle(RailConnector::ConnectionStyle::TwistedStraightDown);
                 if(style == 1)
-                    setConnectionStyle(RailNode::ConnectionStyle::TwistedHorizontal);
+                    setConnectionStyle(RailConnector::ConnectionStyle::TwistedHorizontal);
                 if(style == 2)
-                    setConnectionStyle(RailNode::ConnectionStyle::TwistedVertical);
+                    setConnectionStyle(RailConnector::ConnectionStyle::TwistedVertical);
                 if(style == 3)
-                    setConnectionStyle(RailNode::ConnectionStyle::CorkscrewStraightDown);
+                    setConnectionStyle(RailConnector::ConnectionStyle::CorkscrewStraightDown);
                 if(style == 4)
-                    setConnectionStyle(RailNode::ConnectionStyle::Horizontal4D);
+                    setConnectionStyle(RailConnector::ConnectionStyle::Horizontal4D);
                 if(style == 5)
-                    setConnectionStyle(RailNode::ConnectionStyle::Vertical4D);
+                    setConnectionStyle(RailConnector::ConnectionStyle::Vertical4D);
                 if(style == 6)
-                    setConnectionStyle(RailNode::ConnectionStyle::Aligned4D);
+                    setConnectionStyle(RailConnector::ConnectionStyle::Aligned4D);
                 if(style == 7)
-                    setConnectionStyle(RailNode::ConnectionStyle::Special4D);
+                    setConnectionStyle(RailConnector::ConnectionStyle::Special4D);
                 if(style == 8)
-                    setConnectionStyle(RailNode::ConnectionStyle::SuspendedHorizontal);
+                    setConnectionStyle(RailConnector::ConnectionStyle::SuspendedHorizontal);
                 if(style == 9)
-                    setConnectionStyle(RailNode::ConnectionStyle::SuspendedVertical);
+                    setConnectionStyle(RailConnector::ConnectionStyle::SuspendedVertical);
             }
 
             setSizeParameter(file->readDouble());
             uint32_t prefabIndex = file->readUnsignedInteger();
 
-            if(!getIsModel() && getConnectionStyle() == RailNode::ConnectionStyle::Prefab) {
+            if(!getIsModel() && getConnectionStyle() == RailConnector::ConnectionStyle::Prefab) {
                 setPrefabIndex(prefabIndex - 1);
             } else {
                 setPrefabIndex(0);
@@ -77,7 +77,7 @@ namespace NoLimits {
             }
         }
 
-        void RailNode::write(File::File *file) {
+        void RailConnector::write(File::File *file) {
             file->writeDouble(getPosition());
 
             file->writeNull(1);
@@ -91,38 +91,38 @@ namespace NoLimits {
             uint8_t style = getConnectionStyle();
 
             if(!getIsModel()) {
-                if(style == RailNode::ConnectionStyle::Simple)
+                if(style == RailConnector::ConnectionStyle::Simple)
                     file->writeUnsigned8(0);
-                if(style == RailNode::ConnectionStyle::Prefab)
+                if(style == RailConnector::ConnectionStyle::Prefab)
                     file->writeUnsigned8(1);
-                if(style == RailNode::ConnectionStyle::TrackDefault)
+                if(style == RailConnector::ConnectionStyle::TrackDefault)
                     file->writeUnsigned8(2);
             } else {
-                if(style == RailNode::ConnectionStyle::TwistedStraightDown)
+                if(style == RailConnector::ConnectionStyle::TwistedStraightDown)
                     file->writeUnsigned8(0);
-                if(style == RailNode::ConnectionStyle::TwistedHorizontal)
+                if(style == RailConnector::ConnectionStyle::TwistedHorizontal)
                     file->writeUnsigned8(1);
-                if(style == RailNode::ConnectionStyle::TwistedVertical)
+                if(style == RailConnector::ConnectionStyle::TwistedVertical)
                     file->writeUnsigned8(2);
-                if(style == RailNode::ConnectionStyle::CorkscrewStraightDown)
+                if(style == RailConnector::ConnectionStyle::CorkscrewStraightDown)
                     file->writeUnsigned8(3);
-                if(style == RailNode::ConnectionStyle::Horizontal4D)
+                if(style == RailConnector::ConnectionStyle::Horizontal4D)
                     file->writeUnsigned8(4);
-                if(style == RailNode::ConnectionStyle::Vertical4D)
+                if(style == RailConnector::ConnectionStyle::Vertical4D)
                     file->writeUnsigned8(5);
-                if(style == RailNode::ConnectionStyle::Aligned4D)
+                if(style == RailConnector::ConnectionStyle::Aligned4D)
                     file->writeUnsigned8(6);
-                if(style == RailNode::ConnectionStyle::Special4D)
+                if(style == RailConnector::ConnectionStyle::Special4D)
                     file->writeUnsigned8(7);
-                if(style == RailNode::ConnectionStyle::SuspendedHorizontal)
+                if(style == RailConnector::ConnectionStyle::SuspendedHorizontal)
                     file->writeUnsigned8(8);
-                if(style == RailNode::ConnectionStyle::SuspendedVertical)
+                if(style == RailConnector::ConnectionStyle::SuspendedVertical)
                     file->writeUnsigned8(9);
             }
 
             file->writeDouble(getSizeParameter());
 
-            if(!getIsModel() && style == RailNode::ConnectionStyle::Prefab) {
+            if(!getIsModel() && style == RailConnector::ConnectionStyle::Prefab) {
                 file->writeUnsignedInteger(getPrefabIndex() + 1);
             } else {
                 file->writeUnsignedInteger(0);
@@ -141,59 +141,59 @@ namespace NoLimits {
                     file->writeChunk(supportParameter[i]);
         }
 
-        double RailNode::getPosition() const {
+        double RailConnector::getPosition() const {
             return position;
         }
 
-        void RailNode::setPosition(double value) {
+        void RailConnector::setPosition(double value) {
             position = value;
         }
 
-        double RailNode::getSizeParameter() const {
+        double RailConnector::getSizeParameter() const {
             return sizeParameter;
         }
 
-        void RailNode::setSizeParameter(double value) {
+        void RailConnector::setSizeParameter(double value) {
             sizeParameter = value;
         }
 
-        uint32_t RailNode::getTrackIndex() const {
+        uint32_t RailConnector::getTrackIndex() const {
             return trackIndex;
         }
 
-        void RailNode::setTrackIndex(const uint32_t &value) {
+        void RailConnector::setTrackIndex(const uint32_t &value) {
             trackIndex = value;
         }
 
-        RailNode::ConnectionStyle RailNode::getConnectionStyle() const {
+        RailConnector::ConnectionStyle RailConnector::getConnectionStyle() const {
             return connectionStyle;
         }
 
-        void RailNode::setConnectionStyle(const RailNode::ConnectionStyle &value) {
+        void RailConnector::setConnectionStyle(const RailConnector::ConnectionStyle &value) {
             connectionStyle = value;
         }
 
-        bool RailNode::getIsModel() const {
+        bool RailConnector::getIsModel() const {
             return isModel;
         }
 
-        void RailNode::setIsModel(bool value) {
+        void RailConnector::setIsModel(bool value) {
             isModel = value;
         }
 
-        uint32_t RailNode::getPrefabIndex() const {
+        uint32_t RailConnector::getPrefabIndex() const {
             return prefabIndex;
         }
 
-        void RailNode::setPrefabIndex(const uint32_t &value) {
+        void RailConnector::setPrefabIndex(const uint32_t &value) {
             prefabIndex = value;
         }
 
-        std::vector<SupportParameter *> RailNode::getSupportParameter() const {
+        std::vector<SupportParameter *> RailConnector::getSupportParameter() const {
             return supportParameter;
         }
 
-        uint32_t RailNode::insertSupportParameter(SupportParameter *value) {
+        uint32_t RailConnector::insertSupportParameter(SupportParameter *value) {
             supportParameter.push_back(value);
             return supportParameter.size() - 1;
         }

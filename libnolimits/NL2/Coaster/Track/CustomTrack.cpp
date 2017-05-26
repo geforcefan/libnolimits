@@ -7,7 +7,7 @@ namespace NoLimits {
             vertex.clear();
             rollPoint.clear();
             trigger.clear();
-            railNode.clear();
+            railConnector.clear();
             parameter4D.clear();
             separator.clear();
 
@@ -81,10 +81,10 @@ namespace NoLimits {
                 }
 
                 if(chunk == "SRNP") {
-                    RailNode *_railNode = new RailNode();
-                    insertRailNode(_railNode);
+                    RailConnector *_railConnector = new RailConnector();
+                    insertRailConnector(_railConnector);
 
-                    file->readChunk(_railNode);
+                    file->readChunk(_railConnector);
                     i = file->tell() - 1;
                 }
 
@@ -133,8 +133,8 @@ namespace NoLimits {
                 file->writeChunk(trigger[i]);
             }
 
-            for(uint32_t i = 0; i < railNode.size(); i++) {
-                file->writeChunk(railNode[i]);
+            for(uint32_t i = 0; i < railConnector.size(); i++) {
+                file->writeChunk(railConnector[i]);
             }
 
             file->writeChunk(getSegment());
@@ -188,13 +188,13 @@ namespace NoLimits {
             return trigger.size() - 1;
         }
 
-        std::vector<RailNode*> CustomTrack::getRailNode() const {
-            return railNode;
+        std::vector<RailConnector*> CustomTrack::getRailConnector() const {
+            return railConnector;
         }
 
-        uint32_t CustomTrack::insertRailNode(RailNode* value) {
-            railNode.push_back(value);
-            return railNode.size() - 1;
+        uint32_t CustomTrack::insertRailConnector(RailConnector* value) {
+            railConnector.push_back(value);
+            return railConnector.size() - 1;
         }
 
         std::vector<Parameter4D*> CustomTrack::getParameter4D() const {

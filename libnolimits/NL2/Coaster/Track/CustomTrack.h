@@ -12,7 +12,7 @@
 #include "Segment.h"
 #include "Separator.h"
 #include "Section/Section.h"
-#include "../Support/RailNode.h"
+#include "../Support/RailConnector.h"
 
 namespace NoLimits {
     namespace NoLimits2 {
@@ -63,11 +63,11 @@ namespace NoLimits {
                     std::cout << "---------------------------------------" << std::endl;
                 }
 
-                std::cout << "Coaster[railNode.size]: " << railNode.size() << std::endl;
-                if(railNode.size())
+                std::cout << "Coaster[railConnector.size]: " << railConnector.size() << std::endl;
+                if(railConnector.size())
                     std::cout << "---------------------------------------" << std::endl;
-                for(uint32_t i = 0; i < railNode.size(); i++) {
-                    railNode[i]->debug();
+                for(uint32_t i = 0; i < railConnector.size(); i++) {
+                    railConnector[i]->debug();
                     std::cout << "---------------------------------------" << std::endl;
                 }
 
@@ -106,8 +106,8 @@ namespace NoLimits {
             std::vector<Trigger*> getTrigger() const;
             uint32_t insertTrigger(Trigger* value);
 
-            std::vector<RailNode*> getRailNode() const;
-            uint32_t insertRailNode(RailNode* value);
+            std::vector<RailConnector*> getRailConnector() const;
+            uint32_t insertRailConnector(RailConnector* value);
 
             std::vector<Parameter4D*> getParameter4D() const;
             uint32_t insertParameter4D(Parameter4D* value);
@@ -133,7 +133,7 @@ namespace NoLimits {
             std::vector<Vertex*> vertex;
             std::vector<RollPoint*> rollPoint;
             std::vector<Trigger*> trigger;
-            std::vector<RailNode*> railNode;
+            std::vector<RailConnector*> railConnector;
             std::vector<Parameter4D*> parameter4D;
             std::vector<Separator*> separator;
 
