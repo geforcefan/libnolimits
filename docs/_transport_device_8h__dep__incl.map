@@ -1,0 +1,10 @@
+<map id="libnolimits/NL2/Coaster/Track/Section/TransportDevice.h" name="libnolimits/NL2/Coaster/Track/Section/TransportDevice.h">
+<area shape="rect" id="node2" href="$_brake_8h.html" title="libnolimits/NL2/Coaster\l/Track/Section/Brake.h" alt="" coords="202,92,360,131"/>
+<area shape="rect" id="node5" href="$_station_8h.html" title="libnolimits/NL2/Coaster\l/Track/Section/Station.h" alt="" coords="301,265,463,304"/>
+<area shape="rect" id="node7" href="$_storage_8h.html" title="libnolimits/NL2/Coaster\l/Track/Section/Storage.h" alt="" coords="522,92,690,131"/>
+<area shape="rect" id="node9" href="$_transport_device_8cpp.html" title="libnolimits/NL2/Coaster\l/Track/Section/TransportDevice.cpp" alt="" coords="714,92,946,131"/>
+<area shape="rect" id="node3" href="$_brake_8cpp.html" title="libnolimits/NL2/Coaster\l/Track/Section/Brake.cpp" alt="" coords="5,179,175,217"/>
+<area shape="rect" id="node4" href="$_brake_device_8h.html" title="libnolimits/NL2/Coaster\l/Track/Section/BrakeDevice.h" alt="" coords="251,179,447,217"/>
+<area shape="rect" id="node6" href="$_section_8cpp.html" title="libnolimits/NL2/Coaster\l/Track/Section/Section.cpp" alt="" coords="293,352,472,391"/>
+<area shape="rect" id="node8" href="$_storage_8cpp.html" title="libnolimits/NL2/Coaster\l/Track/Section/Storage.cpp" alt="" coords="573,179,754,217"/>
+</map>

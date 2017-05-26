@@ -1,0 +1,5 @@
+<map id="NoLimits::NoLimits2::Train" name="NoLimits::NoLimits2::Train">
+<area shape="rect" id="node2" href="$class_no_limits_1_1_stream_1_1_chunk.html" title="NoLimits::Stream::Chunk" alt="" coords="5,10,175,35"/>
+<area shape="rect" id="node3" href="$class_no_limits_1_1_no_limits2_1_1_car.html" title="NoLimits::NoLimits2::Car" alt="" coords="653,36,822,62"/>
+<area shape="rect" id="node4" href="$class_no_limits_1_1_no_limits2_1_1_individual_color.html" title="NoLimits::NoLimits2\l::IndividualColor" alt="" coords="336,70,476,108"/>
+</map>

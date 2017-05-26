@@ -1,0 +1,9 @@
+<map id="NoLimits::NoLimits2::Coaster" name="NoLimits::NoLimits2::Coaster">
+<area shape="rect" id="node2" href="$class_no_limits_1_1_stream_1_1_chunk.html" title="NoLimits::Stream::Chunk" alt="" coords="14,581,184,607"/>
+<area shape="rect" id="node3" href="$class_no_limits_1_1_no_limits2_1_1_mode.html" title="NoLimits::NoLimits2\l::Mode" alt="" coords="690,745,830,784"/>
+<area shape="rect" id="node7" href="$class_no_limits_1_1_no_limits2_1_1_custom_friction.html" title="NoLimits::NoLimits2\l::CustomFriction" alt="" coords="357,715,497,753"/>
+<area shape="rect" id="node11" href="$class_no_limits_1_1_no_limits2_1_1_support.html" title="NoLimits::NoLimits2\l::Support" alt="" coords="357,144,497,183"/>
+<area shape="rect" id="node19" href="$class_no_limits_1_1_no_limits2_1_1_colors.html" title="NoLimits::NoLimits2\l::Colors" alt="" coords="357,497,497,536"/>
+<area shape="rect" id="node22" href="$class_no_limits_1_1_no_limits2_1_1_file_script.html" title="NoLimits::NoLimits2\l::FileScript" alt="" coords="357,435,497,473"/>
+<area shape="rect" id="node23" href="$class_no_limits_1_1_no_limits2_1_1_style.html" title="NoLimits::NoLimits2\l::Style" alt="" coords="357,937,497,976"/>
+</map>

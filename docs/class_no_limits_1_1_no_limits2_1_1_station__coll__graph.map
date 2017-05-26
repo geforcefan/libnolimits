@@ -1,0 +1,7 @@
+<map id="NoLimits::NoLimits2::Station" name="NoLimits::NoLimits2::Station">
+<area shape="rect" id="node2" href="$class_no_limits_1_1_no_limits2_1_1_section.html" title="NoLimits::NoLimits2\l::Section" alt="" coords="376,68,516,107"/>
+<area shape="rect" id="node3" href="$class_no_limits_1_1_stream_1_1_chunk.html" title="NoLimits::Stream::Chunk" alt="" coords="5,5,175,31"/>
+<area shape="rect" id="node8" href="$class_no_limits_1_1_no_limits2_1_1_wait_time.html" title="NoLimits::NoLimits2\l::WaitTime" alt="" coords="376,217,516,256"/>
+<area shape="rect" id="node11" href="$class_no_limits_1_1_no_limits2_1_1_brake_device.html" title="NoLimits::NoLimits2\l::BrakeDevice" alt="" coords="376,392,516,431"/>
+<area shape="rect" id="node14" href="$class_no_limits_1_1_no_limits2_1_1_transport_device.html" title="NoLimits::NoLimits2\l::TransportDevice" alt="" coords="376,504,516,543"/>
+</map>

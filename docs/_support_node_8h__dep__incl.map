@@ -1,0 +1,9 @@
+<map id="libnolimits/NL2/Coaster/Support/SupportNode.h" name="libnolimits/NL2/Coaster/Support/SupportNode.h">
+<area shape="rect" id="node2" href="$_rail_node_8h.html" title="libnolimits/NL2/Coaster\l/Support/RailNode.h" alt="" coords="188,92,346,131"/>
+<area shape="rect" id="node5" href="$_beam_8h.html" title="libnolimits/NL2/Coaster\l/Support/Beam.h" alt="" coords="371,92,529,131"/>
+<area shape="rect" id="node8" href="$_support_node_8cpp.html" title="libnolimits/NL2/Coaster\l/Support/SupportNode.cpp" alt="" coords="554,92,733,131"/>
+<area shape="rect" id="node3" href="$_custom_track_8h.html" title="libnolimits/NL2/Coaster\l/Track/CustomTrack.h" alt="" coords="5,179,164,217"/>
+<area shape="rect" id="node4" href="$_rail_node_8cpp.html" title="libnolimits/NL2/Coaster\l/Support/RailNode.cpp" alt="" coords="188,179,346,217"/>
+<area shape="rect" id="node6" href="$_support_8h.html" title="libnolimits/NL2/Coaster\l/Support/Support.h" alt="" coords="371,179,529,217"/>
+<area shape="rect" id="node7" href="$_beam_8cpp.html" title="libnolimits/NL2/Coaster\l/Support/Beam.cpp" alt="" coords="553,179,712,217"/>
+</map>

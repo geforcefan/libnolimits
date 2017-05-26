@@ -1,0 +1,12 @@
+<map id="libnolimits/NL2/Coaster/Track/Segment.h" name="libnolimits/NL2/Coaster/Track/Segment.h">
+<area shape="rect" id="node2" href="$_custom_track_8h.html" title="libnolimits/NL2/Coaster\l/Track/CustomTrack.h" alt="" coords="9,179,167,217"/>
+<area shape="rect" id="node5" href="$_separator_8h.html" title="libnolimits/NL2/Coaster\l/Track/Separator.h" alt="" coords="176,92,334,131"/>
+<area shape="rect" id="node7" href="$_special_track_8h.html" title="libnolimits/NL2/Coaster\l/Track/SpecialTrack.h" alt="" coords="358,92,517,131"/>
+<area shape="rect" id="node9" href="$_switch_track_8h.html" title="libnolimits/NL2/Coaster\l/Track/SwitchTrack.h" alt="" coords="474,179,633,217"/>
+<area shape="rect" id="node10" href="$_transfer_table_8h.html" title="libnolimits/NL2/Coaster\l/Track/TransferTable.h" alt="" coords="657,179,815,217"/>
+<area shape="rect" id="node11" href="$_segment_8cpp.html" title="libnolimits/NL2/Coaster\l/Track/Segment.cpp" alt="" coords="641,92,799,131"/>
+<area shape="rect" id="node3" href="$_coaster_8h.html" title="libnolimits/NL2/Coaster\l/Coaster.h" alt="" coords="242,265,401,304"/>
+<area shape="rect" id="node4" href="$_custom_track_8cpp.html" title="libnolimits/NL2/Coaster\l/Track/CustomTrack.cpp" alt="" coords="5,265,171,304"/>
+<area shape="rect" id="node6" href="$_separator_8cpp.html" title="libnolimits/NL2/Coaster\l/Track/Separator.cpp" alt="" coords="192,179,350,217"/>
+<area shape="rect" id="node8" href="$_special_track_8cpp.html" title="libnolimits/NL2/Coaster\l/Track/SpecialTrack.cpp" alt="" coords="472,265,635,304"/>
+</map>

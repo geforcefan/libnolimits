@@ -1,0 +1,18 @@
+<map id="libnolimits/NL2/Coaster/Track/CustomTrack.h" name="libnolimits/NL2/Coaster/Track/CustomTrack.h">
+<area shape="rect" id="node3" href="$_chunk_8h.html" title="../../../Stream/Chunk.h" alt="" coords="561,312,712,337"/>
+<area shape="rect" id="node7" href="$_track_8h.html" title="Track.h" alt="" coords="304,92,369,117"/>
+<area shape="rect" id="node8" href="$_section_8h.html" title="Section/Section.h" alt="" coords="296,165,421,191"/>
+<area shape="rect" id="node9" href="$_roll_point_8h.html" title="RollPoint.h" alt="" coords="445,165,530,191"/>
+<area shape="rect" id="node10" href="$_vertex_8h.html" title="Vertex.h" alt="" coords="555,165,625,191"/>
+<area shape="rect" id="node11" href="$_trigger_8h.html" title="Trigger.h" alt="" coords="545,92,619,117"/>
+<area shape="rect" id="node12" href="$_parameter4_d_8h.html" title="Parameter4D.h" alt="" coords="642,92,754,117"/>
+<area shape="rect" id="node13" href="$_segment_8h.html" title="Segment.h" alt="" coords="850,165,936,191"/>
+<area shape="rect" id="node16" href="$_separator_8h.html" title="Separator.h" alt="" coords="778,92,869,117"/>
+<area shape="rect" id="node17" href="$_rail_node_8h.html" title="../Support/RailNode.h" alt="" coords="72,165,221,191"/>
+<area shape="rect" id="node4" href="$_file_8h.html" title="../File/File.h" alt="" coords="548,385,638,411"/>
+<area shape="rect" id="node6" href="$_nolimits_8h.html" title="../Nolimits.h" alt="" coords="465,459,556,484"/>
+<area shape="rect" id="node14" href="$_colors_8h.html" title="../Colors.h" alt="" coords="852,239,934,264"/>
+<area shape="rect" id="node15" href="$_wooden_support_generator_8h.html" title="WoodenSupportGenerator.h" alt="" coords="958,239,1145,264"/>
+<area shape="rect" id="node18" href="$_support_node_8h.html" title="SupportNode.h" alt="" coords="388,312,499,337"/>
+<area shape="rect" id="node19" href="$_support_parameter_8h.html" title="SupportParameter.h" alt="" coords="189,239,330,264"/>
+</map>
