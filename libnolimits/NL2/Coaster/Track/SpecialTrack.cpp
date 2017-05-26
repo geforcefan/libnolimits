@@ -9,6 +9,8 @@ namespace NoLimits {
     namespace NoLimits2 {
         void SpecialTrack::read(File::File *file) {
             segment.clear();
+            input.clear();
+            output.clear();
 
             setName(file->readString());
             file->readNull(4); // special track type

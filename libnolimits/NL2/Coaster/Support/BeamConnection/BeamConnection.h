@@ -1,7 +1,7 @@
 #ifndef LIB_NL2PARK_BEAMCONNECTION_H
 #define LIB_NL2PARK_BEAMCONNECTION_H
 
-#include "../../../Stream/Chunk.h"
+#include "../../../../Stream/Chunk.h"
 
 namespace NoLimits {
     namespace NoLimits2 {
@@ -37,6 +37,7 @@ namespace NoLimits {
             Type getType() const;
             void setType(const Type &value);
 
+        protected:
             uint32_t getIndex1() const;
             void setIndex1(const uint32_t &value);
 
@@ -45,6 +46,7 @@ namespace NoLimits {
 
             uint32_t getIndex3() const;
             void setIndex3(const uint32_t &value);
+
         private:
             Type type;
             uint32_t index1;

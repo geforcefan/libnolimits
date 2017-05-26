@@ -13,7 +13,7 @@ namespace NoLimits {
                 setFootstepSounds("intern:data/sounds/walk/grass1.wav\n"
                                   "intern:data/sounds/walk/grass2.wav\n"
                                   "intern:data/sounds/walk/grass3.wav\n"
-                                  "intern:data/sounds/walk/grass4.wav\n");
+                                  "intern:data/sounds/walk/grass4.wav");
                 setAutoplantObject("");
             }
 

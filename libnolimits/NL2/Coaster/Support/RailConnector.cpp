@@ -13,10 +13,10 @@ namespace NoLimits {
 
             file->readNull(2);
 
-            setIsModel(file->readBoolean());
+            bool isModel = file->readBoolean();
             uint8_t style = file->readUnsigned8();
 
-            if(!getIsModel()) {
+            if(!isModel) {
                 if(style == 0)
                     setConnectionStyle(RailConnector::ConnectionStyle::Simple);
                 if(style == 1)
@@ -86,39 +86,38 @@ namespace NoLimits {
 
             file->writeNull(2);
 
-            (file->writeBoolean(getIsModel()));
+            file->writeBoolean(getIsModel());
 
             uint8_t style = getConnectionStyle();
 
-            if(!getIsModel()) {
-                if(style == RailConnector::ConnectionStyle::Simple)
-                    file->writeUnsigned8(0);
-                if(style == RailConnector::ConnectionStyle::Prefab)
-                    file->writeUnsigned8(1);
-                if(style == RailConnector::ConnectionStyle::TrackDefault)
-                    file->writeUnsigned8(2);
-            } else {
-                if(style == RailConnector::ConnectionStyle::TwistedStraightDown)
-                    file->writeUnsigned8(0);
-                if(style == RailConnector::ConnectionStyle::TwistedHorizontal)
-                    file->writeUnsigned8(1);
-                if(style == RailConnector::ConnectionStyle::TwistedVertical)
-                    file->writeUnsigned8(2);
-                if(style == RailConnector::ConnectionStyle::CorkscrewStraightDown)
-                    file->writeUnsigned8(3);
-                if(style == RailConnector::ConnectionStyle::Horizontal4D)
-                    file->writeUnsigned8(4);
-                if(style == RailConnector::ConnectionStyle::Vertical4D)
-                    file->writeUnsigned8(5);
-                if(style == RailConnector::ConnectionStyle::Aligned4D)
-                    file->writeUnsigned8(6);
-                if(style == RailConnector::ConnectionStyle::Special4D)
-                    file->writeUnsigned8(7);
-                if(style == RailConnector::ConnectionStyle::SuspendedHorizontal)
-                    file->writeUnsigned8(8);
-                if(style == RailConnector::ConnectionStyle::SuspendedVertical)
-                    file->writeUnsigned8(9);
-            }
+            if(style == RailConnector::ConnectionStyle::Simple)
+                file->writeUnsigned8(0);
+            else if(style == RailConnector::ConnectionStyle::Prefab)
+                file->writeUnsigned8(1);
+            else if(style == RailConnector::ConnectionStyle::TrackDefault)
+                file->writeUnsigned8(2);
+            else if(style == RailConnector::ConnectionStyle::TwistedStraightDown)
+                file->writeUnsigned8(0);
+            else if(style == RailConnector::ConnectionStyle::TwistedHorizontal)
+                file->writeUnsigned8(1);
+            else if(style == RailConnector::ConnectionStyle::TwistedVertical)
+                file->writeUnsigned8(2);
+            else if(style == RailConnector::ConnectionStyle::CorkscrewStraightDown)
+                file->writeUnsigned8(3);
+            else if(style == RailConnector::ConnectionStyle::Horizontal4D)
+                file->writeUnsigned8(4);
+            else if(style == RailConnector::ConnectionStyle::Vertical4D)
+                file->writeUnsigned8(5);
+            else if(style == RailConnector::ConnectionStyle::Aligned4D)
+                file->writeUnsigned8(6);
+            else if(style == RailConnector::ConnectionStyle::Special4D)
+                file->writeUnsigned8(7);
+            else if(style == RailConnector::ConnectionStyle::SuspendedHorizontal)
+                file->writeUnsigned8(8);
+            else if(style == RailConnector::ConnectionStyle::SuspendedVertical)
+                file->writeUnsigned8(9);
+            else
+                file->writeUnsigned8(0);
 
             file->writeDouble(getSizeParameter());
 
@@ -174,11 +173,13 @@ namespace NoLimits {
         }
 
         bool RailConnector::getIsModel() const {
-            return isModel;
-        }
+            uint8_t style = getConnectionStyle();
 
-        void RailConnector::setIsModel(bool value) {
-            isModel = value;
+            if(style == RailConnector::ConnectionStyle::Simple ||
+               style == RailConnector::ConnectionStyle::Prefab ||
+               style == RailConnector::ConnectionStyle::TrackDefault) {
+               return false;
+            } else return true;
         }
 
         uint32_t RailConnector::getPrefabIndex() const {

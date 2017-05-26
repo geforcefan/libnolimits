@@ -4,7 +4,96 @@
 using namespace NoLimits::NoLimits2;
 
 int main() {
-    Park *customPark = new Park();
+    Park *park = new Park();
+
+    Coaster *coaster = new Coaster("TestCoaster");
+    park->insertCoaster(coaster);
+
+    //////////////////////////////////////////////////////////////////////
+    CustomTrack *track1 = new CustomTrack();
+
+    Vertex *vertex1 = new Vertex();
+    vertex1->setPosition(glm::vec4(0.0f, 11.0f, 1.0f, 1.0f));
+
+    Vertex *vertex2 = new Vertex();
+    vertex2->setPosition(glm::vec4(0.0f, 6.0f, 6.0f, 1.0f));
+
+    track1->insertVertex(vertex1);
+    track1->insertVertex(vertex2);
+
+    uint32_t track1Index = coaster->insertTrack(track1);
+    //////////////////////////////////////////////////////////////////////
+    FreeNode *f1 = new FreeNode();
+    FreeNode *f2 = new FreeNode();
+
+    f1->setPosition(glm::vec3(0.0f, 10.0f, 0.0f));
+    f2->setPosition(glm::vec3(5.0f, 5.0f, 5.0f));
+
+    uint32_t freeNode1Index = coaster->getSupport()->insertFreeNode(f1);
+    uint32_t freeNode2Index = coaster->getSupport()->insertFreeNode(f2);
+    //////////////////////////////////////////////////////////////////////
+    FreeNodeConnection *freeNodeConnection1 = new FreeNodeConnection();
+    freeNodeConnection1->setFreeNodeIndex(freeNode1Index);
+
+    FreeNodeConnection *freeNodeConnection2 = new FreeNodeConnection();
+    freeNodeConnection2->setFreeNodeIndex(freeNode2Index);
+
+    Beam *beam1 = new Beam();
+    beam1->setConnection1(freeNodeConnection1);
+    beam1->setConnection2(freeNodeConnection2);
+    uint32_t beam1Index = coaster->getSupport()->insertBeam(beam1);
+    //////////////////////////////////////////////////////////////////////
+    BeamNode *beamNode1 = new BeamNode();
+    beamNode1->setPosition(0.25f);
+
+    BeamNode *beamNode2 = new BeamNode();
+    beamNode2->setPosition(0.75f);
+
+    uint32_t beamNode1Index = beam1->insertBeamNode(beamNode1);
+    uint32_t beamNode2Index = beam1->insertBeamNode(beamNode2);
+    //////////////////////////////////////////////////////////////////////
+    RailConnector *railConnector = new RailConnector();
+    railConnector->setPosition(0.5f);
+    railConnector->setConnectionStyle(RailConnector::ConnectionStyle::Horizontal4D);
+
+    uint32_t railConnectorIndex = track1->insertRailConnector(railConnector);
+    //////////////////////////////////////////////////////////////////////
+    BeamNodeConnection *beamNodeConnection1 = new BeamNodeConnection();
+    beamNodeConnection1->setBeamIndex(beam1Index);
+    beamNodeConnection1->setBeamNodeIndex(beamNode1Index);
+
+    BeamNodeConnection *beamNodeConnection2 = new BeamNodeConnection();
+    beamNodeConnection2->setBeamIndex(beam1Index);
+    beamNodeConnection2->setBeamNodeIndex(beamNode2Index);
+
+    RailConnectorConnection *railConnectorConnection1 = new RailConnectorConnection();
+    railConnectorConnection1->setTrackIndex(track1Index);
+    railConnectorConnection1->setRailConnectorIndex(railConnectorIndex);
+    railConnectorConnection1->setIndex(3);
+
+    RailConnectorConnection *railConnectorConnection2 = new RailConnectorConnection();
+    railConnectorConnection2->setTrackIndex(track1Index);
+    railConnectorConnection2->setRailConnectorIndex(railConnectorIndex);
+    railConnectorConnection2->setIndex(2);
+
+    Beam *beam2 = new Beam();
+    beam2->setConnection1(beamNodeConnection1);
+    beam2->setConnection2(railConnectorConnection1);
+    uint32_t beam2Index = coaster->getSupport()->insertBeam(beam2);
+
+    Beam *beam3 = new Beam();
+    beam3->setConnection1(beamNodeConnection2);
+    beam3->setConnection2(railConnectorConnection2);
+    uint32_t beam3Index = coaster->getSupport()->insertBeam(beam3);
+    //////////////////////////////////////////////////////////////////////
+
+    park->save("test/TestPark/CustomPark.nl2park");
+
+
+    Park *park2 = new Park("test/Hydra/Hydra.nl2park");
+    park2->save("test/Hydra/HydraClone.nl2park");
+
+    /*Park *customPark = new Park();
     customPark->insertCoaster(new Coaster("TestCoaster"));
 
     Coaster *coaster = customPark->getCoaster("TestCoaster");
@@ -121,6 +210,6 @@ int main() {
     coaster->getSupport()->insertBeam(beam3);
     coaster->getSupport()->insertBeam(beam4);
 
-    customPark->save("test/TestPark/CustomPark.nl2park");
+    customPark->save("test/TestPark/CustomPark.nl2park");*/
     return 0;
 }

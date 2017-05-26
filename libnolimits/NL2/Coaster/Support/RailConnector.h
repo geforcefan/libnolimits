@@ -31,7 +31,6 @@ namespace NoLimits {
                 setSizeParameter(0.0f);
                 setTrackIndex(0);
                 setConnectionStyle(ConnectionStyle::TrackDefault);
-                setIsModel(0);
                 setPrefabIndex(0);
             }
 
@@ -71,9 +70,6 @@ namespace NoLimits {
             ConnectionStyle getConnectionStyle() const;
             void setConnectionStyle(const ConnectionStyle &value);
 
-            bool getIsModel() const;
-            void setIsModel(bool value);
-
             uint32_t getPrefabIndex() const;
             void setPrefabIndex(const uint32_t &value);
 
@@ -83,12 +79,15 @@ namespace NoLimits {
             /*! \cond INTERNAL */
             std::string getChunkName() { return "SRNP"; }
             /*! \endcond */
+
+        protected:
+            bool getIsModel() const;
+
         private:
             ConnectionStyle connectionStyle;
             double position;
             double sizeParameter;
             uint32_t trackIndex;
-            bool isModel;
 
             uint32_t prefabIndex;
 
