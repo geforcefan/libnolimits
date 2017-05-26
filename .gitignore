@@ -1,12 +1,15 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
 CMakeLists.txt.user
+test/TestPark/TestPark.nl2park_backip
 */examples/*
 !*/examples/CMakeLists.txt
 !*/examples/*.cpp
 */test/*
 !*/test/CMakeLists.txt
 !*/test/*.cpp
+test/TestPark/Data.txt
+examples/basic
 x64
 .idea
 *.dir
@@ -95,3 +98,11 @@ Thumbs.db
 install_manifest.txt
 
 example/libnolimits_example_basic
+
+*.nl2park_backup
+
+test/TestPark/Data.txt
+
+CMakeLists.txt.user
+
+test/TestPark/TestPark.nl2park_backup

@@ -27,9 +27,23 @@ namespace NoLimits {
 
             Brake() : Section(Section::SectionType::Brake) {
                 transportDevice = new TransportDevice();
+
+                setExtraBlockLength(0.0f);
+                setMode(BrakeMode::BlockBrake);
+                setCompleteStop(false);
+                setWaitTime(0.0f);
+                setBrakeType(BrakeType::FrictionBrake);
+                setSpeedLimit(Helper::kphToMs(36.0f));
+                setHysteresis(Helper::kphToMs(5.0f));
+                setDeceleration(Helper::GToNewton(0.8f));
+                setPositionOnTrain(Position::FirstCar);
+                setPositionOnSection(0.0f);
+                setEnableTransport(false);
             }
 
             void debug() {
+                Section::debug();
+
                 std::cout << "Brake[getExtraBlockLength]: " << getExtraBlockLength() << std::endl;
                 std::cout << "Brake[getMode]: " << getMode() << std::endl;
                 std::cout << "Brake[getCompleteStop]: " << getCompleteStop() << std::endl;
@@ -41,11 +55,14 @@ namespace NoLimits {
                 std::cout << "Brake[getPositionOnTrain]: " << getPositionOnTrain() << std::endl;
                 std::cout << "Brake[getPositionOnSection]: " << getPositionOnSection() << std::endl;
                 std::cout << "Brake[getEnableTransport]: " << getEnableTransport() << std::endl;
+
                 getTransportDevice()->debug();
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             double getExtraBlockLength() const;
             void setExtraBlockLength(double value);
@@ -83,7 +100,9 @@ namespace NoLimits {
             TransportDevice *getTransportDevice() const;
             void setTransportDevice(TransportDevice *value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "BRKE"; }
+            /*! \endcond */
         private:
             double extraBlockLength;
 

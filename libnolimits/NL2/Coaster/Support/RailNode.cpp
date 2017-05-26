@@ -47,9 +47,10 @@ namespace NoLimits {
             }
 
             setSizeParameter(file->readDouble());
+            uint32_t prefabIndex = file->readUnsignedInteger();
 
             if(!getIsModel() && getConnectionStyle() == RailNode::ConnectionStyle::Prefab) {
-                setPrefabIndex(file->readUnsignedInteger() - 1);
+                setPrefabIndex(prefabIndex - 1);
             } else {
                 setPrefabIndex(0);
             }
@@ -192,8 +193,9 @@ namespace NoLimits {
             return supportParameter;
         }
 
-        void RailNode::insertSupportParameter(SupportParameter *value) {
+        uint32_t RailNode::insertSupportParameter(SupportParameter *value) {
             supportParameter.push_back(value);
+            return supportParameter.size() - 1;
         }
     }
 }

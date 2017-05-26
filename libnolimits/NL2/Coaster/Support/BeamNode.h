@@ -7,16 +7,23 @@ namespace NoLimits {
     namespace NoLimits2 {
         class BeamNode : public Stream::Chunk {
         public:
-            BeamNode() {}
+            BeamNode() {
+                setIsFlange(false);
+                setPosition(0.0f);
+            }
 
-            void read(File::File *file);
-            void write(File::File *file);
-
-            bool getIsFlange() const;
-            void setIsFlange(bool value);
+            void debug() {
+                std::cout << "BeamNode[getIsFlange]: " << getIsFlange() << std::endl;
+                std::cout << "BeamNode[getPosition]: " << getPosition() << std::endl;
+            }
 
             float getPosition() const;
             void setPosition(float value);
+
+            bool getIsFlange() const;
+        protected:
+            void setIsFlange(bool value);
+
         private:
             float position;
             bool isFlange;

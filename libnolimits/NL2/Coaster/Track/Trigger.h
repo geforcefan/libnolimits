@@ -15,10 +15,22 @@ namespace NoLimits {
                 LockSwinging
             };
 
-            Trigger() {}
+            Trigger() {
+                setPosition(0.0f);
+                setName("");
+                setTrainEvent(TrainEvent::None);
+            }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                std::cout << "Vertex[getPosition]: " << getPosition() << std::endl;
+                std::cout << "Vertex[getName]: " << getName() << std::endl;
+                std::cout << "Vertex[getTrainEvent]: " << getTrainEvent() << std::endl;
+            }
 
             double getPosition() const;
             void setPosition(double value);
@@ -29,7 +41,9 @@ namespace NoLimits {
             TrainEvent getTrainEvent() const;
             void setTrainEvent(const TrainEvent &value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "TTRG"; }
+            /*! \endcond */
         private:
             double position;
             std::string name;

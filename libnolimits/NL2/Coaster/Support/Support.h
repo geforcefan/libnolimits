@@ -13,22 +13,60 @@ namespace NoLimits {
         public:
             Support() {}
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                std::cout << "Support[footer.size]: " << footer.size() << std::endl;
+                if(footer.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < footer.size(); i++) {
+                    footer[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                std::cout << "Support[freeNode.size]: " << freeNode.size() << std::endl;
+                if(freeNode.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < freeNode.size(); i++) {
+                    freeNode[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                std::cout << "Support[beam.size]: " << beam.size() << std::endl;
+                if(beam.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < beam.size(); i++) {
+                    beam[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                std::cout << "Support[prefab.size]: " << prefab.size() << std::endl;
+                if(prefab.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < prefab.size(); i++) {
+                    std::cout << "Support[prefab][" << i << "]: " << prefab[i] << std::endl;
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+            }
 
             std::vector<Footer *> getFooter() const;
-            void insertFooter(Footer* value);
-
-            std::string getChunkName() { return "SUPP"; }
+            uint32_t insertFooter(Footer* value);
 
             std::vector<FreeNode *> getFreeNode() const;
-            void insertFreeNode(FreeNode* value);
+            uint32_t insertFreeNode(FreeNode* value);
 
             std::vector<Beam *> getBeam() const;
-            void insertBeam(Beam* value);
+            uint32_t insertBeam(Beam* value);
 
             std::vector<std::string> getPrefab() const;
-            void insertPrefab(std::string value);
+            uint32_t insertPrefab(std::string value);
+
+            /*! \cond INTERNAL */
+            std::string getChunkName() { return "SUPP"; }
+            /*! \endcond */
 
         private:
             std::vector<Footer*> footer;

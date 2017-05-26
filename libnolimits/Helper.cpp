@@ -42,4 +42,12 @@ namespace NoLimits {
         s << "vec4[" << v.x << ", " << v.y << ", " << v.z << ", " << v.w << "]";
         return s.str();
     }
+
+    double Helper::kphToMs(double value) {
+        return value / 3.6;
+    }
+
+    double Helper::GToNewton(double value) {
+        return value * 9.80665;
+    }
 }

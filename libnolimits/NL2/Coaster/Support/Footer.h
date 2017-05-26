@@ -28,10 +28,30 @@ namespace NoLimits {
                 Spine = 64
             };
 
-            Footer() {}
+            Footer() {
+                setPosition(glm::vec3(0.0f, 0.0f, 0.0f));
+                setRotationAngle(0.0f);
+                setAboveGround(0.3f);
+                setBaseStyle(BaseStyle::SteelSquare);
+                setConnectionStyle(ConnectionStyle::Simple);
+                setColorMode(ColorMode::Support);
+                setCustomColor(glm::vec3(255.0f, 255.0f, 255.0f));
+            }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                std::cout << "Footer[getPosition]: " << Helper::debug(getPosition()) << std::endl;
+                std::cout << "Footer[getRotationAngle]: " << getRotationAngle() << std::endl;
+                std::cout << "Footer[getAboveGround]: " << getAboveGround() << std::endl;
+                std::cout << "Footer[getBaseStyle]: " << getBaseStyle() << std::endl;
+                std::cout << "Footer[getConnectionStyle]: " << getConnectionStyle() << std::endl;
+                std::cout << "Footer[getColorMode]: " << getColorMode() << std::endl;
+                std::cout << "Footer[getCustomColor]: " << Helper::debug(getCustomColor()) << std::endl;
+            }
 
             glm::vec3 getPosition() const;
             void setPosition(const glm::vec3 &value);
@@ -53,7 +73,6 @@ namespace NoLimits {
 
             glm::vec3 getCustomColor() const;
             void setCustomColor(const glm::vec3 &value);
-
         private:
             glm::vec3 position;
 

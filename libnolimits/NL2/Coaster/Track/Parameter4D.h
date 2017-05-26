@@ -7,9 +7,20 @@ namespace NoLimits {
     namespace NoLimits2 {
         class Parameter4D : public Stream::Chunk {
         public:
-            Parameter4D() {}
+            Parameter4D() {
+                setPosition(0.0f);
+                setAngle(0.0f);
+            }
+
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                std::cout << "RollPoint[getPosition]: " << getPosition() << std::endl;
+                std::cout << "RollPoint[getAngle]: " << getAngle() << std::endl;
+            }
 
             double getPosition() const;
             void setPosition(double value);
@@ -17,7 +28,9 @@ namespace NoLimits {
             double getAngle() const;
             void setAngle(double value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "4DPM"; }
+            /*! \endcond */
         private:
             double position;
             double angle;

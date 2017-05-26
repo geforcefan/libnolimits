@@ -24,9 +24,35 @@ namespace NoLimits {
                 Spacing45Ft
             };
 
-            WoodenSupportGenerator() {}
+            WoodenSupportGenerator() {
+                setUseIndividualSettings(false);
+                setUseLeftWideSupports(false);
+                setUseRightWideSupports(false);
+                setUseLeftCatwalks(false);
+                setUseRightCatwalks(false);
+                setUseLeftHandrails(false);
+                setUseRightHandrails(false);
+                setCollisionDetection(false);
+                setEnableSupports(false);
+            }
+
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                std::cout << "WoodenSupportGenerator[getUseIndividualSettings]: " << getUseIndividualSettings() << std::endl;
+                std::cout << "WoodenSupportGenerator[getUseLeftWideSupports]: " << getUseLeftWideSupports() << std::endl;
+                std::cout << "WoodenSupportGenerator[getUseRightWideSupports]: " << getUseRightWideSupports() << std::endl;
+                std::cout << "WoodenSupportGenerator[getUseLeftCatwalks]: " << getUseLeftCatwalks() << std::endl;
+                std::cout << "WoodenSupportGenerator[getUseRightCatwalks]: " << getUseRightCatwalks() << std::endl;
+                std::cout << "WoodenSupportGenerator[getUseLeftHandrails]: " << getUseLeftHandrails() << std::endl;
+                std::cout << "WoodenSupportGenerator[getUseRightHandrails]: " << getUseRightHandrails() << std::endl;
+                std::cout << "WoodenSupportGenerator[getCollisionDetection]: " << getCollisionDetection() << std::endl;
+                std::cout << "WoodenSupportGenerator[getEnableSupports]: " << getEnableSupports() << std::endl;
+                std::cout << "WoodenSupportGenerator[getBentSpacing]: " << getBentSpacing() << std::endl;
+            }
 
             bool getUseIndividualSettings();
             bool getUseLeftWideSupports();

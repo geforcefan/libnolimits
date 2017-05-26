@@ -33,8 +33,19 @@ namespace NoLimits {
 
             uint32_t numberOfBeamNodes = file->readUnsignedInteger();
             for(uint32_t i = 0; i < numberOfBeamNodes; i++) {
-                BeamNode* _beamNode = new BeamNode();
-                _beamNode->read(file);
+                float position = file->readFloat();
+                bool isFlange = file->readBoolean();
+
+                file->readNull(11);
+
+                BeamNode* _beamNode = nullptr;
+
+                if(isFlange)
+                    _beamNode = new Flange();
+                else
+                    _beamNode = new BeamNode();
+
+                _beamNode->setPosition(position);
                 insertBeamNode(_beamNode);
             }
         }
@@ -68,7 +79,9 @@ namespace NoLimits {
 
             file->writeUnsignedInteger(beamNode.size());
             for(uint32_t i = 0; i < beamNode.size(); i++) {
-                beamNode[i]->write(file);
+                file->writeFloat(beamNode[i]->getPosition());
+                file->writeBoolean(beamNode[i]->getIsFlange());
+                file->writeNull(11);
             }
         }
 
@@ -164,45 +177,26 @@ namespace NoLimits {
             return beamNode;
         }
 
-        void Beam::insertBeamNode(BeamNode *value) {
+        uint32_t Beam::insertBeamNode(BeamNode *value) {
             beamNode.push_back(value);
+            return beamNode.size() - 1;
         }
 
-        Beam::RotationMode Beam::getRotationMode() const {
-            return rotationMode;
-        }
-
-        void Beam::setRotationMode(const Beam::RotationMode &value) {
-            rotationMode = value;
-        }
-
-        Beam::LODPriority Beam::getLodPriority() const {
-            return lodPriority;
-        }
-
-        void Beam::setLodPriority(const Beam::LODPriority &value) {
-            lodPriority = value;
+        uint32_t Beam::insertFlange(Flange *value) {
+            beamNode.push_back(value);
+            return beamNode.size() - 1;
         }
 
         void Beam::setFlag1(const uint8_t &value) {
             SupportNode::setFlag1(value);
-
-            rotationMode = getRotationMode();
-            lodPriority = getLODPriority();
         }
 
         void Beam::setFlag2(const uint8_t &value) {
             SupportNode::setFlag2(value);
-
-            rotationMode = getRotationMode();
-            lodPriority = getLODPriority();
         }
 
         void Beam::setFlag3(const uint8_t &value) {
             SupportNode::setFlag3(value);
-
-            rotationMode = getRotationMode();
-            lodPriority = getLODPriority();
         }
 
         Beam::RotationMode Beam::getRotationMode() {
@@ -222,8 +216,6 @@ namespace NoLimits {
                 case Beam::RotationMode::HorizontalBeam:
                     break;
             }
-
-            rotationMode = getRotationMode();
         }
 
         Beam::LODPriority Beam::getLODPriority() {
@@ -261,8 +253,6 @@ namespace NoLimits {
                 case Beam::LODPriority::Highest:
                     break;
             }
-
-            lodPriority = getLODPriority();
         }
     }
 }

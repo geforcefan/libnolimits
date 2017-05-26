@@ -51,8 +51,9 @@ namespace NoLimits {
             return sceneObject;
         }
 
-        void Scenery::insertSceneObject(std::string value) {
+        uint32_t Scenery::insertSceneObject(std::string value) {
             sceneObject.push_back(value);
+            return sceneObject.size() - 1;
         }
 
         std::vector<SceneObjectInstance *> Scenery::getSceneObjectInstance() const {
@@ -68,8 +69,9 @@ namespace NoLimits {
             return nullptr;
         }
 
-        void Scenery::insertSceneObjectInstance(SceneObjectInstance* value) {
+        uint32_t Scenery::insertSceneObjectInstance(SceneObjectInstance* value) {
             sceneObjectInstance.push_back(value);
+            return sceneObjectInstance.size() - 1;
         }
     }
 }

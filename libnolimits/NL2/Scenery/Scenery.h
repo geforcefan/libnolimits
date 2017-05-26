@@ -29,17 +29,21 @@ namespace NoLimits {
                 }
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             std::vector<std::string> getSceneObject() const;
-            void insertSceneObject(std::string value);
+            uint32_t insertSceneObject(std::string value);
 
             std::vector<SceneObjectInstance *> getSceneObjectInstance() const;
             SceneObjectInstance* getSceneObjectInstance(std::string name);
-            void insertSceneObjectInstance(SceneObjectInstance * value);
+            uint32_t insertSceneObjectInstance(SceneObjectInstance * value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "SCEN"; }
+            /*! \endcond */
         private:
             std::vector<std::string> sceneObject;
             std::vector<SceneObjectInstance*> sceneObjectInstance;

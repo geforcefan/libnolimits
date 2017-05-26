@@ -8,9 +8,30 @@ namespace NoLimits {
     namespace NoLimits2 {
         class WaitTime {
         public:
-            WaitTime() {}
-            double getAvarage() const;
-            void setAvarage(double value);
+            WaitTime() {
+                setAverage(50.0f);
+                setMinimum(40.0f);
+                setMaximum(60.0f);
+                setDeviation(5.0f);
+            }
+
+            void debug() {
+                std::cout << "WaitTime[getAverage]: " << getAverage() << std::endl;
+                std::cout << "WaitTime[getMinimum]: " << getMinimum() << std::endl;
+                std::cout << "WaitTime[getMaximum]: " << getMaximum() << std::endl;
+                std::cout << "WaitTime[getDeviation]: " << getDeviation() << std::endl;
+
+                std::cout << "WaitTime[synchronizeDispatchWith.size]: " << synchronizeDispatchWith.size() << std::endl;
+                if(synchronizeDispatchWith.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < synchronizeDispatchWith.size(); i++) {
+                    std::cout << "WaitTime[synchronizeDispatchWith][" << i << "]: " << synchronizeDispatchWith[i] << std::endl;
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+            }
+
+            double getAverage() const;
+            void setAverage(double value);
 
             double getMinimum() const;
             void setMinimum(double value);
@@ -22,10 +43,9 @@ namespace NoLimits {
             void setDeviation(double value);
 
             std::vector<uint32_t> getSynchronizeDispatchWith() const;
-            void insertSynchronizeDispatchWith(uint32_t value);
-
+            uint32_t insertSynchronizeDispatchWith(uint32_t value);
         private:
-            double avarage;
+            double average;
             double minimum;
             double maximum;
             double deviation;

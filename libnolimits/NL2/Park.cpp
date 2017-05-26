@@ -96,9 +96,10 @@ namespace NoLimits {
                 return nullptr;
         }
 
-        void Park::insertCoaster(Coaster* value) {
+        uint32_t Park::insertCoaster(Coaster* value) {
             coasterMapping[value->getName()] = coaster.size();
             coaster.push_back(value);
+            return coaster.size() - 1;
         }
 
         Terrain *Park::getTerrain() const {

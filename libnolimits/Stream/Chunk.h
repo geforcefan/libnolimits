@@ -10,10 +10,13 @@ namespace NoLimits {
     namespace Stream {
         class Chunk {
         public:
+            /*! \cond INTERNAL */
             virtual void read(File::File *file) {}
             virtual void write(File::File *file) {}
-            virtual void debug() {}
             virtual std::string getChunkName() { return "CHNK"; }
+            /*! \endcond */
+
+            virtual void debug() {}
         };
     }
 }

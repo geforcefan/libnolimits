@@ -34,8 +34,10 @@ namespace NoLimits {
                 std::cout << "Water[getWaves]: " << getWaves() << std::endl;
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             float getDensity() const;
             void setDensity(float value);

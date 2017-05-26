@@ -14,9 +14,31 @@ namespace NoLimits {
                 HideDevice = 2
             };
 
-            Transport() : Section(Section::SectionType::Transport) {}
+            Transport() : Section(Section::SectionType::Transport) {
+                setSpeed(Helper::kphToMs(8.0f));
+                setAcceleration(Helper::GToNewton(0.5f));
+                setDeceleration(Helper::GToNewton(0.3f));
+                setSpeedingUpPasses(0);
+                setMinSpeed(Helper::kphToMs(0.0f));
+                setTransportType(TransportType::FrictionWheels);
+            }
+
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                Section::debug();
+
+                std::cout << "Transport[getSpeed]: " << getSpeed() << std::endl;
+                std::cout << "Transport[getAcceleration]: " << getAcceleration() << std::endl;
+                std::cout << "Transport[getDeceleration]: " << getDeceleration() << std::endl;
+                std::cout << "Transport[getSpeedingUpPasses]: " << getSpeedingUpPasses() << std::endl;
+                std::cout << "Transport[getSpeedingDown]: " << getSpeedingDown() << std::endl;
+                std::cout << "Transport[getMinSpeed]: " << getMinSpeed() << std::endl;
+                std::cout << "Transport[getTransportType]: " << getTransportType() << std::endl;
+            }
 
             double getSpeed() const;
             void setSpeed(double value);
@@ -39,7 +61,9 @@ namespace NoLimits {
             TransportType getTransportType() const;
             void setTransportType(const TransportType &value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "TRNS"; }
+            /*! \endcond */
         private:
             double speed;
 

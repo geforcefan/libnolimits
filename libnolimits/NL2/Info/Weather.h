@@ -29,8 +29,10 @@ namespace NoLimits {
                 std::cout << "Weather[getThunderIntensity]: " << getThunderIntensity() << std::endl;
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             float getRainIntensity() const;
             void setRainIntensity(float value);

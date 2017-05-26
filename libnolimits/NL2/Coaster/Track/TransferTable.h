@@ -5,6 +5,7 @@
 
 #include "SpecialTrack.h"
 #include "Section/Section.h"
+#include "Segment.h"
 
 namespace NoLimits {
     namespace NoLimits2 {
@@ -12,10 +13,40 @@ namespace NoLimits {
         public:
             TransferTable() : SpecialTrack(SpecialTrack::SpecialTrackType::Transfer) {
                 section = new Section();
+
+                setDefaultTrack(0);
+                setLength(20.0f);
+                setDistance(3.0f);
+                setDisplayStructure(SpecialTrack::DisplayStructure::Simple);
+
+                insertInput(0);
+                insertInput(0);
+                insertInput(0);
+
+                insertOutput(0);
+                insertOutput(0);
+                insertOutput(0);
+
+                setSwitchTime(15.0f);
+
+                insertSegment(new Segment());
             }
 
+            /*! \cond INTERNAL */
             void readSpecialTrack(File::File *file);
             void writeSpecialTrack(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                SpecialTrack::debug();
+
+                std::cout << "TransferTable[getDefaultTrack]: " << getDefaultTrack() << std::endl;
+                std::cout << "TransferTable[getLength]: " << getLength() << std::endl;
+                std::cout << "TransferTable[getDistance]: " << getDistance() << std::endl;
+                std::cout << "TransferTable[getDisplayStructure]: " << getDisplayStructure() << std::endl;
+
+                getSection()->debug();
+            }
 
             uint32_t getDefaultTrack() const;
             void setDefaultTrack(const uint32_t &value);
@@ -32,7 +63,9 @@ namespace NoLimits {
             Section *getSection() const;
             void setSection(Section *value);
 
+            /*! \cond INTERNAL */
             std::string getSpecialTrackChunkName() { return "TRTB"; }
+            /*! \endcond */
 
         private:
             uint32_t defaultTrack;

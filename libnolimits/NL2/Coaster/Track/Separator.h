@@ -19,10 +19,21 @@ namespace NoLimits {
                 segment = new Segment();
 
                 setSeparatorType(Separator::SeparatorType::StyleSeparator);
+                setPosition(0.0f);
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                std::cout << "Separator[getPosition]: " << getPosition() << std::endl;
+                std::cout << "Separator[getSeparatorType]: " << getSeparatorType() << std::endl;
+
+                getSegment()->debug();
+                getSection()->debug();
+            }
 
             Section *getSection() const;
             void setSection(Section *value);
@@ -36,7 +47,9 @@ namespace NoLimits {
             SeparatorType getSeparatorType() const;
             void setSeparatorType(const SeparatorType &value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "SEPA"; }
+            /*! \endcond */
         private:
             Section *section;
             Segment *segment;

@@ -34,9 +34,9 @@ If you need help installing ``libnolimits``, read the wiki article about [How to
 
 # Documentation
 
-Documentation is not written yet. It´s still in progress.
+API documentation can be found here: https://geforcefan.github.io/libnolimits/
 
-~~Here it is: https://geforcefan.github.io/libnolimits/~~
+Documentation is not completely written yet. It´s still in progress.
 
 ## Examples
 
@@ -87,7 +87,7 @@ park->save("HydraClone.nl2park");
     - [x] Triggers
     - [x] Roll points
     - [x] 4D parameters
-    - [ ] Special tracks (switch and transfer table)
+    - [x] Special tracks (switch and transfer table)
   - [x] Trains
     - [x] Cars
   - [x] Custom Friction

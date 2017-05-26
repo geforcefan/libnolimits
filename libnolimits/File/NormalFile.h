@@ -4,6 +4,7 @@
 #include "File.h"
 #include <stdio.h>
 
+/*! \cond INTERNAL */
 namespace NoLimits {
     namespace File {
         class NormalFile : public File {
@@ -29,5 +30,6 @@ namespace NoLimits {
         };
     }
 }
+/*! \endcond */
 
 #endif // NORMALFILE_H

@@ -7,9 +7,22 @@ namespace NoLimits {
     namespace NoLimits2 {
         class Vertex : public Stream::Chunk {
         public:
-            Vertex() {}
+            Vertex() {
+                setPosition(glm::vec4(0.0f, 0.0f, 0.0f, 1.0f));
+                setLocked(false);
+                setStrict(false);
+            }
+
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                std::cout << "Vertex[getPosition]: " << Helper::debug(getPosition()) << std::endl;
+                std::cout << "Vertex[getLocked]: " << getLocked() << std::endl;
+                std::cout << "Vertex[getStrict]: " << getStrict() << std::endl;
+            }
 
             glm::vec4 getPosition() const;
             void setPosition(const glm::vec4 &value);

@@ -14,15 +14,19 @@ namespace NoLimits {
                 SpecialTrack
             };
 
-            Track(TrackType trackType) : _trackType(trackType) {}
-            Track() : _trackType(TrackType::None) {}
+            Track(TrackType _trackType) : trackType(_trackType) {}
+            Track() : trackType(TrackType::None) {}
             TrackType getTrackType() const;
             void setTrackType(const TrackType &value);
             virtual Section *getSectionByName(std::string name) { return nullptr; }
 
-            virtual void debug() {}
+            /*! \cond INTERNAL */
+            virtual void debug() {
+                std::cout << "Track[getTrackType]: " << getTrackType() << std::endl;
+            }
+            /*! \endcond */
         private:
-            TrackType _trackType;
+            TrackType trackType;
         };
     }
 }

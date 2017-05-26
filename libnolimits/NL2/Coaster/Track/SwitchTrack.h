@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "SpecialTrack.h"
+#include "Segment.h"
 
 namespace NoLimits {
     namespace NoLimits2 {
@@ -30,12 +31,36 @@ namespace NoLimits {
                 switch(switchType) {
                 case SwitchType::Merge:
                     setSpecialTrackType(SpecialTrack::SpecialTrackType::SwitchTrackMerge);
+
+                    insertInput(0);
+                    insertInput(0);
+
+                    insertOutput(0);
                     break;
                 case SwitchType::Fork:
                 default:
                     setSpecialTrackType(SpecialTrack::SpecialTrackType::SwitchTrackFork);
+
+                    insertOutput(0);
+                    insertOutput(0);
+
+                    insertInput(0);
                     break;
                 }
+
+                insertSegment(new Segment());
+                insertSegment(new Segment());
+
+                setSwitchTime(5.0f);
+            }
+
+            void debug() {
+                SpecialTrack::debug();
+
+                std::cout << "SwitchTrack[getDirection]: " << getDirection() << std::endl;
+                std::cout << "SwitchTrack[getStyle]: " << getStyle() << std::endl;
+                std::cout << "SwitchTrack[getDisplayStructure]: " << getDisplayStructure() << std::endl;
+                std::cout << "SwitchTrack[getDefaultTrack]: " << getDefaultTrack() << std::endl;
             }
 
             Direction getDirection() const;
@@ -50,11 +75,12 @@ namespace NoLimits {
             uint32_t getDefaultTrack() const;
             void setDefaultTrack(const uint32_t &value);
 
+            /*! \cond INTERNAL */
             void readSpecialTrack(File::File *file);
             void writeSpecialTrack(File::File *file);
 
             std::string getSpecialTrackChunkName() { return "SWTR"; }
-
+            /*! \endcond */
         private:
             Direction direction;
             Style style;

@@ -42,11 +42,13 @@ namespace NoLimits {
                 getIndividualColor()->debug();
             }
 
+            /*! \cond INTERNAL */
             void write(File::File *file);
             void read(File::File *file);
+            /*! \endcond */
 
             std::vector<Car*> getCar() const;
-            void insertCar(Car* value);
+            uint32_t insertCar(Car* value);
 
             IndividualColor *getIndividualColor() const;
             void setIndividualColor(IndividualColor *value);
@@ -63,6 +65,9 @@ namespace NoLimits {
             Car *getZeroCar() const;
             void setZeroCar(Car *value);
 
+            /*! \cond INTERNAL */
+            std::string getChunkName() { return "TRAI"; }
+            /*! \endcond */
         private:
             Car *zeroCar;
             std::vector<Car*> car;
@@ -70,8 +75,6 @@ namespace NoLimits {
             bool runBackward;
             bool removedFromTrack;
             std::string startBlock;
-
-            std::string getChunkName() { return "TRAI"; }
         };
     }
 }

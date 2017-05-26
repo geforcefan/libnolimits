@@ -8,7 +8,15 @@ namespace NoLimits {
     namespace NoLimits2 {
         class TransportDevice {
         public:
-            TransportDevice() {}
+            TransportDevice() {
+                setTransportType(Transport::TransportType::FrictionWheels);
+                setSpeed(Helper::kphToMs(8.0f));
+                setAcceleration(Helper::GToNewton(0.5f));
+                setAcceleration(Helper::GToNewton(0.3f));
+                setLaunch(false);
+                setLaunchAcceleration(Helper::GToNewton(0.8f));
+                setLaunchMaxSpeed(Helper::kphToMs(100.0f));
+            }
 
             void debug() {
                 std::cout << "TransportDevice[getTransportType]: " << getTransportType() << std::endl;
@@ -40,7 +48,6 @@ namespace NoLimits {
 
             double getLaunchMaxSpeed() const;
             void setLaunchMaxSpeed(double value);
-
         private:
             Transport::TransportType transportType;
 

@@ -7,10 +7,18 @@ namespace NoLimits {
     namespace NoLimits2 {
         class FreeNode : public Stream::Chunk {
         public:
-            FreeNode() {}
+            FreeNode() {
+                setPosition(glm::vec3(0.0f, 0.0f, 0.0f));
+            }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                std::cout << "FreeNode[getPosition]: " << Helper::debug(getPosition()) << std::endl;
+            }
 
             glm::vec3 getPosition() const;
             void setPosition(const glm::vec3 &value);

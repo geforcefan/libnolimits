@@ -10,11 +10,11 @@ namespace NoLimits {
         public:
             IndividualColor() {
                 setHasIndividualColor(false);
-                setCarColor(glm::vec3(0.0f));
-                setSeatColor(glm::vec3(0.0f));
-                setHarnessColor(glm::vec3(0.0f));
-                setBogieColor(glm::vec3(0.0f));
-                setChassisColor(glm::vec3(0.0f));
+                setCarColor(glm::vec3(255.0f));
+                setSeatColor(glm::vec3(255.0f));
+                setHarnessColor(glm::vec3(255.0f));
+                setBogieColor(glm::vec3(255.0f));
+                setChassisColor(glm::vec3(255.0f));
             }
 
             void debug() {
@@ -34,8 +34,10 @@ namespace NoLimits {
                 }
             }
 
+            /*! \cond INTERNAL */
             void write(File::File *file);
             void read(File::File *file);
+            /*! \endcond */
 
             bool getHasIndividualColor() const;
             void setHasIndividualColor(bool value);
@@ -56,8 +58,11 @@ namespace NoLimits {
             void setChassisColor(const glm::vec3 &value);
 
             std::vector<std::string> getCarTexture() const;
-            void insertCarTexture(std::string value);
+            uint32_t insertCarTexture(std::string value);
 
+            /*! \cond INTERNAL */
+            std::string getChunkName() { return "INDC"; }
+            /*! \endcond */
         private:
             bool hasIndividualColor;
 
@@ -68,8 +73,6 @@ namespace NoLimits {
             glm::vec3 chassisColor;
 
             std::vector<std::string> carTexture;
-
-            std::string getChunkName() { return "INDC"; }
         };
     }
 }

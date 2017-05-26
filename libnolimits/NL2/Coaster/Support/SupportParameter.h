@@ -12,18 +12,30 @@ namespace NoLimits {
                 PipeSize
             };
 
-            SupportParameter() {}
+            SupportParameter() {
+                setValue(0.0);
+                setType(Type::FooterStyle);
+            }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
-            std::string getChunkName() { return "SPPM"; }
+            void debug() {
+                std::cout << "SupportParameter[getValue]: " << getValue() << std::endl;
+                std::cout << "SupportParameter[getType]: " << getType() << std::endl;
+            }
 
             double getValue() const;
             void setValue(double value);
 
             Type getType() const;
             void setType(const Type &value);
+
+            /*! \cond INTERNAL */
+            std::string getChunkName() { return "SPPM"; }
+            /*! \endcond */
 
         private:
             double value;

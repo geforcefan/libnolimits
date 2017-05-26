@@ -36,6 +36,10 @@ namespace NoLimits {
                 insertTrain(new Train());
             }
 
+            Coaster(std::string name) : Coaster() {
+                setName(name);
+            }
+
             void debug() {
                 std::cout << "Coaster[getName]: " << getName() << std::endl;
                 std::cout << "Coaster[getDescription]: " << getDescription() << std::endl;
@@ -74,8 +78,10 @@ namespace NoLimits {
                 }
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             std::string getName() const;
             void setName(const std::string &value);
@@ -102,19 +108,21 @@ namespace NoLimits {
             void setSupport(Support *value);
 
             std::vector<Track*> getTrack() const;
-            void insertTrack(Track* value);
+            uint32_t insertTrack(Track* value);
 
             std::vector<Train*> getTrain() const;
-            void insertTrain(Train* value);
+            uint32_t insertTrain(Train* value);
 
             Section *getSection(std::string name);
 
             FileScript *getFileScript();
 
             std::vector<Script *> getScript() const;
-            void insertScript(Script* value);
+            uint32_t insertScript(Script* value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "COAS"; }
+            /*! \endcond */
 
         private:
             std::string name;

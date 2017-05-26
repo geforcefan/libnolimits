@@ -16,11 +16,23 @@ namespace NoLimits {
                 Storage
             };
 
-            Section(SectionType sectionType) : _sectionType(sectionType), section(this) {}
-            Section() : _sectionType(SectionType::Track), section(this) {}
+            Section(SectionType sectionType) : _sectionType(sectionType), section(this) {
+                setName("");
+            }
 
+            Section() : _sectionType(SectionType::Track), section(this) {
+                setName("");
+            }
+
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void writeChunk(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                std::cout << "Section[getSectionType]: " << getSectionType() << std::endl;
+                std::cout << "Section[getName]: " << getName() << std::endl;
+            }
 
             SectionType getSectionType() const;
             void setSectionType(const SectionType &sectionType);
@@ -30,7 +42,6 @@ namespace NoLimits {
 
             Section *getSection() const;
             void setSection(Section *value);
-
         private:
             SectionType _sectionType;
             std::string name;

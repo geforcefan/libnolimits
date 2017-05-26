@@ -4,12 +4,12 @@
 
 namespace NoLimits {
     namespace NoLimits2 {
-        double WaitTime::getAvarage() const {
-            return avarage;
+        double WaitTime::getAverage() const {
+            return average;
         }
 
-        void WaitTime::setAvarage(double value) {
-            avarage = value;
+        void WaitTime::setAverage(double value) {
+            average = value;
         }
 
         double WaitTime::getMinimum() const {
@@ -40,8 +40,9 @@ namespace NoLimits {
             return synchronizeDispatchWith;
         }
 
-        void WaitTime::insertSynchronizeDispatchWith(uint32_t value) {
+        uint32_t WaitTime::insertSynchronizeDispatchWith(uint32_t value) {
             synchronizeDispatchWith.push_back(value);
+            return synchronizeDispatchWith.size();
         }
     }
 }

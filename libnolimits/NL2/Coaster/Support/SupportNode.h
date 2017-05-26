@@ -24,6 +24,26 @@ namespace NoLimits {
                 SpineColor
             };
 
+            SupportNode() {
+                setHasNoCapsForLODsHint(false);
+                setHasDimAsIfItWasInATunnel(false);
+                setHasNoStartCapHint(false);
+                setHasNoEndCapHint(false);
+                setHasRotationModeAzimuth(false);
+                setColorMode(ColorMode::SupportColor);
+                setColor(glm::vec3(255.0f, 255.0f, 255.0f));
+            }
+
+            void debug() {
+                std::cout << "SupportNode[getHasNoCapsForLODsHint]: " << getHasNoCapsForLODsHint() << std::endl;
+                std::cout << "SupportNode[getHasDimAsIfItWasInATunnel]: " << getHasDimAsIfItWasInATunnel() << std::endl;
+                std::cout << "SupportNode[getHasNoStartCapHint]: " << getHasNoStartCapHint() << std::endl;
+                std::cout << "SupportNode[getHasNoEndCapHint]: " << getHasNoEndCapHint() << std::endl;
+                std::cout << "SupportNode[getHasRotationModeAzimuth]: " << getHasRotationModeAzimuth() << std::endl;
+                std::cout << "SupportNode[getColorMode]: " << getColorMode() << std::endl;
+                std::cout << "SupportNode[getColor]: " << Helper::debug(getColor()) << std::endl;
+            }
+
             bool getHasNoCapsForLODsHint();
             bool getHasDimAsIfItWasInATunnel();
             bool getHasNoStartCapHint();
@@ -58,9 +78,9 @@ namespace NoLimits {
             uint8_t flag1;
             uint8_t flag2;
             uint8_t flag3;
+
         private:
             glm::vec3 color;
-            ColorMode colorMode;
         };
     }
 }

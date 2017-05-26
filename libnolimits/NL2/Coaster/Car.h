@@ -20,19 +20,28 @@ namespace NoLimits {
                 getIndividualColor()->debug();
             }
 
+            /*! \cond INTERNAL */
             void write(File::File *file);
             void read(File::File *file);
+            /*! \endcond */
 
             IndividualColor *getIndividualColor() const;
             void setIndividualColor(IndividualColor *value);
 
+            /*! \cond INTERNAL */
             uint32_t getInternalCarIndex() const;
             void setInternalCarIndex(const uint32_t &value);
+            /*! \endcond */
 
+            /*! \cond INTERNAL */
+            std::string getChunkName() { return "CAR "; }
+            /*! \endcond */
         private:
             IndividualColor *individualColor;
-            std::string getChunkName() { return "CAR "; }
+
+            /*! \cond INTERNAL */
             uint32_t internalCarIndex;
+            /*! \endcond */
         };
     }
 }

@@ -20,13 +20,17 @@ namespace NoLimits {
                 }
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             std::vector<std::string> getPath() const;
-            void insertPath(std::string value);
+            uint32_t insertPath(std::string value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "FSCR"; }
+            /*! \endcond */
         private:
             std::vector<std::string> path;
         };

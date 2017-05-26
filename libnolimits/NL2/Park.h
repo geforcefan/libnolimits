@@ -34,8 +34,10 @@ namespace NoLimits {
                 terrain->debug();
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             void save(std::string filepath);
 
@@ -43,7 +45,7 @@ namespace NoLimits {
 
             std::vector<Coaster*> getCoaster() const;
             Coaster* getCoaster(std::string name) const;
-            void insertCoaster(Coaster* value);
+            uint32_t insertCoaster(Coaster* value);
 
             Terrain *getTerrain() const;
             void setTerrain(Terrain *value);
@@ -54,7 +56,9 @@ namespace NoLimits {
             Scenery *getScenery() const;
             void setScenery(Scenery *value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "NL2P"; }
+            /*! \endcond */
 
         private:
             Info *info;
@@ -63,7 +67,10 @@ namespace NoLimits {
             Scenery *scenery;
 
             std::vector<Coaster*> coaster;
+
+            /*! \cond INTERNAL */
             std::map<std::string, int> coasterMapping;
+            /*! \endcond */
         };
     }
 }

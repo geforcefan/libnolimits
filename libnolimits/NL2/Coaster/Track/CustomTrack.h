@@ -18,36 +18,102 @@ namespace NoLimits {
     namespace NoLimits2 {
         class CustomTrack: public Track  {
         public:
-            CustomTrack();
+            CustomTrack() : Track(TrackType::Custom) {
+                firstRollPoint = new RollPoint();
+                lastRollPoint = new RollPoint();
+                segment = new Segment();
+                section = new Section();
 
-            void debug() {
-                getSegment()->debug();
-                getSection()->debug();
+                setClosed(false);
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                Track::debug();
+
+                std::cout << "CustomTrack[getClosed]: " << getClosed() << std::endl;
+                std::cout << "CustomTrack[getFirstRollPoint]: " << std::endl;
+                getFirstRollPoint()->debug();
+
+                std::cout << "Coaster[vertex.size]: " << vertex.size() << std::endl;
+                if(vertex.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < vertex.size(); i++) {
+                    vertex[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                std::cout << "Coaster[rollPoint.size]: " << rollPoint.size() << std::endl;
+                if(rollPoint.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < rollPoint.size(); i++) {
+                    rollPoint[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                std::cout << "Coaster[trigger.size]: " << trigger.size() << std::endl;
+                if(trigger.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < trigger.size(); i++) {
+                    trigger[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                std::cout << "Coaster[railNode.size]: " << railNode.size() << std::endl;
+                if(railNode.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < railNode.size(); i++) {
+                    railNode[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                std::cout << "Coaster[parameter4D.size]: " << parameter4D.size() << std::endl;
+                if(parameter4D.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < parameter4D.size(); i++) {
+                    parameter4D[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                std::cout << "Coaster[separator.size]: " << separator.size() << std::endl;
+                if(separator.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < separator.size(); i++) {
+                    separator[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                getSegment()->debug();
+                getSection()->debug();
+
+                std::cout << "CustomTrack[getLastRollPoint]: " << std::endl;
+                getLastRollPoint()->debug();
+            }
 
             RollPoint *getFirstRollPoint() const;
             RollPoint *getLastRollPoint() const;
 
             std::vector<Vertex*> getVertex() const;
-            void insertVertex(Vertex *value);
+            uint32_t insertVertex(Vertex *value);
 
             std::vector<RollPoint*> getRollPoint() const;
-            void insertRollPoint(RollPoint* value);
+            uint32_t insertRollPoint(RollPoint* value);
 
             std::vector<Trigger*> getTrigger() const;
-            void insertTrigger(Trigger* value);
+            uint32_t insertTrigger(Trigger* value);
 
             std::vector<RailNode*> getRailNode() const;
-            void insertRailNode(RailNode* value);
+            uint32_t insertRailNode(RailNode* value);
 
             std::vector<Parameter4D*> getParameter4D() const;
-            void insertParameter4D(Parameter4D* value);
+            uint32_t insertParameter4D(Parameter4D* value);
 
             std::vector<Separator*> getSeparator() const;
-            void insertSeparator(Separator* value);
+            uint32_t insertSeparator(Separator* value);
 
             Segment *getSegment() const;
             void setSegment(Segment *value);
@@ -60,8 +126,9 @@ namespace NoLimits {
 
             virtual Section *getSectionByName(std::string);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "CUTK"; }
-
+            /*! \endcond */
         private:
             std::vector<Vertex*> vertex;
             std::vector<RollPoint*> rollPoint;

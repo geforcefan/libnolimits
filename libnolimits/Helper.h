@@ -9,6 +9,7 @@
 #include <cstdio>
 #include <glm/glm.hpp>
 
+/*! \cond INTERNAL */
 namespace NoLimits {
     class Helper
     {
@@ -20,7 +21,10 @@ namespace NoLimits {
         static std::string debug(glm::vec3 v);
         static std::string debug(glm::vec4 v);
 
+        static double kphToMs(double value);
+        static double GToNewton(double value);
     };
 }
+/*! \endcond */
 
 #endif // HELPER_H

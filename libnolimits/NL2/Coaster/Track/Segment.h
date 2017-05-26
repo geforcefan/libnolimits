@@ -29,10 +29,75 @@ namespace NoLimits {
 
             Segment() {
                 woodenSupportGenerator = new WoodenSupportGenerator();
+
+                setInvisibleSegment(false);
+
+                setLeftRailingAndCatwalk(false);
+                setLeftRailingLights(false);
+                setLeftRailingLightsColor(glm::vec3(255.0f));
+
+                setRightRailingAndCatwalk(false);
+                setRightRailingLights(false);
+                setRightRailingLightsColor(glm::vec3(255.0f));
+
+                setTransparentCatwalks(false);
+                setUseRailsColor(false);
+                setUseCrossTiesColor(false);
+                setUseMainSpineColor(false);
+                setUseHandrailsColor(false);
+                setUseCatwalksColor(false);
+
+                setRailColor(glm::vec3(255.0f));
+                setCrossTiesColor(glm::vec3(255.0f));
+                setMainSpineColor(glm::vec3(255.0f));
+                setHandrailsColor(glm::vec3(255.0f));
+                setCatwalksColor(glm::vec3(255.0f));
+
+                setUseSpineColorScheme(false);
+                setTunnel(Tunnel::None);
+                setSpineType(0);
+                setTieSpacing(TieSpacing::LowestStress);
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                std::cout << "Segment[getInvisibleSegment]: " << getInvisibleSegment() << std::endl;
+
+                std::cout << "Segment[getLeftRailingAndCatwalk]: " << getLeftRailingAndCatwalk() << std::endl;
+                std::cout << "Segment[getLeftRailingLights]: " << getLeftRailingLights() << std::endl;
+                std::cout << "Segment[getLeftRailingLightsColor]: " << Helper::debug(getLeftRailingLightsColor()) << std::endl;
+
+                std::cout << "Segment[getRightRailingAndCatwalk]: " << getRightRailingAndCatwalk() << std::endl;
+                std::cout << "Segment[getRightRailingLights]: " << getRightRailingLights() << std::endl;
+                std::cout << "Segment[getRightRailingLightsColor]: " << Helper::debug(getRightRailingLightsColor()) << std::endl;
+
+                std::cout << "Segment[getTransparentCatwalks]: " << getTransparentCatwalks() << std::endl;
+
+                std::cout << "Segment[getUseRailsColor]: " << getUseRailsColor() << std::endl;
+                std::cout << "Segment[getUseCrossTiesColor]: " << getUseCrossTiesColor() << std::endl;
+                std::cout << "Segment[getUseMainSpineColor]: " << getUseMainSpineColor() << std::endl;
+                std::cout << "Segment[getUseHandrailsColor]: " << getUseHandrailsColor() << std::endl;
+                std::cout << "Segment[getUseCatwalksColor]: " << getUseCatwalksColor() << std::endl;
+
+                std::cout << "Segment[getRailColor]: " << Helper::debug(getRailColor()) << std::endl;
+                std::cout << "Segment[getCrossTiesColor]: " << Helper::debug(getCrossTiesColor()) << std::endl;
+                std::cout << "Segment[getMainSpineColor]: " << Helper::debug(getMainSpineColor()) << std::endl;
+                std::cout << "Segment[getHandrailsColor]: " << Helper::debug(getHandrailsColor()) << std::endl;
+                std::cout << "Segment[getCatwalksColor]: " << Helper::debug(getCatwalksColor()) << std::endl;
+
+                std::cout << "Segment[getUseSpineColorScheme]: " << getUseSpineColorScheme() << std::endl;
+                std::cout << "Segment[getSpineColorScheme]: " << getSpineColorScheme() << std::endl;
+
+                std::cout << "Segment[getTunnel]: " << getTunnel() << std::endl;
+                std::cout << "Segment[getSpineType]: " << getSpineType() << std::endl;
+                std::cout << "Segment[getTieSpacing]: " << getTieSpacing() << std::endl;
+
+                getWoodenSupportGenerator()->debug();
+            }
 
             bool getInvisibleSegment() const;
             void setInvisibleSegment(bool value);
@@ -105,7 +170,9 @@ namespace NoLimits {
 
             WoodenSupportGenerator *getWoodenSupportGenerator() const;
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "SEGM"; }
+            /*! \endcond */
         private:
             bool invisibleSegment;
 

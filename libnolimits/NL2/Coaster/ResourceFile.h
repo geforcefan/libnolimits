@@ -17,8 +17,10 @@ namespace NoLimits {
                 std::cout << "Script[getPath]: " << getPath() << std::endl;
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             std::string getId() const;
             void setId(const std::string &value);

@@ -29,11 +29,13 @@ namespace NoLimits {
                 }
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             std::vector<ResourceFile *> getResourceFile() const;
-            void insertResourceFile(ResourceFile* value);
+            uint32_t insertResourceFile(ResourceFile* value);
 
             std::string getScriptClass() const;
             void setScriptClass(const std::string &value);
@@ -44,7 +46,9 @@ namespace NoLimits {
             bool getPrivateVirtualMachine() const;
             void setPrivateVirtualMachine(bool value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "SCRT"; }
+            /*! \endcond */
 
         private:
             std::string scriptClass;

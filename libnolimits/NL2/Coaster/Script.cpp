@@ -41,8 +41,9 @@ namespace NoLimits {
             return resourceFile;
         }
 
-        void Script::insertResourceFile(ResourceFile* value) {
+        uint32_t Script::insertResourceFile(ResourceFile* value) {
             resourceFile.push_back(value);
+            return resourceFile.size() - 1;
         }
 
         std::string Script::getScriptClass() const {

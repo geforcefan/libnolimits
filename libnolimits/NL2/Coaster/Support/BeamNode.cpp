@@ -2,20 +2,6 @@
 
 namespace NoLimits {
     namespace NoLimits2 {
-        void BeamNode::read(File::File *file) {
-            setPosition(file->readFloat());
-            setIsFlange(file->readBoolean());
-
-            file->readNull(11);
-        }
-
-        void BeamNode::write(File::File *file) {
-            file->writeFloat(getPosition());
-            file->writeBoolean(getIsFlange());
-
-            file->writeNull(11);
-        }
-
         bool BeamNode::getIsFlange() const {
             return isFlange;
         }

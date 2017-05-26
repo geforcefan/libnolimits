@@ -122,16 +122,18 @@ namespace NoLimits {
             return input;
         }
 
-        void SpecialTrack::insertInput(uint32_t value) {
+        uint32_t SpecialTrack::insertInput(uint32_t value) {
             input.push_back(value);
+            return input.size() - 1;
         }
 
         std::vector<uint32_t> SpecialTrack::getOutput() const {
             return output;
         }
 
-        void SpecialTrack::insertOutput(uint32_t value) {
+        uint32_t SpecialTrack::insertOutput(uint32_t value) {
             output.push_back(value);
+            return output.size() - 1;
         }
 
         float SpecialTrack::getSwitchTime() const {
@@ -146,8 +148,9 @@ namespace NoLimits {
             return segment;
         }
 
-        void SpecialTrack::insertSegment(Segment *value) {
+        uint32_t SpecialTrack::insertSegment(Segment *value) {
             segment.push_back(value);
+            return segment.size() - 1;
         }
 
         SpecialTrack *SpecialTrack::createSpecialTrackFromType(SpecialTrack::SpecialTrackType specialTrackType) {

@@ -35,8 +35,10 @@ namespace NoLimits {
                 getExtras()->debug();
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             BaseMap *getBaseMap() const;
             void setBaseMap(BaseMap *value);

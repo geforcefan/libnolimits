@@ -93,8 +93,9 @@ namespace NoLimits {
             return carTexture;
         }
 
-        void IndividualColor::insertCarTexture(std::string value) {
+        uint32_t IndividualColor::insertCarTexture(std::string value) {
             carTexture.push_back(value);
+            return carTexture.size() - 1;
         }
     }
 }

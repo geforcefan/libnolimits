@@ -35,10 +35,49 @@ namespace NoLimits {
                 waitTime = new WaitTime();
                 brakeDevice = new BrakeDevice();
                 transportDevice = new TransportDevice();
+
+                setExtraBlockLength(0.0f);
+                setUnloadingOnly(false);
+                setDisplay(Display::FullBuilding);
+                setGateDirection(GateDirection::Left);
+                setEntranceStairs(Stairs::EndSide);
+                setExitStairs(Stairs::EndSide);
+                setPasses(0);
+                setShuttleBackwardsStart(false);
+                setStructureColor(glm::vec3(54.0f, 16.0f, 16.0f));
+                setRailingsColor(glm::vec3(172.0f, 172.0f, 186.0f));
+                setGatesColor(glm::vec3(172.0f, 172.0f, 186.0f));
+                setStationNumber(1);
             }
 
+            void debug() {
+                Section::debug();
+
+                std::cout << "Station[getExtraBlockLength]: " << getExtraBlockLength() << std::endl;
+                std::cout << "Station[getUnloadingOnly]: " << getUnloadingOnly() << std::endl;
+                std::cout << "Station[getDisplay]: " << getDisplay() << std::endl;
+                std::cout << "Station[getGateDirection]: " << getGateDirection() << std::endl;
+                std::cout << "Station[getEntranceStairs]: " << getEntranceStairs() << std::endl;
+                std::cout << "Station[getExitStairs]: " << getExitStairs() << std::endl;
+                std::cout << "Station[getPasses]: " << getPasses() << std::endl;
+                std::cout << "Station[getShuttleBackwardsStart]: " << getShuttleBackwardsStart() << std::endl;
+
+                std::cout << "Station[getStructureColor]: " << Helper::debug(getStructureColor()) << std::endl;
+                std::cout << "Station[getRailingsColor]: " << Helper::debug(getRailingsColor()) << std::endl;
+                std::cout << "Station[getGatesColor]: " << Helper::debug(getGatesColor()) << std::endl;
+
+                std::cout << "Station[getUseTransportDevice]: " << getUseTransportDevice() << std::endl;
+                std::cout << "Station[getStationNumber]: " << getStationNumber() << std::endl;
+
+                getWaitTime()->debug();
+                getBrakeDevice()->debug();
+                getTransportDevice()->debug();
+            }
+
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             double getExtraBlockLength() const;
             void setExtraBlockLength(double value);
@@ -88,7 +127,9 @@ namespace NoLimits {
             uint32_t getStationNumber() const;
             void setStationNumber(const uint32_t &value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "STTN"; }
+            /*! \endcond */
         private:
             double extraBlockLength;
 

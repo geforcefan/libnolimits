@@ -17,10 +17,33 @@ namespace NoLimits {
 
             Storage() : Section(Section::SectionType::Storage) {
                 transportDevice = new TransportDevice();
+
+                setEnableTransportDevice(true);
+                setTransportType(Transport::TransportType::FrictionWheels);
+                setBuilding(Building::None);
+
+                setSideColor(glm::vec3(128.0f, 0.0f, 64.0f));
+                setRoofColor(glm::vec3(160.0f, 160.0f, 160.0f));
+                setFrameColor(glm::vec3(127.0f, 127.0f, 127.0f));
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                Section::debug();
+
+                std::cout << "Storage[getEnableTransportDevice]: " << getEnableTransportDevice() << std::endl;
+                std::cout << "Storage[getTransportType]: " << getTransportType() << std::endl;
+                std::cout << "Storage[getBuilding]: " << getBuilding() << std::endl;
+                std::cout << "Storage[getSideColor]: " << Helper::debug(getSideColor()) << std::endl;
+                std::cout << "Storage[getRoofColor]: " << Helper::debug(getRoofColor()) << std::endl;
+                std::cout << "Storage[getFrameColor]: " << Helper::debug(getFrameColor()) << std::endl;
+
+                getTransportDevice()->debug();
+            }
 
             bool getEnableTransportDevice() const;
             void setEnableTransportDevice(bool value);
@@ -43,7 +66,9 @@ namespace NoLimits {
             glm::vec3 getFrameColor() const;
             void setFrameColor(const glm::vec3 &value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "STOR"; }
+            /*! \endcond */
         private:
             bool enableTransportDevice;
 

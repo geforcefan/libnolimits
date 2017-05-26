@@ -17,8 +17,10 @@ namespace NoLimits {
                 std::cout << "CustomFriction[getAirResistanceParameter]: " << getAirResistanceParameter() << std::endl;
             }
 
+            /*! \cond INTERNAL */
             void write(File::File *file);
             void read(File::File *file);
+            /*! \endcond */
 
             double getConstFrictionParameter() const;
             void setConstFrictionParameter(double value);
@@ -26,7 +28,9 @@ namespace NoLimits {
             double getAirResistanceParameter() const;
             void setAirResistanceParameter(double value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "CUFR"; }
+            /*! \endcond */
         private:
             double constFrictionParameter;
             double airResistanceParameter;

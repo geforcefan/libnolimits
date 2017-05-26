@@ -8,19 +8,19 @@ namespace NoLimits {
         class Colors: public Stream::Chunk {
         public:
             Colors() {
-                setWireframeTrack(glm::vec3(0.0f));
-                setRails(glm::vec3(0.0f));
-                setCrossTies(glm::vec3(0.0f));
-                setMainSpine(glm::vec3(0.0f));
-                setCar(glm::vec3(0.0f));
-                setSeat(glm::vec3(0.0f));
-                setHarness(glm::vec3(0.0f));
-                setBogie(glm::vec3(0.0f));
-                setChasiss(glm::vec3(0.0f));
-                setSupports(glm::vec3(0.0f));
-                setTunnel(glm::vec3(0.0f));
-                setHandrails(glm::vec3(0.0f));
-                setCatwalks(glm::vec3(0.0f));
+                setWireframeTrack(glm::vec3(0.0f, 0.0f, 255.0f));
+                setRails(glm::vec3(255.0f));
+                setCrossTies(glm::vec3(255.0f));
+                setMainSpine(glm::vec3(255.0f));
+                setCar(glm::vec3(255.0f));
+                setSeat(glm::vec3(255.0f));
+                setHarness(glm::vec3(255.0f));
+                setBogie(glm::vec3(255.0f));
+                setChasiss(glm::vec3(255.0f));
+                setSupports(glm::vec3(255.0f));
+                setTunnel(glm::vec3(255.0f));
+                setHandrails(glm::vec3(255.0f));
+                setCatwalks(glm::vec3(255.0f));
                 setSpineColorScheme(SpineColorScheme::Plain);
             }
 
@@ -47,8 +47,6 @@ namespace NoLimits {
                 std::cout << "Colors[getCatwalks]: " << Helper::debug(getCatwalks()) << std::endl;
                 std::cout << "Colors[getSpineColorScheme]: " << getSpineColorScheme() << std::endl;
             }
-
-            void read(File::File *file);
 
             glm::vec3 getWireframeTrack() const;
             void setWireframeTrack(const glm::vec3 &value);

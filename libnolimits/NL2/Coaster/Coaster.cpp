@@ -240,16 +240,18 @@ namespace NoLimits {
             return track;
         }
 
-        void Coaster::insertTrack(Track* value) {
+        uint32_t Coaster::insertTrack(Track* value) {
             track.push_back(value);
+            return track.size() - 1;
         }
 
         std::vector<Train*> Coaster::getTrain() const {
             return train;
         }
 
-        void Coaster::insertTrain(Train* value) {
+        uint32_t Coaster::insertTrain(Train* value) {
             train.push_back(value);
+            return train.size() - 1;
         }
 
         Section *Coaster::getSection(std::string name) {
@@ -275,8 +277,9 @@ namespace NoLimits {
             return script;
         }
 
-        void Coaster::insertScript(Script* value) {
+        uint32_t Coaster::insertScript(Script* value) {
             script.push_back(value);
+            return script.size() - 1;
         }
 
         Support *Coaster::getSupport() const {

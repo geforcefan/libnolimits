@@ -12,7 +12,7 @@ namespace NoLimits {
             getTransportDevice()->setDeceleration(file->readDouble());
 
             getBrakeDevice()->setDeceleration(file->readDouble());
-            getWaitTime()->setAvarage(file->readDouble());
+            getWaitTime()->setAverage(file->readDouble());
             getWaitTime()->setMinimum(file->readDouble());
             getWaitTime()->setMaximum(file->readDouble());
             getWaitTime()->setDeviation(file->readDouble());
@@ -62,7 +62,7 @@ namespace NoLimits {
             file->writeDouble(getTransportDevice()->getDeceleration());
 
             file->writeDouble(getBrakeDevice()->getDeceleration());
-            file->writeDouble(getWaitTime()->getAvarage());
+            file->writeDouble(getWaitTime()->getAverage());
             file->writeDouble(getWaitTime()->getMinimum());
             file->writeDouble(getWaitTime()->getMaximum());
             file->writeDouble(getWaitTime()->getDeviation());

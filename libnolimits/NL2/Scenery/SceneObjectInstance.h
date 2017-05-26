@@ -30,8 +30,10 @@ namespace NoLimits {
                 std::cout << "SceneObjectInstance[getDimObject]: " << getDimObject() << std::endl;
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             std::string getName() const;
             void setName(const std::string &value);

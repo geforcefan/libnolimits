@@ -4,6 +4,7 @@
 #include "File.h"
 #include <string>
 
+/*! \cond INTERNAL */
 namespace NoLimits {
     namespace File {
         class MemoryFile : public File
@@ -34,5 +35,6 @@ namespace NoLimits {
         };
     }
 }
+/*! \endcond */
 
 #endif

@@ -29,8 +29,9 @@ namespace NoLimits {
             return path;
         }
 
-        void FileScript::insertPath(std::string value) {
+        uint32_t FileScript::insertPath(std::string value) {
             path.push_back(value);
+            return path.size() - 1;
         }
     }
 }

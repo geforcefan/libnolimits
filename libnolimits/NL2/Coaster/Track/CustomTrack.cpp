@@ -3,13 +3,6 @@
 
 namespace NoLimits {
     namespace NoLimits2 {
-        CustomTrack::CustomTrack() : Track(TrackType::Custom) {
-            firstRollPoint = new RollPoint();
-            lastRollPoint = new RollPoint();
-            segment = new Segment();
-            section = new Section();
-        }
-
         void CustomTrack::read(File::File *file) {
             vertex.clear();
             rollPoint.clear();
@@ -172,48 +165,54 @@ namespace NoLimits {
             return vertex;
         }
 
-        void CustomTrack::insertVertex(Vertex *value) {
+        uint32_t CustomTrack::insertVertex(Vertex *value) {
             vertex.push_back(value);
+            return vertex.size() - 1;
         }
 
         std::vector<RollPoint *> CustomTrack::getRollPoint() const {
             return rollPoint;
         }
 
-        void CustomTrack::insertRollPoint(RollPoint *value) {
+        uint32_t CustomTrack::insertRollPoint(RollPoint *value) {
             rollPoint.push_back(value);
+            return rollPoint.size() - 1;
         }
 
         std::vector<Trigger *> CustomTrack::getTrigger() const {
             return trigger;
         }
 
-        void CustomTrack::insertTrigger(Trigger* value) {
+        uint32_t CustomTrack::insertTrigger(Trigger* value) {
             trigger.push_back(value);
+            return trigger.size() - 1;
         }
 
         std::vector<RailNode*> CustomTrack::getRailNode() const {
             return railNode;
         }
 
-        void CustomTrack::insertRailNode(RailNode* value) {
+        uint32_t CustomTrack::insertRailNode(RailNode* value) {
             railNode.push_back(value);
+            return railNode.size() - 1;
         }
 
         std::vector<Parameter4D*> CustomTrack::getParameter4D() const {
             return parameter4D;
         }
 
-        void CustomTrack::insertParameter4D(Parameter4D* value) {
+        uint32_t CustomTrack::insertParameter4D(Parameter4D* value) {
             parameter4D.push_back(value);
+            return parameter4D.size() - 1;
         }
 
         std::vector<Separator *> CustomTrack::getSeparator() const {
             return separator;
         }
 
-        void CustomTrack::insertSeparator(Separator* value) {
+        uint32_t CustomTrack::insertSeparator(Separator* value) {
             separator.push_back(value);
+            return separator.size() - 1;
         }
 
         Segment *CustomTrack::getSegment() const {

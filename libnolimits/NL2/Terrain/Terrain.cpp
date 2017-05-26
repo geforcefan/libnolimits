@@ -158,8 +158,9 @@ namespace NoLimits {
             return textureRepeats;
         }
 
-        void Terrain::insertTextureRepeats(float value) {
+        uint32_t Terrain::insertTextureRepeats(float value) {
             textureRepeats.push_back(value);
+            return textureRepeats.size() - 1;
         }
 
         std::vector<Layer*> Terrain::getLayer() const {
@@ -178,7 +179,7 @@ namespace NoLimits {
             return nullptr;
         }
 
-        void Terrain::insertLayer(Layer* value) {
+        uint32_t Terrain::insertLayer(Layer* value) {
             layer.push_back(value);
 
             uint32_t numberOfIntensityLayers = std::floor((layer.size() + 1) / 2.0);
@@ -191,6 +192,8 @@ namespace NoLimits {
 
                 terrainIntensityLayers.push_back(intensityLayer);
             }
+
+            return layer.size() - 1;
         }
 
         uint32_t Terrain::getVertexDimX() const {

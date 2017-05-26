@@ -8,16 +8,31 @@ namespace NoLimits {
         class BeamConnection : public Stream::Chunk {
         public:
             enum Type {
-                FreeNode = 1,
-                Footer = 2,
-                RailConnector = 3,
-                BeamNode = 4
+                None,
+                FreeNode,
+                Footer,
+                RailConnector,
+                BeamNode
             };
 
-            BeamConnection() {}
+            BeamConnection() {
+                setType(Type::None);
+                setIndex(0);
+                setIndexOnBeam(0);
+                setIndexOnRailConnector(0);
+            }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                std::cout << "BeamConnection[getType]: " << getType() << std::endl;
+                std::cout << "BeamConnection[getIndex]: " << getIndex() << std::endl;
+                std::cout << "BeamConnection[getIndexOnBeam]: " << getIndexOnBeam() << std::endl;
+                std::cout << "BeamConnection[getIndexOnRailConnector]: " << getIndexOnRailConnector() << std::endl;
+            }
 
             Type getType() const;
             void setType(const Type &value);

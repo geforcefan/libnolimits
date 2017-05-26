@@ -57,18 +57,20 @@ namespace NoLimits {
                 std::cout << "Terrain[getVertexDimY]: " << getVertexDimY() << std::endl;
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             Water *getWater() const;
             void setWater(Water *value);
 
             std::vector<float> getTextureRepeats() const;
-            void insertTextureRepeats(float value);
+            uint32_t insertTextureRepeats(float value);
 
             std::vector<Layer*> getLayer() const;
             Layer *getLayer(std::string name);
-            void insertLayer(Layer* value);
+            uint32_t insertLayer(Layer* value);
 
             uint32_t getVertexDimX() const;
             uint32_t getVertexDimY() const;
@@ -81,7 +83,9 @@ namespace NoLimits {
 
             uint32_t getNumberOfIntensityLayers();
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "TERC"; }
+            /*! \endcond */
         private:
             uint32_t vertexDimX;
             uint32_t vertexDimY;

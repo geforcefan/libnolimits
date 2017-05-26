@@ -20,8 +20,10 @@ namespace NoLimits {
                 std::cout << "Sky[getOverrideDefaultDateTime]: " << getOverrideDefaultDateTime() << std::endl;
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             bool getOverrideDefaultDateTime() const;
             void setOverrideDefaultDateTime(bool value);

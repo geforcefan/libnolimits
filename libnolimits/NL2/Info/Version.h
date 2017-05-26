@@ -16,8 +16,10 @@ namespace NoLimits {
                 std::cout << "Version[getBuild]: " << getBuild() << std::endl;
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             uint16_t getMajor() const;
             void setMajor(const uint16_t &value);

@@ -26,10 +26,38 @@ namespace NoLimits {
                 Prefab
             };
 
-            RailNode() { }
+            RailNode() : SupportNode() {
+                setPosition(0.0f);
+                setSizeParameter(0.0f);
+                setTrackIndex(0);
+                setConnectionStyle(ConnectionStyle::TrackDefault);
+                setIsModel(0);
+                setPrefabIndex(0);
+            }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                SupportNode::debug();
+
+                std::cout << "RailNode[getPosition]: " << getPosition() << std::endl;
+                std::cout << "RailNode[getSizeParameter]: " << getSizeParameter() << std::endl;
+                std::cout << "RailNode[getTrackIndex]: " << getTrackIndex() << std::endl;
+                std::cout << "RailNode[getConnectionStyle]: " << getConnectionStyle() << std::endl;
+                std::cout << "RailNode[getIsModel]: " << getIsModel() << std::endl;
+                std::cout << "RailNode[getPrefabIndex]: " << getPrefabIndex() << std::endl;
+
+                std::cout << "RailNode[vertex.size]: " << supportParameter.size() << std::endl;
+                if(supportParameter.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < supportParameter.size(); i++) {
+                    supportParameter[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+            }
 
             double getPosition() const;
             void setPosition(double value);
@@ -49,11 +77,12 @@ namespace NoLimits {
             uint32_t getPrefabIndex() const;
             void setPrefabIndex(const uint32_t &value);
 
-            std::string getChunkName() { return "SRNP"; }
-
             std::vector<SupportParameter *> getSupportParameter() const;
-            void insertSupportParameter(SupportParameter* value);
+            uint32_t insertSupportParameter(SupportParameter* value);
 
+            /*! \cond INTERNAL */
+            std::string getChunkName() { return "SRNP"; }
+            /*! \endcond */
         private:
             ConnectionStyle connectionStyle;
             double position;

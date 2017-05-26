@@ -45,8 +45,10 @@ namespace NoLimits {
                 getVersion()->debug();
             }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
 
             Weather *getWeather() const;
             Sky *getSky() const;
@@ -78,7 +80,9 @@ namespace NoLimits {
             bool getInitialPositionAndRotationEnabled() const;
             void setInitialPositionAndRotationEnabled(bool value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "INFO"; }
+            /*! \endcond */
         private:
             Weather *weather;
             Sky *sky;

@@ -69,8 +69,9 @@ namespace NoLimits {
             return car;
         }
 
-        void Train::insertCar(Car* value) {
+        uint32_t Train::insertCar(Car* value) {
             car.push_back(value);
+            return car.size() - 1;
         }
 
         IndividualColor *Train::getIndividualColor() const {

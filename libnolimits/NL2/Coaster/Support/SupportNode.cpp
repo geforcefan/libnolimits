@@ -64,8 +64,6 @@ namespace NoLimits {
         }
 
         void SupportNode::setColorMode(SupportNode::ColorMode value)  {
-            colorMode = value;
-
             setWithCheckFlag3(4, false);
             setWithCheckFlag3(5, false);
             setWithCheckFlag3(6, false);
@@ -87,23 +85,18 @@ namespace NoLimits {
                 case SupportNode::ColorMode::CustomColor:
                     break;
             }
-
-            colorMode = getColorMode();
         }
 
         void SupportNode::setFlag1(const uint8_t &value) {
             flag1 = value;
-            colorMode = getColorMode();
         }
 
         void SupportNode::setFlag2(const uint8_t &value) {
             flag2 = value;
-            colorMode = getColorMode();
         }
 
         void SupportNode::setFlag3(const uint8_t &value) {
             flag3 = value;
-            colorMode = getColorMode();
         }
 
         bool SupportNode::hasFlag1(uint8_t flag) {

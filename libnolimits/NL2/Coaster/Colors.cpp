@@ -114,8 +114,5 @@ namespace NoLimits {
         void Colors::setSpineColorScheme(const Colors::SpineColorScheme &value) {
             spineColorScheme = value;
         }
-
-        void Colors::read(File::File *file) {
-        }
     }
 }

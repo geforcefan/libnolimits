@@ -182,33 +182,37 @@ namespace NoLimits {
             return footer;
         }
 
-        void Support::insertFooter(Footer *value) {
+        uint32_t Support::insertFooter(Footer *value) {
             footer.push_back(value);
+            return footer.size() - 1;
         }
 
         std::vector<FreeNode *> Support::getFreeNode() const {
             return freeNode;
         }
 
-        void Support::insertFreeNode(FreeNode *value)
+        uint32_t Support::insertFreeNode(FreeNode *value)
         {
             freeNode.push_back(value);
+            return freeNode.size() - 1;
         }
 
         std::vector<Beam *> Support::getBeam() const {
             return beam;
         }
 
-        void Support::insertBeam(Beam *value) {
+        uint32_t Support::insertBeam(Beam *value) {
             beam.push_back(value);
+            return beam.size() - 1;
         }
 
         std::vector<std::string> Support::getPrefab() const {
             return prefab;
         }
 
-        void Support::insertPrefab(std::string value) {
+        uint32_t Support::insertPrefab(std::string value) {
             prefab.push_back(value);
+            return prefab.size() - 1;
         }
     }
 }

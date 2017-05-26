@@ -7,10 +7,24 @@ namespace NoLimits {
     namespace NoLimits2 {
         class RollPoint : public Stream::Chunk {
         public:
-            RollPoint() {}
+            RollPoint() {
+                setPosition(0.0f);
+                setRoll(0.0f);
+                setVertical(false);
+                setStrict(false);
+            }
 
+            /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
+            /*! \endcond */
+
+            void debug() {
+                std::cout << "RollPoint[getPosition]: " << getPosition() << std::endl;
+                std::cout << "RollPoint[getRoll]: " << getRoll() << std::endl;
+                std::cout << "RollPoint[getVertical]: " << getVertical() << std::endl;
+                std::cout << "RollPoint[getStrict]: " << getStrict() << std::endl;
+            }
 
             double getPosition() const;
             void setPosition(double value);
@@ -24,7 +38,9 @@ namespace NoLimits {
             bool getStrict() const;
             void setStrict(bool value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "ROLL"; }
+            /*! \endcond */
         private:
             double position;
             double roll;
