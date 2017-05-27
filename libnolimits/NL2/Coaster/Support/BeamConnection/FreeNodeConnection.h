@@ -11,6 +11,10 @@ namespace NoLimits {
                 setType(BeamConnection::Type::FreeNode);
             }
 
+            FreeNodeConnection(uint32_t freeNodeIndex) : FreeNodeConnection() {
+                setFreeNodeIndex(freeNodeIndex);
+            }
+
             uint32_t getFreeNodeIndex() const;
             void setFreeNodeIndex(const uint32_t &value);
         };

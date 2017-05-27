@@ -38,6 +38,11 @@ namespace NoLimits {
                 setCustomColor(glm::vec3(255.0f, 255.0f, 255.0f));
             }
 
+            Footer(glm::vec3 position, float rotationAngle) : Footer() {
+                setPosition(position);
+                setRotationAngle(rotationAngle);
+            }
+
             /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);

@@ -11,6 +11,12 @@ namespace NoLimits {
                 setType(BeamConnection::Type::RailConnector);
             }
 
+            RailConnectorConnection(uint32_t trackIndex, uint32_t railConnectorIndex, uint32_t index) : RailConnectorConnection() {
+                setTrackIndex(trackIndex);
+                setRailConnectorIndex(railConnectorIndex);
+                setIndex(index);
+            }
+
             uint32_t getTrackIndex() const;
             void setTrackIndex(const uint32_t &value);
 

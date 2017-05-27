@@ -35,11 +35,13 @@ namespace NoLimits {
             }
 
             Type getType() const;
+
+            static BeamConnection *createBeamConnectionFromType(Type type);
+        protected:
             void setType(const Type &value);
 
-        protected:
-            uint32_t getIndex1() const;
             void setIndex1(const uint32_t &value);
+            uint32_t getIndex1() const;
 
             uint32_t getIndex2() const;
             void setIndex2(const uint32_t &value);

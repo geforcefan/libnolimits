@@ -11,6 +11,10 @@ namespace NoLimits {
                 setType(BeamConnection::Type::Footer);
             }
 
+            FooterConnection(uint32_t footerIndex) : FooterConnection() {
+                setFooterIndex(footerIndex);
+            }
+
             uint32_t getFooterIndex() const;
             void setFooterIndex(const uint32_t &value);
         };

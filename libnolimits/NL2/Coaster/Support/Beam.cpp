@@ -5,7 +5,12 @@ namespace NoLimits {
         void Beam::read(File::File *file) {
             beamNode.clear();
 
+            BeamConnection::Type connection1Type = (BeamConnection::Type)file->readUnsignedInteger();
+            setConnection1(BeamConnection::createBeamConnectionFromType(connection1Type));
             getConnection1()->read(file);
+
+            BeamConnection::Type connection2Type = (BeamConnection::Type)file->readUnsignedInteger();
+            setConnection2(BeamConnection::createBeamConnectionFromType(connection2Type));
             getConnection2()->read(file);
 
             file->readNull(3);
@@ -51,7 +56,10 @@ namespace NoLimits {
         }
 
         void Beam::write(File::File *file) {
+            file->writeUnsignedInteger(getConnection1()->getType());
             getConnection1()->write(file);
+
+            file->writeUnsignedInteger(getConnection2()->getType());
             getConnection2()->write(file);
 
             file->writeNull(3);

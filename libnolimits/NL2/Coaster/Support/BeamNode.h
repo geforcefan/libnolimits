@@ -12,6 +12,10 @@ namespace NoLimits {
                 setPosition(0.0f);
             }
 
+            BeamNode(float position) : BeamNode() {
+                setPosition(position);
+            }
+
             void debug() {
                 std::cout << "BeamNode[getIsFlange]: " << getIsFlange() << std::endl;
                 std::cout << "BeamNode[getPosition]: " << getPosition() << std::endl;

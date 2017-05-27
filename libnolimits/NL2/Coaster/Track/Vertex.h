@@ -13,6 +13,12 @@ namespace NoLimits {
                 setStrict(false);
             }
 
+            Vertex(glm::vec4 position, bool locked, bool strict) {
+                setPosition(position);
+                setLocked(locked);
+                setStrict(strict);
+            }
+
             /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);

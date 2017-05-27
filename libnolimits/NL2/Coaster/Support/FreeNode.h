@@ -11,6 +11,10 @@ namespace NoLimits {
                 setPosition(glm::vec3(0.0f, 0.0f, 0.0f));
             }
 
+            FreeNode(glm::vec3 position) {
+                setPosition(position);
+            }
+
             /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);

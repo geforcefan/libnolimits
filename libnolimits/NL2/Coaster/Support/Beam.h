@@ -7,6 +7,7 @@
 #include "BeamConnection/BeamConnection.h"
 #include "BeamConnection/BeamNodeConnection.h"
 #include "BeamConnection/FreeNodeConnection.h"
+#include "BeamConnection/FooterConnection.h"
 #include "BeamConnection/RailConnectorConnection.h"
 #include "SupportNode.h"
 

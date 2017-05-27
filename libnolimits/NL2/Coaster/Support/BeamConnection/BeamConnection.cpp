@@ -1,16 +1,18 @@
 #include "BeamConnection.h"
+#include "BeamNodeConnection.h"
+#include "FreeNodeConnection.h"
+#include "FooterConnection.h"
+#include "RailConnectorConnection.h"
 
 namespace NoLimits {
     namespace NoLimits2 {
         void BeamConnection::read(File::File *file) {
-            setType((BeamConnection::Type)file->readUnsignedInteger());
             setIndex1(file->readUnsignedInteger());
             setIndex2(file->readUnsignedInteger());
             setIndex3(file->readUnsignedInteger());
         }
 
         void BeamConnection::write(File::File *file) {
-            file->writeUnsignedInteger(getType());
             file->writeUnsignedInteger(getIndex1());
             file->writeUnsignedInteger(getIndex2());
             file->writeUnsignedInteger(getIndex3());
@@ -46,6 +48,22 @@ namespace NoLimits {
 
         void BeamConnection::setIndex3(const uint32_t &value) {
             index3 = value;
+        }
+
+        BeamConnection *BeamConnection::createBeamConnectionFromType(BeamConnection::Type type) {
+            switch(type) {
+                case BeamConnection::Type::BeamNode:
+                    return new BeamNodeConnection();
+                case BeamConnection::Type::Footer:
+                    return new FooterConnection();
+                case BeamConnection::Type::FreeNode:
+                    return new FreeNodeConnection();
+                case BeamConnection::Type::RailConnector:
+                    return new RailConnectorConnection();
+                case BeamConnection::Type::None:
+                default:
+                    return new BeamConnection();
+            }
         }
     }
 }

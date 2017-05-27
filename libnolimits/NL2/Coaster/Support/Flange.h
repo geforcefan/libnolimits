@@ -11,6 +11,10 @@ namespace NoLimits {
             Flange() : BeamNode() {
                 setIsFlange(true);
             }
+
+            Flange(float position) : BeamNode(position) {
+                setIsFlange(true);
+            }
         };
     }
 }

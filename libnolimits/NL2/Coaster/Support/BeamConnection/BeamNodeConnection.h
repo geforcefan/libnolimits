@@ -11,6 +11,11 @@ namespace NoLimits {
                 setType(BeamConnection::Type::BeamNode);
             }
 
+            BeamNodeConnection(uint32_t beamIndex, uint32_t beamNodeIndex) : BeamNodeConnection() {
+                setBeamIndex(beamIndex);
+                setBeamNodeIndex(beamNodeIndex);
+            }
+
             uint32_t getBeamIndex() const;
             void setBeamIndex(const uint32_t &value);
 
