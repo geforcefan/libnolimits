@@ -2,9 +2,9 @@
 #define LIB_STREAM_CHUNK_H
 
 #include "../File/File.h"
+#include "../Nolimits.h"
 
 #include <stdint.h>
-#include "../Nolimits.h"
 
 namespace NoLimits {
     namespace Stream {

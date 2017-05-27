@@ -128,6 +128,7 @@ namespace NoLimits {
             file->writeFile(subfile);
         }
 
+
         void Support::readBeams(File::File *file) {
             file->readNull(4);
             file->readNull(8);
@@ -137,7 +138,6 @@ namespace NoLimits {
             for(uint32_t i = 0; i < numberOfBeams; i++) {
                 Beam *_beam = new Beam();
                 _beam->read(file);
-
                 insertBeam(_beam);
             }
 
@@ -191,10 +191,14 @@ namespace NoLimits {
             return freeNode;
         }
 
-        uint32_t Support::insertFreeNode(FreeNode *value)
-        {
+        uint32_t Support::insertFreeNode(FreeNode *value) {
             freeNode.push_back(value);
             return freeNode.size() - 1;
+        }
+
+        void Support::removeFreeNode(uint32_t freeNodeIndex) {
+
+            freeNode.erase(freeNode.begin() + freeNodeIndex);
         }
 
         std::vector<Beam *> Support::getBeam() const {
@@ -204,6 +208,10 @@ namespace NoLimits {
         uint32_t Support::insertBeam(Beam *value) {
             beam.push_back(value);
             return beam.size() - 1;
+        }
+
+        void Support::removeBeam(uint32_t beamIndex) {
+            beam.erase(beam.begin() + beamIndex);
         }
 
         std::vector<std::string> Support::getPrefab() const {

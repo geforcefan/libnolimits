@@ -57,9 +57,11 @@ namespace NoLimits {
 
             std::vector<FreeNode *> getFreeNode() const;
             uint32_t insertFreeNode(FreeNode* value);
+            void removeFreeNode(uint32_t freeNodeIndex);
 
             std::vector<Beam *> getBeam() const;
             uint32_t insertBeam(Beam* value);
+            void removeBeam(uint32_t beamIndex);
 
             std::vector<std::string> getPrefab() const;
             uint32_t insertPrefab(std::string value);

@@ -41,7 +41,6 @@ int main() {
     uint32_t beam3Index = coaster->getSupport()->insertBeam(beam3);
 
 
-    park->save("test/TestPark/CustomPark.nl2park");
-
+    park->save("test/TestPark/TestPark.custom_park.nl2park");
     return 0;
 }

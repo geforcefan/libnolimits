@@ -106,3 +106,21 @@ test/TestPark/Data.txt
 CMakeLists.txt.user
 
 test/TestPark/TestPark.nl2park_backup
+
+libnolimits.cbp
+
+examples/basic.cbp
+
+*.cbp
+
+test/TestPark/TestPark.supports_free_node.nl2park
+
+test/test_supports_free_node
+
+test/test_custom_park
+
+test/test_beam_remove
+
+test/Hydra/Hydra.nl2park
+
+test/Hydra/HydraClone.nl2park
