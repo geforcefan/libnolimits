@@ -21,6 +21,11 @@ namespace NoLimits {
                 setTrainEvent(TrainEvent::None);
             }
 
+            Trigger(std::string name, double position) : Trigger() {
+                setPosition(position);
+                setName(name);
+            }
+
             /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);

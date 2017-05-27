@@ -14,6 +14,13 @@ namespace NoLimits {
                 setStrict(false);
             }
 
+            RollPoint(double position, double roll, bool vertical, bool strict) {
+                setPosition(position);
+                setRoll(roll);
+                setVertical(vertical);
+                setStrict(strict);
+            }
+
             /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);

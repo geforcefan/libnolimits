@@ -40,6 +40,7 @@ int main() {
     beam3->setConnection2(new RailConnectorConnection(track1Index, railConnectorIndex, 0));
     uint32_t beam3Index = coaster->getSupport()->insertBeam(beam3);
 
+
     park->save("test/TestPark/CustomPark.nl2park");
 
     return 0;

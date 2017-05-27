@@ -12,6 +12,11 @@ namespace NoLimits {
                 setAngle(0.0f);
             }
 
+            Parameter4D(double position, double angle) {
+                setPosition(position);
+                setAngle(angle);
+            }
+
             /*! \cond INTERNAL */
             void read(File::File *file);
             void write(File::File *file);
