@@ -8,6 +8,8 @@ var searchData=
   ['beamconnection_2eh',['BeamConnection.h',['../_beam_connection_8h.html',1,'']]],
   ['beamnode_2ecpp',['BeamNode.cpp',['../_beam_node_8cpp.html',1,'']]],
   ['beamnode_2eh',['BeamNode.h',['../_beam_node_8h.html',1,'']]],
+  ['beamnodeconnection_2ecpp',['BeamNodeConnection.cpp',['../_beam_node_connection_8cpp.html',1,'']]],
+  ['beamnodeconnection_2eh',['BeamNodeConnection.h',['../_beam_node_connection_8h.html',1,'']]],
   ['brake_2ecpp',['Brake.cpp',['../_brake_8cpp.html',1,'']]],
   ['brake_2eh',['Brake.h',['../_brake_8h.html',1,'']]],
   ['brakedevice_2ecpp',['BrakeDevice.cpp',['../_brake_device_8cpp.html',1,'']]],

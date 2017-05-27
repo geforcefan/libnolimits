@@ -3,7 +3,7 @@ var searchData=
   ['aboveground',['aboveGround',['../class_no_limits_1_1_no_limits2_1_1_footer.html#aaade4e37b1624d6267cb88447d5673f8',1,'NoLimits::NoLimits2::Footer']]],
   ['acceleration',['acceleration',['../class_no_limits_1_1_no_limits2_1_1_lift.html#a0c24d6b5932ce94b9ba8e6717faed6a7',1,'NoLimits::NoLimits2::Lift::acceleration()'],['../class_no_limits_1_1_no_limits2_1_1_transport.html#ada98ddbc1e6ff6204d703c424b61a2b6',1,'NoLimits::NoLimits2::Transport::acceleration()'],['../class_no_limits_1_1_no_limits2_1_1_transport_device.html#a3ee239d0657444748364111c28eff923',1,'NoLimits::NoLimits2::TransportDevice::acceleration()']]],
   ['airresistanceparameter',['airResistanceParameter',['../class_no_limits_1_1_no_limits2_1_1_custom_friction.html#ab40dc662a090c5997a2bc2d6c9155a70',1,'NoLimits::NoLimits2::CustomFriction']]],
-  ['aligned4d',['Aligned4D',['../class_no_limits_1_1_no_limits2_1_1_rail_node.html#a839860a8c6ff783ac33fdef869d5e987ae2011a2ae6f25d5fc7bb42ba7da9ab2c',1,'NoLimits::NoLimits2::RailNode']]],
+  ['aligned4d',['Aligned4D',['../class_no_limits_1_1_no_limits2_1_1_rail_connector.html#a7aeee3b4840fe369c767d8d1c24f8612a0144aedbf1ebce2c493c7ba2d95a991d',1,'NoLimits::NoLimits2::RailConnector']]],
   ['angle',['angle',['../class_no_limits_1_1_no_limits2_1_1_parameter4_d.html#addf2c9eded69fb258bd2ada126fd0b7a',1,'NoLimits::NoLimits2::Parameter4D']]],
   ['atend',['AtEnd',['../class_no_limits_1_1_no_limits2_1_1_lift.html#ac867c1af14ddfdf31b1360bd5d04931ba782c6306f9ad4fd217abed609b3e02de',1,'NoLimits::NoLimits2::Lift']]],
   ['atstart',['AtStart',['../class_no_limits_1_1_no_limits2_1_1_lift.html#ac867c1af14ddfdf31b1360bd5d04931ba5ea645b0189e4fe0f0cf33608170c11a',1,'NoLimits::NoLimits2::Lift']]],

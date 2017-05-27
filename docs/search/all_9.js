@@ -1,14 +1,14 @@
 var searchData=
 [
   ['id',['id',['../class_no_limits_1_1_no_limits2_1_1_resource_file.html#a5a8c59803c8e92c1c75c74c57b99b16e',1,'NoLimits::NoLimits2::ResourceFile']]],
-  ['index',['index',['../class_no_limits_1_1_no_limits2_1_1_beam_connection.html#aa954870bd824dcc5f890feee627da736',1,'NoLimits::NoLimits2::BeamConnection']]],
-  ['indexonbeam',['indexOnBeam',['../class_no_limits_1_1_no_limits2_1_1_beam_connection.html#afca0375a62655bea57e949eaa3aff7e9',1,'NoLimits::NoLimits2::BeamConnection']]],
-  ['indexonrailconnector',['indexOnRailConnector',['../class_no_limits_1_1_no_limits2_1_1_beam_connection.html#a873d14a60496ad3b008050b6549c12e1',1,'NoLimits::NoLimits2::BeamConnection']]],
+  ['index1',['index1',['../class_no_limits_1_1_no_limits2_1_1_beam_connection.html#ad68b24f023deb194008f3c825cbd3d91',1,'NoLimits::NoLimits2::BeamConnection']]],
+  ['index2',['index2',['../class_no_limits_1_1_no_limits2_1_1_beam_connection.html#a1e77b5118990b647a6105a78ca21c7f3',1,'NoLimits::NoLimits2::BeamConnection']]],
+  ['index3',['index3',['../class_no_limits_1_1_no_limits2_1_1_beam_connection.html#acbb38cb3467d5ffbad31049f4cdaa19b',1,'NoLimits::NoLimits2::BeamConnection']]],
   ['individualcolor',['IndividualColor',['../class_no_limits_1_1_no_limits2_1_1_individual_color.html',1,'NoLimits::NoLimits2::IndividualColor'],['../class_no_limits_1_1_no_limits2_1_1_individual_color.html#aa1642578d91616508aeb4ab5fa3f077d',1,'NoLimits::NoLimits2::IndividualColor::IndividualColor()'],['../class_no_limits_1_1_no_limits2_1_1_car.html#aa9434ae40d1081b1f1b9a2ccefe2860f',1,'NoLimits::NoLimits2::Car::individualColor()'],['../class_no_limits_1_1_no_limits2_1_1_train.html#a37a530a06a7aebbe45b0aa866f08d2f2',1,'NoLimits::NoLimits2::Train::individualColor()']]],
   ['individualcolor_2ecpp',['IndividualColor.cpp',['../_individual_color_8cpp.html',1,'']]],
   ['individualcolor_2eh',['IndividualColor.h',['../_individual_color_8h.html',1,'']]],
   ['individualsettings',['IndividualSettings',['../class_no_limits_1_1_no_limits2_1_1_wooden_support_generator.html#a5b46b0da79f7731190afd9a17f1aa288accff9a138062016ed7d976d1898e1b84',1,'NoLimits::NoLimits2::WoodenSupportGenerator']]],
-  ['info',['Info',['../class_no_limits_1_1_no_limits2_1_1_info.html',1,'NoLimits::NoLimits2::Info'],['../class_no_limits_1_1_no_limits2_1_1_park.html#a0834c6d0a0e602d9110b93dee73ed617',1,'NoLimits::NoLimits2::Park::info()'],['../class_no_limits_1_1_no_limits2_1_1_info.html#a8655979ab04d44c42a93594afacec1db',1,'NoLimits::NoLimits2::Info::Info()']]],
+  ['info',['Info',['../class_no_limits_1_1_no_limits2_1_1_info.html',1,'NoLimits::NoLimits2::Info'],['../class_no_limits_1_1_no_limits2_1_1_info.html#a8655979ab04d44c42a93594afacec1db',1,'NoLimits::NoLimits2::Info::Info()'],['../class_no_limits_1_1_no_limits2_1_1_park.html#a0834c6d0a0e602d9110b93dee73ed617',1,'NoLimits::NoLimits2::Park::info()']]],
   ['info_2ecpp',['Info.cpp',['../_info_8cpp.html',1,'']]],
   ['info_2eh',['Info.h',['../_info_8h.html',1,'']]],
   ['initialposition',['initialPosition',['../class_no_limits_1_1_no_limits2_1_1_info.html#a089f7e35d31c554430e8f370af6dace5',1,'NoLimits::NoLimits2::Info']]],
@@ -30,7 +30,7 @@ var searchData=
   ['insertparameter4d',['insertParameter4D',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#a457aac616f3e9bd74f7d8134679b2a6e',1,'NoLimits::NoLimits2::CustomTrack']]],
   ['insertpath',['insertPath',['../class_no_limits_1_1_no_limits2_1_1_file_script.html#a539a89cf42555ae50c8c757ae7bcf6e3',1,'NoLimits::NoLimits2::FileScript']]],
   ['insertprefab',['insertPrefab',['../class_no_limits_1_1_no_limits2_1_1_support.html#a9b193a7dbbe5db0f4ecdc66b567a58e0',1,'NoLimits::NoLimits2::Support']]],
-  ['insertrailnode',['insertRailNode',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#af9daac87a75b1815cf6f91796eb60f72',1,'NoLimits::NoLimits2::CustomTrack']]],
+  ['insertrailconnector',['insertRailConnector',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#a5e524d03145d5d8731734175655c8c41',1,'NoLimits::NoLimits2::CustomTrack']]],
   ['insertresourcefile',['insertResourceFile',['../class_no_limits_1_1_no_limits2_1_1_script.html#a6d00bee2e3431a26fd37ce46f6ab406f',1,'NoLimits::NoLimits2::Script']]],
   ['insertrollpoint',['insertRollPoint',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#ae10b8114a31caf94298863302ce7ba04',1,'NoLimits::NoLimits2::CustomTrack']]],
   ['insertsceneobject',['insertSceneObject',['../class_no_limits_1_1_no_limits2_1_1_scenery.html#a7b75d890bef3790ce0330a71a507064a',1,'NoLimits::NoLimits2::Scenery']]],
@@ -38,7 +38,7 @@ var searchData=
   ['insertscript',['insertScript',['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a04977ff56ab517b14af72657bce2e08a',1,'NoLimits::NoLimits2::Coaster']]],
   ['insertsegment',['insertSegment',['../class_no_limits_1_1_no_limits2_1_1_special_track.html#a538271e8a84626064804e052e48c8db5',1,'NoLimits::NoLimits2::SpecialTrack']]],
   ['insertseparator',['insertSeparator',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#abaac57a7d2c5f241a2cb406b7483014f',1,'NoLimits::NoLimits2::CustomTrack']]],
-  ['insertsupportparameter',['insertSupportParameter',['../class_no_limits_1_1_no_limits2_1_1_rail_node.html#a44e14f257f35b85fe004eaef77451e84',1,'NoLimits::NoLimits2::RailNode']]],
+  ['insertsupportparameter',['insertSupportParameter',['../class_no_limits_1_1_no_limits2_1_1_rail_connector.html#a7aa0afae1831343fabfe505f1913d60e',1,'NoLimits::NoLimits2::RailConnector']]],
   ['insertsynchronizedispatchwith',['insertSynchronizeDispatchWith',['../class_no_limits_1_1_no_limits2_1_1_wait_time.html#a9a74f8c653dddd3c506894cbc03940f7',1,'NoLimits::NoLimits2::WaitTime']]],
   ['inserttexturerepeats',['insertTextureRepeats',['../class_no_limits_1_1_no_limits2_1_1_terrain.html#a19efe8ffaca1ccadc679593e7032ef28',1,'NoLimits::NoLimits2::Terrain']]],
   ['inserttrack',['insertTrack',['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a28858c4a11cb1165f777b9be1194ea10',1,'NoLimits::NoLimits2::Coaster']]],
@@ -50,6 +50,5 @@ var searchData=
   ['invertedfacetofacecoaster',['InvertedFaceToFaceCoaster',['../class_no_limits_1_1_no_limits2_1_1_style.html#ac7349400e7c093e03a4bfa1cad90aa44a1538bdf9579678402b1ee4a4e4eda7f4',1,'NoLimits::NoLimits2::Style']]],
   ['invertedimpulsecoaster',['InvertedImpulseCoaster',['../class_no_limits_1_1_no_limits2_1_1_style.html#ac7349400e7c093e03a4bfa1cad90aa44ac848cfb6c59b479a44841333e8618a81',1,'NoLimits::NoLimits2::Style']]],
   ['invisiblesegment',['invisibleSegment',['../class_no_limits_1_1_no_limits2_1_1_segment.html#ab200fdcb7b8ebe9b3a7e79b033ca3fc0',1,'NoLimits::NoLimits2::Segment']]],
-  ['isflange',['isFlange',['../class_no_limits_1_1_no_limits2_1_1_beam_node.html#a0330a7c3f20de298ffb5ae8dbab4cef3',1,'NoLimits::NoLimits2::BeamNode']]],
-  ['ismodel',['isModel',['../class_no_limits_1_1_no_limits2_1_1_rail_node.html#a51606f518fb96268e0b5dfede1e32943',1,'NoLimits::NoLimits2::RailNode']]]
+  ['isflange',['isFlange',['../class_no_limits_1_1_no_limits2_1_1_beam_node.html#a0330a7c3f20de298ffb5ae8dbab4cef3',1,'NoLimits::NoLimits2::BeamNode']]]
 ];

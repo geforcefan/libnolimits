@@ -14,7 +14,7 @@ var searchData=
   ['highest',['Highest',['../class_no_limits_1_1_no_limits2_1_1_beam.html#a60726eeed0e07af52f4abd59a80f97c7a71e86aa9a4ab99470fc10d77e36d45d5',1,'NoLimits::NoLimits2::Beam']]],
   ['higheststress',['HighestStress',['../class_no_limits_1_1_no_limits2_1_1_segment.html#a104d5ac1fd72fa5e4abd1d618a6b6b62a0dbd05733b935d1aa52e0d6d776e3120',1,'NoLimits::NoLimits2::Segment']]],
   ['highstress',['HighStress',['../class_no_limits_1_1_no_limits2_1_1_segment.html#a104d5ac1fd72fa5e4abd1d618a6b6b62acd2712f41ed2bea78e1837ee6c6eadf2',1,'NoLimits::NoLimits2::Segment']]],
-  ['horizontal4d',['Horizontal4D',['../class_no_limits_1_1_no_limits2_1_1_rail_node.html#a839860a8c6ff783ac33fdef869d5e987a99d011c76344c39c4a16ddc5a2558c62',1,'NoLimits::NoLimits2::RailNode']]],
+  ['horizontal4d',['Horizontal4D',['../class_no_limits_1_1_no_limits2_1_1_rail_connector.html#a7aeee3b4840fe369c767d8d1c24f8612a7e5af30a791ab083da070f7fc8a762d9',1,'NoLimits::NoLimits2::RailConnector']]],
   ['horizontalbeam',['HorizontalBeam',['../class_no_limits_1_1_no_limits2_1_1_beam.html#a9f4e6b0b38dc4350c51cd7bdc178243fa392a83715e35b7bbf996e7fcccb416d3',1,'NoLimits::NoLimits2::Beam']]],
   ['hypercoaster',['HyperCoaster',['../class_no_limits_1_1_no_limits2_1_1_style.html#ac7349400e7c093e03a4bfa1cad90aa44a3e55f99edfa65bef0751f5e3947c7107',1,'NoLimits::NoLimits2::Style']]],
   ['hypercoaster4seatsacross',['HyperCoaster4SeatsAcross',['../class_no_limits_1_1_no_limits2_1_1_style.html#ac7349400e7c093e03a4bfa1cad90aa44a189d8b12dbcf09be53eacc22ae95be2d',1,'NoLimits::NoLimits2::Style']]],

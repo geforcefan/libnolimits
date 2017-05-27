@@ -1,8 +1,8 @@
 var searchData=
 [
   ['railcolor',['railColor',['../class_no_limits_1_1_no_limits2_1_1_segment.html#aba7820ed7f93411a727fe8a6876d2ffc',1,'NoLimits::NoLimits2::Segment']]],
+  ['railconnector',['railConnector',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#a15b2934fa54784a9d6afa063697b1c8e',1,'NoLimits::NoLimits2::CustomTrack']]],
   ['railingscolor',['railingsColor',['../class_no_limits_1_1_no_limits2_1_1_station.html#afe459f56991b032b5b81738a7f9a30f1',1,'NoLimits::NoLimits2::Station']]],
-  ['railnode',['railNode',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#a65c1a803e991b3e2363e35275a29850f',1,'NoLimits::NoLimits2::CustomTrack']]],
   ['rails',['rails',['../class_no_limits_1_1_no_limits2_1_1_colors.html#a794da1858761a7cbd5f82845a990851f',1,'NoLimits::NoLimits2::Colors']]],
   ['railtype',['railType',['../class_no_limits_1_1_no_limits2_1_1_style.html#a9b8d5a4848aa14ab6a06729b1e508484',1,'NoLimits::NoLimits2::Style']]],
   ['rainintensity',['rainIntensity',['../class_no_limits_1_1_no_limits2_1_1_weather.html#a2af5e77d65b4cb1a769989b341949e0e',1,'NoLimits::NoLimits2::Weather']]],

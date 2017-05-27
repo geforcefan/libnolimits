@@ -24,5 +24,5 @@ var searchData=
   ['mode',['Mode',['../class_no_limits_1_1_no_limits2_1_1_mode.html',1,'NoLimits::NoLimits2::Mode'],['../class_no_limits_1_1_no_limits2_1_1_mode.html#a8b711f396ad90ccc153b189b3b1ca71e',1,'NoLimits::NoLimits2::Mode::Mode()'],['../class_no_limits_1_1_no_limits2_1_1_coaster.html#ac0359a48d1ccd86faa14642e23661c17',1,'NoLimits::NoLimits2::Coaster::mode()'],['../class_no_limits_1_1_no_limits2_1_1_brake.html#a98e07fe80df21b0d93c026331c90708d',1,'NoLimits::NoLimits2::Brake::mode()']]],
   ['mode_2ecpp',['Mode.cpp',['../_mode_8cpp.html',1,'']]],
   ['mode_2eh',['Mode.h',['../_mode_8h.html',1,'']]],
-  ['motorlocation',['motorLocation',['../class_no_limits_1_1_no_limits2_1_1_lift.html#aab26f2a2a8a6a3c25c861679f0502279',1,'NoLimits::NoLimits2::Lift::motorLocation()'],['../class_no_limits_1_1_no_limits2_1_1_lift.html#ac867c1af14ddfdf31b1360bd5d04931b',1,'NoLimits::NoLimits2::Lift::MotorLocation()']]]
+  ['motorlocation',['MotorLocation',['../class_no_limits_1_1_no_limits2_1_1_lift.html#ac867c1af14ddfdf31b1360bd5d04931b',1,'NoLimits::NoLimits2::Lift::MotorLocation()'],['../class_no_limits_1_1_no_limits2_1_1_lift.html#aab26f2a2a8a6a3c25c861679f0502279',1,'NoLimits::NoLimits2::Lift::motorLocation()']]]
 ];

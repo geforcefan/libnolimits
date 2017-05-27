@@ -1,7 +1,9 @@
 var searchData=
 [
   ['filescript',['FileScript',['../class_no_limits_1_1_no_limits2_1_1_file_script.html#a4ce7898e9f75daca10a69113276d6fa3',1,'NoLimits::NoLimits2::FileScript']]],
-  ['flange',['Flange',['../class_no_limits_1_1_no_limits2_1_1_flange.html#a652dc79f27242f2edae7eeeb88ae0783',1,'NoLimits::NoLimits2::Flange']]],
-  ['footer',['Footer',['../class_no_limits_1_1_no_limits2_1_1_footer.html#af4f1975fee9dedafaf5ffa1c5583a0d5',1,'NoLimits::NoLimits2::Footer']]],
-  ['freenode',['FreeNode',['../class_no_limits_1_1_no_limits2_1_1_free_node.html#a2bc14c5f2b42b72740d1c39091b9e4e4',1,'NoLimits::NoLimits2::FreeNode']]]
+  ['flange',['Flange',['../class_no_limits_1_1_no_limits2_1_1_flange.html#a652dc79f27242f2edae7eeeb88ae0783',1,'NoLimits::NoLimits2::Flange::Flange()'],['../class_no_limits_1_1_no_limits2_1_1_flange.html#a899bc5a50b2ba1d702b44fbc1f6ea055',1,'NoLimits::NoLimits2::Flange::Flange(float position)']]],
+  ['footer',['Footer',['../class_no_limits_1_1_no_limits2_1_1_footer.html#af4f1975fee9dedafaf5ffa1c5583a0d5',1,'NoLimits::NoLimits2::Footer::Footer()'],['../class_no_limits_1_1_no_limits2_1_1_footer.html#a4cb53bb549639b9623a6f5b278170602',1,'NoLimits::NoLimits2::Footer::Footer(glm::vec3 position, float rotationAngle)']]],
+  ['footerconnection',['FooterConnection',['../class_no_limits_1_1_no_limits2_1_1_footer_connection.html#ae5e0256a8d79200da4c06e9b078c0b5a',1,'NoLimits::NoLimits2::FooterConnection::FooterConnection()'],['../class_no_limits_1_1_no_limits2_1_1_footer_connection.html#ad1967dc4fa553857df3cd77c7b6cc905',1,'NoLimits::NoLimits2::FooterConnection::FooterConnection(uint32_t footerIndex)']]],
+  ['freenode',['FreeNode',['../class_no_limits_1_1_no_limits2_1_1_free_node.html#a2bc14c5f2b42b72740d1c39091b9e4e4',1,'NoLimits::NoLimits2::FreeNode::FreeNode()'],['../class_no_limits_1_1_no_limits2_1_1_free_node.html#a8273cc1d32c4a5eb5c1821d42f3fb141',1,'NoLimits::NoLimits2::FreeNode::FreeNode(glm::vec3 position)']]],
+  ['freenodeconnection',['FreeNodeConnection',['../class_no_limits_1_1_no_limits2_1_1_free_node_connection.html#ab521b29250a9e8f225be9a2429cc96eb',1,'NoLimits::NoLimits2::FreeNodeConnection::FreeNodeConnection()'],['../class_no_limits_1_1_no_limits2_1_1_free_node_connection.html#a1e4d4c5e95814cefb53e333fc009157e',1,'NoLimits::NoLimits2::FreeNodeConnection::FreeNodeConnection(uint32_t freeNodeIndex)']]]
 ];

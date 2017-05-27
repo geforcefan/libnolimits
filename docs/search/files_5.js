@@ -7,6 +7,10 @@ var searchData=
   ['flange_2eh',['Flange.h',['../_flange_8h.html',1,'']]],
   ['footer_2ecpp',['Footer.cpp',['../_footer_8cpp.html',1,'']]],
   ['footer_2eh',['Footer.h',['../_footer_8h.html',1,'']]],
+  ['footerconnection_2ecpp',['FooterConnection.cpp',['../_footer_connection_8cpp.html',1,'']]],
+  ['footerconnection_2eh',['FooterConnection.h',['../_footer_connection_8h.html',1,'']]],
   ['freenode_2ecpp',['FreeNode.cpp',['../_free_node_8cpp.html',1,'']]],
-  ['freenode_2eh',['FreeNode.h',['../_free_node_8h.html',1,'']]]
+  ['freenode_2eh',['FreeNode.h',['../_free_node_8h.html',1,'']]],
+  ['freenodeconnection_2ecpp',['FreeNodeConnection.cpp',['../_free_node_connection_8cpp.html',1,'']]],
+  ['freenodeconnection_2eh',['FreeNodeConnection.h',['../_free_node_connection_8h.html',1,'']]]
 ];

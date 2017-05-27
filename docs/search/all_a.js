@@ -18,7 +18,7 @@ var searchData=
   ['lift',['Lift',['../class_no_limits_1_1_no_limits2_1_1_lift.html',1,'NoLimits::NoLimits2::Lift'],['../class_no_limits_1_1_no_limits2_1_1_section.html#a4b1018e270ed74daf4cf0b94a50818a9aae438bbfb9c0ddac9cfa22556bbab7c2',1,'NoLimits::NoLimits2::Section::Lift()'],['../class_no_limits_1_1_no_limits2_1_1_lift.html#a39ad6651bb0dfcef19c6aedb78fa0ba8',1,'NoLimits::NoLimits2::Lift::Lift()']]],
   ['lift_2ecpp',['Lift.cpp',['../_lift_8cpp.html',1,'']]],
   ['lift_2eh',['Lift.h',['../_lift_8h.html',1,'']]],
-  ['lifttype',['liftType',['../class_no_limits_1_1_no_limits2_1_1_lift.html#ad1aed0e9acda585a9c9d80e729198180',1,'NoLimits::NoLimits2::Lift::liftType()'],['../class_no_limits_1_1_no_limits2_1_1_lift.html#abc4ab330029b1431cc310ac835fc61c0',1,'NoLimits::NoLimits2::Lift::LiftType()']]],
+  ['lifttype',['LiftType',['../class_no_limits_1_1_no_limits2_1_1_lift.html#abc4ab330029b1431cc310ac835fc61c0',1,'NoLimits::NoLimits2::Lift::LiftType()'],['../class_no_limits_1_1_no_limits2_1_1_lift.html#ad1aed0e9acda585a9c9d80e729198180',1,'NoLimits::NoLimits2::Lift::liftType()']]],
   ['limlaunchedcoaster',['LimLaunchedCoaster',['../class_no_limits_1_1_no_limits2_1_1_style.html#ac7349400e7c093e03a4bfa1cad90aa44a991abf1418632a1a6999ee09d6e606fa',1,'NoLimits::NoLimits2::Style']]],
   ['linearmotor',['LinearMotor',['../class_no_limits_1_1_no_limits2_1_1_transport.html#a8fe46f719a2efc84a8ad44d5b6d87e2ba67efbe389b488eee9d26dfc0b04599a1',1,'NoLimits::NoLimits2::Transport']]],
   ['lock',['lock',['../class_no_limits_1_1_no_limits2_1_1_scene_object_instance.html#a34ef0dec50fdcfdcc7b8bdd5431e1b3f',1,'NoLimits::NoLimits2::SceneObjectInstance']]],

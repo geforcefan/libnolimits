@@ -8,7 +8,7 @@ var searchData=
   ['thunderintensity',['thunderIntensity',['../class_no_limits_1_1_no_limits2_1_1_weather.html#ace4dae6e4c49c2a19ad91948f8fbdf00',1,'NoLimits::NoLimits2::Weather']]],
   ['tiespacing',['tieSpacing',['../class_no_limits_1_1_no_limits2_1_1_segment.html#ae62931d687310e56735c307c94aa30c1',1,'NoLimits::NoLimits2::Segment']]],
   ['track',['track',['../class_no_limits_1_1_no_limits2_1_1_coaster.html#ad8d0d5ba59946efc623eca783b9ade7a',1,'NoLimits::NoLimits2::Coaster']]],
-  ['trackindex',['trackIndex',['../class_no_limits_1_1_no_limits2_1_1_rail_node.html#a46d1306315e87f244d4913ea70c66f34',1,'NoLimits::NoLimits2::RailNode']]],
+  ['trackindex',['trackIndex',['../class_no_limits_1_1_no_limits2_1_1_rail_connector.html#a6803eceda2fcfd663468b7a02901385b',1,'NoLimits::NoLimits2::RailConnector']]],
   ['tracktype',['trackType',['../class_no_limits_1_1_no_limits2_1_1_track.html#a9466a0ff84ff88165c9e47bd1a88ddd7',1,'NoLimits::NoLimits2::Track']]],
   ['train',['train',['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a567e4d6bf931d56c8fa73ccc7835ceca',1,'NoLimits::NoLimits2::Coaster']]],
   ['trainevent',['trainEvent',['../class_no_limits_1_1_no_limits2_1_1_trigger.html#a4aea2f9b4110f40223b2e46b7a633327',1,'NoLimits::NoLimits2::Trigger']]],

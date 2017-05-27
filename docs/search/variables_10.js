@@ -16,7 +16,7 @@ var searchData=
   ['shuttlebackwardsstart',['shuttleBackwardsStart',['../class_no_limits_1_1_no_limits2_1_1_station.html#a8845cabfc9c6aaa904348584607dcec0',1,'NoLimits::NoLimits2::Station']]],
   ['shuttlemodegentle2ndpassrelease',['shuttleModeGentle2ndPassRelease',['../class_no_limits_1_1_no_limits2_1_1_lift.html#a24e25450a2cd0b3e70d5fab5c2bb21c9',1,'NoLimits::NoLimits2::Lift']]],
   ['sidecolor',['sideColor',['../class_no_limits_1_1_no_limits2_1_1_storage.html#ab974931fb3dfe3aaf043f1761a31fc99',1,'NoLimits::NoLimits2::Storage']]],
-  ['sizeparameter',['sizeParameter',['../class_no_limits_1_1_no_limits2_1_1_rail_node.html#aebcb49d39918242a644308c7be27271f',1,'NoLimits::NoLimits2::RailNode']]],
+  ['sizeparameter',['sizeParameter',['../class_no_limits_1_1_no_limits2_1_1_rail_connector.html#ad24aa39cf7fff83eedc83ecfff589179',1,'NoLimits::NoLimits2::RailConnector']]],
   ['sky',['sky',['../class_no_limits_1_1_no_limits2_1_1_info.html#a10c2901cacaa55436bbb44572756450d',1,'NoLimits::NoLimits2::Info']]],
   ['snowintensity',['snowIntensity',['../class_no_limits_1_1_no_limits2_1_1_weather.html#a9b6835c8f34d286f3f186a95240f1142',1,'NoLimits::NoLimits2::Weather']]],
   ['specularmaptexture',['specularMapTexture',['../class_no_limits_1_1_no_limits2_1_1_bump_map.html#a9d473513feecb27e3f2963b3f1fa26de',1,'NoLimits::NoLimits2::BumpMap']]],
@@ -36,7 +36,7 @@ var searchData=
   ['style',['style',['../class_no_limits_1_1_no_limits2_1_1_coaster.html#ab5c53c948bc0314d67094e085638aff6',1,'NoLimits::NoLimits2::Coaster::style()'],['../class_no_limits_1_1_no_limits2_1_1_switch_track.html#a1ad29bafb7e3394036151c61d3083d45',1,'NoLimits::NoLimits2::SwitchTrack::style()']]],
   ['styletype',['styleType',['../class_no_limits_1_1_no_limits2_1_1_style.html#a9b693a8d0bfc8045fa1baba310c0e2cd',1,'NoLimits::NoLimits2::Style']]],
   ['support',['support',['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a6f00073d8dcc3afa75af57eaa1b2f748',1,'NoLimits::NoLimits2::Coaster']]],
-  ['supportparameter',['supportParameter',['../class_no_limits_1_1_no_limits2_1_1_rail_node.html#aeff56625064330ff4632413553fef936',1,'NoLimits::NoLimits2::RailNode']]],
+  ['supportparameter',['supportParameter',['../class_no_limits_1_1_no_limits2_1_1_rail_connector.html#a8a278e71d048ef355d555c640398a3bb',1,'NoLimits::NoLimits2::RailConnector']]],
   ['supports',['supports',['../class_no_limits_1_1_no_limits2_1_1_colors.html#a7f9f90dcd6106eb4bfd162153a5890c4',1,'NoLimits::NoLimits2::Colors']]],
   ['switchtime',['switchTime',['../class_no_limits_1_1_no_limits2_1_1_special_track.html#a40aa5fbb64aa4a933f21b1a0e08d1fa1',1,'NoLimits::NoLimits2::SpecialTrack']]],
   ['synchronizedispatchwith',['synchronizeDispatchWith',['../class_no_limits_1_1_no_limits2_1_1_wait_time.html#aef1e04923bed84ddef75e31cde88fd14',1,'NoLimits::NoLimits2::WaitTime']]]

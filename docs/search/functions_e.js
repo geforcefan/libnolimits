@@ -6,5 +6,5 @@ var searchData=
   ['transfertable',['TransferTable',['../class_no_limits_1_1_no_limits2_1_1_transfer_table.html#af196ad5597a17bb8dfa5bd039a298d74',1,'NoLimits::NoLimits2::TransferTable']]],
   ['transport',['Transport',['../class_no_limits_1_1_no_limits2_1_1_transport.html#a0d1c69d9a500552f8ee56c113742ff9e',1,'NoLimits::NoLimits2::Transport']]],
   ['transportdevice',['TransportDevice',['../class_no_limits_1_1_no_limits2_1_1_transport_device.html#abc0e6f85bfdf48d53905846da8a4de6d',1,'NoLimits::NoLimits2::TransportDevice']]],
-  ['trigger',['Trigger',['../class_no_limits_1_1_no_limits2_1_1_trigger.html#a63b725a042af8f37aac95a504ef30a7b',1,'NoLimits::NoLimits2::Trigger']]]
+  ['trigger',['Trigger',['../class_no_limits_1_1_no_limits2_1_1_trigger.html#a63b725a042af8f37aac95a504ef30a7b',1,'NoLimits::NoLimits2::Trigger::Trigger()'],['../class_no_limits_1_1_no_limits2_1_1_trigger.html#acefa4ae2cd5cffdd01937ecd902b6c85',1,'NoLimits::NoLimits2::Trigger::Trigger(std::string name, double position)']]]
 ];

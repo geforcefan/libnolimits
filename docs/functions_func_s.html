@@ -116,6 +116,12 @@ $(function() {
 <li>setBaseStyle()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_footer.html#a7281cf01b1a1c0f8bd51f71a31585379">NoLimits::NoLimits2::Footer</a>
 </li>
+<li>setBeamIndex()
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_beam_node_connection.html#ae67913f0436cd0ce55fe00c9e0cdc1ef">NoLimits::NoLimits2::BeamNodeConnection</a>
+</li>
+<li>setBeamNodeIndex()
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_beam_node_connection.html#a6fa3b7c3d648cc3394d14934037dae1b">NoLimits::NoLimits2::BeamNodeConnection</a>
+</li>
 <li>setBentSpacing()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_wooden_support_generator.html#a1c95c323988e5dd0ff834b653032b362">NoLimits::NoLimits2::WoodenSupportGenerator</a>
 </li>
@@ -204,7 +210,7 @@ $(function() {
 </li>
 <li>setConnectionStyle()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_footer.html#acd3832558cd013d1c97cbf7b30878563">NoLimits::NoLimits2::Footer</a>
-, <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_node.html#a808af01d31f83813962af391bf1af242">NoLimits::NoLimits2::RailNode</a>
+, <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_connector.html#ae769dcc107213b4c94e927e2ff8bb6cf">NoLimits::NoLimits2::RailConnector</a>
 </li>
 <li>setConstFrictionParameter()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_custom_friction.html#ad228777280f08cc6c335903dccd0ce09">NoLimits::NoLimits2::CustomFriction</a>
@@ -331,11 +337,17 @@ $(function() {
 <li>setFogIntensity()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_weather.html#aca8431846615b522bbfb2e5caf52aae3">NoLimits::NoLimits2::Weather</a>
 </li>
+<li>setFooterIndex()
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_footer_connection.html#aa8e0f6a0612dffa12183e066953903fa">NoLimits::NoLimits2::FooterConnection</a>
+</li>
 <li>setFootstepSounds()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_extras.html#a99c2f8b2dfd258e10132aa07a1c124d9">NoLimits::NoLimits2::Extras</a>
 </li>
 <li>setFrameColor()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_storage.html#a7474024055038c95c031533b1dc8f322">NoLimits::NoLimits2::Storage</a>
+</li>
+<li>setFreeNodeIndex()
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_free_node_connection.html#ac612f827cdd6ca3ccc7f83cfd244e254">NoLimits::NoLimits2::FreeNodeConnection</a>
 </li>
 <li>setFreezed()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_coaster.html#ad4054c704d0532aa9eca5973f85ff221">NoLimits::NoLimits2::Coaster</a>
@@ -395,13 +407,16 @@ $(function() {
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_resource_file.html#a479ab6ed4e02f15c449a4619e8d349e9">NoLimits::NoLimits2::ResourceFile</a>
 </li>
 <li>setIndex()
-: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_beam_connection.html#a571fb4ba3956f1e25a68d7879addff15">NoLimits::NoLimits2::BeamConnection</a>
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_connector_connection.html#a3eb48280703036ee648a84e6b86cda05">NoLimits::NoLimits2::RailConnectorConnection</a>
 </li>
-<li>setIndexOnBeam()
-: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_beam_connection.html#a9a04c5a09f27d9dae866f52a4b58fc9f">NoLimits::NoLimits2::BeamConnection</a>
+<li>setIndex1()
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_beam_connection.html#ab5c1a368cdf0a0e13bbded56e5f96e0c">NoLimits::NoLimits2::BeamConnection</a>
 </li>
-<li>setIndexOnRailConnector()
-: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_beam_connection.html#a625b80f55a89a5b8805152e73f1125b6">NoLimits::NoLimits2::BeamConnection</a>
+<li>setIndex2()
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_beam_connection.html#aa92215ecc6034eedc9e6ccbcd7817341">NoLimits::NoLimits2::BeamConnection</a>
+</li>
+<li>setIndex3()
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_beam_connection.html#a62a05f677c24e57822dd84a084c9c0e3">NoLimits::NoLimits2::BeamConnection</a>
 </li>
 <li>setIndividualColor()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_car.html#ace7aa8dd3b46823b7cd6088ffc164a13">NoLimits::NoLimits2::Car</a>
@@ -427,9 +442,6 @@ $(function() {
 </li>
 <li>setIsFlange()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_beam_node.html#a053134d1a3a3cc89c87773126b502121">NoLimits::NoLimits2::BeamNode</a>
-</li>
-<li>setIsModel()
-: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_node.html#af4a3c64af54026268c5f83f5e69f101b">NoLimits::NoLimits2::RailNode</a>
 </li>
 <li>setLaunch()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_transport_device.html#a3a881a8bbaa6f788c5dae72fbf3afa48">NoLimits::NoLimits2::TransportDevice</a>
@@ -559,7 +571,7 @@ $(function() {
 , <a class="el" href="class_no_limits_1_1_no_limits2_1_1_footer.html#a87030983113b052da6c61263eb610ba9">NoLimits::NoLimits2::Footer</a>
 , <a class="el" href="class_no_limits_1_1_no_limits2_1_1_free_node.html#aa10492498ef34ca11f7a09915d16c87e">NoLimits::NoLimits2::FreeNode</a>
 , <a class="el" href="class_no_limits_1_1_no_limits2_1_1_parameter4_d.html#aee6c1d0b5a9609d21ea3079dea18330e">NoLimits::NoLimits2::Parameter4D</a>
-, <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_node.html#a064f7b532f3e5123894bfe6591339956">NoLimits::NoLimits2::RailNode</a>
+, <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_connector.html#a8f5351da4f8f84227f5c73ea05b33ca1">NoLimits::NoLimits2::RailConnector</a>
 , <a class="el" href="class_no_limits_1_1_no_limits2_1_1_roll_point.html#af0a86e144093cead8a90c808c6b01500">NoLimits::NoLimits2::RollPoint</a>
 , <a class="el" href="class_no_limits_1_1_no_limits2_1_1_scene_object_instance.html#a6518f0f2f1175e0b02e2f1e37795282b">NoLimits::NoLimits2::SceneObjectInstance</a>
 , <a class="el" href="class_no_limits_1_1_no_limits2_1_1_separator.html#a3f32acace5f37e230fa87df8b6b834a3">NoLimits::NoLimits2::Separator</a>
@@ -574,7 +586,7 @@ $(function() {
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_brake.html#a328d2bd211a6502174217e43b64f8986">NoLimits::NoLimits2::Brake</a>
 </li>
 <li>setPrefabIndex()
-: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_node.html#a6b8f4b2cbeb2a96f68f91d48e9528e34">NoLimits::NoLimits2::RailNode</a>
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_connector.html#a629576730eff83626be078ccdecad5bd">NoLimits::NoLimits2::RailConnector</a>
 </li>
 <li>setPreview()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_info.html#a98030cc0407cdf368e2689a9eefd880a">NoLimits::NoLimits2::Info</a>
@@ -584,6 +596,9 @@ $(function() {
 </li>
 <li>setRailColor()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_segment.html#a4678b959311cd560eeafde1767078b32">NoLimits::NoLimits2::Segment</a>
+</li>
+<li>setRailConnectorIndex()
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_connector_connection.html#a2013a8aeba1ce7ff7403fcb3aefdf810">NoLimits::NoLimits2::RailConnectorConnection</a>
 </li>
 <li>setRailingsColor()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_station.html#afc716eb6b64699bf409c2fa4ebaa286e">NoLimits::NoLimits2::Station</a>
@@ -684,7 +699,7 @@ $(function() {
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_storage.html#a344e0a37e4cec4d8cf7314e689757e5a">NoLimits::NoLimits2::Storage</a>
 </li>
 <li>setSizeParameter()
-: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_node.html#a0fdb1ac84e39850ca45e847553702953">NoLimits::NoLimits2::RailNode</a>
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_connector.html#a2dc0943b199d08839c2a794d9956cf2a">NoLimits::NoLimits2::RailConnector</a>
 </li>
 <li>setSnowIntensity()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_weather.html#a951584758fbb5aca01ed8e20fba7e04a">NoLimits::NoLimits2::Weather</a>
@@ -769,7 +784,8 @@ $(function() {
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_segment.html#ac850bd86e2ccaec349d7caf0e1a18656">NoLimits::NoLimits2::Segment</a>
 </li>
 <li>setTrackIndex()
-: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_node.html#adb374c4700da6a0c510f02877e233126">NoLimits::NoLimits2::RailNode</a>
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_connector.html#a2ea81c14774eab031632b644e90be464">NoLimits::NoLimits2::RailConnector</a>
+, <a class="el" href="class_no_limits_1_1_no_limits2_1_1_rail_connector_connection.html#a23901ee189cf2c06c9693572f07905a3">NoLimits::NoLimits2::RailConnectorConnection</a>
 </li>
 <li>setTrackType()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_track.html#a3ad8391ae7ebc4b279711a9160463e38">NoLimits::NoLimits2::Track</a>
@@ -893,7 +909,7 @@ $(function() {
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_sky.html#a427dcb724925b6bd4a5029c8b0319525">NoLimits::NoLimits2::Sky</a>
 </li>
 <li>SpecialTrack()
-: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_special_track.html#a04c08e2161a62989563104a9f6b0b7c7">NoLimits::NoLimits2::SpecialTrack</a>
+: <a class="el" href="class_no_limits_1_1_no_limits2_1_1_special_track.html#a97e3f0e8bdf38397d295f2e65af1d055">NoLimits::NoLimits2::SpecialTrack</a>
 </li>
 <li>Station()
 : <a class="el" href="class_no_limits_1_1_no_limits2_1_1_station.html#a5162bd5cb3eba6c9f551ae4a4e63cf14">NoLimits::NoLimits2::Station</a>

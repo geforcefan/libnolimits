@@ -17,7 +17,7 @@ var searchData=
   ['completestop',['completeStop',['../class_no_limits_1_1_no_limits2_1_1_brake.html#a2ae7d5de1789bf0e8bcc564c43777d53',1,'NoLimits::NoLimits2::Brake']]],
   ['connection1',['connection1',['../class_no_limits_1_1_no_limits2_1_1_beam.html#a1cf68372bdedd273795606e3e2bcc818',1,'NoLimits::NoLimits2::Beam']]],
   ['connection2',['connection2',['../class_no_limits_1_1_no_limits2_1_1_beam.html#a1015fb6d542ee5fc51cb83f07984c90c',1,'NoLimits::NoLimits2::Beam']]],
-  ['connectionstyle',['connectionStyle',['../class_no_limits_1_1_no_limits2_1_1_footer.html#abace6da046fcd829ef55dcd51d80ceaa',1,'NoLimits::NoLimits2::Footer::connectionStyle()'],['../class_no_limits_1_1_no_limits2_1_1_rail_node.html#ad9f4db892f4b661ad96b9378bafab816',1,'NoLimits::NoLimits2::RailNode::connectionStyle()']]],
+  ['connectionstyle',['connectionStyle',['../class_no_limits_1_1_no_limits2_1_1_footer.html#abace6da046fcd829ef55dcd51d80ceaa',1,'NoLimits::NoLimits2::Footer::connectionStyle()'],['../class_no_limits_1_1_no_limits2_1_1_rail_connector.html#a82da513f06b084826da6084a2457c85c',1,'NoLimits::NoLimits2::RailConnector::connectionStyle()']]],
   ['constfrictionparameter',['constFrictionParameter',['../class_no_limits_1_1_no_limits2_1_1_custom_friction.html#a7343c8855d347463c5849f941933b02b',1,'NoLimits::NoLimits2::CustomFriction']]],
   ['covarage',['covarage',['../class_no_limits_1_1_no_limits2_1_1_auto_paint.html#a5201b18d4610810d337c23deb8bf6e50',1,'NoLimits::NoLimits2::AutoPaint']]],
   ['crossties',['crossTies',['../class_no_limits_1_1_no_limits2_1_1_colors.html#a06186697793358ea06ab16f8c6ab5683',1,'NoLimits::NoLimits2::Colors']]],
