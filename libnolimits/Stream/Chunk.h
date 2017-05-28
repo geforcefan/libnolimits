@@ -5,6 +5,7 @@
 #include "../Nolimits.h"
 
 #include <stdint.h>
+#include <ostream>
 
 namespace NoLimits {
     namespace Stream {

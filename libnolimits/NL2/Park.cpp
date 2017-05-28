@@ -5,13 +5,6 @@
 
 namespace NoLimits {
     namespace NoLimits2 {
-        Park::Park() {
-            info = new Info();
-            terrain = new Terrain();
-            uspk = new Uspk();
-            scenery = new Scenery();
-        }
-
         Park::Park(std::string filepath) : Park() {
             NoLimits::File::File *inputFile = new NoLimits::File::NormalFile(filepath);
             inputFile->openRB();

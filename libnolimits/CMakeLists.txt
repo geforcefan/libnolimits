@@ -6,7 +6,7 @@ source_group("Header Files" FILES ${ROOT_HEADER})
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..)
 
-add_library(nolimits STATIC ${ROOT_SOURCE} ${ROOT_HEADER})
+add_library(nolimits STATIC ${ROOT_SOURCE} ${ROOT_HEADER} NL1/NoLimitsTrack.cpp NL1/NoLimitsTrack.h NL1/Track/Track.cpp NL1/Track/Track.h)
 set_target_properties(nolimits PROPERTIES DEFINE_SYMBOL NOLIMITS_DLL)
 set_property(TARGET nolimits PROPERTY POSITION_INDEPENDENT_CODE 1)
 

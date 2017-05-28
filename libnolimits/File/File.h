@@ -234,8 +234,38 @@ namespace NoLimits {
             void writeBoolean(bool value);
 
             /**
+             * Reads legacy boolean value from file. NoLimits 1 files are legacy
+             *
+             * @return Read boolean value from file
+             */
+            bool readBooleanLegacy();
+
+            /**
+             * Writes legacy boolean value to file. NoLimits 1 files are legacy
+             *
+             * @param value Value to be written
+             */
+            void writeBooleanLegacy(bool value);
+
+            /**
+             * Reads legacy color value from file. NoLimits 1 files are legacy.
+             * Colors are stored in RGB (0-255) as bytes
+             *
+             * @return Read color value from file
+             */
+            glm::vec3 readColorLegacy();
+
+            /**
+             * Writes legacy color value to file. NoLimits 1 files are legacy.
+             * Colors are stored in RGB (0-255) as bytes
+             *
+             * @param value Value to be written
+             */
+            void writeColorLegacy(glm::vec3 color);
+
+            /**
              * Reads color value from file.
-             * Colors are stored in RGB (0-255) as unsigned integers
+             * Colors are stored in RGB (0-255) as bytes
              *
              * @return Read color value from file
              */
@@ -243,7 +273,7 @@ namespace NoLimits {
 
             /**
              * Writes color value to file.
-             * Colors are stored in RGB (0-255) as unsigned integers
+             * Colors are stored in RGB (0-255) as bytes
              *
              * @param value Value to be written
              */
@@ -297,6 +327,20 @@ namespace NoLimits {
              * @return Read 3D unsigned byte vector value from file
              */
             glm::vec3 readUnsigned8Vec3();
+
+            /**
+             * Writes 4D unsigned byte vector value to file.
+             *
+             * @param value Value to be written
+             */
+            void writeUnsigned8Vec4(glm::vec4 vec);
+
+            /**
+             * Reads 4D unsigned byte vector value from file
+             *
+             * @return Read 4D unsigned byte vector value from file
+             */
+            glm::vec4 readUnsigned8Vec4();
 
             /**
              * Writes 3D unsigned byte vector value to file.
@@ -360,6 +404,20 @@ namespace NoLimits {
              * @param value Value to be written
              */
             void writeString(std::string value);
+
+            /**
+             * Reads legacy string value from file. NoLimits 1 files are legacy
+             *
+             * @return Read string value from file
+             */
+            std::string readStringLegacy();
+
+            /**
+             * Writes legacy string value to file. NoLimits 1 files are legacy
+             *
+             * @param value Value to be written
+             */
+            void writeStringLegacy(std::string value);
 
             std::string readChunkName();
             void writeChunkName(std::string chunkName);

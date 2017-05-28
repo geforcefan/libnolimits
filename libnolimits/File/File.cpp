@@ -39,6 +39,18 @@ namespace NoLimits {
             write(&value, 1, 1);
         }
 
+        bool File::readBooleanLegacy() {
+            uint8_t buffer;
+            read(&buffer, 1, 1);
+
+            return buffer == 0xFF ? true : false;
+        }
+
+        void File::writeBooleanLegacy(bool value) {
+            uint8_t writeValue = value ? 0xFF : 0x00;
+            write(&writeValue, 1, 1);
+        }
+
         float File::readFloat() {
             float floatBuffer;
             read(&floatBuffer, 4, 1);
@@ -115,6 +127,15 @@ namespace NoLimits {
             write(&value, 4, 1);
         }
 
+        glm::vec3 File::readColorLegacy() {
+            glm::vec4 color = readUnsigned8Vec4();
+            return glm::vec3(color.r, color.g, color.b);
+        }
+
+        void File::writeColorLegacy(glm::vec3 color) {
+            return writeUnsigned8Vec4(glm::vec4(color.r, color.g, color.b, 255.0f));
+        }
+
         glm::vec3 File::readColor() {
             return readUnsigned8Vec3();
         }
@@ -159,6 +180,17 @@ namespace NoLimits {
             writeUnsigned8(vec.x);
             writeUnsigned8(vec.y);
             writeUnsigned8(vec.z);
+        }
+
+        glm::vec4 File::readUnsigned8Vec4() {
+            return glm::vec4(readUnsigned8(), readUnsigned8(), readUnsigned8(), readUnsigned8());
+        }
+
+        void File::writeUnsigned8Vec4(glm::vec4 vec) {
+            writeUnsigned8(vec.x);
+            writeUnsigned8(vec.y);
+            writeUnsigned8(vec.z);
+            writeUnsigned8(vec.w);
         }
 
         glm::vec2 File::readDoubleVec2() {
@@ -332,6 +364,14 @@ namespace NoLimits {
             writeFile(fileChunkInner);
         }
 
+        std::string File::readStringLegacy() {
+            uint32_t stringLength = readUnsignedInteger();
+            std::string str(stringLength, '\0');
+            read(&str[0], sizeof(char), (size_t)stringLength);
+
+            return str;
+        }
+
         std::string File::readString() {
             bool terminated = false;
             std::string str;
@@ -357,6 +397,11 @@ namespace NoLimits {
                 write(&value[i], sizeof(char), 1);
             }
             writeNull(2);
+        }
+
+        void File::writeStringLegacy(std::string value) {
+            writeUnsignedInteger(value.size());
+            write(&value[0], sizeof(char), value.size());
         }
 
         std::string File::getFilepath() const {

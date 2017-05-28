@@ -1,25 +1,25 @@
 #include "Version.h"
-
+#include <iostream>
 namespace NoLimits {
-    namespace NoLimits2 {
+    namespace NoLimits1 {
         void Version::read(File::File *file) {
             setMajor(file->readUnsigned8());
             setMinor(file->readUnsigned8());
             setRevision(file->readUnsigned8());
-            setBuild(file->readUnsigned8());
+            setMarkup(file->readUnsigned8());
         }
 
         void Version::write(File::File *file) {
-            // we always write the n2park version which this library supports
-            file->writeUnsigned8(NL2PARK_VERSION_MAJOR);
-            file->writeUnsigned8(NL2PARK_VERSION_MINOR);
-            file->writeUnsigned8(NL2PARK_VERSION_REVISION);
-            file->writeUnsigned8(NL2PARK_VERSION_BUILD);
+            // we always write the nltrack version which this library supports
+            file->writeUnsigned8(NLTRACK_VERSION_MAJOR);
+            file->writeUnsigned8(NLTRACK_VERSION_MINOR);
+            file->writeUnsigned8(NLTRACK_VERSION_REVISION);
+            file->writeUnsigned8(NLTRACK_VERSION_MARKUP);
 
-            major = NL2PARK_VERSION_MAJOR;
-            minor = NL2PARK_VERSION_MINOR;
-            revision = NL2PARK_VERSION_REVISION;
-            build = NL2PARK_VERSION_BUILD;
+            major = NLTRACK_VERSION_MAJOR;
+            minor = NLTRACK_VERSION_MINOR;
+            revision = NLTRACK_VERSION_REVISION;
+            markup = NLTRACK_VERSION_MARKUP;
         }
 
         uint8_t Version::getMajor() const {
@@ -46,12 +46,12 @@ namespace NoLimits {
             revision = value;
         }
 
-        uint8_t Version::getBuild() const {
-            return build;
+        uint8_t Version::getMarkup() const {
+            return markup;
         }
 
-        void Version::setBuild(const uint8_t &value) {
-            build = value;
+        void Version::setMarkup(const uint8_t &value) {
+            markup = value;
         }
     }
 }

@@ -16,8 +16,14 @@ namespace NoLimits {
     namespace NoLimits2 {
         class Park: public Stream::Chunk {
         public:
+            Park() {
+                info = new Info();
+                terrain = new Terrain();
+                uspk = new Uspk();
+                scenery = new Scenery();
+            }
+
             Park(std::string filepath);
-            Park();
 
             void debug() {
                 info->debug();
