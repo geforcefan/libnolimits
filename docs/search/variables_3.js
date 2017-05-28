@@ -11,6 +11,7 @@ var searchData=
   ['closed',['closed',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#ae93971f534053600593fbd40f75968f9',1,'NoLimits::NoLimits2::CustomTrack']]],
   ['cloudsintensity',['cloudsIntensity',['../class_no_limits_1_1_no_limits2_1_1_weather.html#ae07208dfc94e98aacedc782fc9661ca1',1,'NoLimits::NoLimits2::Weather']]],
   ['coaster',['coaster',['../class_no_limits_1_1_no_limits2_1_1_park.html#afbe992cf843ef0f4db06698b8ba17b32',1,'NoLimits::NoLimits2::Park']]],
+  ['coasterstyle',['coasterStyle',['../class_no_limits_1_1_no_limits1_1_1_track.html#af556aea77c7aa5dc2ce8690d4afa5076',1,'NoLimits::NoLimits1::Track']]],
   ['color',['color',['../class_no_limits_1_1_no_limits2_1_1_support_node.html#a152d693b189747d081006729c901d6d1',1,'NoLimits::NoLimits2::SupportNode']]],
   ['colormode',['colorMode',['../class_no_limits_1_1_no_limits2_1_1_footer.html#a45960c616a1084d882950b76e08bf808',1,'NoLimits::NoLimits2::Footer']]],
   ['colors',['colors',['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a83191774762c874f55a07f25f34eec3a',1,'NoLimits::NoLimits2::Coaster']]],

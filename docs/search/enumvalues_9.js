@@ -4,6 +4,7 @@ var searchData=
   ['left',['Left',['../class_no_limits_1_1_no_limits2_1_1_station.html#a95970b3a4ecb76ce2f1f72975e20f2e9aa08dac04c91a18da1af9b1d0c64468d4',1,'NoLimits::NoLimits2::Station']]],
   ['leftright',['LeftRight',['../class_no_limits_1_1_no_limits2_1_1_switch_track.html#a1ba2bccc641acd45be36ac9d3f0285f3a9e62c8dd679690d8e69ed251933d3fb2',1,'NoLimits::NoLimits2::SwitchTrack']]],
   ['lift',['Lift',['../class_no_limits_1_1_no_limits2_1_1_section.html#a4b1018e270ed74daf4cf0b94a50818a9aae438bbfb9c0ddac9cfa22556bbab7c2',1,'NoLimits::NoLimits2::Section']]],
+  ['limlaunched',['LIMLaunched',['../class_no_limits_1_1_no_limits1_1_1_track.html#a9301393a6d2fb10417d894a178c63578acb5f7a5d7e0ebe99f3bfa96f3bc73731',1,'NoLimits::NoLimits1::Track']]],
   ['limlaunchedcoaster',['LimLaunchedCoaster',['../class_no_limits_1_1_no_limits2_1_1_style.html#ac7349400e7c093e03a4bfa1cad90aa44a991abf1418632a1a6999ee09d6e606fa',1,'NoLimits::NoLimits2::Style']]],
   ['linearmotor',['LinearMotor',['../class_no_limits_1_1_no_limits2_1_1_transport.html#a8fe46f719a2efc84a8ad44d5b6d87e2ba67efbe389b488eee9d26dfc0b04599a1',1,'NoLimits::NoLimits2::Transport']]],
   ['lockspinning',['LockSpinning',['../class_no_limits_1_1_no_limits2_1_1_trigger.html#a246c22619e0eba52ade9d4b15e217e6aa4d3f31ebaa6ebbbd233e1535ed83b7f0',1,'NoLimits::NoLimits2::Trigger']]],

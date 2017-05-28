@@ -19,6 +19,7 @@ var searchData=
   ['lift_2ecpp',['Lift.cpp',['../_lift_8cpp.html',1,'']]],
   ['lift_2eh',['Lift.h',['../_lift_8h.html',1,'']]],
   ['lifttype',['LiftType',['../class_no_limits_1_1_no_limits2_1_1_lift.html#abc4ab330029b1431cc310ac835fc61c0',1,'NoLimits::NoLimits2::Lift::LiftType()'],['../class_no_limits_1_1_no_limits2_1_1_lift.html#ad1aed0e9acda585a9c9d80e729198180',1,'NoLimits::NoLimits2::Lift::liftType()']]],
+  ['limlaunched',['LIMLaunched',['../class_no_limits_1_1_no_limits1_1_1_track.html#a9301393a6d2fb10417d894a178c63578acb5f7a5d7e0ebe99f3bfa96f3bc73731',1,'NoLimits::NoLimits1::Track']]],
   ['limlaunchedcoaster',['LimLaunchedCoaster',['../class_no_limits_1_1_no_limits2_1_1_style.html#ac7349400e7c093e03a4bfa1cad90aa44a991abf1418632a1a6999ee09d6e606fa',1,'NoLimits::NoLimits2::Style']]],
   ['linearmotor',['LinearMotor',['../class_no_limits_1_1_no_limits2_1_1_transport.html#a8fe46f719a2efc84a8ad44d5b6d87e2ba67efbe389b488eee9d26dfc0b04599a1',1,'NoLimits::NoLimits2::Transport']]],
   ['lock',['lock',['../class_no_limits_1_1_no_limits2_1_1_scene_object_instance.html#a34ef0dec50fdcfdcc7b8bdd5431e1b3f',1,'NoLimits::NoLimits2::SceneObjectInstance']]],

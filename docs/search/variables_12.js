@@ -1,6 +1,7 @@
 var searchData=
 [
   ['unloadingonly',['unloadingOnly',['../class_no_limits_1_1_no_limits2_1_1_station.html#a3057d464ae4e5eb7d582912e2b33665f',1,'NoLimits::NoLimits2::Station']]],
+  ['use16friction',['use16Friction',['../class_no_limits_1_1_no_limits1_1_1_no_limits_track.html#ac0f1448b9b0844d645f2fae5c2e42a4b',1,'NoLimits::NoLimits1::NoLimitsTrack']]],
   ['usecatwalkscolor',['useCatwalksColor',['../class_no_limits_1_1_no_limits2_1_1_segment.html#a30267370dad548acba4f15ae625a48fc',1,'NoLimits::NoLimits2::Segment']]],
   ['usecrosstiescolor',['useCrossTiesColor',['../class_no_limits_1_1_no_limits2_1_1_segment.html#ac1610ea2881d010d11c327fa94b4487f',1,'NoLimits::NoLimits2::Segment']]],
   ['usehandrailscolor',['useHandrailsColor',['../class_no_limits_1_1_no_limits2_1_1_segment.html#a3592613ac0a8a3ee9d63ffdee263b0b3',1,'NoLimits::NoLimits2::Segment']]],

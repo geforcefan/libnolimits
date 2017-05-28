@@ -1,6 +1,6 @@
 <map id="libnolimits/NL2/Terrain/BumpMap.h" name="libnolimits/NL2/Terrain/BumpMap.h">
 <area shape="rect" id="node3" href="$_terrain_map_8h.html" title="TerrainMap.h" alt="" coords="83,92,182,117"/>
 <area shape="rect" id="node4" href="$_chunk_8h.html" title="../../Stream/Chunk.h" alt="" coords="206,92,346,117"/>
-<area shape="rect" id="node5" href="$_file_8h.html" title="../File/File.h" alt="" coords="231,165,321,191"/>
-<area shape="rect" id="node7" href="$_nolimits_8h.html" title="../Nolimits.h" alt="" coords="297,239,388,264"/>
+<area shape="rect" id="node5" href="$_file_8h.html" title="../File/File.h" alt="" coords="190,165,280,191"/>
+<area shape="rect" id="node7" href="$_nolimits_8h.html" title="../Nolimits.h" alt="" coords="256,239,347,264"/>
 </map>

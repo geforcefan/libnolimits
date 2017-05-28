@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['individualcolor',['IndividualColor',['../class_no_limits_1_1_no_limits2_1_1_individual_color.html#aa1642578d91616508aeb4ab5fa3f077d',1,'NoLimits::NoLimits2::IndividualColor']]],
+  ['individualcolor',['IndividualColor',['../class_no_limits_1_1_no_limits1_1_1_individual_color.html#a3ef13981d735cac317994b674cb304d1',1,'NoLimits::NoLimits1::IndividualColor::IndividualColor()'],['../class_no_limits_1_1_no_limits2_1_1_individual_color.html#aa1642578d91616508aeb4ab5fa3f077d',1,'NoLimits::NoLimits2::IndividualColor::IndividualColor()']]],
   ['info',['Info',['../class_no_limits_1_1_no_limits2_1_1_info.html#a8655979ab04d44c42a93594afacec1db',1,'NoLimits::NoLimits2::Info']]],
   ['insertbeam',['insertBeam',['../class_no_limits_1_1_no_limits2_1_1_support.html#ab8aa374a0ee8a89289e8fc675be85b06',1,'NoLimits::NoLimits2::Support']]],
   ['insertbeamnode',['insertBeamNode',['../class_no_limits_1_1_no_limits2_1_1_beam.html#a2ebbedf1d89453bfc3d43dccf2748033',1,'NoLimits::NoLimits2::Beam']]],
@@ -28,7 +28,7 @@ var searchData=
   ['insertsynchronizedispatchwith',['insertSynchronizeDispatchWith',['../class_no_limits_1_1_no_limits2_1_1_wait_time.html#a9a74f8c653dddd3c506894cbc03940f7',1,'NoLimits::NoLimits2::WaitTime']]],
   ['inserttexturerepeats',['insertTextureRepeats',['../class_no_limits_1_1_no_limits2_1_1_terrain.html#a19efe8ffaca1ccadc679593e7032ef28',1,'NoLimits::NoLimits2::Terrain']]],
   ['inserttrack',['insertTrack',['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a28858c4a11cb1165f777b9be1194ea10',1,'NoLimits::NoLimits2::Coaster']]],
-  ['inserttrain',['insertTrain',['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a001789f61c461099434847d3a58c6633',1,'NoLimits::NoLimits2::Coaster']]],
+  ['inserttrain',['insertTrain',['../class_no_limits_1_1_no_limits1_1_1_track.html#a67808fdf8f6e085fb1005fa23ae0519d',1,'NoLimits::NoLimits1::Track::insertTrain()'],['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a001789f61c461099434847d3a58c6633',1,'NoLimits::NoLimits2::Coaster::insertTrain()']]],
   ['inserttrigger',['insertTrigger',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#a5392e3a3982694a29b163f1c360dc271',1,'NoLimits::NoLimits2::CustomTrack']]],
   ['insertvertex',['insertVertex',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#a0b3edf57a8dbaccd88075cbe4a311dea',1,'NoLimits::NoLimits2::CustomTrack']]]
 ];

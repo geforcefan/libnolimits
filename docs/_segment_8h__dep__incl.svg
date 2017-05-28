@@ -8,16 +8,16 @@
  viewBox="0.00 0.00 615.50 232.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 228)">
 <title>libnolimits/NL2/Coaster/Track/Segment.h</title>
-<!-- Node18 -->
+<!-- Node19 -->
 <g id="node1" class="node">
-<title>Node18</title>
+<title>Node19</title>
 <polygon fill="#bfbfbf" stroke="#000000" points="307.6807,-195.5 307.6807,-223.5 426.498,-223.5 426.498,-195.5 307.6807,-195.5"/>
 <text text-anchor="start" x="315.6807" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">libnolimits/NL2/Coaster</text>
 <text text-anchor="middle" x="367.0894" y="-201.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/Track/Segment.h</text>
 </g>
-<!-- Node19 -->
+<!-- Node20 -->
 <g id="node2" class="node">
-<title>Node19</title>
+<title>Node20</title>
 <g id="a_node2"><a xlink:href="_custom_track_8h.html" target="_top" xlink:title="libnolimits/NL2/Coaster\l/Track/CustomTrack.h">
 <polygon fill="none" stroke="#000000" points="2.6807,-65.5 2.6807,-93.5 121.498,-93.5 121.498,-65.5 2.6807,-65.5"/>
 <text text-anchor="start" x="10.6807" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">libnolimits/NL2/Coaster</text>
@@ -25,15 +25,15 @@
 </a>
 </g>
 </g>
-<!-- Node18&#45;&gt;Node19 -->
+<!-- Node19&#45;&gt;Node20 -->
 <g id="edge1" class="edge">
-<title>Node18&#45;&gt;Node19</title>
+<title>Node19&#45;&gt;Node20</title>
 <path fill="none" stroke="#191970" d="M297.2241,-201.0604C234.5045,-192.4552 147.9963,-177.7258 119.0894,-159 94.2879,-142.9338 76.8684,-111.9805 68.2536,-93.7995"/>
 <polygon fill="#191970" stroke="#191970" points="297.0858,-204.5733 307.4636,-202.4402 298.0207,-197.636 297.0858,-204.5733"/>
 </g>
-<!-- Node25 -->
+<!-- Node26 -->
 <g id="node5" class="node">
-<title>Node25</title>
+<title>Node26</title>
 <g id="a_node5"><a xlink:href="_separator_8h.html" target="_top" xlink:title="libnolimits/NL2/Coaster\l/Track/Separator.h">
 <polygon fill="none" stroke="#000000" points="127.6807,-130.5 127.6807,-158.5 246.498,-158.5 246.498,-130.5 127.6807,-130.5"/>
 <text text-anchor="start" x="135.6807" y="-146.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">libnolimits/NL2/Coaster</text>
@@ -41,15 +41,15 @@
 </a>
 </g>
 </g>
-<!-- Node18&#45;&gt;Node25 -->
+<!-- Node19&#45;&gt;Node26 -->
 <g id="edge4" class="edge">
-<title>Node18&#45;&gt;Node25</title>
+<title>Node19&#45;&gt;Node26</title>
 <path fill="none" stroke="#191970" d="M318.5039,-191.9553C289.5085,-181.4847 253.1788,-168.3656 226.0705,-158.5765"/>
 <polygon fill="#191970" stroke="#191970" points="317.4377,-195.2914 328.032,-195.396 319.8153,-188.7075 317.4377,-195.2914"/>
 </g>
-<!-- Node27 -->
+<!-- Node28 -->
 <g id="node7" class="node">
-<title>Node27</title>
+<title>Node28</title>
 <g id="a_node7"><a xlink:href="_special_track_8h.html" target="_top" xlink:title="libnolimits/NL2/Coaster\l/Track/SpecialTrack.h">
 <polygon fill="none" stroke="#000000" points="264.6807,-130.5 264.6807,-158.5 383.498,-158.5 383.498,-130.5 264.6807,-130.5"/>
 <text text-anchor="start" x="272.6807" y="-146.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">libnolimits/NL2/Coaster</text>
@@ -57,15 +57,15 @@
 </a>
 </g>
 </g>
-<!-- Node18&#45;&gt;Node27 -->
+<!-- Node19&#45;&gt;Node28 -->
 <g id="edge7" class="edge">
-<title>Node18&#45;&gt;Node27</title>
+<title>Node19&#45;&gt;Node28</title>
 <path fill="none" stroke="#191970" d="M352.1167,-186.8669C345.8933,-177.4594 338.8638,-166.8334 333.4015,-158.5765"/>
 <polygon fill="#191970" stroke="#191970" points="349.3225,-188.9869 357.759,-195.396 355.1607,-185.1247 349.3225,-188.9869"/>
 </g>
-<!-- Node29 -->
+<!-- Node30 -->
 <g id="node9" class="node">
-<title>Node29</title>
+<title>Node30</title>
 <g id="a_node9"><a xlink:href="_switch_track_8h.html" target="_top" xlink:title="libnolimits/NL2/Coaster\l/Track/SwitchTrack.h">
 <polygon fill="none" stroke="#ff0000" points="351.6807,-65.5 351.6807,-93.5 470.498,-93.5 470.498,-65.5 351.6807,-65.5"/>
 <text text-anchor="start" x="359.6807" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">libnolimits/NL2/Coaster</text>
@@ -73,15 +73,15 @@
 </a>
 </g>
 </g>
-<!-- Node18&#45;&gt;Node29 -->
+<!-- Node19&#45;&gt;Node30 -->
 <g id="edge15" class="edge">
-<title>Node18&#45;&gt;Node29</title>
+<title>Node19&#45;&gt;Node30</title>
 <path fill="none" stroke="#191970" d="M379.8836,-186.4123C384.1943,-177.969 388.7523,-168.2238 392.0894,-159 400.1518,-136.715 405.7807,-109.6735 408.7202,-93.5648"/>
 <polygon fill="#191970" stroke="#191970" points="376.7683,-184.8165 375.2,-195.2947 382.9602,-188.0815 376.7683,-184.8165"/>
 </g>
-<!-- Node31 -->
+<!-- Node32 -->
 <g id="node10" class="node">
-<title>Node31</title>
+<title>Node32</title>
 <g id="a_node10"><a xlink:href="_transfer_table_8h.html" target="_top" xlink:title="libnolimits/NL2/Coaster\l/Track/TransferTable.h">
 <polygon fill="none" stroke="#ff0000" points="488.6807,-65.5 488.6807,-93.5 607.498,-93.5 607.498,-65.5 488.6807,-65.5"/>
 <text text-anchor="start" x="496.6807" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">libnolimits/NL2/Coaster</text>
@@ -89,15 +89,15 @@
 </a>
 </g>
 </g>
-<!-- Node18&#45;&gt;Node31 -->
+<!-- Node19&#45;&gt;Node32 -->
 <g id="edge16" class="edge">
-<title>Node18&#45;&gt;Node31</title>
+<title>Node19&#45;&gt;Node32</title>
 <path fill="none" stroke="#191970" d="M391.5868,-189.0489C411.7087,-172.5382 441.1762,-149.0096 468.0894,-130 486.4687,-117.0181 508.0877,-103.4681 524.2153,-93.676"/>
 <polygon fill="#191970" stroke="#191970" points="389.3211,-186.3807 383.8331,-195.4435 393.7748,-191.7811 389.3211,-186.3807"/>
 </g>
-<!-- Node33 -->
+<!-- Node34 -->
 <g id="node11" class="node">
-<title>Node33</title>
+<title>Node34</title>
 <g id="a_node11"><a xlink:href="_segment_8cpp.html" target="_top" xlink:title="libnolimits/NL2/Coaster\l/Track/Segment.cpp">
 <polygon fill="none" stroke="#000000" points="476.6807,-130.5 476.6807,-158.5 595.498,-158.5 595.498,-130.5 476.6807,-130.5"/>
 <text text-anchor="start" x="484.6807" y="-146.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">libnolimits/NL2/Coaster</text>
@@ -105,15 +105,15 @@
 </a>
 </g>
 </g>
-<!-- Node18&#45;&gt;Node33 -->
+<!-- Node19&#45;&gt;Node34 -->
 <g id="edge14" class="edge">
-<title>Node18&#45;&gt;Node33</title>
+<title>Node19&#45;&gt;Node34</title>
 <path fill="none" stroke="#191970" d="M413.4174,-191.6815C440.5217,-181.2568 474.26,-168.2805 499.4904,-158.5765"/>
 <polygon fill="#191970" stroke="#191970" points="411.8369,-188.5394 403.7598,-195.396 414.3497,-195.0728 411.8369,-188.5394"/>
 </g>
-<!-- Node20 -->
+<!-- Node21 -->
 <g id="node3" class="node">
-<title>Node20</title>
+<title>Node21</title>
 <g id="a_node3"><a xlink:href="_coaster_8h.html" target="_top" xlink:title="libnolimits/NL2/Coaster\l/Coaster.h">
 <polygon fill="none" stroke="#ff0000" points="177.6807,-.5 177.6807,-28.5 296.498,-28.5 296.498,-.5 177.6807,-.5"/>
 <text text-anchor="start" x="185.6807" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">libnolimits/NL2/Coaster</text>
@@ -121,15 +121,15 @@
 </a>
 </g>
 </g>
-<!-- Node19&#45;&gt;Node20 -->
+<!-- Node20&#45;&gt;Node21 -->
 <g id="edge2" class="edge">
-<title>Node19&#45;&gt;Node20</title>
+<title>Node20&#45;&gt;Node21</title>
 <path fill="none" stroke="#191970" d="M109.6933,-61.8185C137.8221,-51.3707 172.9503,-38.3231 199.1911,-28.5765"/>
 <polygon fill="#191970" stroke="#191970" points="108.2173,-58.633 100.0617,-65.396 110.6547,-65.195 108.2173,-58.633"/>
 </g>
-<!-- Node24 -->
+<!-- Node25 -->
 <g id="node4" class="node">
-<title>Node24</title>
+<title>Node25</title>
 <g id="a_node4"><a xlink:href="_custom_track_8cpp.html" target="_top" xlink:title="libnolimits/NL2/Coaster\l/Track/CustomTrack.cpp">
 <polygon fill="none" stroke="#000000" points="0,-.5 0,-28.5 124.1787,-28.5 124.1787,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">libnolimits/NL2/Coaster</text>
@@ -137,21 +137,21 @@
 </a>
 </g>
 </g>
-<!-- Node19&#45;&gt;Node24 -->
+<!-- Node20&#45;&gt;Node25 -->
 <g id="edge3" class="edge">
-<title>Node19&#45;&gt;Node24</title>
+<title>Node20&#45;&gt;Node25</title>
 <path fill="none" stroke="#191970" d="M62.0894,-55.1081C62.0894,-46.1539 62.0894,-36.3227 62.0894,-28.5765"/>
 <polygon fill="#191970" stroke="#191970" points="58.5895,-55.3959 62.0894,-65.396 65.5895,-55.396 58.5895,-55.3959"/>
 </g>
-<!-- Node25&#45;&gt;Node19 -->
+<!-- Node26&#45;&gt;Node20 -->
 <g id="edge5" class="edge">
-<title>Node25&#45;&gt;Node19</title>
+<title>Node26&#45;&gt;Node20</title>
 <path fill="none" stroke="#191970" d="M150.963,-125.7143C131.2491,-115.4631 107.2482,-102.9826 89.1596,-93.5765"/>
 <polygon fill="#191970" stroke="#191970" points="149.4793,-128.8877 159.9662,-130.396 152.7088,-122.6771 149.4793,-128.8877"/>
 </g>
-<!-- Node26 -->
+<!-- Node27 -->
 <g id="node6" class="node">
-<title>Node26</title>
+<title>Node27</title>
 <g id="a_node6"><a xlink:href="_separator_8cpp.html" target="_top" xlink:title="libnolimits/NL2/Coaster\l/Track/Separator.cpp">
 <polygon fill="none" stroke="#000000" points="139.6807,-65.5 139.6807,-93.5 258.498,-93.5 258.498,-65.5 139.6807,-65.5"/>
 <text text-anchor="start" x="147.6807" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">libnolimits/NL2/Coaster</text>
@@ -159,21 +159,21 @@
 </a>
 </g>
 </g>
-<!-- Node25&#45;&gt;Node26 -->
+<!-- Node26&#45;&gt;Node27 -->
 <g id="edge6" class="edge">
-<title>Node25&#45;&gt;Node26</title>
+<title>Node26&#45;&gt;Node27</title>
 <path fill="none" stroke="#191970" d="M191.538,-120.4029C193.2056,-111.3703 195.0448,-101.4078 196.4906,-93.5765"/>
 <polygon fill="#191970" stroke="#191970" points="188.0669,-119.9267 189.6932,-130.396 194.9506,-121.1976 188.0669,-119.9267"/>
 </g>
-<!-- Node27&#45;&gt;Node20 -->
+<!-- Node28&#45;&gt;Node21 -->
 <g id="edge8" class="edge">
-<title>Node27&#45;&gt;Node20</title>
+<title>Node28&#45;&gt;Node21</title>
 <path fill="none" stroke="#191970" d="M308.9989,-121.951C291.0348,-95.1081 261.5819,-51.098 246.5538,-28.6423"/>
 <polygon fill="#191970" stroke="#191970" points="306.1427,-123.9762 314.6132,-130.3402 311.9602,-120.083 306.1427,-123.9762"/>
 </g>
-<!-- Node28 -->
+<!-- Node29 -->
 <g id="node8" class="node">
-<title>Node28</title>
+<title>Node29</title>
 <g id="a_node8"><a xlink:href="_special_track_8cpp.html" target="_top" xlink:title="libnolimits/NL2/Coaster\l/Track/SpecialTrack.cpp">
 <polygon fill="none" stroke="#000000" points="349.8276,-.5 349.8276,-28.5 472.3511,-28.5 472.3511,-.5 349.8276,-.5"/>
 <text text-anchor="start" x="357.8276" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">libnolimits/NL2/Coaster</text>
@@ -181,33 +181,33 @@
 </a>
 </g>
 </g>
-<!-- Node27&#45;&gt;Node28 -->
+<!-- Node28&#45;&gt;Node29 -->
 <g id="edge9" class="edge">
-<title>Node27&#45;&gt;Node28</title>
+<title>Node28&#45;&gt;Node29</title>
 <path fill="none" stroke="#191970" d="M325.5404,-120.3411C327.5268,-103.6302 332.1896,-81.5172 343.0894,-65 353.2135,-49.6581 369.6633,-37.2584 383.8475,-28.5854"/>
 <polygon fill="#191970" stroke="#191970" points="322.0435,-120.1433 324.5828,-130.4294 329.0122,-120.8049 322.0435,-120.1433"/>
 </g>
-<!-- Node27&#45;&gt;Node29 -->
+<!-- Node28&#45;&gt;Node30 -->
 <g id="edge10" class="edge">
-<title>Node27&#45;&gt;Node29</title>
+<title>Node28&#45;&gt;Node30</title>
 <path fill="none" stroke="#191970" d="M351.3034,-124.1677C364.6069,-114.2283 380.2854,-102.5144 392.2485,-93.5765"/>
 <polygon fill="#191970" stroke="#191970" points="348.8833,-121.6068 342.9671,-130.396 353.073,-127.2145 348.8833,-121.6068"/>
 </g>
-<!-- Node27&#45;&gt;Node31 -->
+<!-- Node28&#45;&gt;Node32 -->
 <g id="edge12" class="edge">
-<title>Node27&#45;&gt;Node31</title>
+<title>Node28&#45;&gt;Node32</title>
 <path fill="none" stroke="#191970" d="M382.3992,-127.5797C418.7811,-117.0225 465.0641,-103.5921 499.461,-93.6109"/>
 <polygon fill="#191970" stroke="#191970" points="381.0467,-124.3278 372.4182,-130.476 382.9975,-131.0504 381.0467,-124.3278"/>
 </g>
-<!-- Node29&#45;&gt;Node28 -->
+<!-- Node30&#45;&gt;Node29 -->
 <g id="edge11" class="edge">
-<title>Node29&#45;&gt;Node28</title>
+<title>Node30&#45;&gt;Node29</title>
 <path fill="none" stroke="#191970" d="M411.0894,-55.1081C411.0894,-46.1539 411.0894,-36.3227 411.0894,-28.5765"/>
 <polygon fill="#191970" stroke="#191970" points="407.5895,-55.3959 411.0894,-65.396 414.5895,-55.396 407.5895,-55.3959"/>
 </g>
-<!-- Node31&#45;&gt;Node28 -->
+<!-- Node32&#45;&gt;Node29 -->
 <g id="edge13" class="edge">
-<title>Node31&#45;&gt;Node28</title>
+<title>Node32&#45;&gt;Node29</title>
 <path fill="none" stroke="#191970" d="M509.0803,-60.9921C487.3651,-50.6892 460.7628,-38.0677 440.7583,-28.5765"/>
 <polygon fill="#191970" stroke="#191970" points="507.8274,-64.2715 518.3624,-65.396 510.828,-57.9472 507.8274,-64.2715"/>
 </g>

@@ -1,9 +1,12 @@
 <map id="libnolimits/Helper.h" name="libnolimits/Helper.h">
-<area shape="rect" id="node2" href="$_nolimits_8h.html" title="libnolimits/Nolimits.h" alt="" coords="105,79,247,104"/>
-<area shape="rect" id="node8" href="$_helper_8cpp.html" title="libnolimits/Helper.cpp" alt="" coords="272,79,419,104"/>
-<area shape="rect" id="node3" href="$_file_8h.html" title="libnolimits/File/File.h" alt="" coords="106,159,247,184"/>
-<area shape="rect" id="node4" href="$_chunk_8h.html" title="libnolimits/Stream\l/Chunk.h" alt="" coords="113,239,240,277"/>
-<area shape="rect" id="node5" href="$_sky_8h.html" title="libnolimits/NL2/Info\l/Sky.h" alt="" coords="5,325,139,364"/>
-<area shape="rect" id="node6" href="$_version_8h.html" title="libnolimits/NL2/Info\l/Version.h" alt="" coords="163,325,297,364"/>
-<area shape="rect" id="node7" href="$_support_node_8h.html" title="libnolimits/NL2/Coaster\l/Support/SupportNode.h" alt="" coords="322,152,487,191"/>
+<area shape="rect" id="node2" href="$_nolimits_8h.html" title="libnolimits/Nolimits.h" alt="" coords="400,79,542,104"/>
+<area shape="rect" id="node11" href="$_helper_8cpp.html" title="libnolimits/Helper.cpp" alt="" coords="567,79,714,104"/>
+<area shape="rect" id="node3" href="$_file_8h.html" title="libnolimits/File/File.h" alt="" coords="267,159,408,184"/>
+<area shape="rect" id="node4" href="$_chunk_8h.html" title="libnolimits/Stream\l/Chunk.h" alt="" coords="274,239,401,277"/>
+<area shape="rect" id="node5" href="$_n_l1_2_info_2_info_8h.html" title="libnolimits/NL1/Info\l/Info.h" alt="" coords="5,325,139,364"/>
+<area shape="rect" id="node6" href="$_n_l1_2_track_2_track_8h.html" title="libnolimits/NL1/Track\l/Track.h" alt="" coords="261,412,406,451"/>
+<area shape="rect" id="node7" href="$_n_l1_2_info_2_version_8h.html" title="libnolimits/NL1/Info\l/Version.h" alt="" coords="163,325,297,364"/>
+<area shape="rect" id="node8" href="$_sky_8h.html" title="libnolimits/NL2/Info\l/Sky.h" alt="" coords="371,325,505,364"/>
+<area shape="rect" id="node9" href="$_n_l2_2_info_2_version_8h.html" title="libnolimits/NL2/Info\l/Version.h" alt="" coords="528,325,662,364"/>
+<area shape="rect" id="node10" href="$_support_node_8h.html" title="libnolimits/NL2/Coaster\l/Support/SupportNode.h" alt="" coords="736,152,902,191"/>
 </map>
