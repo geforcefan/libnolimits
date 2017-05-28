@@ -23,9 +23,10 @@ var searchData=
   ['minor',['minor',['../class_no_limits_1_1_no_limits1_1_1_version.html#a5df7ac537d7806b89a7f078f0a0926b3',1,'NoLimits::NoLimits1::Version::minor()'],['../class_no_limits_1_1_no_limits2_1_1_version.html#ac1cc89a1a1068b54d5edde8c71c5cfa4',1,'NoLimits::NoLimits2::Version::minor()']]],
   ['minslope',['minSlope',['../class_no_limits_1_1_no_limits2_1_1_auto_paint.html#a44f07e5855015ccf735189e86c7343a2',1,'NoLimits::NoLimits2::AutoPaint']]],
   ['minspeed',['minSpeed',['../class_no_limits_1_1_no_limits2_1_1_transport.html#a83d69c2c4d5579df43a97a07abe3a77c',1,'NoLimits::NoLimits2::Transport']]],
-  ['mode',['Mode',['../class_no_limits_1_1_no_limits2_1_1_mode.html',1,'NoLimits::NoLimits2::Mode'],['../class_no_limits_1_1_no_limits2_1_1_mode.html#a8b711f396ad90ccc153b189b3b1ca71e',1,'NoLimits::NoLimits2::Mode::Mode()'],['../class_no_limits_1_1_no_limits2_1_1_coaster.html#ac0359a48d1ccd86faa14642e23661c17',1,'NoLimits::NoLimits2::Coaster::mode()'],['../class_no_limits_1_1_no_limits2_1_1_brake.html#a98e07fe80df21b0d93c026331c90708d',1,'NoLimits::NoLimits2::Brake::mode()']]],
+  ['mode',['Mode',['../class_no_limits_1_1_no_limits2_1_1_mode.html',1,'NoLimits::NoLimits2::Mode'],['../class_no_limits_1_1_no_limits2_1_1_coaster.html#ac0359a48d1ccd86faa14642e23661c17',1,'NoLimits::NoLimits2::Coaster::mode()'],['../class_no_limits_1_1_no_limits2_1_1_brake.html#a98e07fe80df21b0d93c026331c90708d',1,'NoLimits::NoLimits2::Brake::mode()'],['../class_no_limits_1_1_no_limits2_1_1_mode.html#a8b711f396ad90ccc153b189b3b1ca71e',1,'NoLimits::NoLimits2::Mode::Mode()']]],
   ['mode_2ecpp',['Mode.cpp',['../_mode_8cpp.html',1,'']]],
   ['mode_2eh',['Mode.h',['../_mode_8h.html',1,'']]],
   ['modernlooping',['ModernLooping',['../class_no_limits_1_1_no_limits1_1_1_track.html#a9301393a6d2fb10417d894a178c63578af818eefd336d0a6ab06a9fdf31b48ffb',1,'NoLimits::NoLimits1::Track']]],
+  ['motoratend',['MotorAtEnd',['../class_no_limits_1_1_no_limits1_1_1_lift.html#a511b722930619ecd33e2518680ea63f5a844903d5fb65ea8ecbd9a3f2229e279a',1,'NoLimits::NoLimits1::Lift']]],
   ['motorlocation',['motorLocation',['../class_no_limits_1_1_no_limits2_1_1_lift.html#aab26f2a2a8a6a3c25c861679f0502279',1,'NoLimits::NoLimits2::Lift::motorLocation()'],['../class_no_limits_1_1_no_limits2_1_1_lift.html#ac867c1af14ddfdf31b1360bd5d04931b',1,'NoLimits::NoLimits2::Lift::MotorLocation()']]]
 ];

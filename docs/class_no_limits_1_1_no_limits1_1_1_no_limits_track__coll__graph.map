@@ -1,6 +1,7 @@
 <map id="NoLimits::NoLimits1::NoLimitsTrack" name="NoLimits::NoLimits1::NoLimitsTrack">
-<area shape="rect" id="node2" href="$class_no_limits_1_1_stream_1_1_chunk.html" title="NoLimits::Stream::Chunk" alt="" coords="5,24,175,49"/>
-<area shape="rect" id="node3" href="$class_no_limits_1_1_no_limits1_1_1_track.html" title="NoLimits::NoLimits1\l::Track" alt="" coords="650,113,790,152"/>
-<area shape="rect" id="node4" href="$class_no_limits_1_1_no_limits1_1_1_info.html" title="NoLimits::NoLimits1\l::Info" alt="" coords="296,57,436,96"/>
-<area shape="rect" id="node9" href="$class_no_limits_1_1_no_limits1_1_1_version.html" title="NoLimits::NoLimits1\l::Version" alt="" coords="296,281,436,320"/>
+<area shape="rect" id="node2" href="$class_no_limits_1_1_stream_1_1_chunk.html" title="NoLimits::Stream::Chunk" alt="" coords="5,282,175,307"/>
+<area shape="rect" id="node3" href="$class_no_limits_1_1_no_limits1_1_1_track.html" title="NoLimits::NoLimits1\l::Track" alt="" coords="698,375,838,414"/>
+<area shape="rect" id="node5" href="$class_no_limits_1_1_no_limits1_1_1_info.html" title="NoLimits::NoLimits1\l::Info" alt="" coords="344,557,484,595"/>
+<area shape="rect" id="node11" href="$class_no_limits_1_1_no_limits1_1_1_colors.html" title="NoLimits::NoLimits1\l::Colors" alt="" coords="344,619,484,658"/>
+<area shape="rect" id="node13" href="$class_no_limits_1_1_no_limits1_1_1_version.html" title="NoLimits::NoLimits1\l::Version" alt="" coords="344,106,484,145"/>
 </map>

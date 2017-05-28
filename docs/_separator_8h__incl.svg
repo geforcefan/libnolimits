@@ -18,7 +18,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="_section_8h.html" target="_top" xlink:title="Section/Section.h">
+<g id="a_node2"><a xlink:href="_n_l2_2_coaster_2_track_2_section_2_section_8h.html" target="_top" xlink:title="Section/Section.h">
 <polygon fill="none" stroke="#000000" points="0,-120.5 0,-138.5 93.8271,-138.5 93.8271,-120.5 0,-120.5"/>
 <text text-anchor="middle" x="46.9136" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Section/Section.h</text>
 </a>
@@ -76,7 +76,7 @@
 <!-- Node19 -->
 <g id="node5" class="node">
 <title>Node19</title>
-<g id="a_node5"><a xlink:href="_colors_8h.html" target="_top" xlink:title="../Colors.h">
+<g id="a_node5"><a xlink:href="_n_l2_2_coaster_2_colors_8h.html" target="_top" xlink:title="../Colors.h">
 <polygon fill="none" stroke="#000000" points="188.1279,-65.5 188.1279,-83.5 249.6992,-83.5 249.6992,-65.5 188.1279,-65.5"/>
 <text text-anchor="middle" x="218.9136" y="-71.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">../Colors.h</text>
 </a>

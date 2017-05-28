@@ -2,10 +2,11 @@
 <area shape="rect" id="node2" href="$_file_8cpp.html" title="libnolimits/File/File.cpp" alt="" coords="5,85,161,111"/>
 <area shape="rect" id="node3" href="$_memory_file_8cpp.html" title="libnolimits/File/MemoryFile.cpp" alt="" coords="185,85,389,111"/>
 <area shape="rect" id="node4" href="$_no_limits_track_8cpp.html" title="libnolimits/NL1/NoLimits\lTrack.cpp" alt="" coords="413,79,577,117"/>
-<area shape="rect" id="node5" href="$_n_l1_2_track_2_track_8cpp.html" title="libnolimits/NL1/Track\l/Track.cpp" alt="" coords="601,79,746,117"/>
-<area shape="rect" id="node6" href="$_support_8cpp.html" title="libnolimits/NL2/Coaster\l/Support/Support.cpp" alt="" coords="771,79,929,117"/>
-<area shape="rect" id="node7" href="$_section_8cpp.html" title="libnolimits/NL2/Coaster\l/Track/Section/Section.cpp" alt="" coords="953,79,1133,117"/>
-<area shape="rect" id="node8" href="$_special_track_8cpp.html" title="libnolimits/NL2/Coaster\l/Track/SpecialTrack.cpp" alt="" coords="1157,79,1321,117"/>
-<area shape="rect" id="node9" href="$_park_8cpp.html" title="libnolimits/NL2/Park.cpp" alt="" coords="1345,85,1509,111"/>
-<area shape="rect" id="node10" href="$_terrain_8cpp.html" title="libnolimits/NL2/Terrain\l/Terrain.cpp" alt="" coords="1533,79,1686,117"/>
+<area shape="rect" id="node5" href="$_n_l1_2_track_2_section_2_section_8cpp.html" title="libnolimits/NL1/Track\l/Section/Section.cpp" alt="" coords="601,79,746,117"/>
+<area shape="rect" id="node6" href="$_n_l1_2_track_2_track_8cpp.html" title="libnolimits/NL1/Track\l/Track.cpp" alt="" coords="769,79,914,117"/>
+<area shape="rect" id="node7" href="$_support_8cpp.html" title="libnolimits/NL2/Coaster\l/Support/Support.cpp" alt="" coords="939,79,1097,117"/>
+<area shape="rect" id="node8" href="$_n_l2_2_coaster_2_track_2_section_2_section_8cpp.html" title="libnolimits/NL2/Coaster\l/Track/Section/Section.cpp" alt="" coords="1121,79,1301,117"/>
+<area shape="rect" id="node9" href="$_special_track_8cpp.html" title="libnolimits/NL2/Coaster\l/Track/SpecialTrack.cpp" alt="" coords="1325,79,1489,117"/>
+<area shape="rect" id="node10" href="$_park_8cpp.html" title="libnolimits/NL2/Park.cpp" alt="" coords="1513,85,1677,111"/>
+<area shape="rect" id="node11" href="$_terrain_8cpp.html" title="libnolimits/NL2/Terrain\l/Terrain.cpp" alt="" coords="1701,79,1854,117"/>
 </map>

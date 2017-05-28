@@ -4,6 +4,7 @@ var searchData=
   ['basestyle',['baseStyle',['../class_no_limits_1_1_no_limits2_1_1_footer.html#aa6c7424b8d85b43506731d509fd4fb4b',1,'NoLimits::NoLimits2::Footer']]],
   ['beam',['beam',['../class_no_limits_1_1_no_limits2_1_1_support.html#ad06c0382decd0cd9cd7ac5549dd3457a',1,'NoLimits::NoLimits2::Support']]],
   ['beamnode',['beamNode',['../class_no_limits_1_1_no_limits2_1_1_beam.html#aa9745d165bba702bde3526491fcdafe0',1,'NoLimits::NoLimits2::Beam']]],
+  ['blocksegment',['blockSegment',['../class_no_limits_1_1_no_limits1_1_1_brake.html#af0d3e829117183b44bf34dbd67e2fdd1',1,'NoLimits::NoLimits1::Brake']]],
   ['bogie',['bogie',['../class_no_limits_1_1_no_limits2_1_1_colors.html#ac3cbcb268231d61de325628571d0e80c',1,'NoLimits::NoLimits2::Colors']]],
   ['bogiecolor',['bogieColor',['../class_no_limits_1_1_no_limits2_1_1_individual_color.html#ad5b26081efabdcee87426cd5067451bf',1,'NoLimits::NoLimits2::IndividualColor']]],
   ['brakedevice',['brakeDevice',['../class_no_limits_1_1_no_limits2_1_1_station.html#abc336c2378086a9453741c7e60034b78',1,'NoLimits::NoLimits2::Station']]],

@@ -45,7 +45,7 @@
 <!-- Node18 -->
 <g id="node8" class="node">
 <title>Node18</title>
-<g id="a_node8"><a xlink:href="_colors_8h.html" target="_top" xlink:title="Colors.h">
+<g id="a_node8"><a xlink:href="_n_l2_2_coaster_2_colors_8h.html" target="_top" xlink:title="Colors.h">
 <polygon fill="none" stroke="#000000" points="346.005,-165.5 346.005,-183.5 399.2413,-183.5 399.2413,-165.5 346.005,-165.5"/>
 <text text-anchor="middle" x="372.6232" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Colors.h</text>
 </a>
@@ -120,7 +120,7 @@
 <!-- Node26 -->
 <g id="node16" class="node">
 <title>Node26</title>
-<g id="a_node16"><a xlink:href="_section_8h.html" target="_top" xlink:title="Section/Section.h">
+<g id="a_node16"><a xlink:href="_n_l2_2_coaster_2_track_2_section_2_section_8h.html" target="_top" xlink:title="Section/Section.h">
 <polygon fill="none" stroke="#000000" points="380.7096,-220.5 380.7096,-238.5 474.5367,-238.5 474.5367,-220.5 380.7096,-220.5"/>
 <text text-anchor="middle" x="427.6232" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Section/Section.h</text>
 </a>
@@ -444,7 +444,7 @@
 <!-- Node29 -->
 <g id="node19" class="node">
 <title>Node29</title>
-<g id="a_node19"><a xlink:href="_vertex_8h.html" target="_top" xlink:title="Vertex.h">
+<g id="a_node19"><a xlink:href="_n_l2_2_coaster_2_track_2_vertex_8h.html" target="_top" xlink:title="Vertex.h">
 <polygon fill="none" stroke="#000000" points="32.276,-275.5 32.276,-293.5 84.9703,-293.5 84.9703,-275.5 32.276,-275.5"/>
 <text text-anchor="middle" x="58.6232" y="-281.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Vertex.h</text>
 </a>

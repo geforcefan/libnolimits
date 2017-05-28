@@ -2,7 +2,10 @@ var searchData=
 [
   ['railconnector',['RailConnector',['../class_no_limits_1_1_no_limits2_1_1_beam_connection.html#a2f817f9c548947e93971c3afce3e49f4a9ac506d9bf4ff9bb3eb91f854ea9a394',1,'NoLimits::NoLimits2::BeamConnection']]],
   ['rectangularconcrete',['RectangularConcrete',['../class_no_limits_1_1_no_limits2_1_1_segment.html#a110fd89f265dac66100f7f663f4964dcab9b53dcb38e0562c2c90d20c7c4f00e0',1,'NoLimits::NoLimits2::Segment']]],
+  ['releaseatend',['ReleaseAtEnd',['../class_no_limits_1_1_no_limits1_1_1_lift.html#a511b722930619ecd33e2518680ea63f5ae3fbca55374a7927ae0190a54a2c1794',1,'NoLimits::NoLimits1::Lift']]],
+  ['reversecablelift',['ReverseCableLift',['../class_no_limits_1_1_no_limits1_1_1_lift.html#a511b722930619ecd33e2518680ea63f5ab92ac2705b17db339cfd845887ce7451',1,'NoLimits::NoLimits1::Lift']]],
   ['right',['Right',['../class_no_limits_1_1_no_limits2_1_1_station.html#a95970b3a4ecb76ce2f1f72975e20f2e9ac53b7762af94ec189f978e23de8bf653',1,'NoLimits::NoLimits2::Station']]],
+  ['rightrailing',['RightRailing',['../class_no_limits_1_1_no_limits1_1_1_section.html#a683b648e78af73d3c7abd3d922b9e084ab0e06471c2366d8f4c5ad987c19bde89',1,'NoLimits::NoLimits1::Section']]],
   ['rocketcoaster',['RocketCoaster',['../class_no_limits_1_1_no_limits2_1_1_style.html#ac7349400e7c093e03a4bfa1cad90aa44a0f23af28f6e1631e8f235f45b1c519f9',1,'NoLimits::NoLimits2::Style']]],
   ['rotatehorizontally',['RotateHorizontally',['../class_no_limits_1_1_no_limits2_1_1_switch_track.html#a24b0240e9f8b2b9f40d8085b7bae9337a4f4139c95ac68cd8eb685311501bb994',1,'NoLimits::NoLimits2::SwitchTrack']]],
   ['rotatevertically',['RotateVertically',['../class_no_limits_1_1_no_limits2_1_1_switch_track.html#a24b0240e9f8b2b9f40d8085b7bae9337a1d134d73e7f0783ef2832e22a5e1adbf',1,'NoLimits::NoLimits2::SwitchTrack']]],

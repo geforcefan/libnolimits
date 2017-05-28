@@ -2,7 +2,7 @@ var searchData=
 [
   ['file_2ecpp',['File.cpp',['../_file_8cpp.html',1,'']]],
   ['file_2eh',['File.h',['../_file_8h.html',1,'']]],
-  ['filescript',['FileScript',['../class_no_limits_1_1_no_limits2_1_1_file_script.html',1,'NoLimits::NoLimits2::FileScript'],['../class_no_limits_1_1_no_limits2_1_1_file_script.html#a4ce7898e9f75daca10a69113276d6fa3',1,'NoLimits::NoLimits2::FileScript::FileScript()'],['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a4fde193a895f149bd4b0e1780f3f8dd9',1,'NoLimits::NoLimits2::Coaster::fileScript()']]],
+  ['filescript',['FileScript',['../class_no_limits_1_1_no_limits2_1_1_file_script.html',1,'NoLimits::NoLimits2::FileScript'],['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a4fde193a895f149bd4b0e1780f3f8dd9',1,'NoLimits::NoLimits2::Coaster::fileScript()'],['../class_no_limits_1_1_no_limits2_1_1_file_script.html#a4ce7898e9f75daca10a69113276d6fa3',1,'NoLimits::NoLimits2::FileScript::FileScript()']]],
   ['filescript_2ecpp',['FileScript.cpp',['../_file_script_8cpp.html',1,'']]],
   ['filescript_2eh',['FileScript.h',['../_file_script_8h.html',1,'']]],
   ['firstcar',['FirstCar',['../class_no_limits_1_1_no_limits2_1_1_brake.html#a86358125d8ce9c8c806fef4c5ceaf920aed666da19db5caeb533f73fe6391366d',1,'NoLimits::NoLimits2::Brake']]],
@@ -12,6 +12,8 @@ var searchData=
   ['flag2',['flag2',['../class_no_limits_1_1_no_limits2_1_1_support_node.html#aebf7df476028ed764590e03f4f47e611',1,'NoLimits::NoLimits2::SupportNode::flag2()'],['../class_no_limits_1_1_no_limits2_1_1_wooden_support_generator.html#a575eb06e6030966a052af65cf17b8fd5',1,'NoLimits::NoLimits2::WoodenSupportGenerator::flag2()']]],
   ['flag3',['flag3',['../class_no_limits_1_1_no_limits2_1_1_support_node.html#a22b2ff470c664751462dea176f18e345',1,'NoLimits::NoLimits2::SupportNode']]],
   ['flags',['Flags',['../class_no_limits_1_1_no_limits2_1_1_support_node.html#add63490ddab645c7e1ef766b126202bf',1,'NoLimits::NoLimits2::SupportNode']]],
+  ['flags1',['flags1',['../class_no_limits_1_1_no_limits1_1_1_section.html#acedb6080c84302b0d69b9c192c5ac9ff',1,'NoLimits::NoLimits1::Section']]],
+  ['flags2',['flags2',['../class_no_limits_1_1_no_limits1_1_1_section.html#ae7a9d28f6746e3af627fda5f8ec50c8a',1,'NoLimits::NoLimits1::Section']]],
   ['flange',['Flange',['../class_no_limits_1_1_no_limits2_1_1_flange.html',1,'NoLimits::NoLimits2::Flange'],['../class_no_limits_1_1_no_limits2_1_1_flange.html#a652dc79f27242f2edae7eeeb88ae0783',1,'NoLimits::NoLimits2::Flange::Flange()'],['../class_no_limits_1_1_no_limits2_1_1_flange.html#a899bc5a50b2ba1d702b44fbc1f6ea055',1,'NoLimits::NoLimits2::Flange::Flange(float position)']]],
   ['flange_2eh',['Flange.h',['../_flange_8h.html',1,'']]],
   ['floorless',['Floorless',['../class_no_limits_1_1_no_limits1_1_1_track.html#a9301393a6d2fb10417d894a178c63578a781428cf8c7e824d827f5d0bfddc0bff',1,'NoLimits::NoLimits1::Track']]],
@@ -35,6 +37,7 @@ var searchData=
   ['freenodeconnection_2eh',['FreeNodeConnection.h',['../_free_node_connection_8h.html',1,'']]],
   ['freezed',['freezed',['../class_no_limits_1_1_no_limits2_1_1_coaster.html#afbcc1855ef321a48ce7c30b827e64497',1,'NoLimits::NoLimits2::Coaster']]],
   ['frictionbrake',['FrictionBrake',['../class_no_limits_1_1_no_limits2_1_1_brake.html#ad12901c66dc16593036fbd104e389582a77a264900dc6b27206cd217b628e40b9',1,'NoLimits::NoLimits2::Brake']]],
-  ['frictionwheels',['FrictionWheels',['../class_no_limits_1_1_no_limits2_1_1_lift.html#abc4ab330029b1431cc310ac835fc61c0a8afb1c4a7146c760c1bcf34d7c38ff44',1,'NoLimits::NoLimits2::Lift::FrictionWheels()'],['../class_no_limits_1_1_no_limits2_1_1_transport.html#a8fe46f719a2efc84a8ad44d5b6d87e2bad3a79a52317ac37cdd80d449e5d9bf77',1,'NoLimits::NoLimits2::Transport::FrictionWheels()']]],
+  ['frictionwheels',['FrictionWheels',['../class_no_limits_1_1_no_limits1_1_1_lift.html#ae697b7d91d2456527e236442124d5869aa22c370097cc62c8de72d7ff63b474b0',1,'NoLimits::NoLimits1::Lift::FrictionWheels()'],['../class_no_limits_1_1_no_limits1_1_1_transport.html#a3952fa3e702f5334b41aee263e4f969ba7a2e7e9e32f4c1b8f13d99ae7e43b3d3',1,'NoLimits::NoLimits1::Transport::FrictionWheels()'],['../class_no_limits_1_1_no_limits2_1_1_lift.html#abc4ab330029b1431cc310ac835fc61c0a8afb1c4a7146c760c1bcf34d7c38ff44',1,'NoLimits::NoLimits2::Lift::FrictionWheels()'],['../class_no_limits_1_1_no_limits2_1_1_transport.html#a8fe46f719a2efc84a8ad44d5b6d87e2bad3a79a52317ac37cdd80d449e5d9bf77',1,'NoLimits::NoLimits2::Transport::FrictionWheels()']]],
+  ['frontcar',['FrontCar',['../class_no_limits_1_1_no_limits1_1_1_brake.html#a183e8f867645a8392f5dc026655c9572a1a216c3df4c47a7829bae81fbbcc9ad2',1,'NoLimits::NoLimits1::Brake']]],
   ['fullbuilding',['FullBuilding',['../class_no_limits_1_1_no_limits2_1_1_station.html#abc7858b4fcaccd5affdb77e072564968a28617ba7bc2de3966bef1d6ae9c89f6c',1,'NoLimits::NoLimits2::Station']]]
 ];

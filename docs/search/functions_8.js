@@ -22,6 +22,7 @@ var searchData=
   ['insertsceneobject',['insertSceneObject',['../class_no_limits_1_1_no_limits2_1_1_scenery.html#a7b75d890bef3790ce0330a71a507064a',1,'NoLimits::NoLimits2::Scenery']]],
   ['insertsceneobjectinstance',['insertSceneObjectInstance',['../class_no_limits_1_1_no_limits2_1_1_scenery.html#a8ff71770be56355a610dc0e6e91777f7',1,'NoLimits::NoLimits2::Scenery']]],
   ['insertscript',['insertScript',['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a04977ff56ab517b14af72657bce2e08a',1,'NoLimits::NoLimits2::Coaster']]],
+  ['insertsection',['insertSection',['../class_no_limits_1_1_no_limits1_1_1_track.html#a9a436c0707aa5e826f2a332f7b6f3d32',1,'NoLimits::NoLimits1::Track']]],
   ['insertsegment',['insertSegment',['../class_no_limits_1_1_no_limits2_1_1_special_track.html#a538271e8a84626064804e052e48c8db5',1,'NoLimits::NoLimits2::SpecialTrack']]],
   ['insertseparator',['insertSeparator',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#abaac57a7d2c5f241a2cb406b7483014f',1,'NoLimits::NoLimits2::CustomTrack']]],
   ['insertsupportparameter',['insertSupportParameter',['../class_no_limits_1_1_no_limits2_1_1_rail_connector.html#a7aa0afae1831343fabfe505f1913d60e',1,'NoLimits::NoLimits2::RailConnector']]],
@@ -30,5 +31,5 @@ var searchData=
   ['inserttrack',['insertTrack',['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a28858c4a11cb1165f777b9be1194ea10',1,'NoLimits::NoLimits2::Coaster']]],
   ['inserttrain',['insertTrain',['../class_no_limits_1_1_no_limits1_1_1_track.html#a67808fdf8f6e085fb1005fa23ae0519d',1,'NoLimits::NoLimits1::Track::insertTrain()'],['../class_no_limits_1_1_no_limits2_1_1_coaster.html#a001789f61c461099434847d3a58c6633',1,'NoLimits::NoLimits2::Coaster::insertTrain()']]],
   ['inserttrigger',['insertTrigger',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#a5392e3a3982694a29b163f1c360dc271',1,'NoLimits::NoLimits2::CustomTrack']]],
-  ['insertvertex',['insertVertex',['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#a0b3edf57a8dbaccd88075cbe4a311dea',1,'NoLimits::NoLimits2::CustomTrack']]]
+  ['insertvertex',['insertVertex',['../class_no_limits_1_1_no_limits1_1_1_track.html#afd8ea764e8fdb6c04e2844db1027d442',1,'NoLimits::NoLimits1::Track::insertVertex()'],['../class_no_limits_1_1_no_limits2_1_1_custom_track.html#a0b3edf57a8dbaccd88075cbe4a311dea',1,'NoLimits::NoLimits2::CustomTrack::insertVertex()']]]
 ];

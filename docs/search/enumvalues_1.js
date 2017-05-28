@@ -6,5 +6,5 @@ var searchData=
   ['blockbrake',['BlockBrake',['../class_no_limits_1_1_no_limits2_1_1_brake.html#a8d089cc378e5e2f5bd62c3ca89ea6d75afd0c876355679092fa63b1c9ad47a56d',1,'NoLimits::NoLimits2::Brake']]],
   ['bottomaccented',['BottomAccented',['../class_no_limits_1_1_no_limits2_1_1_colors.html#aff2ce01690de0b8e46907f9dcece8c03ad59cc4504d0dbf9ce636d2977a44bc75',1,'NoLimits::NoLimits2::Colors']]],
   ['boxbeam',['BoxBeam',['../class_no_limits_1_1_no_limits2_1_1_beam.html#a06a1592233b0ac88ad289b1567732929aab81c2d0b8c5c873fbdf2b67c00a43b5',1,'NoLimits::NoLimits2::Beam']]],
-  ['brake',['Brake',['../class_no_limits_1_1_no_limits2_1_1_section.html#a4b1018e270ed74daf4cf0b94a50818a9a012e444f0c249ad5cf9f778ebce868a9',1,'NoLimits::NoLimits2::Section']]]
+  ['brake',['Brake',['../class_no_limits_1_1_no_limits1_1_1_section.html#a88f15fbd964fd5371ce6b3386775414dabdec29f1ae1ad9c46873d171d72c9e45',1,'NoLimits::NoLimits1::Section::Brake()'],['../class_no_limits_1_1_no_limits2_1_1_section.html#a4b1018e270ed74daf4cf0b94a50818a9a012e444f0c249ad5cf9f778ebce868a9',1,'NoLimits::NoLimits2::Section::Brake()']]]
 ];

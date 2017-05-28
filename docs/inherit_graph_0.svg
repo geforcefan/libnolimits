@@ -11,10 +11,10 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="class_no_limits_1_1_no_limits2_1_1_brake_device.html" target="_top" xlink:title="NoLimits::NoLimits2\l::BrakeDevice">
+<g id="a_node1"><a xlink:href="class_no_limits_1_1_no_limits1_1_1_transport_device.html" target="_top" xlink:title="NoLimits::NoLimits1\l::TransportDevice">
 <polygon fill="none" stroke="#000000" points="0,-.5 0,-28.5 104.9111,-28.5 104.9111,-.5 0,-.5"/>
-<text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">NoLimits::NoLimits2</text>
-<text text-anchor="middle" x="52.4556" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::BrakeDevice</text>
+<text text-anchor="start" x="8" y="-16.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">NoLimits::NoLimits1</text>
+<text text-anchor="middle" x="52.4556" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::TransportDevice</text>
 </a>
 </g>
 </g>

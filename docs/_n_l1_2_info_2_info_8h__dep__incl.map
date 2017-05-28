@@ -1,6 +1,8 @@
 <map id="libnolimits/NL1/Info/Info.h" name="libnolimits/NL1/Info/Info.h">
-<area shape="rect" id="node2" href="$_n_l1_2_info_2_info_8cpp.html" title="libnolimits/NL1/Info\l/Info.cpp" alt="" coords="5,92,139,131"/>
-<area shape="rect" id="node3" href="$_n_l1_2_track_2_track_8h.html" title="libnolimits/NL1/Track\l/Track.h" alt="" coords="163,92,307,131"/>
-<area shape="rect" id="node4" href="$_no_limits_track_8h.html" title="libnolimits/NL1/NoLimits\lTrack.h" alt="" coords="64,179,227,217"/>
-<area shape="rect" id="node5" href="$_n_l1_2_track_2_track_8cpp.html" title="libnolimits/NL1/Track\l/Track.cpp" alt="" coords="252,179,397,217"/>
+<area shape="rect" id="node2" href="$_n_l1_2_info_2_info_8cpp.html" title="libnolimits/NL1/Info\l/Info.cpp" alt="" coords="133,92,267,131"/>
+<area shape="rect" id="node3" href="$_n_l1_2_track_2_track_8h.html" title="libnolimits/NL1/Track\l/Track.h" alt="" coords="291,92,435,131"/>
+<area shape="rect" id="node4" href="$_no_limits_track_8h.html" title="libnolimits/NL1/NoLimits\lTrack.h" alt="" coords="5,179,169,217"/>
+<area shape="rect" id="node5" href="$_beziers_chunk_8cpp.html" title="libnolimits/NL1/Track\l/BeziersChunk.cpp" alt="" coords="194,179,338,217"/>
+<area shape="rect" id="node6" href="$_segments_chunk_8cpp.html" title="libnolimits/NL1/Track\l/Section/SegmentsChunk.cpp" alt="" coords="362,179,559,217"/>
+<area shape="rect" id="node7" href="$_n_l1_2_track_2_track_8cpp.html" title="libnolimits/NL1/Track\l/Track.cpp" alt="" coords="583,179,727,217"/>
 </map>
