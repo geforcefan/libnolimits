@@ -1,12 +1,15 @@
 #include "Track.h"
 #include "../../File/NormalFile.h"
 #include "../../File/MemoryFile.h"
-#include "Beziers.h"
+#include "BeziersChunk.h"
+#include "Section/SegmentsChunk.h"
 
 namespace NoLimits {
     namespace NoLimits1 {
         void Track::read(File::File *file) {
             train.clear();
+            vertex.clear();
+            section.clear();
 
             setCoasterStyle((Track::CoasterStyle)file->readUnsignedInteger());
 
@@ -38,8 +41,6 @@ namespace NoLimits {
             file->readNull(3);
             file->readNull(4); // number of sub chunks
 
-            std::cout << "file->tell(): " << file->tell() << std::endl;
-
             for(int i = file->tell(); i <= file->getFilesize(); i++) {
                 file->seek(i, SEEK_SET);
 
@@ -51,8 +52,14 @@ namespace NoLimits {
                 }
 
                 if (chunk == "BEZR") {
-                    Beziers *beziers = new Beziers(this);
-                    file->readChunk(beziers);
+                    BeziersChunk *beziersChunk = new BeziersChunk(this);
+                    file->readChunk(beziersChunk);
+                    i = file->tell() - 1;
+                }
+
+                if (chunk == "SEGM") {
+                    SegmentsChunk *segmentsChunk = new SegmentsChunk(this);
+                    file->readChunk(segmentsChunk);
                     i = file->tell() - 1;
                 }
             }
@@ -97,8 +104,14 @@ namespace NoLimits {
             numberOfSubChunks++;
 
             if(vertex.size()) {
-                Beziers *beziers = new Beziers(this);
-                subChunksFile->writeChunk(beziers);
+                BeziersChunk *beziersChunk = new BeziersChunk(this);
+                subChunksFile->writeChunk(beziersChunk);
+                numberOfSubChunks++;
+            }
+
+            if(section.size()) {
+                SegmentsChunk *segmentsChunk = new SegmentsChunk(this);
+                subChunksFile->writeChunk(segmentsChunk);
                 numberOfSubChunks++;
             }
 
@@ -162,6 +175,22 @@ namespace NoLimits {
 
         void Track::insertVertex(Vertex* value) {
             vertex.push_back(value);
+        }
+
+        const std::vector<Section *, std::allocator<Section *>> &Track::getSection() const {
+            return section;
+        }
+
+        void Track::insertSection(Section* value) {
+            section.push_back(value);
+        }
+
+        bool Track::getClosed() const {
+            return closed;
+        }
+
+        void Track::setClosed(bool value) {
+            closed = value;
         }
     }
 }

@@ -67,8 +67,12 @@ namespace NoLimits {
         std::streamsize MemoryFile::write(const void *ptr, std::streamsize size, std::streamsize count) {
             if(openedWB) {
                 std::streamsize copySize = count * size;
-                bufferSize += copySize;
-                reallocBuffer();
+                std::streamsize endOffset = copySize + bufferSize;
+
+                if(endOffset > bufferSize) {
+                    bufferSize += endOffset - bufferSize;
+                    reallocBuffer();
+                }
 
                 memcpy(((char*)buffer)+pos, ptr, copySize);
                 pos += copySize;

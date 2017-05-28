@@ -7,6 +7,7 @@
 #include "Train.h"
 #include "Vertex.h"
 #include "Colors.h"
+#include "Section/Section.h"
 #include <string>
 
 namespace NoLimits {
@@ -91,6 +92,9 @@ namespace NoLimits {
             const std::vector<Vertex *, std::allocator<Vertex *>> &getVertex() const;
             void insertVertex(Vertex *value);
 
+            const std::vector<Section *, std::allocator<Section *>> &getSection() const;
+            void insertSection(Section* value);
+
             uint32_t getNumberOfCarsPerTrain() const;
             void setNumberOfCarsPerTrain(uint32_t value);
 
@@ -99,6 +103,9 @@ namespace NoLimits {
 
             TrackMode getTrackMode() const;
             void setTrackMode(TrackMode value);
+
+            bool getClosed() const;
+            void setClosed(bool closed);
 
             /*! \cond INTERNAL */
             std::string getChunkName() { return "TRCK"; }
@@ -110,8 +117,11 @@ namespace NoLimits {
             Colors *colors;
             std::vector<Train*> train;
             std::vector<Vertex*> vertex;
+            std::vector<Section*> section;
 
             uint32_t numberOfCarsPerTrain;
+
+            bool closed;
         };
     }
 }

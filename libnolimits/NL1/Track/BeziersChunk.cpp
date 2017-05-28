@@ -1,9 +1,9 @@
-#include "Beziers.h"
+#include "BeziersChunk.h"
 #include "Track.h"
 
 namespace NoLimits {
     namespace NoLimits1 {
-        void Beziers::read(File::File *file) {
+        void BeziersChunk::read(File::File *file) {
             file->readNull(16);
             uint32_t numberOfVertices = file->readUnsignedInteger();
 
@@ -17,9 +17,9 @@ namespace NoLimits {
             file->readNull(4); // number of sub chunks
         }
 
-        void Beziers::write(File::File *file) {
+        void BeziersChunk::write(File::File *file) {
             file->writeNull(16);
-            file->writeUnsignedInteger(track->getVertex().size());
+            file->writeUnsignedInteger((uint32_t) track->getVertex().size());
 
             for(uint32_t i = 0; i < track->getVertex().size(); i++) {
                 track->getVertex()[i]->write(file);
