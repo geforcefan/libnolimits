@@ -1,6 +1,7 @@
 #include "Track.h"
 #include "../../File/NormalFile.h"
 #include "../../File/MemoryFile.h"
+#include "Beziers.h"
 
 namespace NoLimits {
     namespace NoLimits1 {
@@ -18,6 +19,27 @@ namespace NoLimits {
                 insertTrain(_train);
             }
 
+            getColors()->setTrackSpine(file->readColorLegacy());
+            getColors()->setTrackRail(file->readColorLegacy());
+            getColors()->setTrackCrosstie(file->readColorLegacy());
+            getColors()->setSupports(file->readColorLegacy());
+            getColors()->setTrainSeat(file->readColorLegacy());
+            getColors()->setTrainRestraint(file->readColorLegacy());
+            getColors()->setTrain(file->readColorLegacy());
+            getColors()->setTrainGear(file->readColorLegacy());
+
+            file->readNull(4); // always 0, 57, 23, 2, don´t know what this is.
+
+            setTrackMode((Track::TrackMode)file->readUnsignedInteger());
+
+            getColors()->setUseTunnelColor(file->readBooleanLegacy());
+            getColors()->setTunnel(file->readColorLegacy());
+
+            file->readNull(3);
+            file->readNull(4); // number of sub chunks
+
+            std::cout << "file->tell(): " << file->tell() << std::endl;
+
             for(int i = file->tell(); i <= file->getFilesize(); i++) {
                 file->seek(i, SEEK_SET);
 
@@ -25,6 +47,12 @@ namespace NoLimits {
 
                 if (chunk == "INFO") {
                     file->readChunk(getInfo());
+                    i = file->tell() - 1;
+                }
+
+                if (chunk == "BEZR") {
+                    Beziers *beziers = new Beziers(this);
+                    file->readChunk(beziers);
                     i = file->tell() - 1;
                 }
             }
@@ -39,6 +67,27 @@ namespace NoLimits {
                 train[i]->write(file);
             }
 
+            file->writeColorLegacy(getColors()->getTrackSpine());
+            file->writeColorLegacy(getColors()->getTrackRail());
+            file->writeColorLegacy(getColors()->getTrackCrosstie());
+            file->writeColorLegacy(getColors()->getSupports());
+            file->writeColorLegacy(getColors()->getTrainSeat());
+            file->writeColorLegacy(getColors()->getTrainRestraint());
+            file->writeColorLegacy(getColors()->getTrain());
+            file->writeColorLegacy(getColors()->getTrainGear());
+
+            file->writeUnsigned8(0);
+            file->writeUnsigned8(57);
+            file->writeUnsigned8(23);
+            file->writeUnsigned8(2);
+
+            file->writeUnsignedInteger(getTrackMode());
+
+            file->writeBooleanLegacy(getColors()->getUseTunnelColor());
+            file->writeColorLegacy(getColors()->getTunnel());
+
+            file->writeNull(3);
+
             uint32_t numberOfSubChunks = 0;
 
             File::File *subChunksFile = new File::MemoryFile();
@@ -46,6 +95,12 @@ namespace NoLimits {
 
             subChunksFile->writeChunk(getInfo());
             numberOfSubChunks++;
+
+            if(vertex.size()) {
+                Beziers *beziers = new Beziers(this);
+                subChunksFile->writeChunk(beziers);
+                numberOfSubChunks++;
+            }
 
             subChunksFile->close();
 
@@ -83,6 +138,30 @@ namespace NoLimits {
 
         void Track::setNumberOfCarsPerTrain(uint32_t value) {
             numberOfCarsPerTrain = value;
+        }
+
+        Colors *Track::getColors() const {
+            return colors;
+        }
+
+        void Track::setColors(Colors *value) {
+            colors = value;
+        }
+
+        Track::TrackMode Track::getTrackMode() const {
+            return trackMode;
+        }
+
+        void Track::setTrackMode(Track::TrackMode value) {
+            trackMode = value;
+        }
+
+        const std::vector<Vertex *, std::allocator<Vertex *>> &Track::getVertex() const {
+            return vertex;
+        }
+
+        void Track::insertVertex(Vertex* value) {
+            vertex.push_back(value);
         }
     }
 }

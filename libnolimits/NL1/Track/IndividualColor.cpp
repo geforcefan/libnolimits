@@ -5,22 +5,22 @@ namespace NoLimits {
     namespace NoLimits1 {
         void IndividualColor::read(File::File *file) {
             setHasIndividualColor(file->readBooleanLegacy());
-            file->writeNull(7);
-            file->writeStringLegacy(getTexture());
-            file->writeColorLegacy(getSeatColor());
-            file->writeColorLegacy(getRestraintColor());
-            file->writeColorLegacy(getTrainColor());
-            file->writeColorLegacy(getGearColor());
-        }
-
-        void IndividualColor::write(File::File *file) {
-            file->writeBooleanLegacy(getHasIndividualColor());
             file->readNull(7);
             setTexture(file->readStringLegacy());
             setSeatColor(file->readColorLegacy());
             setRestraintColor(file->readColorLegacy());
             setTrainColor(file->readColorLegacy());
             setGearColor(file->readColorLegacy());
+        }
+
+        void IndividualColor::write(File::File *file) {
+            file->writeBooleanLegacy(getHasIndividualColor());
+            file->writeNull(7);
+            file->writeStringLegacy(getTexture());
+            file->writeColorLegacy(getSeatColor());
+            file->writeColorLegacy(getRestraintColor());
+            file->writeColorLegacy(getTrainColor());
+            file->writeColorLegacy(getGearColor());
         }
 
         bool IndividualColor::getHasIndividualColor() const {

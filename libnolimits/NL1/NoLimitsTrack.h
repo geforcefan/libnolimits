@@ -37,7 +37,9 @@ namespace NoLimits {
             Track *getTrack() const;
             void setTrack(Track *value);
 
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "NLIM"; }
+            /*! \endcond */
 
         private:
             Version *version;

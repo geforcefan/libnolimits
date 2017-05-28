@@ -129,11 +129,19 @@ namespace NoLimits {
 
         glm::vec3 File::readColorLegacy() {
             glm::vec4 color = readUnsigned8Vec4();
+#ifdef __BIG_ENDIAN__
             return glm::vec3(color.r, color.g, color.b);
+#else
+            return glm::vec3(color.a, color.b, color.g);
+#endif
         }
 
         void File::writeColorLegacy(glm::vec3 color) {
-            return writeUnsigned8Vec4(glm::vec4(color.r, color.g, color.b, 255.0f));
+#ifdef __BIG_ENDIAN__
+            writeUnsigned8Vec4(glm::vec4(color.r, color.g, color.b, 255.0f));
+#else
+            writeUnsigned8Vec4(glm::vec4(255.0f, color.b, color.g, color.r));
+#endif
         }
 
         glm::vec3 File::readColor() {

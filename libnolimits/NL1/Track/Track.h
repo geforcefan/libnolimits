@@ -5,6 +5,8 @@
 #include "../../Stream/Chunk.h"
 #include "../Info/Info.h"
 #include "Train.h"
+#include "Vertex.h"
+#include "Colors.h"
 #include <string>
 
 namespace NoLimits {
@@ -38,12 +40,38 @@ namespace NoLimits {
                 ModernLooping = 49
             };
 
+            enum TrackMode {
+                Continious,
+                Shuttle
+            };
+
             Track() {
                 setInfo(new Info());
+                setColors(new Colors());
             }
 
             void debug() {
                 getInfo()->debug();
+                getColors()->debug();
+
+                std::cout << "Track[getTrackMode]: " << getTrackMode() << std::endl;
+                std::cout << "Track[getCoasterStyle]: " << getCoasterStyle() << std::endl;
+
+                std::cout << "Track[getTrain.size]: " << train.size() << std::endl;
+                if(train.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < train.size(); i++) {
+                    train[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
+
+                std::cout << "Track[getVertex.size]: " << vertex.size() << std::endl;
+                if(vertex.size())
+                    std::cout << "---------------------------------------" << std::endl;
+                for(uint32_t i = 0; i < vertex.size(); i++) {
+                    vertex[i]->debug();
+                    std::cout << "---------------------------------------" << std::endl;
+                }
             }
 
             /*! \cond INTERNAL */
@@ -60,14 +88,28 @@ namespace NoLimits {
             const std::vector<Train *, std::allocator<Train *>> &getTrain() const;
             void insertTrain(Train* value);
 
+            const std::vector<Vertex *, std::allocator<Vertex *>> &getVertex() const;
+            void insertVertex(Vertex *value);
+
             uint32_t getNumberOfCarsPerTrain() const;
             void setNumberOfCarsPerTrain(uint32_t value);
 
+            Colors *getColors() const;
+            void setColors(Colors *value);
+
+            TrackMode getTrackMode() const;
+            void setTrackMode(TrackMode value);
+
+            /*! \cond INTERNAL */
             std::string getChunkName() { return "TRCK"; }
+            /*! \endcond */
         private:
             Info *info;
             CoasterStyle coasterStyle;
-            std::vector<Train *> train;
+            TrackMode trackMode;
+            Colors *colors;
+            std::vector<Train*> train;
+            std::vector<Vertex*> vertex;
 
             uint32_t numberOfCarsPerTrain;
         };
