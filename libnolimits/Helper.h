@@ -20,6 +20,9 @@ namespace NoLimits {
         static std::string debug(glm::vec2 v);
         static std::string debug(glm::vec3 v);
         static std::string debug(glm::vec4 v);
+        static std::string debug(glm::dvec2 v);
+        static std::string debug(glm::dvec3 v);
+        static std::string debug(glm::dvec4 v);
 
         static double kphToMs(double value);
         static double GToNewton(double value);

@@ -18,11 +18,11 @@ namespace NoLimits {
             file->writeNull(22);
         }
 
-        glm::vec4 Vertex::getPosition() const {
+        glm::dvec4 Vertex::getPosition() const {
             return position;
         }
 
-        void Vertex::setPosition(const glm::vec4 &value) {
+        void Vertex::setPosition(const glm::dvec4 &value) {
             position = value;
         }
 

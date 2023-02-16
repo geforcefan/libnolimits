@@ -8,12 +8,12 @@ namespace NoLimits {
         class Vertex : public Stream::Chunk {
         public:
             Vertex() {
-                setPosition(glm::vec4(0.0f, 0.0f, 0.0f, 1.0f));
+                setPosition(glm::dvec4(0.0f, 0.0f, 0.0f, 1.0f));
                 setLocked(false);
                 setStrict(false);
             }
 
-            Vertex(glm::vec4 position, bool locked, bool strict) {
+            Vertex(glm::dvec4 position, bool locked, bool strict) {
                 setPosition(position);
                 setLocked(locked);
                 setStrict(strict);
@@ -30,8 +30,8 @@ namespace NoLimits {
                 std::cout << "Vertex[getStrict]: " << getStrict() << std::endl;
             }
 
-            glm::vec4 getPosition() const;
-            void setPosition(const glm::vec4 &value);
+            glm::dvec4 getPosition() const;
+            void setPosition(const glm::dvec4 &value);
 
             bool getLocked() const;
             void setLocked(bool value);

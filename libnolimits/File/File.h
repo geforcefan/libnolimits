@@ -312,14 +312,14 @@ namespace NoLimits {
              *
              * @return Read 2D double vector value from file
              */
-            glm::vec2 readDoubleVec2();
+            glm::dvec2 readDoubleVec2();
 
             /**
              * Writes 2D double vector value to file.
              *
              * @param value Value to be written
              */
-            void writeDoubleVec2(glm::vec2 vec);
+            void writeDoubleVec2(glm::dvec2 vec);
 
             /**
              * Reads 3D unsigned byte vector value from file
@@ -368,28 +368,28 @@ namespace NoLimits {
              *
              * @return Read 3D double vector value from file
              */
-            glm::vec3 readDoubleVec3();
+            glm::dvec3 readDoubleVec3();
 
             /**
              * Writes 3D double vector value to file.
              *
              * @param value Value to be written
              */
-            void writeDoubleVec3(glm::vec3 vec);
+            void writeDoubleVec3(glm::dvec3 vec);
 
             /**
              * Reads 4D double vector value from file
              *
              * @return Read 4D double vector value from file
              */
-            glm::vec4 readDoubleVec4();
+            glm::dvec4 readDoubleVec4();
 
             /**
              * Writes 4D double vector value to file.
              *
              * @param value Value to be written
              */
-            void writeDoubleVec4(glm::vec4 vec);
+            void writeDoubleVec4(glm::dvec4 vec);
 
             /**
              * Reads string value from file

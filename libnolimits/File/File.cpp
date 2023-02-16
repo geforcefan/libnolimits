@@ -153,7 +153,7 @@ namespace NoLimits {
         }
 
         glm::vec2 File::readIntVec2() {
-            return glm::vec2(readInteger(), readInteger());
+            return {readInteger(), readInteger()};
         }
 
         void File::writeIntVec2(glm::vec2 vec) {
@@ -162,7 +162,7 @@ namespace NoLimits {
         }
 
         glm::vec2 File::readFloatVec2() {
-            return glm::vec2(readFloat(), readFloat());
+            return {readFloat(), readFloat()};
         }
 
         void File::writeFloatVec2(glm::vec2 vec) {
@@ -171,7 +171,7 @@ namespace NoLimits {
         }
 
         glm::vec3 File::readFloatVec3() {
-            return glm::vec3(readFloat(), readFloat(), readFloat());
+            return {readFloat(), readFloat(), readFloat()};
         }
 
         void File::writeFloatVec3(glm::vec3 vec) {
@@ -181,7 +181,7 @@ namespace NoLimits {
         }
 
         glm::vec3 File::readUnsigned8Vec3() {
-            return glm::vec3(readUnsigned8(), readUnsigned8(), readUnsigned8());
+            return {readUnsigned8(), readUnsigned8(), readUnsigned8()};
         }
 
         void File::writeUnsigned8Vec3(glm::vec3 vec) {
@@ -191,7 +191,7 @@ namespace NoLimits {
         }
 
         glm::vec4 File::readUnsigned8Vec4() {
-            return glm::vec4(readUnsigned8(), readUnsigned8(), readUnsigned8(), readUnsigned8());
+            return {readUnsigned8(), readUnsigned8(), readUnsigned8(), readUnsigned8()};
         }
 
         void File::writeUnsigned8Vec4(glm::vec4 vec) {
@@ -201,31 +201,31 @@ namespace NoLimits {
             writeUnsigned8(vec.w);
         }
 
-        glm::vec2 File::readDoubleVec2() {
-            return glm::vec2(readDouble(), readDouble());
+        glm::dvec2 File::readDoubleVec2() {
+            return glm::dvec2(readDouble(), readDouble());
         }
 
-        void File::writeDoubleVec2(glm::vec2 vec) {
+        void File::writeDoubleVec2(glm::dvec2 vec) {
             writeDouble(vec.x);
             writeDouble(vec.y);
         }
 
-        glm::vec4 File::readDoubleVec4() {
-            return glm::vec4(readDouble(), readDouble(), readDouble(), readDouble());
+        glm::dvec4 File::readDoubleVec4() {
+            return {readDouble(), readDouble(), readDouble(), readDouble()};
         }
 
-        void File::writeDoubleVec4(glm::vec4 vec) {
+        void File::writeDoubleVec4(glm::dvec4 vec) {
             writeDouble(vec.x);
             writeDouble(vec.y);
             writeDouble(vec.z);
             writeDouble(vec.w);
         }
 
-        glm::vec3 File::readDoubleVec3() {
+        glm::dvec3 File::readDoubleVec3() {
             return glm::vec3(readDouble(), readDouble(), readDouble());
         }
 
-        void File::writeDoubleVec3(glm::vec3 vec) {
+        void File::writeDoubleVec3(glm::dvec3 vec) {
             writeDouble(vec.x);
             writeDouble(vec.y);
             writeDouble(vec.z);
@@ -256,20 +256,22 @@ namespace NoLimits {
             readUnsignedInteger(); // uncompressedSize
             uint32_t compressedSize = readUnsignedInteger();
 
-            MemoryFile *decompressedDataMemoryFile = new MemoryFile();
+            auto *decompressedDataMemoryFile = new MemoryFile();
             decompressedDataMemoryFile->openWB();
 
-            Bytef* in = (Bytef *) malloc(compressedSize);
+            auto* in = (Bytef *) malloc(compressedSize);
             read(in, 1, compressedSize);
 
             Bytef buffer[ZLIB_CHUNK];
 
-            z_stream_s stream;
-            stream.avail_in = compressedSize;
-            stream.next_in = in;
-            stream.zalloc = Z_NULL;
-            stream.zfree = Z_NULL;
-            stream.opaque = Z_NULL;
+            z_stream_s stream{
+                .next_in = in,
+                .avail_in = compressedSize,
+                .zalloc = Z_NULL,
+                .zfree = Z_NULL,
+                .opaque = Z_NULL
+            };
+
 
             int code = inflateInit(&stream);
 
@@ -303,15 +305,16 @@ namespace NoLimits {
             uncompressedFile->openRB();
             compressedFile->openWB();
 
-            Bytef* in = (Bytef *) malloc(uncompressedFile->getFilesize());
+            auto* in = (Bytef *) malloc(uncompressedFile->getFilesize());
             Bytef buffer[ZLIB_CHUNK];
 
-            z_stream_s stream;
-            stream.avail_in = uncompressedFile->read(in, 1, uncompressedFile->getFilesize());
-            stream.next_in = in;
-            stream.zalloc = Z_NULL;
-            stream.zfree = Z_NULL;
-            stream.opaque = Z_NULL;
+            z_stream_s stream{
+                .next_in = in,
+                .avail_in = static_cast<uInt>(uncompressedFile->read(in, 1, uncompressedFile->getFilesize())),
+                .zalloc = Z_NULL,
+                .zfree = Z_NULL,
+                .opaque = Z_NULL
+            };
 
             int code = deflateInit(&stream, Z_BEST_COMPRESSION);
 
@@ -351,7 +354,7 @@ namespace NoLimits {
             seek(-4, SEEK_CUR);
             read(&chunkBuffer[0], chunkSize + 4, 1);
 
-            MemoryFile *chunkFile = new MemoryFile();
+            auto *chunkFile = new MemoryFile();
             chunkFile->setBuffer(chunkBuffer, chunkSize + 4);
 
             chunkFile->openRB();
@@ -361,7 +364,7 @@ namespace NoLimits {
         }
 
         void File::writeChunk(Stream::Chunk *chunk) {
-            MemoryFile *fileChunkInner = new MemoryFile();
+            auto *fileChunkInner = new MemoryFile();
 
             fileChunkInner->openWB();
             chunk->write(fileChunkInner);
@@ -400,9 +403,9 @@ namespace NoLimits {
         }
 
         void File::writeString(std::string value) {
-            for(unsigned long i = 0; i < value.size(); i++) {
+            for(char & i : value) {
                 writeNull(1);
-                write(&value[i], sizeof(char), 1);
+                write(&i, sizeof(char), 1);
             }
             writeNull(2);
         }

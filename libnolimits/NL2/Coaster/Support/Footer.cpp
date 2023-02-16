@@ -44,11 +44,11 @@ namespace NoLimits {
             file->writeNull(9);
         }
 
-        glm::vec3 Footer::getPosition() const {
+        glm::dvec3 Footer::getPosition() const {
             return position;
         }
 
-        void Footer::setPosition(const glm::vec3 &value) {
+        void Footer::setPosition(const glm::dvec3 &value) {
             position = value;
         }
 

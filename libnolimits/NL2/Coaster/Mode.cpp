@@ -27,11 +27,11 @@ namespace NoLimits {
             splinePosition = value;
         }
         
-        glm::vec2 Mode::getSplinePositionOffset() const {
+        glm::dvec2 Mode::getSplinePositionOffset() const {
             return splinePositionOffset;
         }
         
-        void Mode::setSplinePositionOffset(const glm::vec2 &value) {
+        void Mode::setSplinePositionOffset(const glm::dvec2 &value) {
             splinePositionOffset = value;
         }
         

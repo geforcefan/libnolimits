@@ -37,13 +37,13 @@ namespace NoLimits {
 
             readSpecialTrack(file);
 
-            for(int i=0; i <= file->tell(); i++) {
+            for(long i=0; i <= file->tell(); i++) {
                 file->seek(i, SEEK_SET);
 
                 std::string chunk = file->readChunkName();
 
                 if(chunk == "SEGM") {
-                    Segment *_segment = new Segment();
+                    auto *_segment = new Segment();
                     insertSegment(_segment);
 
                     file->readChunk(_segment);
@@ -104,19 +104,19 @@ namespace NoLimits {
             name = value;
         }
 
-        glm::vec3 SpecialTrack::getPosition() const {
+        glm::dvec3 SpecialTrack::getPosition() const {
             return position;
         }
 
-        void SpecialTrack::setPosition(const glm::vec3 &value) {
+        void SpecialTrack::setPosition(const glm::dvec3 &value) {
             position = value;
         }
 
-        glm::vec3 SpecialTrack::getRotation() const {
+        glm::dvec3 SpecialTrack::getRotation() const {
             return rotation;
         }
 
-        void SpecialTrack::setRotation(const glm::vec3 &value) {
+        void SpecialTrack::setRotation(const glm::dvec3 &value) {
             rotation = value;
         }
 

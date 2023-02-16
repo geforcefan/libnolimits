@@ -23,17 +23,9 @@ namespace NoLimits {
                 Off
             };
 
-            SpecialTrack() : Track(TrackType::SpecialTrack), _specialTrackType(SpecialTrackType::None) {
-                setName("");
-                setPosition(glm::vec3(0.0f));
-                setRotation(glm::vec3(0.0f));
-                setSwitchTime(15.0f);
-            }
+            SpecialTrack() : Track(TrackType::SpecialTrack), _specialTrackType(SpecialTrackType::None) {}
 
             SpecialTrack(SpecialTrackType specialTrackType) : Track(TrackType::SpecialTrack), _specialTrackType(specialTrackType) {
-                setName("");
-                setPosition(glm::vec3(0.0f));
-                setRotation(glm::vec3(0.0f));
                 setSwitchTime(0.0f);
             }
 
@@ -55,7 +47,7 @@ namespace NoLimits {
                 std::cout << "SpecialTrack[getSwitchTime]: " << getSwitchTime() << std::endl;
 
                 std::cout << "SpecialTrack[input.size]: " << input.size() << std::endl;
-                if(input.size())
+                if(!input.empty())
                     std::cout << "---------------------------------------" << std::endl;
                 for(uint32_t i = 0; i < input.size(); i++) {
                     std::cout << "SpecialTrack[input][" << i << "]: " << input[i] << std::endl;
@@ -63,7 +55,7 @@ namespace NoLimits {
                 }
 
                 std::cout << "SpecialTrack[output.size]: " << output.size() << std::endl;
-                if(output.size())
+                if(!output.empty())
                     std::cout << "---------------------------------------" << std::endl;
                 for(uint32_t i = 0; i < output.size(); i++) {
                     std::cout << "SpecialTrack[output][" << i << "]: " << output[i] << std::endl;
@@ -71,10 +63,10 @@ namespace NoLimits {
                 }
 
                 std::cout << "SpecialTrack[segment.size]: " << segment.size() << std::endl;
-                if(segment.size())
+                if(!segment.empty())
                     std::cout << "---------------------------------------" << std::endl;
-                for(uint32_t i = 0; i < segment.size(); i++) {
-                    segment[i]->debug();
+                for(auto & i : segment) {
+                    i->debug();
                     std::cout << "---------------------------------------" << std::endl;
                 }
             }
@@ -85,11 +77,11 @@ namespace NoLimits {
             std::string getName() const;
             void setName(const std::string &value);
 
-            glm::vec3 getPosition() const;
-            void setPosition(const glm::vec3 &value);
+            glm::dvec3 getPosition() const;
+            void setPosition(const glm::dvec3 &value);
 
-            glm::vec3 getRotation() const;
-            void setRotation(const glm::vec3 &value);
+            glm::dvec3 getRotation() const;
+            void setRotation(const glm::dvec3 &value);
 
             std::vector<uint32_t> getInput() const;
             uint32_t insertInput(uint32_t value);
@@ -114,13 +106,13 @@ namespace NoLimits {
 
             std::string name;
 
-            glm::vec3 position;
-            glm::vec3 rotation;
+            glm::dvec3 position = glm::dvec3(0.0f);
+            glm::dvec3 rotation = glm::dvec3(0.0f);
 
             std::vector<uint32_t> input;
             std::vector<uint32_t> output;
 
-            float switchTime;
+            float switchTime = 15.0f;
 
             std::vector<Segment*> segment;
         };

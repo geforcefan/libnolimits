@@ -34,7 +34,7 @@ namespace NoLimits {
                 setOperationMode(Operation::ClosedCircuit);
                 setPhysicsModel(PhysicsModel::NoLimits22);
                 setSplinePosition(SplinePosition::CenterOfRail);
-                setSplinePositionOffset(glm::vec2(0.0f));
+                setSplinePositionOffset(glm::dvec2(0.0f));
             }
 
             void debug() {
@@ -57,14 +57,14 @@ namespace NoLimits {
 
             CustomFriction *getCustomFriction() const;
 
-            glm::vec2 getSplinePositionOffset() const;
-            void setSplinePositionOffset(const glm::vec2 &value);
+            glm::dvec2 getSplinePositionOffset() const;
+            void setSplinePositionOffset(const glm::dvec2 &value);
 
         private:
             Operation operationMode;
             PhysicsModel physicsModel;
             SplinePosition splinePosition;
-            glm::vec2 splinePositionOffset;
+            glm::dvec2 splinePositionOffset;
             CustomFriction *customFriction;
         };
     }

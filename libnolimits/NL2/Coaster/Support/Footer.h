@@ -28,17 +28,9 @@ namespace NoLimits {
                 Spine = 64
             };
 
-            Footer() {
-                setPosition(glm::vec3(0.0f, 0.0f, 0.0f));
-                setRotationAngle(0.0f);
-                setAboveGround(0.3f);
-                setBaseStyle(BaseStyle::SteelSquare);
-                setConnectionStyle(ConnectionStyle::Simple);
-                setColorMode(ColorMode::Support);
-                setCustomColor(glm::vec3(255.0f, 255.0f, 255.0f));
-            }
+            Footer() = default;
 
-            Footer(glm::vec3 position, float rotationAngle) : Footer() {
+            Footer(glm::dvec3 position, float rotationAngle) : Footer() {
                 setPosition(position);
                 setRotationAngle(rotationAngle);
             }
@@ -58,8 +50,8 @@ namespace NoLimits {
                 std::cout << "Footer[getCustomColor]: " << Helper::debug(getCustomColor()) << std::endl;
             }
 
-            glm::vec3 getPosition() const;
-            void setPosition(const glm::vec3 &value);
+            glm::dvec3 getPosition() const;
+            void setPosition(const glm::dvec3 &value);
 
             float getRotationAngle() const;
             void setRotationAngle(float value);
@@ -79,16 +71,16 @@ namespace NoLimits {
             glm::vec3 getCustomColor() const;
             void setCustomColor(const glm::vec3 &value);
         private:
-            glm::vec3 position;
+            glm::dvec3 position = glm::dvec3(0.0f, 0.0f, 0.0f);
 
-            float rotationAngle;
-            float aboveGround;
+            float rotationAngle = 0.0f;
+            float aboveGround = 0.3f;
 
-            BaseStyle baseStyle;
-            ConnectionStyle connectionStyle;
+            BaseStyle baseStyle = BaseStyle::SteelSquare;
+            ConnectionStyle connectionStyle = ConnectionStyle::Simple;
 
-            ColorMode colorMode;
-            glm::vec3 customColor;
+            ColorMode colorMode = ColorMode::Support;
+            glm::vec3 customColor = glm::vec3(255.0f, 255.0f, 255.0f);
         };
     }
 }

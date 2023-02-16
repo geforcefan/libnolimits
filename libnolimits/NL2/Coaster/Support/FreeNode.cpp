@@ -12,11 +12,11 @@ namespace NoLimits {
             file->writeNull(4);
         }
 
-        glm::vec3 FreeNode::getPosition() const {
+        glm::dvec3 FreeNode::getPosition() const {
             return position;
         }
 
-        void FreeNode::setPosition(const glm::vec3 &value) {
+        void FreeNode::setPosition(const glm::dvec3 &value) {
             position = value;
         }
     }
